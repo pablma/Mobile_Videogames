@@ -2,24 +2,24 @@ package com.example.androidengine;
 import android.graphics.Bitmap;
 
 public class Image implements com.example.engine.Image {
-    Bitmap bitmap_;
+    Bitmap _bitmap;
 
     public Image(Bitmap bitmap){
-        this.bitmap_ = bitmap;
+        this._bitmap = bitmap;
     }
 
     @Override
     public int getWidth() {
-        return bitmap_.getWidth();
+        return _bitmap.getWidth();
     }
 
     @Override
     public int getHeight() {
-        return bitmap_.getHeight();
+        return _bitmap.getHeight();
     }
 
     @Override
     public void dispose() {
-        bitmap_.recycle();
+        _bitmap.recycle();
     }
 }
