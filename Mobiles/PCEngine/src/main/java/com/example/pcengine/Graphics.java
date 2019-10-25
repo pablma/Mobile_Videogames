@@ -5,10 +5,24 @@ import com.example.engine.Image;
 
 public class Graphics implements com.example.engine.Graphics {
 
+    java.awt.Graphics _graphics;
+    java.awt.Image _frameBuffer;
+
+
+    public Graphics(){
+    }
 
     @Override
     public Image newImage(String name) {
-        return null;
+       try {
+           _frameBuffer = javax.imageio.ImageIO.read(new java.io.File(name));
+       }
+       catch (Exception e) {
+           System.err.println(e);
+       }
+
+       com.example.pcengine.Image img = new com.example.pcengine.Image(_frameBuffer);
+       return img;
     }
 
     @Override
@@ -18,7 +32,8 @@ public class Graphics implements com.example.engine.Graphics {
 
     @Override
     public void drawImage(Image image, int x, int y) {
-
+        com.example.pcengine.Image img = (com.example.pcengine.Image)image;
+        _graphics.drawImage(img._image, x, y, null);
     }
 
     @Override
@@ -28,11 +43,11 @@ public class Graphics implements com.example.engine.Graphics {
 
     @Override
     public int getWidth() {
-        return 0;
+        return  _frameBuffer.getWidth(null);
     }
 
     @Override
     public int getHeight() {
-        return 0;
+        return  _frameBuffer.getHeight(null);
     }
 }
