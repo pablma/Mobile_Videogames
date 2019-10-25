@@ -22,6 +22,11 @@ public class Graphics implements com.example.engine.Graphics {
     }
 
     @Override
+    public void drawImage(Image image, int x, int y, int srcX, int srcY, int srcWidth, int srcHeight) {
+
+    }
+
+    @Override
     public int getWidth() {
         return 0;
     }

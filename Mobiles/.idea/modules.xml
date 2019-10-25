@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/Engine/Engine.iml" filepath="$PROJECT_DIR$/Engine/Engine.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Logic/Logic.iml" filepath="$PROJECT_DIR$/Logic/Logic.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Mobiles.iml" filepath="$PROJECT_DIR$/Mobiles.iml" />
+      <module fileurl="file://$PROJECT_DIR$/PCEngine/PCEngine.iml" filepath="$PROJECT_DIR$/PCEngine/PCEngine.iml" />
+      <module fileurl="file://$PROJECT_DIR$/PCGame/PCGame.iml" filepath="$PROJECT_DIR$/PCGame/PCGame.iml" />
+      <module fileurl="file://$PROJECT_DIR$/androidengine/androidengine.iml" filepath="$PROJECT_DIR$/androidengine/androidengine.iml" />
+      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+    </modules>
+  </component>
+</project>
