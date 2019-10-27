@@ -2,9 +2,14 @@ package com.example.engine;
 
 public interface Graphics {
     public Image newImage(String name);
+
     public void clear(int color);
+
     public void drawImage(Image image, int x, int y);
+
     public void drawImage(Image image, int x, int y, int srcX, int srcY, int srcWidth, int srcHeight);
+
     public int getWidth();
+
     public int getHeight();
 }
