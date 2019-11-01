@@ -88,22 +88,22 @@ public class SingleTouchHandler implements TouchHandler {
 
             switch (event.getAction()) {
                 case MotionEvent.ACTION_DOWN:
-                    touchEvent.type = Input.TouchEvent.TOUCH_DOWN;
+                    touchEvent._type = Input.TouchEvent.TOUCH_DOWN;
                     _isTouched = true;
                     break;
                 case MotionEvent.ACTION_MOVE:
-                    touchEvent.type = Input.TouchEvent.TOUCH_DRAGGED;
+                    touchEvent._type = Input.TouchEvent.TOUCH_DRAGGED;
                     _isTouched = true;
                     break;
                 case MotionEvent.ACTION_CANCEL:
                 case MotionEvent.ACTION_UP:
-                    touchEvent.type = Input.TouchEvent.TOUCH_UP;
+                    touchEvent._type = Input.TouchEvent.TOUCH_UP;
                     _isTouched = false;
                     break;
             }
 
-            touchEvent.x = _touchX = (int)(event.getX() * _scaleX);
-            touchEvent.y = _touchY = (int)(event.getY() * _scaleY);
+            touchEvent._x = _touchX = (int)(event.getX() * _scaleX);
+            touchEvent._y = _touchY = (int)(event.getY() * _scaleY);
             _touchEventsBuffer.add(touchEvent);
 
             return true;
