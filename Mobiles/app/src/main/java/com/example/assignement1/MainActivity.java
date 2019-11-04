@@ -11,11 +11,52 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.SurfaceHolder;
 import android.view.SurfaceView;
 
+import com.example.engine.Game;
+import com.example.engine.Input;
+import com.example.engine.Screen;
+
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.List;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends Screen {
 
+    public MainActivity(Game game) {
+        super(game);
+    }
+
+
+    @Override
+    public void update(float deltaTime) {
+        //List<Input.TouchEvent> touchEvents = _game.getInput().get
+    }
+
+
+    @Override
+    public void present(float deltaTime) {
+
+    }
+
+
+    @Override
+    public void pause() {
+
+    }
+
+
+    @Override
+    public void resume() {
+
+    }
+
+
+    @Override
+    public void dispose() {
+
+    }
+
+
+    /*
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -118,6 +159,7 @@ public class MainActivity extends AppCompatActivity {
         //}
     }
     int _x = 100;
+    */
 }
 
 

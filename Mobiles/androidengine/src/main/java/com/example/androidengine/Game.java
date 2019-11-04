@@ -18,8 +18,8 @@ public class Game extends Activity implements com.example.engine.Game {
     MySurfaceView _renderView;
     com.example.androidengine.Graphics _graphics;
     com.example.androidengine.Input _input;
-
     Screen _screen;
+
 
     public Game(){
     }
