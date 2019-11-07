@@ -76,6 +76,8 @@ public class Graphics implements com.example.engine.Graphics {
         _dstRect.left = x;
         _dstRect.top = y;
         _dstRect.right = x + srcWidth - 1;
+        //_dstRect.right = x + _canvas.getWidth() - 1;
+        //_dstRect.bottom = y + _canvas.getHeight() - 1;
         _dstRect.bottom = y + srcHeight - 1;
 
         com.example.androidengine.Image img = (com.example.androidengine.Image)image;

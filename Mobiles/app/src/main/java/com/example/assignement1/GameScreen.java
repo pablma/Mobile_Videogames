@@ -16,7 +16,8 @@ public class GameScreen extends Screen {
     public GameScreen(Game game) {
         super(game);
         g = _game.getGraphics();
-        img = g.newImage("th.png");
+        img = g.newImage("backgrounds.png");
+
     }
 
     @Override
@@ -26,7 +27,10 @@ public class GameScreen extends Screen {
 
     @Override
     public void present(float deltaTime) {
-        g.drawImage(img, 0, 0);
+
+        g.drawImage(img, 0, 0, 0,0, img.getWidth() / 9, img.getHeight());
+
+
     }
 
     @Override

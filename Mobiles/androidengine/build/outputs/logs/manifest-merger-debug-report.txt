@@ -1,37 +1,37 @@
 -- Merging decision tree log ---
 manifest
-ADDED from C:\hlocal\Mobiles\Mobile_Videogames\Mobiles\androidengine\src\main\AndroidManifest.xml:1:1-2:43
-INJECTED from C:\hlocal\Mobiles\Mobile_Videogames\Mobiles\androidengine\src\main\AndroidManifest.xml:1:1-2:43
-INJECTED from C:\hlocal\Mobiles\Mobile_Videogames\Mobiles\androidengine\src\main\AndroidManifest.xml:1:1-2:43
-INJECTED from C:\hlocal\Mobiles\Mobile_Videogames\Mobiles\androidengine\src\main\AndroidManifest.xml:1:1-2:43
-INJECTED from C:\hlocal\Mobiles\Mobile_Videogames\Mobiles\androidengine\src\main\AndroidManifest.xml:1:1-2:43
-INJECTED from C:\hlocal\Mobiles\Mobile_Videogames\Mobiles\androidengine\src\main\AndroidManifest.xml:1:1-2:43
-INJECTED from C:\hlocal\Mobiles\Mobile_Videogames\Mobiles\androidengine\src\main\AndroidManifest.xml:1:1-2:43
+ADDED from C:\hlocal\Moviles\Mobile_Videogames\Mobiles\androidengine\src\main\AndroidManifest.xml:1:1-2:43
+INJECTED from C:\hlocal\Moviles\Mobile_Videogames\Mobiles\androidengine\src\main\AndroidManifest.xml:1:1-2:43
+INJECTED from C:\hlocal\Moviles\Mobile_Videogames\Mobiles\androidengine\src\main\AndroidManifest.xml:1:1-2:43
+INJECTED from C:\hlocal\Moviles\Mobile_Videogames\Mobiles\androidengine\src\main\AndroidManifest.xml:1:1-2:43
+INJECTED from C:\hlocal\Moviles\Mobile_Videogames\Mobiles\androidengine\src\main\AndroidManifest.xml:1:1-2:43
+INJECTED from C:\hlocal\Moviles\Mobile_Videogames\Mobiles\androidengine\src\main\AndroidManifest.xml:1:1-2:43
+INJECTED from C:\hlocal\Moviles\Mobile_Videogames\Mobiles\androidengine\src\main\AndroidManifest.xml:1:1-2:43
 	package
-		ADDED from C:\hlocal\Mobiles\Mobile_Videogames\Mobiles\androidengine\src\main\AndroidManifest.xml:2:5-40
-		INJECTED from C:\hlocal\Mobiles\Mobile_Videogames\Mobiles\androidengine\src\main\AndroidManifest.xml
-		INJECTED from C:\hlocal\Mobiles\Mobile_Videogames\Mobiles\androidengine\src\main\AndroidManifest.xml
+		ADDED from C:\hlocal\Moviles\Mobile_Videogames\Mobiles\androidengine\src\main\AndroidManifest.xml:2:5-40
+		INJECTED from C:\hlocal\Moviles\Mobile_Videogames\Mobiles\androidengine\src\main\AndroidManifest.xml
+		INJECTED from C:\hlocal\Moviles\Mobile_Videogames\Mobiles\androidengine\src\main\AndroidManifest.xml
 	android:versionName
-		INJECTED from C:\hlocal\Mobiles\Mobile_Videogames\Mobiles\androidengine\src\main\AndroidManifest.xml
-		ADDED from C:\hlocal\Mobiles\Mobile_Videogames\Mobiles\androidengine\src\main\AndroidManifest.xml:1:1-2:43
-		INJECTED from C:\hlocal\Mobiles\Mobile_Videogames\Mobiles\androidengine\src\main\AndroidManifest.xml
+		INJECTED from C:\hlocal\Moviles\Mobile_Videogames\Mobiles\androidengine\src\main\AndroidManifest.xml
+		ADDED from C:\hlocal\Moviles\Mobile_Videogames\Mobiles\androidengine\src\main\AndroidManifest.xml:1:1-2:43
+		INJECTED from C:\hlocal\Moviles\Mobile_Videogames\Mobiles\androidengine\src\main\AndroidManifest.xml
 	android:versionCode
-		INJECTED from C:\hlocal\Mobiles\Mobile_Videogames\Mobiles\androidengine\src\main\AndroidManifest.xml
-		ADDED from C:\hlocal\Mobiles\Mobile_Videogames\Mobiles\androidengine\src\main\AndroidManifest.xml:1:1-2:43
-		INJECTED from C:\hlocal\Mobiles\Mobile_Videogames\Mobiles\androidengine\src\main\AndroidManifest.xml
+		INJECTED from C:\hlocal\Moviles\Mobile_Videogames\Mobiles\androidengine\src\main\AndroidManifest.xml
+		ADDED from C:\hlocal\Moviles\Mobile_Videogames\Mobiles\androidengine\src\main\AndroidManifest.xml:1:1-2:43
+		INJECTED from C:\hlocal\Moviles\Mobile_Videogames\Mobiles\androidengine\src\main\AndroidManifest.xml
 	xmlns:android
-		ADDED from C:\hlocal\Mobiles\Mobile_Videogames\Mobiles\androidengine\src\main\AndroidManifest.xml:1:11-69
+		ADDED from C:\hlocal\Moviles\Mobile_Videogames\Mobiles\androidengine\src\main\AndroidManifest.xml:1:11-69
 uses-sdk
-INJECTED from C:\hlocal\Mobiles\Mobile_Videogames\Mobiles\androidengine\src\main\AndroidManifest.xml reason: use-sdk injection requested
-INJECTED from C:\hlocal\Mobiles\Mobile_Videogames\Mobiles\androidengine\src\main\AndroidManifest.xml
-INJECTED from C:\hlocal\Mobiles\Mobile_Videogames\Mobiles\androidengine\src\main\AndroidManifest.xml
-INJECTED from C:\hlocal\Mobiles\Mobile_Videogames\Mobiles\androidengine\src\main\AndroidManifest.xml
-INJECTED from C:\hlocal\Mobiles\Mobile_Videogames\Mobiles\androidengine\src\main\AndroidManifest.xml
+INJECTED from C:\hlocal\Moviles\Mobile_Videogames\Mobiles\androidengine\src\main\AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from C:\hlocal\Moviles\Mobile_Videogames\Mobiles\androidengine\src\main\AndroidManifest.xml
+INJECTED from C:\hlocal\Moviles\Mobile_Videogames\Mobiles\androidengine\src\main\AndroidManifest.xml
+INJECTED from C:\hlocal\Moviles\Mobile_Videogames\Mobiles\androidengine\src\main\AndroidManifest.xml
+INJECTED from C:\hlocal\Moviles\Mobile_Videogames\Mobiles\androidengine\src\main\AndroidManifest.xml
 	android:targetSdkVersion
-		INJECTED from C:\hlocal\Mobiles\Mobile_Videogames\Mobiles\androidengine\src\main\AndroidManifest.xml
-		ADDED from C:\hlocal\Mobiles\Mobile_Videogames\Mobiles\androidengine\src\main\AndroidManifest.xml
-		INJECTED from C:\hlocal\Mobiles\Mobile_Videogames\Mobiles\androidengine\src\main\AndroidManifest.xml
+		INJECTED from C:\hlocal\Moviles\Mobile_Videogames\Mobiles\androidengine\src\main\AndroidManifest.xml
+		ADDED from C:\hlocal\Moviles\Mobile_Videogames\Mobiles\androidengine\src\main\AndroidManifest.xml
+		INJECTED from C:\hlocal\Moviles\Mobile_Videogames\Mobiles\androidengine\src\main\AndroidManifest.xml
 	android:minSdkVersion
-		INJECTED from C:\hlocal\Mobiles\Mobile_Videogames\Mobiles\androidengine\src\main\AndroidManifest.xml
-		ADDED from C:\hlocal\Mobiles\Mobile_Videogames\Mobiles\androidengine\src\main\AndroidManifest.xml
-		INJECTED from C:\hlocal\Mobiles\Mobile_Videogames\Mobiles\androidengine\src\main\AndroidManifest.xml
+		INJECTED from C:\hlocal\Moviles\Mobile_Videogames\Mobiles\androidengine\src\main\AndroidManifest.xml
+		ADDED from C:\hlocal\Moviles\Mobile_Videogames\Mobiles\androidengine\src\main\AndroidManifest.xml
+		INJECTED from C:\hlocal\Moviles\Mobile_Videogames\Mobiles\androidengine\src\main\AndroidManifest.xml
