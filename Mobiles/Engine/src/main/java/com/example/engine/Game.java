@@ -8,5 +8,5 @@ public interface Game {
     public void setScreen(Screen screen);
 
     public Screen getCurrentScreen();
-    public Screen getSrartScreen();
+    public Screen getStartScreen();
 }

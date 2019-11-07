@@ -44,7 +44,7 @@ public class Game extends Activity implements com.example.engine.Game {
         _renderView = new MySurfaceView(this, frameBuffer);
         _graphics = new com.example.androidengine.Graphics(getAssets(), frameBuffer);
         _input = new com.example.androidengine.Input(_renderView, scaleX, scaleY);
-        _screen = getSrartScreen();
+        _screen = getStartScreen();
         setContentView(_renderView);
     }
 
@@ -94,7 +94,7 @@ public class Game extends Activity implements com.example.engine.Game {
     }
 
     @Override
-    public Screen getSrartScreen() {
+    public Screen getStartScreen() {
         return null;
     }
 }
