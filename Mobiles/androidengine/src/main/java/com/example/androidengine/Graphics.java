@@ -6,6 +6,7 @@ import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.graphics.Rect;
+import android.view.Window;
 
 import com.example.engine.Image;
 
@@ -76,13 +77,51 @@ public class Graphics implements com.example.engine.Graphics {
         _dstRect.left = x;
         _dstRect.top = y;
         _dstRect.right = x + srcWidth - 1;
-        //_dstRect.right = x + _canvas.getWidth() - 1;
-        //_dstRect.bottom = y + _canvas.getHeight() - 1;
         _dstRect.bottom = y + srcHeight - 1;
 
         com.example.androidengine.Image img = (com.example.androidengine.Image)image;
         _canvas.drawBitmap(img._bitmap, _srcRect, _dstRect,null);
     }
+
+    @Override
+    public void drawBackground(Image image, int srcX, int srcY, int srcWidth, int srcHeight) {
+        _srcRect.left = srcX;
+        _srcRect.top = srcY;
+        _srcRect.right = srcX + srcWidth - 1;
+        _srcRect.bottom = srcY + srcHeight - 1;
+
+        _dstRect.left = 0;
+        _dstRect.top = 0;
+        _dstRect.right = _canvas.getWidth();
+        _dstRect.bottom = _canvas.getHeight();
+
+        com.example.androidengine.Image img = (com.example.androidengine.Image)image;
+        _canvas.drawBitmap(img._bitmap, _srcRect, _dstRect,null);
+    }
+
+    @Override
+    public void drawImageCentered(Image image, int x, int y, int srcX, int srcY, int srcWidth, int srcHeight, float scale) {
+
+        int windowX_center = _canvas.getWidth() / 2;
+        int windowY_center = _canvas.getHeight() / 2;
+
+        int imageX_center = (int)((image.getWidth() / 2) * scale);
+        int imageY_center = (int)((image.getHeight() / 2) * scale);
+
+        _srcRect.left = srcX;
+        _srcRect.top = srcY;
+        _srcRect.right = srcX + srcWidth - 1;
+        _srcRect.bottom = srcY + srcHeight - 1;
+
+        _dstRect.left = x + windowX_center - imageX_center;
+        _dstRect.top = y + windowY_center - imageY_center;
+        _dstRect.right = x + windowX_center + imageX_center - 1;
+        _dstRect.bottom = y + windowY_center + imageY_center - 1;
+
+        com.example.androidengine.Image img = (com.example.androidengine.Image)image;
+        _canvas.drawBitmap(img._bitmap, _srcRect, _dstRect,null);
+    }
+
 
     @Override
     public int getWidth() {

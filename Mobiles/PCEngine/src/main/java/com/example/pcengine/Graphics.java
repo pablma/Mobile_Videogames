@@ -54,6 +54,15 @@ public class Graphics implements com.example.engine.Graphics {
     }
 
     @Override
+    public void drawBackground(Image image, int srcX, int srcY, int srcWidth, int srcHeight) {
+    }
+
+    @Override
+    public void drawImageCentered(Image image, int x, int y, int srcX, int srcY, int srcWidth, int srcHeight, float scale) {
+
+    }
+
+    @Override
     public int getWidth() {
         return  _frameBuffer.getWidth(null);
     }
