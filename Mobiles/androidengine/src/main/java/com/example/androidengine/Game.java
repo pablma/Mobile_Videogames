@@ -93,7 +93,4 @@ public class Game extends Activity implements com.example.engine.Game {
         return null;
     }
 
-    public void pedro(){
-
-    }
 }

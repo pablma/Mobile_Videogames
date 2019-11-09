@@ -6,7 +6,6 @@ import com.example.engine.Game;
 import com.example.engine.Graphics;
 import com.example.engine.Image;
 import com.example.engine.Input;
-import com.example.engine.Screen;
 
 import java.util.List;
 
@@ -17,9 +16,10 @@ public class GameScreen extends Screen { // debería de ir en la lógica
     Image img;
     Image img1;
     Image img2;
-    Game GAMEs;
+    Image img3;
+    Game _game;
 
-    float scale = 2f;
+    float scale = 1f;
 
     int x = 0;
     int y1 ;
@@ -29,38 +29,41 @@ public class GameScreen extends Screen { // debería de ir en la lógica
     public GameScreen(Game game) {
         super(game);
 
-        GAMEs = _game;
+
+        _game = game;
+
         g = _game.getGraphics();
         img = g.newImage("backgrounds.png");
 
-        img1 = g.newImage("backgrounds.png");
+        img1 = g.newImage("arrowsBackground.png");
         img2 = g.newImage("backgrounds.png");
 
-        y1 = -100;
-        y2 = y1 - (int)(img2.getHeight() * scale) + 1;
+        y1 = 0;
     }
 
     @Override
     public void update(float deltaTime) {
-        List<Input.TouchEvent> touchEvents = GAMEs.getInput().getTouchEvents();
+
+        y1 += 2;
+
+        List<Input.TouchEvent> touchEvents = _game.getInput().getTouchEvents();
         for (int i = 0; i < touchEvents.size(); i++) {
             Input.TouchEvent event = touchEvents.get(i);
             if (event._type == Input.EventType.TOUCH_DOWN) {
                 System.out.println("Click with mouse key: " + event._id);
+                img1 = img2;
             }
         }
     }
 
-
     @Override
     public void present(float deltaTime) {
-        //g.drawBackground(img,0,0,img.getWidth() / 9, img.getHeight());
 
-        //g.drawImageCentered(img1, x, y1,0,0, img1.getWidth(), img1.getHeight(), scale);
-        //g.drawImageCentered(img2, x, y2,0,0, img2.getWidth(), img2.getHeight(), scale);
-
-        Graphics g = GAMEs.getGraphics();
         g.clear(0xffff00ff);
+
+        g.drawBackground(img,0,0,img.getWidth() / 9, img.getHeight());
+        g.drawImageCentered(img1, x, y1,0,0, img1.getWidth(), img1.getHeight(), scale);
+
     }
 
     @Override

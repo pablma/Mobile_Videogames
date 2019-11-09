@@ -5,7 +5,7 @@ import javax.swing.JFrame;
 public class DesktopSurfaceView extends JFrame {
 
     private Game _game;
-    volatile boolean _running = false;
+    volatile boolean _running = true;
 
     public DesktopSurfaceView(Game game, String windowName, int w, int h){
         super(windowName);

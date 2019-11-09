@@ -10,12 +10,11 @@ public class DesktopMain extends Game {
         super(windowName, w, h );
     }
 
-    @Override
     public Screen getStartScreen() {
         return new GameScreen(this);
     }
 
     public static void main(String[] args){
-        Game game = new Game("Switch Dash", 1920, 1080);
+        DesktopMain game = new DesktopMain("Switch Dash", 780, 420);
     }
 }
