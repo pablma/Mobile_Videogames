@@ -7,10 +7,10 @@ import javax.swing.JFrame;
 
 public class Input implements com.example.engine.Input {
 
-    private DesktopMouseHandler _desktopMouseHandler;
+    private PCMouseHandler _PCMouseHandler;
 
     public Input(JFrame window){
-        _desktopMouseHandler = new DesktopMouseHandler(window);
+        _PCMouseHandler = new PCMouseHandler(window);
     }
 
     @Override
@@ -20,16 +20,16 @@ public class Input implements com.example.engine.Input {
 
     @Override
     public int getTouchX(int id) {
-        return _desktopMouseHandler.getTouchX();
+        return _PCMouseHandler.getTouchX();
     }
 
     @Override
     public int getTouchY(int id) {
-        return _desktopMouseHandler.getTouchY();
+        return _PCMouseHandler.getTouchY();
     }
 
     @Override
     public List<TouchEvent> getTouchEvents() {
-        return _desktopMouseHandler.getTouchEvents();
+        return _PCMouseHandler.getTouchEvents();
     }
 }

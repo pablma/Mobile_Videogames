@@ -2,25 +2,25 @@ package com.example.pcengine;
 
 
 import com.example.engine.Input;
-import com.example.engine.Screen;
+import com.example.engine.State;
 
 public class Game implements com.example.engine.Game {
 
-    DesktopSurfaceView _renderView;
+    PCSurfaceView _renderView;
     com.example.pcengine.Graphics _graphics;
     com.example.pcengine.Input _input;
-    Screen _screen;
+    State _state;
 
     public Game(String windowName, int w, int h){
 
-        _renderView = new DesktopSurfaceView(this, windowName, w, h);
+        _renderView = new PCSurfaceView(this, windowName, w, h);
 
         _renderView.setIgnoreRepaint(true);
         _renderView.setVisible(true);
 
         _graphics = new com.example.pcengine.Graphics(_renderView);
         _input = new com.example.pcengine.Input(_renderView);
-        _screen = getStartScreen();
+        _state = getStartState();
 
         _renderView.run();
     }
@@ -36,25 +36,25 @@ public class Game implements com.example.engine.Game {
     }
 
     @Override
-    public void setScreen(Screen screen) {
+    public void setScreen(State state) {
 
-        if(screen == null)
-            throw new IllegalArgumentException("Screen must not be null");
-        this._screen.pause();
-        this._screen.dispose();
-        screen.resume();
-        screen.update(0);
-        this._screen = screen;
+        if(state == null)
+            throw new IllegalArgumentException("State must not be null");
+        this._state.pause();
+        this._state.dispose();
+        state.resume();
+        state.update(0);
+        this._state = state;
 
     }
 
     @Override
-    public Screen getCurrentScreen() {
-        return _screen;
+    public State getCurrentState() {
+        return _state;
     }
 
     @Override
-    public Screen getStartScreen() {
+    public State getStartState() {
         return null;
     }
 

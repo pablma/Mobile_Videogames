@@ -5,8 +5,8 @@ public interface Game {
     Graphics getGraphics();
     Input getInput();
 
-    public void setScreen(Screen screen);
+    public void setScreen(State state);
 
-    public Screen getCurrentScreen();
-    public Screen getStartScreen();
+    public State getCurrentState();
+    public State getStartState();
 }
