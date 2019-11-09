@@ -42,9 +42,9 @@ public class SingleTouchHandler implements TouchHandler {
 
 
     @Override
-    public boolean isTouchDown(int pointer) {
+    public boolean isTouchDown(int id) {
         synchronized (this){
-            if(pointer == 0)
+            if(id == 0)
                 return _isTouched;
             else
                 return false;
@@ -52,14 +52,14 @@ public class SingleTouchHandler implements TouchHandler {
     }
 
     @Override
-    public int getTouchX(int pointer) {
+    public int getTouchX(int id) {
         synchronized (this){
             return _touchX;
         }
     }
 
     @Override
-    public int getTouchY(int pointer) {
+    public int getTouchY(int id) {
         synchronized (this){
             return _touchY;
         }
@@ -88,20 +88,21 @@ public class SingleTouchHandler implements TouchHandler {
 
             switch (event.getAction()) {
                 case MotionEvent.ACTION_DOWN:
-                    touchEvent._type = Input.TouchEvent.TOUCH_DOWN;
+                    touchEvent._type = Input.EventType.TOUCH_DOWN;
                     _isTouched = true;
                     break;
                 case MotionEvent.ACTION_MOVE:
-                    touchEvent._type = Input.TouchEvent.TOUCH_DRAGGED;
+                    touchEvent._type = Input.EventType.TOUCH_DRAGGED;
                     _isTouched = true;
                     break;
                 case MotionEvent.ACTION_CANCEL:
                 case MotionEvent.ACTION_UP:
-                    touchEvent._type = Input.TouchEvent.TOUCH_UP;
+                    touchEvent._type = Input.EventType.TOUCH_UP;
                     _isTouched = false;
                     break;
             }
 
+            touchEvent._id = 0;
             touchEvent._x = _touchX = (int)(event.getX() * _scaleX);
             touchEvent._y = _touchY = (int)(event.getY() * _scaleY);
             _touchEventsBuffer.add(touchEvent);

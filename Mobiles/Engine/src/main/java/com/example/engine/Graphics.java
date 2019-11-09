@@ -1,5 +1,7 @@
 package com.example.engine;
 
+import java.awt.Canvas;
+
 public interface Graphics {
     public Image newImage(String name);
 

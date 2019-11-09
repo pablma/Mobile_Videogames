@@ -16,7 +16,7 @@ public class MySurfaceView extends SurfaceView implements Runnable {
     SurfaceHolder _holder;
     volatile boolean _running = false;
 
-    public MySurfaceView(Game game, Bitmap frameBuffer) {
+    public MySurfaceView(Game game, Bitmap frameBuffer) { // context es una avtivity de android , game es una actividad de android
         super(game);
         this._game = game;
         this._frameBuffer = frameBuffer;
@@ -29,7 +29,7 @@ public class MySurfaceView extends SurfaceView implements Runnable {
             _renderThread = new Thread(this);
             _renderThread.start();
         }
-    }
+    } //  como en la prueba de concepto
 
     public void run(){
         Rect dstRect = new Rect();

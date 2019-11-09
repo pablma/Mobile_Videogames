@@ -30,6 +30,7 @@ public class Graphics implements com.example.engine.Graphics {
         this._paint = new Paint();
     }
 
+
     @Override
     public Image newImage(String name) {
         InputStream in = null;
@@ -64,7 +65,7 @@ public class Graphics implements com.example.engine.Graphics {
     @Override
     public void drawImage(Image image, int x, int y) {
         com.example.androidengine.Image img = (com.example.androidengine.Image)image;
-        _canvas.drawBitmap(img._bitmap, x, y,null);
+        _canvas.drawBitmap(img.getBitmap(), x, y,null);
     }
 
     @Override
@@ -80,7 +81,7 @@ public class Graphics implements com.example.engine.Graphics {
         _dstRect.bottom = y + srcHeight - 1;
 
         com.example.androidengine.Image img = (com.example.androidengine.Image)image;
-        _canvas.drawBitmap(img._bitmap, _srcRect, _dstRect,null);
+        _canvas.drawBitmap(img.getBitmap(), _srcRect, _dstRect,null);
     }
 
     @Override
@@ -96,7 +97,7 @@ public class Graphics implements com.example.engine.Graphics {
         _dstRect.bottom = _canvas.getHeight();
 
         com.example.androidengine.Image img = (com.example.androidengine.Image)image;
-        _canvas.drawBitmap(img._bitmap, _srcRect, _dstRect,null);
+        _canvas.drawBitmap(img.getBitmap(), _srcRect, _dstRect,null);
     }
 
     @Override
@@ -119,7 +120,7 @@ public class Graphics implements com.example.engine.Graphics {
         _dstRect.bottom = y + windowY_center + imageY_center - 1;
 
         com.example.androidengine.Image img = (com.example.androidengine.Image)image;
-        _canvas.drawBitmap(img._bitmap, _srcRect, _dstRect,null);
+        _canvas.drawBitmap(img.getBitmap(), _srcRect, _dstRect,null);
     }
 
 

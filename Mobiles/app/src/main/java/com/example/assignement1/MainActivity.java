@@ -1,24 +1,9 @@
 package com.example.assignement1;
 
 
-import android.content.Context;
-import android.content.res.AssetManager;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
-import android.graphics.Canvas;
-import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
-import android.view.SurfaceHolder;
-import android.view.SurfaceView;
-
 import com.example.androidengine.Game;
-import com.example.androidengine.Input;
 import com.example.engine.Screen;
-import com.example.assignement1.GameScreen;
-
-import java.io.IOException;
-import java.io.InputStream;
-import java.util.List;
+import com.example.logic.GameScreen;
 
 public class MainActivity extends Game {
 

@@ -8,8 +8,6 @@ import android.support.annotation.Nullable;
 import android.view.Window;
 import android.view.WindowManager;
 
-import com.example.engine.Graphics;
-import com.example.engine.Input;
 import com.example.engine.Screen;
 
 
@@ -21,9 +19,6 @@ public class Game extends Activity implements com.example.engine.Game {
     Screen _screen;
 
 
-    public Game(){
-    }
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,8 +28,8 @@ public class Game extends Activity implements com.example.engine.Game {
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
 
         boolean isLandScape = getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE;
-        int frameBufferWidth = isLandScape ? 480 : 320;
-        int frameBufferHeight = isLandScape ?  320 : 480;
+        int frameBufferWidth = isLandScape ? 1920 : 1080;
+        int frameBufferHeight = isLandScape ?  1080 : 1920;
 
         Bitmap frameBuffer = Bitmap.createBitmap(frameBufferWidth, frameBufferHeight, Bitmap.Config.RGB_565);
 
@@ -74,7 +69,7 @@ public class Game extends Activity implements com.example.engine.Game {
     @Override
     public Input getInput() {
         return _input;
-    }
+    } // Puede dar porblemas no devolver el deAndorid engine, ahora devolvemos la interfaz
 
     @Override
     public void setScreen(Screen screen) {
@@ -96,5 +91,9 @@ public class Game extends Activity implements com.example.engine.Game {
     @Override
     public Screen getStartScreen() {
         return null;
+    }
+
+    public void pedro(){
+
     }
 }

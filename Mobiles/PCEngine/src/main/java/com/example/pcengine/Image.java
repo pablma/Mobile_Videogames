@@ -1,12 +1,14 @@
 package com.example.pcengine;
 
 public class Image implements com.example.engine.Image {
-    java.awt.Image _image;
+
+    private java.awt.Image _image;
 
     public Image(java.awt.Image image){
         this._image = image;
     }
 
+    public java.awt.Image getImage(){ return _image; }
     @Override
     public int getWidth() {
        return _image.getWidth(null);
@@ -19,5 +21,6 @@ public class Image implements com.example.engine.Image {
 
     @Override
     public void dispose() {
+        _image.flush();
     }
 }

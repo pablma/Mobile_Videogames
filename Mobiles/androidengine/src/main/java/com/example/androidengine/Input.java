@@ -13,19 +13,24 @@ public class Input implements com.example.engine.Input {
         _touchHandler = new SingleTouchHandler(view, scaleX, scaleY);
     }
 
-    public boolean isTouchDown(int pointer){
+
+    @Override
+    public boolean isTouchDown(int pointer) {
         return _touchHandler.isTouchDown(pointer);
     }
 
-    public int getTouchX(int pointer){
+    @Override
+    public int getTouchX(int pointer) {
         return _touchHandler.getTouchX(pointer);
     }
 
-    public int getTouchY(int pointer){
+    @Override
+    public int getTouchY(int pointer) {
         return _touchHandler.getTouchY(pointer);
     }
 
-    public List<TouchEvent> getTouchEvents(){
+    @Override
+    public List<TouchEvent> getTouchEvents() {
         return _touchHandler.getTouchEvents();
     }
 }

@@ -2,11 +2,15 @@ package com.example.androidengine;
 import android.graphics.Bitmap;
 
 public class Image implements com.example.engine.Image {
-    Bitmap _bitmap;
+
+    private Bitmap _bitmap;
+
 
     public Image(Bitmap bitmap){
         this._bitmap = bitmap;
     }
+
+    public Bitmap getBitmap(){ return _bitmap; }
 
     @Override
     public int getWidth() {
@@ -15,6 +19,7 @@ public class Image implements com.example.engine.Image {
 
     @Override
     public int getHeight() {
+
         return _bitmap.getHeight();
     }
 
