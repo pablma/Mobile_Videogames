@@ -35,8 +35,8 @@ public class GameState extends State { // debería de ir en la lógica
         g = _game.getGraphics();
         //img = g.newImage("backgrounds.png");
 
-        //img1 = g.newImage("arrowsBackground.png");
-        //img2 = g.newImage("backgrounds.png");
+        img1 = g.newImage("arrowsBackground.png");
+        img = g.newImage("backgrounds.png");
 
         y1 = 0;
     }
@@ -51,7 +51,7 @@ public class GameState extends State { // debería de ir en la lógica
             Input.TouchEvent event = touchEvents.get(i);
             if (event._type == Input.EventType.TOUCH_DOWN) {
                 System.out.println("Click with mouse key: " + event._id);
-                img1 = img2;
+                img1 = img;
             }
         }
     }
@@ -61,8 +61,8 @@ public class GameState extends State { // debería de ir en la lógica
 
         g.clear(0xffff00ff);
 
-        //g.drawBackground(img,0,0,img.getWidth() / 9, img.getHeight());
-        //g.drawImageCentered(img1, x, y1,0,0, img1.getWidth(), img1.getHeight(), scale);
+        g.drawBackground(img,0,0,img.getWidth() / 9, img.getHeight());
+        g.drawImageCentered(img1, x, y1,0,0, img1.getWidth(), img1.getHeight(), scale);
 
     }
 

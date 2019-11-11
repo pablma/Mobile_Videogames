@@ -23,6 +23,8 @@ public class Graphics implements com.example.engine.Graphics {
     Rect _dstRect = new Rect();
 
     float _defaultAspectRatio;
+    float _defaultCanvasWidht;
+    float _defaultCanvasHeigh;
 
 
     public Graphics(AssetManager assets, Bitmap frameBuffer){
@@ -31,7 +33,9 @@ public class Graphics implements com.example.engine.Graphics {
         this._canvas = new Canvas(frameBuffer);
         this._paint = new Paint();
 
-        _defaultAspectRatio = _canvas.getHeight() / _canvas.getWidth();
+        _defaultCanvasHeigh = 1920;
+        _defaultCanvasWidht = 1080;
+        _defaultAspectRatio = _defaultCanvasHeigh/_defaultCanvasWidht;
     }
 
 
@@ -142,15 +146,27 @@ public class Graphics implements com.example.engine.Graphics {
 
         float screenAspectRatio = screenHeight / screenWidth;
 
-        if(_defaultAspectRatio > screenAspectRatio){ //horizontalScreen
-            _canvas.scale(1/_defaultAspectRatio, 1);
+        float _scale;
+
+
+        if(screenAspectRatio < 1){ //horizontalScreen
+            //_scale = screenHeight / _defaultCanvasHeigh;
+            System.out.println("Horizontal canvas W " + _canvas.getWidth() + "Horizontal canvas H " + _canvas.getHeight());
+            System.out.println("Horizontal screen W " + screenWidth + "Horizontal screen H " + screenHeight);
+            //_canvas.scale(1/_defaultAspectRatio, 1, screenWidth/2, screenHeight/2 );
+            //System.out.println("HORIZONTAL");
         }
         else { //vertical screen
-            _canvas.scale(1, _defaultAspectRatio);
-
+            System.out.println("Vertical canvas W " + _canvas.getWidth() + "Vertical canvas H " + _canvas.getHeight());
+            System.out.println("Vertical screen W " + screenWidth + "Vertical screen H " + screenHeight);;
+            //_scale = screenWidth / _defaultCanvasWidht;
+            //_canvas.scale(1, 1/_defaultAspectRatio,screenWidth/2, screenHeight/2 );
         }
 
+    }
 
+    public void scaleTest(int screenWidth, int screenHeight){
+        _canvas.scale(0.5f,0.5f, screenWidth/2, screenHeight/2 );
     }
 
 }

@@ -50,7 +50,7 @@ public class Graphics implements com.example.engine.Graphics {
 
         java.awt.Image javaImage = null;
         try {
-            javaImage = javax.imageio.ImageIO.read(new java.io.File(name));
+            javaImage = javax.imageio.ImageIO.read(new java.io.File("assets/" + name));
        }
        catch (Exception e) {
            System.err.println(e);
