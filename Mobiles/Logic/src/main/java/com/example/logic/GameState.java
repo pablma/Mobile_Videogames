@@ -8,6 +8,7 @@ import com.example.engine.Image;
 import com.example.engine.Input;
 
 import java.util.List;
+import java.util.Queue;
 
 
 public class GameState extends State { // debería de ir en la lógica
@@ -18,12 +19,10 @@ public class GameState extends State { // debería de ir en la lógica
     Image img2;
     Image img3;
     Game _game;
+    Image _player;
+
 
     float scale = 1f;
-
-    int x = 0;
-    int y1 ;
-    int y2;
 
 
     public GameState(Game game) {
@@ -37,14 +36,12 @@ public class GameState extends State { // debería de ir en la lógica
 
         img1 = g.newImage("arrowsBackground.png");
         img = g.newImage("backgrounds.png");
+        _player = g.newImage("players.png");
 
-        y1 = 0;
     }
 
     @Override
     public void update(float deltaTime) {
-
-        y1 += 2;
 
         List<Input.TouchEvent> touchEvents = _game.getInput().getTouchEvents();
         for (int i = 0; i < touchEvents.size(); i++) {
@@ -54,6 +51,9 @@ public class GameState extends State { // debería de ir en la lógica
                 img1 = img;
             }
         }
+
+
+
     }
 
     @Override
@@ -62,7 +62,8 @@ public class GameState extends State { // debería de ir en la lógica
         g.clear(0xffff00ff);
 
         g.drawBackground(img,0,0,img.getWidth() / 9, img.getHeight());
-        g.drawImageCentered(img1, x, y1,0,0, img1.getWidth(), img1.getHeight(), scale);
+        g.drawImageCentered(img1, 0, 0,0,0, img1.getWidth(), img1.getHeight(), scale);
+        g.drawImageCentered(_player, 0, 950, 0, _player.getHeight() / 2, _player.getWidth(), _player.getHeight(), 1);
 
     }
 
