@@ -103,8 +103,8 @@ public class Graphics implements com.example.engine.Graphics {
     }
 
     @Override
-    public void drawImageCentered(Image image, int x, int y, int srcX, int srcY, int srcWidth, int srcHeight, float scale) {
-
+    public void drawImageCentered(Image image, int y, Rect srcRect) {
+        /*
         int srcX2 = srcX + srcWidth - 1;
         int srcY2 = srcY + srcHeight - 1;
 
@@ -113,6 +113,7 @@ public class Graphics implements com.example.engine.Graphics {
 
         com.example.pcengine.Image img = (com.example.pcengine.Image)image;
         _graphics.drawImage(img.getImage(), x, y, dstX2, dstY2, srcX, srcY, srcX2, srcY2,null);
+        */
     }
 
     @Override

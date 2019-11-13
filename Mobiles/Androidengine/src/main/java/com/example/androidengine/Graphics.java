@@ -105,23 +105,21 @@ public class Graphics implements com.example.engine.Graphics {
 
 
     @Override
-    public void drawImageCentered(Image image, int x, int y, int srcX, int srcY, int srcWidth, int srcHeight, float scale) {
+    public void drawImageCentered(Image image, int y, com.example.engine.Rect srcRect) {
 
         int windowX_center = _canvas.getWidth() / 2;
-        int windowY_center = _canvas.getHeight() / 2;
 
-        int imageX_center = (int)((image.getWidth() / 2) * scale);
-        int imageY_center = (int)((image.getHeight() / 2) * scale);
+        int imageX_center = (int)((srcRect.getWidth() / 2));
 
-        _srcRect.left = srcX;
-        _srcRect.top = srcY;
-        _srcRect.right = srcX + srcWidth - 1;
-        _srcRect.bottom = srcY + srcHeight - 1;
+        _srcRect.left = srcRect.getLeft();
+        _srcRect.top = srcRect.getTop();
+        _srcRect.right = srcRect.getRight();
+        _srcRect.bottom = srcRect.getBottom();
 
-        _dstRect.left = x + windowX_center - imageX_center;
-        _dstRect.top = y + windowY_center - imageY_center;
-        _dstRect.right = x + windowX_center + imageX_center - 1;
-        _dstRect.bottom = y + windowY_center + imageY_center - 1;
+        _dstRect.left = windowX_center - imageX_center;
+        _dstRect.top = y;
+        _dstRect.right = windowX_center + imageX_center - 1;
+        _dstRect.bottom = y + srcRect.getHeight() - 1;
 
         com.example.androidengine.Image img = (com.example.androidengine.Image)image;
         _canvas.drawBitmap(img.getBitmap(), _srcRect, _dstRect,null);

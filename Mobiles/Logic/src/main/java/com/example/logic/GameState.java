@@ -19,6 +19,7 @@ public class GameState extends State { // debería de ir en la lógica
 
     Game _game;
 
+    int blackBalPosY = 0;
 
     Sprite _blackBallSp;
     Sprite _greenBackgroundSp;
@@ -46,6 +47,10 @@ public class GameState extends State { // debería de ir en la lógica
     @Override
     public void update(float deltaTime) {
 
+        blackBalPosY += 200 * deltaTime;
+
+        if(blackBalPosY > 1920) blackBalPosY = 0;
+
         List<Input.TouchEvent> touchEvents = _game.getInput().getTouchEvents();
         for (int i = 0; i < touchEvents.size(); i++) {
             Input.TouchEvent event = touchEvents.get(i);
@@ -60,13 +65,14 @@ public class GameState extends State { // debería de ir en la lógica
 
         _graphics.clear(0xffff00ff);
 
-        _blackBallSp.drawImage(0,0);
-        _greenBackgroundSp.drawImage(0,0);
+        //_blackBallSp.drawImage(0,0);
+        _greenBackgroundSp.drawImageAsBackground();
+        _blackBallSp.drawImageCentered(blackBalPosY);
+
     }
 
     @Override
     public void pause() {
-
     }
 
     @Override

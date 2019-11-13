@@ -1,6 +1,6 @@
 package com.example.engine;
 
-/*
+
 import java.awt.Canvas;
 
 public abstract class AbstractGraphics implements Graphics{
@@ -10,41 +10,25 @@ public abstract class AbstractGraphics implements Graphics{
         _graphics = graphics;
     }
 
+
     @Override
-    public Image newImage(String name) {
-        return null;
+    public void drawImage(Image image, int x, int y, Rect srcRect) {
+        //reescaldo X Y
+        int recaladaX = 0;
+        int rescaladaY = 0;
+        drawImagePrivate(image, recaladaX, rescaladaY, srcRect);
     }
 
     @Override
-    public void clear(int color) {
-    }
-
-    @Override
-    public void drawImage(Image image, int x, int y) {
-    }
-
-    @Override
-    public void drawImage(Image image, int x, int y, int srcX, int srcY, int srcWidth, int srcHeight) {
+    public void drawImageAsBackground(Image image, Rect srcRect) {
 
     }
 
     @Override
-    public void drawImageAsBackground(Image image, int srcX, int srcY, int srcWidth, int srcHeight) {
-    }
-
-    @Override
-    public void drawImageCentered(Image image, int x, int y, int srcX, int srcY, int srcWidth, int srcHeight, float scale) {
+    public void drawImageCentered(Image image, int y, Rect srcRect) {
 
     }
 
-    @Override
-    public int getWidth() {
-        return 0;
-    }
 
-    @Override
-    public int getHeight() {
-        return 0;
-    }
+    protected abstract void drawImagePrivate(Image image, int x, int y, Rect srcRect);
 }
-*/

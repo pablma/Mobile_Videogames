@@ -22,4 +22,6 @@ public class Sprite {
     public void drawImageAsBackground(){
         _graphics.drawImageAsBackground(_image, _srcRect);
     }
+
+    public void drawImageCentered(int y){_graphics.drawImageCentered(_image, y, _srcRect);}
 }
