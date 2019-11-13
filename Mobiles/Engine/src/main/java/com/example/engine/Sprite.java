@@ -15,10 +15,11 @@ public class Sprite {
         _srcRect = srcRect;
     }
 
-    public void drawImage(int x, int y) {
-        _graphics.drawImage(_image, x, y);
+    public void drawImage(int x, int y){
+        _graphics.drawImage(_image, x, y, _srcRect);
     }
 
-    public void drawImage(int x, int y, Rect srcRect){
+    public void drawImageAsBackground(){
+        _graphics.drawImageAsBackground(_image, _srcRect);
     }
 }

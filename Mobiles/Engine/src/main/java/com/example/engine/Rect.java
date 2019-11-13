@@ -3,6 +3,7 @@ package com.example.engine;
 public class Rect {
 
     private int _left, _right, _top, _bottom;
+    private int _width, _height;
 
     public Rect(int x, int y, int width, int height){
 
@@ -10,6 +11,9 @@ public class Rect {
         _top = y;
         _right = x + width;
         _bottom = y + height;
+
+        _width = width;
+        _height = height;
 
     }
 
@@ -27,5 +31,13 @@ public class Rect {
 
     public int getBottom(){
         return _bottom;
+    }
+
+    public int getWidth(){
+        return _width;
+    }
+
+    public int getHeight(){
+        return _height;
     }
 }

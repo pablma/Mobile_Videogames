@@ -16,30 +16,19 @@ import java.util.Queue;
 public class GameState extends State { // debería de ir en la lógica
 
     Graphics _graphics;
-    Image img;
-    Image img1;
-    Image img2;
-    Image img3;
+
     Game _game;
-    Image _player;
 
 
     Sprite _blackBallSp;
+    Sprite _greenBackgroundSp;
 
-    float scale = 1f;
 
 
     public GameState(Game game) {
         super(game);
-
         _game = game;
-
         _graphics = _game.getGraphics();
-        //img = g.newImage("backgrounds.png");
-
-        img1 = _graphics.newImage("arrowsBackground.png");
-        img = _graphics.newImage("backgrounds.png");
-        _player = _graphics.newImage("players.png");
 
         Assets._blackBallImg = _graphics.newImage("balls.png");
         Assets._blackBallRect = new Rect(0,  Assets._blackBallImg.getHeight() / 2,
@@ -47,6 +36,11 @@ public class GameState extends State { // debería de ir en la lógica
 
         _blackBallSp = new Sprite(_graphics, Assets._blackBallImg, Assets._blackBallRect);
 
+        Assets._greenBackgroundImg = _graphics.newImage("backgrounds.png");
+        Assets._greenBackgroundRect = new Rect(0,0,
+                Assets._greenBackgroundImg.getWidth() / 9, Assets._greenBackgroundImg.getHeight());
+
+        _greenBackgroundSp = new Sprite(_graphics, Assets._greenBackgroundImg, Assets._greenBackgroundRect);
     }
 
     @Override
@@ -57,12 +51,8 @@ public class GameState extends State { // debería de ir en la lógica
             Input.TouchEvent event = touchEvents.get(i);
             if (event._type == Input.EventType.TOUCH_DOWN) {
                 System.out.println("Click with mouse key: " + event._id);
-                img1 = img;
             }
         }
-
-
-
     }
 
     @Override
@@ -70,11 +60,8 @@ public class GameState extends State { // debería de ir en la lógica
 
         _graphics.clear(0xffff00ff);
 
-        _graphics.drawBackground(img,0,0,img.getWidth() / 9, img.getHeight());
-        //_graphics.drawImageCentered(img1, 0, 0,0,0, img1.getWidth(), img1.getHeight(), scale);
-        //_graphics.drawImageCentered(_player, 0, 950, 0, _player.getHeight() / 2, _player.getWidth(), _player.getHeight(), 1);
-
         _blackBallSp.drawImage(0,0);
+        _greenBackgroundSp.drawImage(0,0);
     }
 
     @Override

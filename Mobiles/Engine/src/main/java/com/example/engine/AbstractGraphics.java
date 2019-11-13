@@ -1,6 +1,6 @@
 package com.example.engine;
 
-
+/*
 import java.awt.Canvas;
 
 public abstract class AbstractGraphics implements Graphics{
@@ -29,7 +29,7 @@ public abstract class AbstractGraphics implements Graphics{
     }
 
     @Override
-    public void drawBackground(Image image, int srcX, int srcY, int srcWidth, int srcHeight) {
+    public void drawImageAsBackground(Image image, int srcX, int srcY, int srcWidth, int srcHeight) {
     }
 
     @Override
@@ -47,3 +47,4 @@ public abstract class AbstractGraphics implements Graphics{
         return 0;
     }
 }
+*/

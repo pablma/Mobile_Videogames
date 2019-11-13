@@ -7,11 +7,9 @@ public interface Graphics {
 
     public void clear(int color);
 
-    public void drawImage(Image image, int x, int y);
+    public void drawImage(Image image, int x, int y, Rect srcRect);
 
-    public void drawImage(Image image, int x, int y, int srcX, int srcY, int srcWidth, int srcHeight);
-
-    public void drawBackground(Image image, int srcX, int srcY, int srcWidth, int srcHeight);
+    public void drawImageAsBackground(Image image, Rect srcRect);
 
     public void drawImageCentered(Image image, int x, int y, int srcX, int srcY, int srcWidth, int srcHeight, float scale);
 

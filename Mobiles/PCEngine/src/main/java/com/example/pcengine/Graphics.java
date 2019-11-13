@@ -2,6 +2,8 @@ package com.example.pcengine;
 
 
 import com.example.engine.Image;
+import com.example.engine.Rect;
+
 import java.awt.image.BufferStrategy;
 import javax.swing.JFrame;
 
@@ -70,14 +72,8 @@ public class Graphics implements com.example.engine.Graphics {
     }
 
     @Override
-    public void drawImage(Image image, int x, int y) {
-        com.example.pcengine.Image img = (com.example.pcengine.Image)image;
-        _graphics.drawImage(img.getImage(), x, y, null);
-    }
-
-    @Override
-    public void drawImage(Image image, int x, int y, int srcX, int srcY, int srcWidth, int srcHeight) {
-
+    public void drawImage(Image image, int x, int y, Rect srcRect) {
+    /*
         int srcX2 = srcX + srcWidth - 1;
         int srcY2 = srcY + srcHeight - 1;
 
@@ -86,11 +82,14 @@ public class Graphics implements com.example.engine.Graphics {
 
         com.example.pcengine.Image img = (com.example.pcengine.Image)image;
         _graphics.drawImage(img.getImage(), x, y, dstX2, dstY2, srcX, srcY, srcX2, srcY2,null);
+    */
     }
 
-    @Override
-    public void drawBackground(Image image, int srcX, int srcY, int srcWidth, int srcHeight) {
 
+
+    @Override
+    public void drawImageAsBackground(Image image, Rect srcRect) {
+   /*
         int srcX2 = srcX + srcWidth - 1;
         int srcY2 = srcY + srcHeight - 1;
 
@@ -99,6 +98,8 @@ public class Graphics implements com.example.engine.Graphics {
 
         com.example.pcengine.Image img = (com.example.pcengine.Image)image;
         _graphics.drawImage(img.getImage(), 0, 0, dstX2, dstY2, srcX, srcY, srcX2, srcY2,null);
+
+    */
     }
 
     @Override

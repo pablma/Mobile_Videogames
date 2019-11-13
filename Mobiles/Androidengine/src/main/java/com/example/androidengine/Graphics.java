@@ -71,33 +71,28 @@ public class Graphics implements com.example.engine.Graphics {
     }
 
     @Override
-    public void drawImage(Image image, int x, int y) {
-        com.example.androidengine.Image img = (com.example.androidengine.Image)image;
-        _canvas.drawBitmap(img.getBitmap(), x, y,null);
-    }
-
-    @Override
-    public void drawImage(Image image, int x, int y, int srcX, int srcY, int srcWidth, int srcHeight) {
-        _srcRect.left = srcX;
-        _srcRect.top = srcY;
-        _srcRect.right = srcX + srcWidth - 1;
-        _srcRect.bottom = srcY + srcHeight - 1;
+    public void drawImage(Image image, int x, int y, com.example.engine.Rect srcRect) {
+        _srcRect.left = srcRect.getLeft();
+        _srcRect.top = srcRect.getTop();
+        _srcRect.right = srcRect.getRight();
+        _srcRect.bottom = srcRect.getBottom();
 
         _dstRect.left = x;
         _dstRect.top = y;
-        _dstRect.right = x + srcWidth - 1;
-        _dstRect.bottom = y + srcHeight - 1;
+        _dstRect.right = x + srcRect.getWidth() - 1;
+        _dstRect.bottom = y + srcRect.getHeight() - 1;
 
         com.example.androidengine.Image img = (com.example.androidengine.Image)image;
         _canvas.drawBitmap(img.getBitmap(), _srcRect, _dstRect,null);
     }
 
     @Override
-    public void drawBackground(Image image, int srcX, int srcY, int srcWidth, int srcHeight) {
-        _srcRect.left = srcX;
-        _srcRect.top = srcY;
-        _srcRect.right = srcX + srcWidth - 1;
-        _srcRect.bottom = srcY + srcHeight - 1;
+    public void drawImageAsBackground(Image image, com.example.engine.Rect srcRect) {
+
+        _srcRect.left = srcRect.getLeft();
+        _srcRect.top = srcRect.getTop();
+        _srcRect.right = srcRect.getRight();
+        _srcRect.bottom = srcRect.getBottom();
 
         _dstRect.left = 0;
         _dstRect.top = 0;
@@ -107,6 +102,7 @@ public class Graphics implements com.example.engine.Graphics {
         com.example.androidengine.Image img = (com.example.androidengine.Image)image;
         _canvas.drawBitmap(img.getBitmap(), _srcRect, _dstRect,null);
     }
+
 
     @Override
     public void drawImageCentered(Image image, int x, int y, int srcX, int srcY, int srcWidth, int srcHeight, float scale) {
