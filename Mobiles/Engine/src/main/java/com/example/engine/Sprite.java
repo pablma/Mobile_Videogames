@@ -1,17 +1,24 @@
 package com.example.engine;
 
-import org.w3c.dom.css.Rect;
+
 
 public class Sprite {
+
     private Image _image;
     private Rect _srcRect;
+    private Graphics _graphics;
 
-    public Sprite(Image img, Rect srcRect){
+    public Sprite(Graphics graphics, Image img, Rect srcRect){
+
+        _graphics = graphics;
         _image = img;
         _srcRect = srcRect;
     }
 
-    /*public draw(Graphics g) {
-        //g.drawImage();
-    }*/
+    public void drawImage(int x, int y) {
+        _graphics.drawImage(_image, x, y);
+    }
+
+    public void drawImage(int x, int y, Rect srcRect){
+    }
 }
