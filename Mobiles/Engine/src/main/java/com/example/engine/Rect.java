@@ -40,4 +40,38 @@ public class Rect {
     public int getHeight(){
         return _height;
     }
+
+    public void setLeft(int value){
+        _left = value;
+    }
+
+    public void setRight(int value){
+        _right = value;
+    }
+
+    public void setTop(int value){
+        _top = value;
+    }
+
+    public void setBottom(int value){
+        _bottom = value;
+    }
+
+    private void setWidth(int left, int right){
+        int aux = right - left;
+
+        if(aux < 0)
+            aux = -aux;
+
+        _height = aux;
+    }
+
+    private void setHeight(int top, int bottom){
+        int aux = bottom - top;
+
+        if(aux < 0)
+            aux = -aux;
+
+        _height = aux;
+    }
 }

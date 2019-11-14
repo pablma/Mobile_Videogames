@@ -5,30 +5,50 @@ import java.awt.Canvas;
 
 public abstract class AbstractGraphics implements Graphics{
 
-    Graphics _graphics;
-    public AbstractGraphics(Graphics graphics){
-        _graphics = graphics;
-    }
+    protected int windowWidth, windowHeight;  // logicW and logicH
+    protected int screenWidth, screenHeight;  // PhysicW and PhysicH
 
+    public AbstractGraphics(){
+
+    }
 
     @Override
     public void drawImage(Image image, int x, int y, Rect srcRect) {
         //reescaldo X Y
-        int recaladaX = 0;
-        int rescaladaY = 0;
-        drawImagePrivate(image, recaladaX, rescaladaY, srcRect);
+        Rect dstRectResized = new Rect(0, 0, 0, 0);
+
+        int scale = 2;
+
+        int resizedX = x * scale;
+        int resizedY = y * scale;
+
+        dstRectResized.setLeft(resizedX);
+        dstRectResized.setTop(resizedY);
+        dstRectResized.setRight((x + srcRect.getWidth()) * scale);
+        dstRectResized.setBottom((y + srcRect.getHeight()) * scale);
+
+        drawImagePrivate(image, resizedX, resizedY, srcRect, dstRectResized);
     }
 
     @Override
     public void drawImageAsBackground(Image image, Rect srcRect) {
+        //reescaldo X Y
+        Rect dstRectResized = new Rect(0, 0, 0, 0);
 
+        dstRectResized.setLeft(0);
+        dstRectResized.setTop(0);
+        dstRectResized.setRight(getWidth());
+        dstRectResized.setBottom(getHeight());
+
+        drawImageAsBackgroundPrivate(image, srcRect, dstRectResized);
     }
 
     @Override
     public void drawImageCentered(Image image, int y, Rect srcRect) {
-
     }
 
+    protected abstract void drawImagePrivate(Image image, int x, int y, Rect srcRect, Rect dstRect);
 
-    protected abstract void drawImagePrivate(Image image, int x, int y, Rect srcRect);
+    protected abstract void drawImageAsBackgroundPrivate(Image image, Rect srcRect, Rect dstRect);
+
 }

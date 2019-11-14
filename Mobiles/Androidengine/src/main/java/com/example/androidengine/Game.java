@@ -53,7 +53,7 @@ public class Game extends Activity implements com.example.engine.Game {
     protected void onResume() {
         super.onResume();
 
-        _graphics.scaleCanvas(getScreenWidth(), getScreenHeight());
+        //_graphics.scaleCanvas(getScreenWidth(), getScreenHeight());
         _state.resume();
         _renderView.resume();
 

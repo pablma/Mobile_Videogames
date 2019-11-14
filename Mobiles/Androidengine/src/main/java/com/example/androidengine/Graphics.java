@@ -8,17 +8,19 @@ import android.graphics.Paint;
 import android.graphics.Rect;
 import android.view.Window;
 
+import com.example.engine.AbstractGraphics;
 import com.example.engine.Image;
 
 import java.io.IOException;
 import java.io.InputStream;
 
-public class Graphics implements com.example.engine.Graphics {
+public class Graphics extends AbstractGraphics {
 
     AssetManager _assets;
     Bitmap _frameBuffer;
     Canvas _canvas;
     Paint _paint;
+
     Rect _srcRect = new Rect();
     Rect _dstRect = new Rect();
 
@@ -37,7 +39,6 @@ public class Graphics implements com.example.engine.Graphics {
         _defaultCanvasWidht = 1080;
         _defaultAspectRatio = _defaultCanvasHeigh/_defaultCanvasWidht;
     }
-
 
     @Override
     public Image newImage(String name) {
@@ -65,11 +66,54 @@ public class Graphics implements com.example.engine.Graphics {
         return img;
     }
 
+    protected void drawImagePrivate(Image image, int x, int y, com.example.engine.Rect srcRect, com.example.engine.Rect dstRect) {
+        _srcRect.left = srcRect.getLeft();
+        _srcRect.top = srcRect.getTop();
+        _srcRect.right = srcRect.getRight();
+        _srcRect.bottom = srcRect.getBottom();
+
+        _dstRect.left = dstRect.getLeft();
+        _dstRect.top = dstRect.getTop();
+        _dstRect.right = dstRect.getRight();
+        _dstRect.bottom = dstRect.getBottom();
+
+        com.example.androidengine.Image img = (com.example.androidengine.Image)image;
+        _canvas.drawBitmap(img.getBitmap(), _srcRect, _dstRect,null);
+    }
+
+    protected void drawImageAsBackgroundPrivate(Image image, com.example.engine.Rect srcRect, com.example.engine.Rect dstRect) {
+
+        _srcRect.left = srcRect.getLeft();
+        _srcRect.top = srcRect.getTop();
+        _srcRect.right = srcRect.getRight();
+        _srcRect.bottom = srcRect.getBottom();
+
+        _dstRect.left = dstRect.getLeft();
+        _dstRect.top = dstRect.getTop();
+        _dstRect.right = dstRect.getRight();
+        _dstRect.bottom = dstRect.getBottom();;
+
+        com.example.androidengine.Image img = (com.example.androidengine.Image)image;
+        _canvas.drawBitmap(img.getBitmap(), _srcRect, _dstRect,null);
+    }
+
     @Override
     public void clear(int color) {
         _canvas.drawRGB((color & 0xff0000) >> 16, (color & 0xff00) >> 8, (color & 0xff));
     }
 
+    @Override
+    public int getWidth() {
+        return _frameBuffer.getWidth();
+    }
+
+    @Override
+    public int getHeight() {
+        return _frameBuffer.getHeight();
+    }
+
+
+    /*
     @Override
     public void drawImage(Image image, int x, int y, com.example.engine.Rect srcRect) {
         _srcRect.left = srcRect.getLeft();
@@ -125,17 +169,6 @@ public class Graphics implements com.example.engine.Graphics {
         _canvas.drawBitmap(img.getBitmap(), _srcRect, _dstRect,null);
     }
 
-
-    @Override
-    public int getWidth() {
-        return _frameBuffer.getWidth();
-    }
-
-    @Override
-    public int getHeight() {
-        return _frameBuffer.getHeight();
-    }
-
     public void scaleCanvas(int screenWidth, int screenHeight){
 
         float screenAspectRatio = screenHeight / screenWidth;
@@ -162,5 +195,5 @@ public class Graphics implements com.example.engine.Graphics {
     public void scaleTest(int screenWidth, int screenHeight){
         _canvas.scale(0.5f,0.5f, screenWidth/2, screenHeight/2 );
     }
-
+    */
 }
