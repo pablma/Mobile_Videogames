@@ -91,11 +91,29 @@ public class Graphics extends AbstractGraphics {
         _dstRect.left = dstRect.getLeft();
         _dstRect.top = dstRect.getTop();
         _dstRect.right = dstRect.getRight();
-        _dstRect.bottom = dstRect.getBottom();;
+        _dstRect.bottom = dstRect.getBottom();
 
         com.example.androidengine.Image img = (com.example.androidengine.Image)image;
         _canvas.drawBitmap(img.getBitmap(), _srcRect, _dstRect,null);
     }
+
+    @Override
+    protected void drawImageXCenteredPrivate(Image image, int y, com.example.engine.Rect srcRect, com.example.engine.Rect dstRect) {
+
+        _srcRect.left = srcRect.getLeft();
+        _srcRect.top = srcRect.getTop();
+        _srcRect.right = srcRect.getRight();
+        _srcRect.bottom = srcRect.getBottom();
+
+        _dstRect.left = dstRect.getLeft();
+        _dstRect.top = dstRect.getTop();
+        _dstRect.right = dstRect.getRight();
+        _dstRect.bottom = dstRect.getBottom();
+
+        com.example.androidengine.Image img = (com.example.androidengine.Image)image;
+        _canvas.drawBitmap(img.getBitmap(), _srcRect, _dstRect,null);
+    }
+
 
     @Override
     public void clear(int color) {
@@ -149,7 +167,7 @@ public class Graphics extends AbstractGraphics {
 
 
     @Override
-    public void drawImageCentered(Image image, int y, com.example.engine.Rect srcRect) {
+    public void drawImageXCentered(Image image, int y, com.example.engine.Rect srcRect) {
 
         int windowX_center = _canvas.getWidth() / 2;
 

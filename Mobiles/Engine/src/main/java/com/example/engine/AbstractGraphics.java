@@ -5,8 +5,6 @@ import java.awt.Canvas;
 
 public abstract class AbstractGraphics implements Graphics{
 
-    protected int windowWidth, windowHeight;  // logicW and logicH
-    protected int screenWidth, screenHeight;  // PhysicW and PhysicH
 
     public AbstractGraphics(){
 
@@ -44,11 +42,25 @@ public abstract class AbstractGraphics implements Graphics{
     }
 
     @Override
-    public void drawImageCentered(Image image, int y, Rect srcRect) {
+    public void drawImageXCentered(Image image, int y, Rect srcRect) {
+        Rect dstRectResized = new Rect(0, 0, 0, 0);
+
+        int scale = 1;
+
+        int xCenteredPosition = getWidth() / 2 - ((srcRect.getWidth() / 2) * scale);
+
+        dstRectResized.setLeft(xCenteredPosition);
+        dstRectResized.setTop(y);
+        dstRectResized.setRight((xCenteredPosition + srcRect.getWidth()) * scale);
+        dstRectResized.setBottom((y + srcRect.getHeight()) * scale);
+
+        drawImageXCenteredPrivate(image, y,  srcRect, dstRectResized);
     }
 
     protected abstract void drawImagePrivate(Image image, int x, int y, Rect srcRect, Rect dstRect);
 
     protected abstract void drawImageAsBackgroundPrivate(Image image, Rect srcRect, Rect dstRect);
+
+    protected abstract void drawImageXCenteredPrivate(Image image, int y,  Rect srcRect, Rect dstRect);
 
 }

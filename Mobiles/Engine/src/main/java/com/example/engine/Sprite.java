@@ -23,5 +23,5 @@ public class Sprite {
         _graphics.drawImageAsBackground(_image, _srcRect);
     }
 
-    public void drawImageCentered(int y){_graphics.drawImageCentered(_image, y, _srcRect);}
+    public void drawImageXCentered(int y){_graphics.drawImageXCentered(_image, y, _srcRect);}
 }

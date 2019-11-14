@@ -11,7 +11,7 @@ public interface Graphics {
 
     public void drawImageAsBackground(Image image, Rect srcRect);
 
-    public void drawImageCentered(Image image, int y, Rect srcRect);
+    public void drawImageXCentered(Image image, int y, Rect srcRect);
 
     public int getWidth();
 
