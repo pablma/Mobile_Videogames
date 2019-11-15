@@ -126,6 +126,11 @@ public class Graphics implements com.example.engine.Graphics {
         return  _window.getHeight();
     }
 
+    @Override
+    public void getScreenSizes(int w, int h) {
+
+    }
+
     public void setGraphics(){
         while(true) {
             try {

@@ -209,9 +209,27 @@ public class Graphics extends AbstractGraphics {
         }
 
     }
+  */
+    public void scaleCanvas(int screenWidth, int screenHeight){
+
+        float screenAspectRatio = screenHeight / screenWidth;
+
+        float _scale;
+
+        if(screenAspectRatio < 1){ //horizontalScreen
+            _scale = screenHeight / _defaultCanvasHeigh;
+            _canvas.scale(1 / screenAspectRatio, 1, screenWidth/2, screenHeight/2 );
+
+        }
+        else { //vertical screen
+            _scale = screenWidth / _defaultCanvasWidht;
+            _canvas.scale(1, screenAspectRatio,screenWidth/2, screenHeight/2 );
+        }
+    }
 
     public void scaleTest(int screenWidth, int screenHeight){
+        System.out.println("antes" + _canvas.getWidth());
         _canvas.scale(0.5f,0.5f, screenWidth/2, screenHeight/2 );
+        System.out.println("despues" + _canvas.getWidth());
     }
-    */
 }

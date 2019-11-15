@@ -16,4 +16,6 @@ public interface Graphics {
     public int getWidth();
 
     public int getHeight();
+
+    public void getScreenSizes(int w, int h);
 }

@@ -45,6 +45,8 @@ public class Game extends Activity implements com.example.engine.Game {
         _input = new com.example.androidengine.Input(_renderView, scaleX, scaleY);
         _state = getStartState();
 
+        _graphics.getScreenSizes(getScreenWidth(), getScreenHeight());
+
         setContentView(_renderView);
 
     }
@@ -52,8 +54,6 @@ public class Game extends Activity implements com.example.engine.Game {
     @Override
     protected void onResume() {
         super.onResume();
-
-        //_graphics.scaleCanvas(getScreenWidth(), getScreenHeight());
         _state.resume();
         _renderView.resume();
 

@@ -5,7 +5,7 @@ import java.awt.Canvas;
 
 public abstract class AbstractGraphics implements Graphics{
 
-
+    private int _wW, _wH;
     public AbstractGraphics(){
 
     }
@@ -33,10 +33,30 @@ public abstract class AbstractGraphics implements Graphics{
         //reescaldo X Y
         Rect dstRectResized = new Rect(0, 0, 0, 0);
 
-        dstRectResized.setLeft(0);
-        dstRectResized.setTop(0);
-        dstRectResized.setRight(getWidth());
-        dstRectResized.setBottom(getHeight());
+        int scaleW = 1;
+        int scaleH = 1;
+
+        int physicWidth = getWidth();
+        int physicHeight = getHeight();
+
+        int left = 0;
+        int top = 0;
+
+        float logicAspectRatio = (float)getHeight()/(float)getWidth(); //logic gH, and logic gW change depending on the rotation of the screen
+
+        if(physicHeight > physicWidth){
+            physicHeight = (int)((float)_wW * logicAspectRatio);
+            top = getHeight() / 2 - physicHeight / 2;
+        }
+        else {
+            physicWidth = (int)((float)_wH * logicAspectRatio);
+            left = getWidth() / 2 - physicWidth / 2;
+        }
+
+        dstRectResized.setLeft(left);
+        dstRectResized.setTop(top);
+        dstRectResized.setBottom(top + physicHeight);
+        dstRectResized.setRight(left + physicWidth);
 
         drawImageAsBackgroundPrivate(image, srcRect, dstRectResized);
     }
@@ -56,6 +76,13 @@ public abstract class AbstractGraphics implements Graphics{
 
         drawImageXCenteredPrivate(image, y,  srcRect, dstRectResized);
     }
+
+    @Override
+    public void getScreenSizes(int w, int h) {
+        _wW = w;
+        _wH = h;
+    }
+
 
     protected abstract void drawImagePrivate(Image image, int x, int y, Rect srcRect, Rect dstRect);
 
