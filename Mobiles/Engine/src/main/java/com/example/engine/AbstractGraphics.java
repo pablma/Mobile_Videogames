@@ -5,10 +5,9 @@ import java.awt.Canvas;
 
 public abstract class AbstractGraphics implements Graphics{
 
-    private int _wW, _wH;
-    public AbstractGraphics(){
+    private int _windowWidth, _windowHeight;
 
-    }
+    public AbstractGraphics(){}
 
     @Override
     public void drawImage(Image image, int x, int y, Rect srcRect) {
@@ -45,11 +44,11 @@ public abstract class AbstractGraphics implements Graphics{
         float logicAspectRatio = (float)getHeight()/(float)getWidth(); //logic gH, and logic gW change depending on the rotation of the screen
 
         if(physicHeight > physicWidth){
-            physicHeight = (int)((float)_wW * logicAspectRatio);
+            physicHeight = (int)((float)_windowWidth * logicAspectRatio);
             top = getHeight() / 2 - physicHeight / 2;
         }
         else {
-            physicWidth = (int)((float)_wH * logicAspectRatio);
+            physicWidth = (int)((float)_windowHeight * logicAspectRatio);
             left = getWidth() / 2 - physicWidth / 2;
         }
 
@@ -79,10 +78,9 @@ public abstract class AbstractGraphics implements Graphics{
 
     @Override
     public void getScreenSizes(int w, int h) {
-        _wW = w;
-        _wH = h;
+        _windowWidth = w;
+        _windowHeight = h;
     }
-
 
     protected abstract void drawImagePrivate(Image image, int x, int y, Rect srcRect, Rect dstRect);
 
