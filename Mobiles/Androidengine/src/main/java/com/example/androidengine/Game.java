@@ -99,5 +99,5 @@ public class Game extends Activity implements com.example.engine.Game {
     public State getStartState() {
         return null;
     }
-    
+
 }

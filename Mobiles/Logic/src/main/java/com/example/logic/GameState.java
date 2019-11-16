@@ -23,6 +23,7 @@ public class GameState extends State { // debería de ir en la lógica
 
     Sprite _blackBallSp;
     Sprite _greenBackgroundSp;
+    Sprite _backgroundArrows;
 
 
 
@@ -42,6 +43,13 @@ public class GameState extends State { // debería de ir en la lógica
                 Assets._greenBackgroundImg.getWidth() / 9, Assets._greenBackgroundImg.getHeight());
 
         _greenBackgroundSp = new Sprite(_graphics, Assets._greenBackgroundImg, Assets._greenBackgroundRect);
+
+        Assets._backgroundArrowsImg = _graphics.newImage("arrowsBackground.png");
+        Assets._backgroundArrowsRect = new Rect(0,0, Assets._backgroundArrowsImg.getWidth(), Assets._backgroundArrowsImg.getHeight());
+
+        _backgroundArrows = new Sprite(_graphics, Assets._backgroundArrowsImg, Assets._backgroundArrowsRect);
+
+
     }
 
     @Override
@@ -67,7 +75,8 @@ public class GameState extends State { // debería de ir en la lógica
 
 
         _greenBackgroundSp.drawImageAsBackground();
-        _blackBallSp.drawImage(400,400);
+        _backgroundArrows.drawImageXCentered(0);
+        _blackBallSp.drawImage(200,400);
     }
 
     @Override

@@ -107,7 +107,19 @@ public class Graphics extends AbstractGraphics {
     }
 
     @Override
-    protected void drawImageXCenteredPrivate(Image image, int y, Rect srcRect, Rect dstRect) {
+    protected void drawImageXCenteredPrivate(Image image, Rect srcRect, Rect dstRect) {
+        _srcRect.x = srcRect.getLeft();
+        _srcRect.y = srcRect.getTop();
+        _srcRect.width = srcRect.getRight();
+        _srcRect.height = srcRect.getBottom();
+
+        _dstRect.x = dstRect.getLeft();
+        _dstRect.y = dstRect.getTop();
+        _dstRect.width = dstRect.getRight();
+        _dstRect.height = dstRect.getBottom();
+
+        com.example.pcengine.Image img = (com.example.pcengine.Image)image;
+        _graphics.drawImage(img.getImage(), _dstRect.x, _dstRect.y, _dstRect.width, _dstRect.height, _srcRect.x, _srcRect.y, _srcRect.width, _srcRect.height,null);
     }
 
 

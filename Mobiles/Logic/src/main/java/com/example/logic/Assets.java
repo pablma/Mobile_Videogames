@@ -11,4 +11,7 @@ public class Assets { // debería ir en logic
     public static Image _greenBackgroundImg;
     public static Rect _greenBackgroundRect;
 
+    public static Image _backgroundArrowsImg;
+    public static Rect _backgroundArrowsRect;
+
 }
