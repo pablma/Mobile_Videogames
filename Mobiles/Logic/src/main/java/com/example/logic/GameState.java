@@ -25,6 +25,8 @@ public class GameState extends State { // debería de ir en la lógica
     Sprite _greenBackgroundSp;
     Sprite _backgroundArrows;
 
+    GameObject ball;
+
 
 
     public GameState(Game game) {
@@ -49,6 +51,8 @@ public class GameState extends State { // debería de ir en la lógica
 
         _backgroundArrows = new Sprite(_graphics, Assets._backgroundArrowsImg, Assets._backgroundArrowsRect);
 
+        ball = new Ball(100, 100, _graphics, _blackBallSp);
+
 
     }
 
@@ -66,6 +70,9 @@ public class GameState extends State { // debería de ir en la lógica
                 System.out.println("Click with mouse key: " + event._id);
             }
         }
+
+        ball.update(deltaTime);
+
     }
 
     @Override
@@ -77,6 +84,7 @@ public class GameState extends State { // debería de ir en la lógica
         _greenBackgroundSp.drawImageAsBackground();
         _backgroundArrows.drawImageXCentered(0);
         _blackBallSp.drawImage(200,400);
+        ball.present(deltaTime);
     }
 
     @Override
