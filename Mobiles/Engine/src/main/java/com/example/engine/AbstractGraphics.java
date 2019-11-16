@@ -86,7 +86,7 @@ public abstract class AbstractGraphics implements Graphics{
         dstRectResized.setBottom(top + physicWindowHeight);
         dstRectResized.setRight(left + physicWindowWidth);
 
-        drawImageAsBackgroundPrivate(image, srcRect, dstRectResized);
+        drawImagePrivate(image, srcRect, dstRectResized);
     }
 
     @Override
@@ -145,9 +145,5 @@ public abstract class AbstractGraphics implements Graphics{
     }
 
     protected abstract void drawImagePrivate(Image image, Rect srcRect, Rect dstRect);
-
-    protected abstract void drawImageAsBackgroundPrivate(Image image, Rect srcRect, Rect dstRect);
-
-    protected abstract void drawImageXCenteredPrivate(Image image, Rect srcRect, Rect dstRect);
 
 }
