@@ -30,34 +30,26 @@ public abstract class AbstractGraphics implements Graphics{
     @Override
     public void drawImageAsBackground(Image image, Rect srcRect) {
         //reescaldo X Y
-        Rect dstRectResized = new Rect(0, 0, 0, 0);
-
-        int scaleW = 1;
-        int scaleH = 1;
 
         int physicWidth = getWidth();
         int physicHeight = getHeight();
-
-        int left = 0;
         int top = 0;
+        int left = 0;
 
-        //float logicAspectRatio = (float)getHeight()/(float)getWidth(); //logic gH, and logic gW change depending on the rotation of the screen
         float logicAspectRatio = 1920.0f / 1080.0f;
-
-        System.out.println("GRAPHICS " + _windowWidth + " " + _windowHeight);
 
         if(physicHeight > physicWidth){ //vertical
             physicHeight = (int)((float)_windowWidth * logicAspectRatio);
+            physicWidth = getWidth();
             top = getHeight() / 2 - physicHeight / 2;
-            physicWidth = 1080;
         }
         else {//horizontal
             physicWidth = (int)((float)_windowHeight / logicAspectRatio);
+            physicHeight = getHeight();
             left = getWidth() / 2 - physicWidth / 2;
-            physicHeight = 1920;
         }
 
-
+        Rect dstRectResized = new Rect(0, 0, 0, 0);
         dstRectResized.setLeft(left);
         dstRectResized.setTop(top);
         dstRectResized.setBottom(top + physicHeight);

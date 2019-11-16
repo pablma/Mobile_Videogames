@@ -5,6 +5,9 @@ import com.example.engine.Input;
 import com.example.engine.State;
 
 import java.awt.Dimension;
+import java.awt.GraphicsEnvironment;
+import java.awt.Insets;
+import java.awt.Rectangle;
 import java.awt.Toolkit;
 
 public class Game implements com.example.engine.Game {
@@ -73,7 +76,7 @@ public class Game implements com.example.engine.Game {
         return null;
     }
 
-    public void updateVariables(){
-        _graphics.getScreenSizes(_graphics.getWidth(), _graphics.getHeight());
+    public void updateGraphicsWindowSizeVariables(){
+        _graphics.getScreenSizes(_graphics.getWidth(), _graphics.getHeight()); // Method that allow us to update the variables that have the information of the window Size on the abstract class Graphics
     }
 }

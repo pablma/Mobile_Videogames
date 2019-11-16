@@ -108,7 +108,6 @@ public class Graphics extends AbstractGraphics {
 
     @Override
     protected void drawImageXCenteredPrivate(Image image, int y, Rect srcRect, Rect dstRect) {
-
     }
 
 
@@ -159,17 +158,13 @@ public class Graphics extends AbstractGraphics {
     @Override
     public int getWidth() {
         return  _window.getWidth();
-    }
+    } //In PC the physic dimensions are the dimensions of the window where we are displaying the game
 
     @Override
     public int getHeight() {
         return  _window.getHeight();
     }
 
-    @Override
-    public void getScreenSizes(int w, int h) {
-
-    }
 
     public void setGraphics(){
         while(true) {
@@ -187,5 +182,7 @@ public class Graphics extends AbstractGraphics {
     }
 
     public BufferStrategy getBufferStrategy() { return _strategy; }
+
+
 
 }
