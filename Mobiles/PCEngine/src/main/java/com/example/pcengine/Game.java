@@ -4,6 +4,9 @@ package com.example.pcengine;
 import com.example.engine.Input;
 import com.example.engine.State;
 
+import java.awt.Dimension;
+import java.awt.Toolkit;
+
 public class Game implements com.example.engine.Game {
 
     PCSurfaceView _renderView;
@@ -49,6 +52,18 @@ public class Game implements com.example.engine.Game {
     }
 
     @Override
+    public int getScreenWidth() {
+        Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
+        return screenSize.width;
+    }
+
+    @Override
+    public int getScreenHeight() {
+        Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
+        return screenSize.height;
+    }
+
+    @Override
     public State getCurrentState() {
         return _state;
     }
@@ -58,4 +73,7 @@ public class Game implements com.example.engine.Game {
         return null;
     }
 
+    public void updateVariables(){
+        _graphics.getScreenSizes(_graphics.getWidth(), _graphics.getHeight());
+    }
 }

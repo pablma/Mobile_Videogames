@@ -1,6 +1,7 @@
 package com.example.pcengine;
 
 
+import com.example.engine.AbstractGraphics;
 import com.example.engine.Image;
 import com.example.engine.Rect;
 
@@ -9,7 +10,7 @@ import javax.swing.JFrame;
 
 import java.awt.*;
 
-public class Graphics implements com.example.engine.Graphics {
+public class Graphics extends AbstractGraphics {
 
     java.awt.Graphics _graphics;
     private BufferStrategy _strategy; // obtener referencia a grafics - strategy show - dispose
@@ -72,8 +73,49 @@ public class Graphics implements com.example.engine.Graphics {
     }
 
     @Override
-    public void drawImage(Image image, int x, int y, Rect srcRect) {
+    protected void drawImagePrivate(Image image, com.example.engine.Rect srcRect, com.example.engine.Rect dstRect) {
+        _srcRect.x = srcRect.getLeft();
+        _srcRect.y = srcRect.getTop();
+        _srcRect.width = srcRect.getRight();
+        _srcRect.height = srcRect.getBottom();
+
+        _dstRect.x = dstRect.getLeft();
+        _dstRect.y = dstRect.getTop();
+        _dstRect.width = dstRect.getRight();
+        _dstRect.height = dstRect.getBottom();
+
+        com.example.pcengine.Image img = (com.example.pcengine.Image)image;
+        _graphics.drawImage(img.getImage(), _dstRect.x,  _dstRect.y, _dstRect.width, _dstRect.height, _srcRect.x, _srcRect.y, _srcRect.width, _srcRect.height,null);
+    }
+
+    @Override
+    protected void drawImageAsBackgroundPrivate(Image image, Rect srcRect, Rect dstRect) {
+
+        _srcRect.x = srcRect.getLeft();
+        _srcRect.y = srcRect.getTop();
+        _srcRect.width = srcRect.getRight();
+        _srcRect.height = srcRect.getBottom();
+
+        _dstRect.x = dstRect.getLeft();
+        _dstRect.y = dstRect.getTop();
+        _dstRect.width = dstRect.getRight();
+        _dstRect.height = dstRect.getBottom();
+
+        com.example.pcengine.Image img = (com.example.pcengine.Image)image;
+        _graphics.drawImage(img.getImage(), _dstRect.x, _dstRect.y, _dstRect.width, _dstRect.height, _srcRect.x, _srcRect.y, _srcRect.width, _srcRect.height,null);
+
+    }
+
+    @Override
+    protected void drawImageXCenteredPrivate(Image image, int y, Rect srcRect, Rect dstRect) {
+
+    }
+
+
     /*
+    @Override
+    public void drawImage(Image image, int x, int y, Rect srcRect) {
+
         int srcX2 = srcX + srcWidth - 1;
         int srcY2 = srcY + srcHeight - 1;
 
@@ -82,14 +124,13 @@ public class Graphics implements com.example.engine.Graphics {
 
         com.example.pcengine.Image img = (com.example.pcengine.Image)image;
         _graphics.drawImage(img.getImage(), x, y, dstX2, dstY2, srcX, srcY, srcX2, srcY2,null);
-    */
     }
 
 
 
     @Override
     public void drawImageAsBackground(Image image, Rect srcRect) {
-   /*
+
         int srcX2 = srcX + srcWidth - 1;
         int srcY2 = srcY + srcHeight - 1;
 
@@ -98,13 +139,11 @@ public class Graphics implements com.example.engine.Graphics {
 
         com.example.pcengine.Image img = (com.example.pcengine.Image)image;
         _graphics.drawImage(img.getImage(), 0, 0, dstX2, dstY2, srcX, srcY, srcX2, srcY2,null);
-
-    */
     }
 
     @Override
     public void drawImageXCentered(Image image, int y, Rect srcRect) {
-        /*
+
         int srcX2 = srcX + srcWidth - 1;
         int srcY2 = srcY + srcHeight - 1;
 
@@ -113,8 +152,9 @@ public class Graphics implements com.example.engine.Graphics {
 
         com.example.pcengine.Image img = (com.example.pcengine.Image)image;
         _graphics.drawImage(img.getImage(), x, y, dstX2, dstY2, srcX, srcY, srcX2, srcY2,null);
-        */
+
     }
+    */
 
     @Override
     public int getWidth() {
@@ -147,6 +187,5 @@ public class Graphics implements com.example.engine.Graphics {
     }
 
     public BufferStrategy getBufferStrategy() { return _strategy; }
-
 
 }

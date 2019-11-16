@@ -3,6 +3,7 @@ package com.example.androidengine;
 import android.app.Activity;
 import android.content.res.Configuration;
 import android.graphics.Bitmap;
+
 import android.graphics.Point;
 import android.os.Bundle;
 import android.view.Display;
@@ -18,10 +19,6 @@ public class Game extends Activity implements com.example.engine.Game {
     com.example.androidengine.Graphics _graphics;
     com.example.androidengine.Input _input;
     State _state;
-
-    int screenWidth;
-    int screenHeight;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,8 +42,6 @@ public class Game extends Activity implements com.example.engine.Game {
         _input = new com.example.androidengine.Input(_renderView, scaleX, scaleY);
         _state = getStartState();
 
-        _graphics.getScreenSizes(getScreenWidth(), getScreenHeight());
-
         setContentView(_renderView);
 
     }
@@ -54,6 +49,9 @@ public class Game extends Activity implements com.example.engine.Game {
     @Override
     protected void onResume() {
         super.onResume();
+
+        _graphics.getScreenSizes(getScreenWidth(), getScreenHeight());
+
         _state.resume();
         _renderView.resume();
 
@@ -102,19 +100,19 @@ public class Game extends Activity implements com.example.engine.Game {
         return null;
     }
 
-
-    private Point getScreenDimensions(){
+    @Override
+    public int getScreenWidth(){
         Display display = getWindowManager().getDefaultDisplay();
         Point size = new Point();
         display.getSize(size);
-        return size;
+        return size.x;
     }
 
-    private int getScreenWidth(){
-        return getScreenDimensions().x;
-    }
-
-    private int getScreenHeight(){
-        return getScreenDimensions().y;
+    @Override
+    public int getScreenHeight(){
+        Display display = getWindowManager().getDefaultDisplay();
+        Point size = new Point();
+        display.getSize(size);
+        return size.y;
     }
 }

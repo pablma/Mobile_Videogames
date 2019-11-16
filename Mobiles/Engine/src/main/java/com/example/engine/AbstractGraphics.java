@@ -14,7 +14,7 @@ public abstract class AbstractGraphics implements Graphics{
         //reescaldo X Y
         Rect dstRectResized = new Rect(0, 0, 0, 0);
 
-        int scale = 2;
+        int scale = 1;
 
         int resizedX = x * scale;
         int resizedY = y * scale;
@@ -24,7 +24,7 @@ public abstract class AbstractGraphics implements Graphics{
         dstRectResized.setRight((x + srcRect.getWidth()) * scale);
         dstRectResized.setBottom((y + srcRect.getHeight()) * scale);
 
-        drawImagePrivate(image, resizedX, resizedY, srcRect, dstRectResized);
+        drawImagePrivate(image, srcRect, dstRectResized);
     }
 
     @Override
@@ -41,16 +41,22 @@ public abstract class AbstractGraphics implements Graphics{
         int left = 0;
         int top = 0;
 
-        float logicAspectRatio = (float)getHeight()/(float)getWidth(); //logic gH, and logic gW change depending on the rotation of the screen
+        //float logicAspectRatio = (float)getHeight()/(float)getWidth(); //logic gH, and logic gW change depending on the rotation of the screen
+        float logicAspectRatio = 1920.0f / 1080.0f;
 
-        if(physicHeight > physicWidth){
+        System.out.println("GRAPHICS " + _windowWidth + " " + _windowHeight);
+
+        if(physicHeight > physicWidth){ //vertical
             physicHeight = (int)((float)_windowWidth * logicAspectRatio);
             top = getHeight() / 2 - physicHeight / 2;
+            physicWidth = 1080;
         }
-        else {
-            physicWidth = (int)((float)_windowHeight * logicAspectRatio);
+        else {//horizontal
+            physicWidth = (int)((float)_windowHeight / logicAspectRatio);
             left = getWidth() / 2 - physicWidth / 2;
+            physicHeight = 1920;
         }
+
 
         dstRectResized.setLeft(left);
         dstRectResized.setTop(top);
@@ -82,7 +88,7 @@ public abstract class AbstractGraphics implements Graphics{
         _windowHeight = h;
     }
 
-    protected abstract void drawImagePrivate(Image image, int x, int y, Rect srcRect, Rect dstRect);
+    protected abstract void drawImagePrivate(Image image, Rect srcRect, Rect dstRect);
 
     protected abstract void drawImageAsBackgroundPrivate(Image image, Rect srcRect, Rect dstRect);
 

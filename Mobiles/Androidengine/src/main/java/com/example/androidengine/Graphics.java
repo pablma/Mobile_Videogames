@@ -23,9 +23,6 @@ public class Graphics extends AbstractGraphics {
     Rect _srcRect = new Rect();
     Rect _dstRect = new Rect();
 
-    float _defaultAspectRatio;
-    float _defaultCanvasWidht;
-    float _defaultCanvasHeigh;
 
 
     public Graphics(AssetManager assets, Bitmap frameBuffer){
@@ -34,9 +31,6 @@ public class Graphics extends AbstractGraphics {
         this._canvas = new Canvas(frameBuffer);
         this._paint = new Paint();
 
-        _defaultCanvasHeigh = 1920;
-        _defaultCanvasWidht = 1080;
-        _defaultAspectRatio = _defaultCanvasHeigh/_defaultCanvasWidht;
     }
 
     @Override
@@ -65,7 +59,7 @@ public class Graphics extends AbstractGraphics {
         return img;
     }
 
-    protected void drawImagePrivate(Image image, int x, int y, com.example.engine.Rect srcRect, com.example.engine.Rect dstRect) {
+    protected void drawImagePrivate(Image image, com.example.engine.Rect srcRect, com.example.engine.Rect dstRect) {
         _srcRect.left = srcRect.getLeft();
         _srcRect.top = srcRect.getTop();
         _srcRect.right = srcRect.getRight();
