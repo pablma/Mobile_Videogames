@@ -99,20 +99,5 @@ public class Game extends Activity implements com.example.engine.Game {
     public State getStartState() {
         return null;
     }
-
-    @Override
-    public int getScreenWidth(){
-        Display display = getWindowManager().getDefaultDisplay();
-        Point size = new Point();
-        display.getSize(size);
-        return size.x;
-    }
-
-    @Override
-    public int getScreenHeight(){
-        Display display = getWindowManager().getDefaultDisplay();
-        Point size = new Point();
-        display.getSize(size);
-        return size.y;
-    }
+    
 }

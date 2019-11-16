@@ -9,10 +9,6 @@ public interface Game {
 
     public void setScreen(State state);
 
-    public int getScreenWidth();
-    public int getScreenHeight();
-
-
     public State getCurrentState();
     public State getStartState();
 }

@@ -55,18 +55,6 @@ public class Game implements com.example.engine.Game {
     }
 
     @Override
-    public int getScreenWidth() {
-        Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
-        return screenSize.width;
-    }
-
-    @Override
-    public int getScreenHeight() {
-        Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
-        return screenSize.height;
-    }
-
-    @Override
     public State getCurrentState() {
         return _state;
     }
