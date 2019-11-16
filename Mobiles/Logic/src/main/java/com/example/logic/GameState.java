@@ -67,9 +67,7 @@ public class GameState extends State { // debería de ir en la lógica
 
 
         _greenBackgroundSp.drawImageAsBackground();
-        _blackBallSp.drawImage(10,10);
-        _blackBallSp.drawImageXCentered(500);
-
+        _blackBallSp.drawImage(400,400);
     }
 
     @Override

@@ -11,18 +11,48 @@ public abstract class AbstractGraphics implements Graphics{
 
     @Override
     public void drawImage(Image image, int x, int y, Rect srcRect) {
-        //reescaldo X Y
+
+
+        float scale = 1;
+
+        int physicWindowWidth = getWidth();
+        int physicWindowHeight = getHeight();
+        int top = 0;
+        int left = 0;
+
+        float logicAspectRatio = 1920.0f / 1080.0f;
+
+        if(physicWindowHeight > physicWindowWidth){ //vertical
+
+
+            physicWindowHeight = (int)((float)_windowWidth * logicAspectRatio);
+            top = getHeight() / 2 - physicWindowHeight / 2;
+
+            scale = (float)physicWindowHeight / 1920.0f;
+        }
+        else {//horizontal
+
+            physicWindowWidth = (int)((float)_windowHeight / logicAspectRatio);
+            left = getWidth() / 2 - physicWindowWidth / 2;
+
+            scale = (float)physicWindowWidth / 1080.0f;
+        }
+
+        int resizedX = (int)(x * scale);
+        int resizedY = (int)(y * scale);
+
+        int resizedImageW = (int)(srcRect.getWidth() * scale);
+        int resizedImageH = (int)(srcRect.getHeight() * scale);
+
+        int physicX = resizedX + left;
+        int physicY = resizedY + top;
+
         Rect dstRectResized = new Rect(0, 0, 0, 0);
 
-        int scale = 1;
-
-        int resizedX = x * scale;
-        int resizedY = y * scale;
-
-        dstRectResized.setLeft(resizedX);
-        dstRectResized.setTop(resizedY);
-        dstRectResized.setRight((x + srcRect.getWidth()) * scale);
-        dstRectResized.setBottom((y + srcRect.getHeight()) * scale);
+        dstRectResized.setLeft(physicX);
+        dstRectResized.setTop(physicY);
+        dstRectResized.setRight(physicX + resizedImageW);
+        dstRectResized.setBottom(physicY + resizedImageH);
 
         drawImagePrivate(image, srcRect, dstRectResized);
     }
@@ -31,29 +61,29 @@ public abstract class AbstractGraphics implements Graphics{
     public void drawImageAsBackground(Image image, Rect srcRect) {
         //reescaldo X Y
 
-        int physicWidth = getWidth();
-        int physicHeight = getHeight();
+        int physicWindowWidth = getWidth();
+        int physicWindowHeight = getHeight();
         int top = 0;
         int left = 0;
 
         float logicAspectRatio = 1920.0f / 1080.0f;
 
-        if(physicHeight > physicWidth){ //vertical
-            physicHeight = (int)((float)_windowWidth * logicAspectRatio);
-            physicWidth = getWidth();
-            top = getHeight() / 2 - physicHeight / 2;
+        if(physicWindowHeight > physicWindowWidth){ //vertical
+            physicWindowHeight = (int)((float)_windowWidth * logicAspectRatio);
+            physicWindowWidth = getWidth();
+            top = getHeight() / 2 - physicWindowHeight / 2;
         }
         else {//horizontal
-            physicWidth = (int)((float)_windowHeight / logicAspectRatio);
-            physicHeight = getHeight();
-            left = getWidth() / 2 - physicWidth / 2;
+            physicWindowWidth = (int)((float)_windowHeight / logicAspectRatio);
+            physicWindowHeight = getHeight();
+            left = getWidth() / 2 - physicWindowWidth / 2;
         }
 
         Rect dstRectResized = new Rect(0, 0, 0, 0);
         dstRectResized.setLeft(left);
         dstRectResized.setTop(top);
-        dstRectResized.setBottom(top + physicHeight);
-        dstRectResized.setRight(left + physicWidth);
+        dstRectResized.setBottom(top + physicWindowHeight);
+        dstRectResized.setRight(left + physicWindowWidth);
 
         drawImageAsBackgroundPrivate(image, srcRect, dstRectResized);
     }
