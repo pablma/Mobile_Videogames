@@ -27,4 +27,10 @@ public class GameObject {
     public void resume(){}
 
     public void dispose(){}
+
+    public float getPosX() { return _posX;}
+    public float getPosY() { return _posY;}
+
+    public void setPosX(float value) { _posX = value;}
+    public void setPosY(float value) { _posY = value;}
 }
