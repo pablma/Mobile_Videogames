@@ -22,8 +22,9 @@ public abstract class AbstractGraphics implements Graphics{
 
         float logicAspectRatio = 1920.0f / 1080.0f;
 
-        if(physicWindowHeight > physicWindowWidth){ //vertical
+        float physicAspectRatio = (float)_windowHeight/(float)_windowWidth;
 
+        if( physicAspectRatio > logicAspectRatio ){ //vertical
 
             physicWindowHeight = (int)((float)_windowWidth * logicAspectRatio);
             top = getHeight() / 2 - physicWindowHeight / 2;
@@ -31,7 +32,6 @@ public abstract class AbstractGraphics implements Graphics{
             scale = (float)physicWindowHeight / 1920.0f;
         }
         else {//horizontal
-
             physicWindowWidth = (int)((float)_windowHeight / logicAspectRatio);
             left = getWidth() / 2 - physicWindowWidth / 2;
 
@@ -67,15 +67,16 @@ public abstract class AbstractGraphics implements Graphics{
         int left = 0;
 
         float logicAspectRatio = 1920.0f / 1080.0f;
+        float physicAspectRatio = (float)_windowHeight/(float)_windowWidth;
 
-        if(physicWindowHeight > physicWindowWidth){ //vertical
+        if( physicAspectRatio > logicAspectRatio ){ //vertical
             physicWindowHeight = (int)((float)_windowWidth * logicAspectRatio);
-            physicWindowWidth = getWidth();
+
             top = getHeight() / 2 - physicWindowHeight / 2;
         }
         else {//horizontal
             physicWindowWidth = (int)((float)_windowHeight / logicAspectRatio);
-            physicWindowHeight = getHeight();
+
             left = getWidth() / 2 - physicWindowWidth / 2;
         }
 
