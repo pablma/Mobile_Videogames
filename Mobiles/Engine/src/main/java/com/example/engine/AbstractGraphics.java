@@ -139,6 +139,87 @@ public abstract class AbstractGraphics implements Graphics{
     }
 
     @Override
+    public void drawImageAsUpperLeftBand(Image image, Rect srcRect) {
+
+        //reescaldo X Y
+
+        int physicWindowWidth = getWidth();
+        int physicWindowHeight = getHeight();
+        int top = 0;
+        int left = 0;
+
+        float logicAspectRatio = 1920.0f / 1080.0f;
+        float physicAspectRatio = (float)_windowHeight/(float)_windowWidth;
+
+        Rect dstRectResized = new Rect(0, 0, 0, 0);
+
+        if( physicAspectRatio > logicAspectRatio ){ //vertical
+            physicWindowHeight = (int)((float)_windowWidth * logicAspectRatio);
+
+            top = getHeight() / 2 - physicWindowHeight / 2;
+
+            dstRectResized.setLeft(left);
+            dstRectResized.setTop(0);
+            dstRectResized.setBottom(top);
+            dstRectResized.setRight(left + physicWindowWidth);
+        }
+        else {//horizontal
+            physicWindowWidth = (int)((float)_windowHeight / logicAspectRatio);
+
+            left = getWidth() / 2 - physicWindowWidth / 2;
+
+            dstRectResized.setLeft(0);
+            dstRectResized.setTop(top);
+            dstRectResized.setBottom(top + physicWindowHeight);
+            dstRectResized.setRight(left);
+        }
+
+
+
+        drawImagePrivate(image, srcRect, dstRectResized);
+    }
+
+    @Override
+    public void drawImageAsBottomRightBand(Image image, Rect srcRect) {
+
+        //reescaldo X Y
+
+        int physicWindowWidth = getWidth();
+        int physicWindowHeight = getHeight();
+        int top = 0;
+        int left = 0;
+
+        float logicAspectRatio = 1920.0f / 1080.0f;
+        float physicAspectRatio = (float)_windowHeight/(float)_windowWidth;
+
+        Rect dstRectResized = new Rect(0, 0, 0, 0);
+
+        if( physicAspectRatio > logicAspectRatio ){ //vertical
+            physicWindowHeight = (int)((float)_windowWidth * logicAspectRatio);
+
+            top = getHeight() / 2 - physicWindowHeight / 2;
+
+            dstRectResized.setLeft(left);
+            dstRectResized.setTop(top + physicWindowHeight);
+            dstRectResized.setBottom(getHeight());
+            dstRectResized.setRight(left + physicWindowWidth);
+        }
+        else {//horizontal
+            physicWindowWidth = (int)((float)_windowHeight / logicAspectRatio);
+
+            left = getWidth() / 2 - physicWindowWidth / 2;
+
+            dstRectResized.setLeft(left + physicWindowWidth);
+            dstRectResized.setTop(top);
+            dstRectResized.setBottom(top + physicWindowHeight);
+            dstRectResized.setRight(getWidth());
+        }
+
+        drawImagePrivate(image, srcRect, dstRectResized);
+    }
+
+
+    @Override
     public void getScreenSizes(int w, int h) {
         _windowWidth = w;
         _windowHeight = h;

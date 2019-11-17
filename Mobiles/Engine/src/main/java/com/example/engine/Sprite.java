@@ -24,4 +24,9 @@ public class Sprite {
     }
 
     public void drawImageXCentered(int y){_graphics.drawImageXCentered(_image, y, _srcRect);}
+
+    public void drawImageAsUpperLeftBand(){_graphics.drawImageAsUpperLeftBand(_image, _srcRect);}
+
+    public void drawImageAsBottomRightBand(){_graphics.drawImageAsBottomRightBand(_image, _srcRect);}
+
 }

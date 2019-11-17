@@ -110,6 +110,12 @@ public class LoadingState extends State {
         Assets._brownBackgroundSprite = new Sprite(_graphics, Assets._brownBackgroundImg, Assets._brownBackgroundRect);
 
 
+        Assets._blackBandImg = _graphics.newImage("black.png") ;
+        Assets._blackBandRect = new Rect(0,0,
+                Assets._blackBandImg.getWidth(), Assets._blackBandImg.getHeight());
+        Assets._blackBandSprite = new Sprite(_graphics, Assets._blackBandImg,Assets._blackBandRect);
+
+
 
         //Interface
 
@@ -196,8 +202,8 @@ public class LoadingState extends State {
 
         Assets._sevenImg = Assets._zeroImg;
         Assets._sevenRect  = new Rect(14 * (Assets._sevenImg.getWidth() / 15),3 * (Assets._sevenImg.getHeight() / 7),
-                Assets._sevenImg.getWidth() / 15, Assets._sevenImg.getHeight());
-        Assets._blackSprite = new Sprite(_graphics, Assets._sevenImg, Assets._sevenRect);
+                Assets._sevenImg.getWidth() / 15, Assets._sevenImg.getHeight() / 7);
+        Assets._sevenSprite = new Sprite(_graphics, Assets._sevenImg, Assets._sevenRect);
 
 
         Assets._eightImg = Assets._zeroImg;

@@ -69,6 +69,10 @@ public class Assets { // debería ir en logic
     public static Image _brownBackgroundImg;
     public static Rect _brownBackgroundRect;
 
+    public static Sprite _blackBandSprite;
+    public static Image _blackBandImg;
+    public static Rect _blackBandRect;
+
 
     //Interface
     public static Sprite _gameOverSprite;
@@ -124,7 +128,7 @@ public class Assets { // debería ir en logic
     public static Image _sixImg;
     public static Rect _sixRect;
 
-    public static Sprite _blackSprite;
+    public static Sprite _sevenSprite;
     public static Image _sevenImg;
     public static Rect _sevenRect;
 

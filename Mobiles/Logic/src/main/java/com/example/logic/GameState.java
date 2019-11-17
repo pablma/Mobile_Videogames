@@ -43,6 +43,7 @@ public class GameState extends State { // debería de ir en la lógica
 
     //BACKGROUND_COLOR
     BackgroundColor _backgroudnColor;
+    Sprite _blackBand =  Assets._blackBandSprite;
 
 
 
@@ -102,9 +103,14 @@ public class GameState extends State { // debería de ir en la lógica
 
         _backgroudnColor.present(deltaTime);
 
+        _blackBand.drawImageAsBottomRightBand();
+        _blackBand.drawImageAsUpperLeftBand();
+
         arrowsBackgroundPresent(deltaTime);
         ballsPresent(deltaTime);
         playerPresent(deltaTime);
+
+
     }
 
     @Override
