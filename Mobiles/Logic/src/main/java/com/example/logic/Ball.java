@@ -5,43 +5,40 @@ import com.example.engine.Sprite;
 
 import java.util.Random;
 
-public class Ball extends GameObject {
-
-    enum BallColor {
-        BLACK,
-        WHITE
-    }
+public class Ball extends SwitchDashObject {
 
     private float _velY = 10f;
-    private BallColor _ballColor;
-    private BallColor _initialColor;
+    private Color _initialColor;
 
     private Sprite _blackBall;
     private Sprite _whiteBall;
 
     private Random random;
 
-    private BallColor _masterWhiteArray[] = new BallColor[]{BallColor.WHITE, BallColor.WHITE, BallColor.WHITE, BallColor.WHITE, BallColor.WHITE,
-            BallColor.WHITE, BallColor.WHITE, BallColor.BLACK, BallColor.BLACK, BallColor.BLACK};
+    private Color _masterWhiteArray[] = new Color[]{Color.WHITE, Color.WHITE, Color.WHITE, Color.WHITE, Color.WHITE,
+            Color.WHITE, Color.WHITE, Color.BLACK, Color.BLACK, Color.BLACK};
 
-    private BallColor _masterBlackArray[] = new BallColor[]{BallColor.BLACK, BallColor.BLACK, BallColor.BLACK, BallColor.BLACK, BallColor.BLACK,
-            BallColor.BLACK, BallColor.BLACK, BallColor.WHITE, BallColor.WHITE, BallColor.WHITE};
+    private Color _masterBlackArray[] = new Color[]{Color.BLACK, Color.BLACK, Color.BLACK, Color.BLACK, Color.BLACK,
+            Color.BLACK, Color.BLACK, Color.WHITE, Color.WHITE, Color.WHITE};
 
 
     public Ball(float iniPosX, float iniPosY, Graphics g) {
-        super(iniPosX, iniPosY, g);
+
+        super(iniPosX, iniPosY, g, Assets._blackBallSprite, Assets._whiteBallSprite);
         _blackBall = Assets._blackBallSprite;
         _whiteBall = Assets._whiteBallSprite;
 
         random = new Random();
+
         if(random.nextInt(2) == 0)
-            _initialColor = BallColor.BLACK;
+            _initialColor = Color.BLACK;
         else
-            _initialColor = BallColor.WHITE;
+            _initialColor = Color.WHITE;
 
-        _ballColor = _initialColor;
+        _color = _initialColor;
 
-        selectBallColor(_initialColor);
+
+
     }
 
     public void update(float deltaTime){
@@ -49,7 +46,8 @@ public class Ball extends GameObject {
     }
 
     public void present(float deltaTime){
-        if(_ballColor == BallColor.BLACK)
+
+        if(_color == Color.BLACK)
             _blackBall.drawImageXCentered((int)_posY);
         else
             _whiteBall.drawImageXCentered((int)_posY);
@@ -64,21 +62,21 @@ public class Ball extends GameObject {
         _posY += _velY;
     }
 
-    public void selectBallColor(BallColor master)
+    public void selectColor(Color master)
     {
-        BallColor colors [];
-        BallColor masterColor = master;
+        Color colors [];
+        Color masterColor = master;
 
-        if(master == BallColor.BLACK)
+        if(master == Color.BLACK)
             colors = _masterBlackArray;
         else
             colors = _masterWhiteArray;
 
         int rnd = random.nextInt(10);
-        _ballColor = colors[rnd];
+        _color = colors[rnd];
     }
 
-    public BallColor getBallColor() {
-        return _ballColor;
+    public Color getColor() {
+        return _color;
     }
 }

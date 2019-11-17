@@ -143,20 +143,11 @@ public class GameState extends State { // debería de ir en la lógica
             Ball b = balls.pop();
             b.update(deltaTime);
 
-            /*
-            if(b.getPosY() > 1920)
+            if(objectsColliding(b, _player) && sameColorObjects(b, _player))
             {
                 b.setPosY(balls.getLast()._posY - ballOffset_Y);
-                b.selectBallColor(balls.getLast().getBallColor());
+                b.selectColor(balls.getLast().getColor());
             }
-            */
-
-            if(objectsColliding(b, _player))
-            {
-                b.setPosY(balls.getLast()._posY - ballOffset_Y);
-                b.selectBallColor(balls.getLast().getBallColor());
-            }
-
 
             balls.add(b);
         }
@@ -189,7 +180,7 @@ public class GameState extends State { // debería de ir en la lógica
         }
     }
 
-    private boolean objectsColliding(GameObject obj1, GameObject obj2){
+    private boolean objectsColliding(SwitchDashObject obj1, SwitchDashObject obj2){
         boolean b = false;
 
         if(obj1.getPosX() >= obj2.getPosX() && obj1.getPosY() >= obj2.getPosY())
@@ -200,17 +191,17 @@ public class GameState extends State { // debería de ir en la lógica
         return b;
     }
 
-    /*
-    private boolean playerAndBallSameColor(Player player, Ball ball){
+
+    private boolean sameColorObjects(SwitchDashObject obj1, SwitchDashObject obj2){
         boolean b = false;
 
-        if(player.getPlayerColor() == ball.getBallColor())
+        if(obj1.getColor() == obj2.getColor())
             b = true;
         else
             b = false;
 
         return b;
     }
-     */
+
 
 }
