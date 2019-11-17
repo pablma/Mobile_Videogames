@@ -31,9 +31,14 @@ public class GameState extends State { // debería de ir en la lógica
     Ball ball_5;
     Ball ball_6;
 
+    Arrows arrows_1;
+    Arrows arrows_2;
+
     float ballOffset_Y = 395f;
+    float arrowsOffset_Y = Assets._backgroundArrowsImg.getHeight();
 
     Deque<Ball> balls;
+    Deque<Arrows> arrowsQueue;
 
     public GameState(Game game) {
         super(game);
@@ -56,6 +61,14 @@ public class GameState extends State { // debería de ir en la lógica
         balls.add(ball_5);
         balls.add(ball_6);
 
+
+        arrows_1 = new Arrows(0,0, _graphics, Assets._backgroundArrowsSprite);
+        arrows_2 = new Arrows(0,arrows_1.getPosY() - arrowsOffset_Y, _graphics, Assets._backgroundArrowsSprite);
+
+        arrowsQueue = new LinkedList<Arrows>();
+        arrowsQueue.add(arrows_1);
+        arrowsQueue.add(arrows_2);
+
     }
 
     @Override
@@ -73,6 +86,8 @@ public class GameState extends State { // debería de ir en la lógica
             }
         }
 
+        arrowsBackgroundUpdate(deltaTime);
+
         for (int i = 0; i < balls.size(); i++)
         {
             Ball b = balls.pop();
@@ -85,6 +100,7 @@ public class GameState extends State { // debería de ir en la lógica
         }
 
 
+
     }
 
     @Override
@@ -93,7 +109,8 @@ public class GameState extends State { // debería de ir en la lógica
         _graphics.clear(0xffff00ff);
 
         Assets._greenBackgroundSprite.drawImageAsBackground();
-        Assets._backgroundArrowsSprite.drawImageXCentered(0);
+
+        arrowsBackgroundPresent(deltaTime);
 
         for(int i = 0; i < balls.size(); i++)
         {
@@ -116,4 +133,27 @@ public class GameState extends State { // debería de ir en la lógica
     @Override
     public void dispose() {
     }
+
+    private void arrowsBackgroundUpdate(float deltaTime){
+        for (int i = 0; i < arrowsQueue.size(); i++)
+        {
+            Arrows a = arrowsQueue.pop();
+
+            if(a.getPosY() > 1920)
+                a.setPosY(arrowsQueue.getLast()._posY - arrowsOffset_Y);
+            arrowsQueue.add(a);
+
+            a.update(deltaTime);
+        }
+    }
+
+    private void arrowsBackgroundPresent(float deltaTime){
+        for(int i = 0; i < arrowsQueue.size(); i++)
+        {
+            Arrows a = arrowsQueue.pop();
+            a.present(deltaTime);
+            arrowsQueue.add(a);
+        }
+    }
+
 }
