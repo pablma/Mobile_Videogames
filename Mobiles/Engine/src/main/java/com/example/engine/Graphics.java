@@ -13,6 +13,8 @@ public interface Graphics {
 
     public void drawImageXCentered(Image image, int y, Rect srcRect);
 
+    public void drawImageXCenteredResized(Image image, int y, Rect srcRect, int w, int h);
+
     public void drawImageAsUpperLeftBand(Image image, Rect srcRect);
 
     public void drawImageAsBottomRightBand(Image image, Rect srcRect);

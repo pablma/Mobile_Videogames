@@ -92,7 +92,6 @@ public abstract class AbstractGraphics implements Graphics{
     @Override
     public void drawImageXCentered(Image image, int y, Rect srcRect) {
 
-
         float scale = 1;
 
         int physicWindowWidth = getWidth();
@@ -136,6 +135,56 @@ public abstract class AbstractGraphics implements Graphics{
 
         drawImagePrivate(image, srcRect, dstRectResized);
 
+    }
+
+    @Override
+    public void drawImageXCenteredResized(Image image, int y, Rect srcRect, int w, int h) {
+
+        float scale = 1;
+
+        int newWidth = w;
+        int newHeight = h;
+
+        int physicWindowWidth = getWidth();
+        int physicWindowHeight = getHeight();
+        int top = 0;
+        int left = 0;
+
+        float logicAspectRatio = 1920.0f / 1080.0f;
+
+        float physicAspectRatio = (float)_windowHeight/(float)_windowWidth;
+
+        if( physicAspectRatio > logicAspectRatio ){ //vertical
+
+            physicWindowHeight = (int)((float)_windowWidth * logicAspectRatio);
+            top = getHeight() / 2 - physicWindowHeight / 2;
+
+            scale = (float)physicWindowHeight / 1920.0f;
+        }
+        else {//horizontal
+            physicWindowWidth = (int)((float)_windowHeight / logicAspectRatio);
+            left = getWidth() / 2 - physicWindowWidth / 2;
+
+            scale = (float)physicWindowWidth / 1080.0f;
+        }
+
+
+        int resizedY = (int)(y * scale);
+
+        int resizedImageW = (int)(newWidth * scale);
+        int resizedImageH = (int)(newHeight * scale);
+
+        int physicX = (int)(((float)getWidth() / 2.0f) - (float)(resizedImageW/2));
+        int physicY = resizedY + top;
+
+        Rect dstRectResized = new Rect(0, 0, 0, 0);
+
+        dstRectResized.setLeft(physicX);
+        dstRectResized.setTop(physicY);
+        dstRectResized.setRight(physicX + resizedImageW);
+        dstRectResized.setBottom(physicY + resizedImageH);
+
+        drawImagePrivate(image, srcRect, dstRectResized);
     }
 
     @Override

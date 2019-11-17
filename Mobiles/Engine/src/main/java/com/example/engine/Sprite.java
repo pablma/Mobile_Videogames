@@ -29,4 +29,8 @@ public class Sprite {
 
     public void drawImageAsBottomRightBand(){_graphics.drawImageAsBottomRightBand(_image, _srcRect);}
 
+    public void drawImageXCenteredResized(int y, int w, int h){
+        _graphics.drawImageXCenteredResized(_image, y, _srcRect, w, h);
+    }
+
 }

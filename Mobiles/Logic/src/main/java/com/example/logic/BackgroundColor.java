@@ -53,7 +53,7 @@ public class BackgroundColor extends GameObject {
     }
 
     public void present(float deltaTime){
-        _colorSpriteSelected.drawImageAsBackground();
+        _colorSpriteSelected.drawImageXCenteredResized(0, Assets._backgroundArrowsImg.getWidth(),1920);
     }
 
     public int getBackgroundColor(){
