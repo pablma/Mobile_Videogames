@@ -92,10 +92,10 @@ public class LoadingState extends State {
         Assets._darkBlueBackgroundSprite = new Sprite(_graphics, Assets._darkBlueBackgroundImg, Assets._darkBlueBackgroundRect);
 
 
-        Assets._orengeBackgroundImg  = Assets._greenBackgroundImg;
-        Assets._orangeBackgroundRect  = new Rect(6 * (Assets._orengeBackgroundImg.getWidth() / 9),0,
-                Assets._orengeBackgroundImg.getWidth() / 9, Assets._orengeBackgroundImg.getHeight());
-        Assets._orengeBackgroundSprite = new Sprite(_graphics, Assets._orengeBackgroundImg, Assets._orangeBackgroundRect);
+        Assets._orangeBackgroundImg  = Assets._greenBackgroundImg;
+        Assets._orangeBackgroundRect  = new Rect(6 * (Assets._orangeBackgroundImg.getWidth() / 9),0,
+                Assets._orangeBackgroundImg.getWidth() / 9, Assets._orangeBackgroundImg.getHeight());
+        Assets._orangeBackgroundSprite = new Sprite(_graphics, Assets._orangeBackgroundImg, Assets._orangeBackgroundRect);
 
 
         Assets._redBackgroundImg  =Assets._greenBackgroundImg;

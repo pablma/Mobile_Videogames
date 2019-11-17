@@ -41,6 +41,10 @@ public class GameState extends State { // debería de ir en la lógica
     // PLAYER
     Player _player;
 
+    //BACKGROUND_COLOR
+    BackgroundColor _backgroudnColor;
+
+
 
     public GameState(Game game) {
         super(game);
@@ -71,6 +75,7 @@ public class GameState extends State { // debería de ir en la lógica
 
         _player = new Player(0, 1200f, _graphics);
 
+        _backgroudnColor = new BackgroundColor(0,0, _graphics);
     }
 
     @Override
@@ -95,7 +100,7 @@ public class GameState extends State { // debería de ir en la lógica
 
         _graphics.clear(0xffff00ff);
 
-        Assets._greenBackgroundSprite.drawImageAsBackground();
+        _backgroudnColor.present(deltaTime);
 
         arrowsBackgroundPresent(deltaTime);
         ballsPresent(deltaTime);

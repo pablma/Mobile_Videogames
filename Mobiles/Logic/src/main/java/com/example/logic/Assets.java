@@ -57,8 +57,8 @@ public class Assets { // debería ir en logic
     public static Image _darkBlueBackgroundImg;
     public static Rect _darkBlueBackgroundRect;
 
-    public static Sprite _orengeBackgroundSprite;
-    public static Image _orengeBackgroundImg;
+    public static Sprite _orangeBackgroundSprite;
+    public static Image _orangeBackgroundImg;
     public static Rect _orangeBackgroundRect;
 
     public static Sprite _redBackgroundImgSprite;
