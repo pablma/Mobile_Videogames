@@ -8,16 +8,14 @@ public class GameObject {
     protected float _posX, _posY;
 
     protected Graphics _graphics;
-    protected Sprite _sprite;
 
-    public GameObject(float iniPosX, float iniPosY, Graphics g, Sprite s){
+    public GameObject(float iniPosX, float iniPosY, Graphics g){
         _iniPosX = iniPosX;
         _iniPosY = iniPosY;
         _posX = _iniPosX;
         _posY = _iniPosY;
 
         _graphics = g;
-        _sprite = s;
     }
 
     public void update(float deltaTime){}

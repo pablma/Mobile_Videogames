@@ -46,12 +46,12 @@ public class GameState extends State { // debería de ir en la lógica
         _graphics = _game.getGraphics();
 
 
-        ball_1 = new Ball(0, 0, _graphics, Assets._blackBallSprite);
-        ball_2 = new Ball(0, ball_1.getPosY() - ballOffset_Y, _graphics,  Assets._blackBallSprite);
-        ball_3 = new Ball(0, ball_2.getPosY() - ballOffset_Y, _graphics,  Assets._blackBallSprite);
-        ball_4 = new Ball(0, ball_3.getPosY() - ballOffset_Y, _graphics,  Assets._blackBallSprite);
-        ball_5 = new Ball(0, ball_4.getPosY() - ballOffset_Y, _graphics,  Assets._blackBallSprite);
-        ball_6 = new Ball(0, ball_5.getPosY() - ballOffset_Y, _graphics,  Assets._blackBallSprite);
+        ball_1 = new Ball(0, 0, _graphics);
+        ball_2 = new Ball(0, ball_1.getPosY() - ballOffset_Y, _graphics);
+        ball_3 = new Ball(0, ball_2.getPosY() - ballOffset_Y, _graphics);
+        ball_4 = new Ball(0, ball_3.getPosY() - ballOffset_Y, _graphics);
+        ball_5 = new Ball(0, ball_4.getPosY() - ballOffset_Y, _graphics);
+        ball_6 = new Ball(0, ball_5.getPosY() - ballOffset_Y, _graphics);
 
         balls = new LinkedList<Ball>();
         balls.add(ball_1);
@@ -62,8 +62,8 @@ public class GameState extends State { // debería de ir en la lógica
         balls.add(ball_6);
 
 
-        arrows_1 = new Arrows(0,0, _graphics, Assets._backgroundArrowsSprite);
-        arrows_2 = new Arrows(0,arrows_1.getPosY() - arrowsOffset_Y, _graphics, Assets._backgroundArrowsSprite);
+        arrows_1 = new Arrows(0,0, _graphics);
+        arrows_2 = new Arrows(0,arrows_1.getPosY() - arrowsOffset_Y, _graphics);
 
         arrowsQueue = new LinkedList<Arrows>();
         arrowsQueue.add(arrows_1);
@@ -87,19 +87,7 @@ public class GameState extends State { // debería de ir en la lógica
         }
 
         arrowsBackgroundUpdate(deltaTime);
-
-        for (int i = 0; i < balls.size(); i++)
-        {
-            Ball b = balls.pop();
-            b.update(deltaTime);
-
-            if(b.getPosY() > 1920)
-                b.setPosY(balls.getLast()._posY - ballOffset_Y);
-
-            balls.add(b);
-        }
-
-
+        ballsUpdate(deltaTime);
 
     }
 
@@ -111,14 +99,7 @@ public class GameState extends State { // debería de ir en la lógica
         Assets._greenBackgroundSprite.drawImageAsBackground();
 
         arrowsBackgroundPresent(deltaTime);
-
-        for(int i = 0; i < balls.size(); i++)
-        {
-            Ball b = balls.pop();
-            b.present(deltaTime);
-            balls.add(b);
-        }
-
+        ballsPresent(deltaTime);
     }
 
     @Override
@@ -153,6 +134,30 @@ public class GameState extends State { // debería de ir en la lógica
             Arrows a = arrowsQueue.pop();
             a.present(deltaTime);
             arrowsQueue.add(a);
+        }
+    }
+
+    private void ballsUpdate(float deltaTime){
+        for (int i = 0; i < balls.size(); i++)
+        {
+            Ball b = balls.pop();
+            b.update(deltaTime);
+
+            if(b.getPosY() > 1920)
+            {
+                b.setPosY(balls.getLast()._posY - ballOffset_Y);
+                b.selectBallColor(balls.getLast().getBallColor());
+            }
+            balls.add(b);
+        }
+    }
+
+    private void ballsPresent(float deltaTime){
+        for(int i = 0; i < balls.size(); i++)
+        {
+            Ball b = balls.pop();
+            b.present(deltaTime);
+            balls.add(b);
         }
     }
 

@@ -3,6 +3,8 @@ package com.example.logic;
 import com.example.engine.Graphics;
 import com.example.engine.Sprite;
 
+import java.util.Random;
+
 public class Ball extends GameObject {
 
     enum BallColor {
@@ -11,11 +13,29 @@ public class Ball extends GameObject {
     }
 
     private float _velY = 10f;
-    private BallColor _color;
+    private BallColor _ballColor;
+    private BallColor _initialColor;
 
-    public Ball(float iniPosX, float iniPosY, Graphics g, Sprite s) {
-        super(iniPosX, iniPosY, g, s);
-        System.out.println("PosIni: " + _iniPosY);
+    private Sprite _blackBall;
+    private Sprite _whiteBall;
+
+    private Random random;
+
+
+    public Ball(float iniPosX, float iniPosY, Graphics g) {
+        super(iniPosX, iniPosY, g);
+        _blackBall = Assets._blackBallSprite;
+        _whiteBall = Assets._whiteBallSprite;
+
+        random = new Random();
+        if(random.nextInt(2) == 0)
+            _initialColor = BallColor.BLACK;
+        else
+            _initialColor = BallColor.WHITE;
+
+        _ballColor = _initialColor;
+
+        selectBallColor(_initialColor);
     }
 
     public void update(float deltaTime){
@@ -23,7 +43,10 @@ public class Ball extends GameObject {
     }
 
     public void present(float deltaTime){
-        _sprite.drawImageXCentered((int)_posY);
+        if(_ballColor == BallColor.BLACK)
+            _blackBall.drawImageXCentered((int)_posY);
+        else
+            _whiteBall.drawImageXCentered((int)_posY);
     }
 
     public void pause(){}
@@ -40,5 +63,25 @@ public class Ball extends GameObject {
             _posY = _iniPosY;
             System.out.println("Pos: " + _posY);
         }*/
+    }
+
+    public void selectBallColor(BallColor master)
+    {
+        BallColor colors [];
+        BallColor masterColor = master;
+
+        if(master == BallColor.BLACK)
+            colors = new BallColor[]{BallColor.BLACK, BallColor.BLACK, BallColor.BLACK, BallColor.BLACK, BallColor.BLACK,
+                    BallColor.BLACK, BallColor.BLACK, BallColor.WHITE, BallColor.WHITE, BallColor.WHITE};
+        else
+            colors = new BallColor[]{BallColor.WHITE, BallColor.WHITE, BallColor.WHITE, BallColor.WHITE, BallColor.WHITE,
+                    BallColor.WHITE, BallColor.WHITE, BallColor.BLACK, BallColor.BLACK, BallColor.BLACK};
+
+        int rnd = random.nextInt(10);
+        _ballColor = colors[rnd];
+    }
+
+    public BallColor getBallColor() {
+        return _ballColor;
     }
 }
