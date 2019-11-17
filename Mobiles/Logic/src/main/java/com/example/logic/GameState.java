@@ -104,6 +104,7 @@ public class GameState extends State { // debería de ir en la lógica
 
         _backgroudnColor.present(deltaTime);
 
+        //NO BORRARPLEASE
         //_blackBand.drawImageAsBottomRightBand();
         //_blackBand.drawImageAsUpperLeftBand();
 
