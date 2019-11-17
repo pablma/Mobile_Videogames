@@ -2,6 +2,7 @@ package com.example.pcgame;
 
 import com.example.engine.State;
 import com.example.logic.GameState;
+import com.example.logic.LoadingState;
 import com.example.pcengine.Game;
 
 public class PCMain extends Game {
@@ -11,7 +12,7 @@ public class PCMain extends Game {
     }
 
     public State getStartState() {
-        return new GameState(this);
+        return new LoadingState(this);
     }
 
     public static void main(String[] args){

@@ -4,12 +4,13 @@ package com.example.assignement1;
 import com.example.androidengine.Game;
 import com.example.engine.State;
 import com.example.logic.GameState;
+import com.example.logic.LoadingState;
 
 public class MainActivity extends Game {
 
 
     public State getStartState() {
-        return new GameState(this);
+        return new LoadingState(this);
     }
 
 }
