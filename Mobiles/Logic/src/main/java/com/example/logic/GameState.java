@@ -82,18 +82,10 @@ public class GameState extends State { // debería de ir en la lógica
     @Override
     public void update(float deltaTime) {
 
-        List<Input.TouchEvent> touchEvents = _game.getInput().getTouchEvents();
-        for (int i = 0; i < touchEvents.size(); i++) {
-            Input.TouchEvent event = touchEvents.get(i);
-            if (event._type == Input.EventType.TOUCH_DOWN) {
-                _player.changePlayerColor();
-            }
-        }
-
+        getInput();
+        playerUpdate(deltaTime);
         arrowsBackgroundUpdate(deltaTime);
         ballsUpdate(deltaTime);
-        playerUpdate(deltaTime);
-
     }
 
     @Override
@@ -147,16 +139,25 @@ public class GameState extends State { // debería de ir en la lógica
     }
 
     private void ballsUpdate(float deltaTime){
-        for (int i = 0; i < balls.size(); i++)
-        {
+        for (int i = 0; i < balls.size(); i++) {
             Ball b = balls.pop();
             b.update(deltaTime);
 
+            /*
             if(b.getPosY() > 1920)
             {
                 b.setPosY(balls.getLast()._posY - ballOffset_Y);
                 b.selectBallColor(balls.getLast().getBallColor());
             }
+            */
+
+            if(objectsColliding(b, _player))
+            {
+                b.setPosY(balls.getLast()._posY - ballOffset_Y);
+                b.selectBallColor(balls.getLast().getBallColor());
+            }
+
+
             balls.add(b);
         }
     }
@@ -177,5 +178,39 @@ public class GameState extends State { // debería de ir en la lógica
     private void playerPresent(float deltaTime) {
         _player.present(deltaTime);
     }
+
+    private void getInput() {
+        List<Input.TouchEvent> touchEvents = _game.getInput().getTouchEvents();
+        for (int i = 0; i < touchEvents.size(); i++) {
+            Input.TouchEvent event = touchEvents.get(i);
+            if (event._type == Input.EventType.TOUCH_DOWN) {
+                _player.changePlayerColor();
+            }
+        }
+    }
+
+    private boolean objectsColliding(GameObject obj1, GameObject obj2){
+        boolean b = false;
+
+        if(obj1.getPosX() >= obj2.getPosX() && obj1.getPosY() >= obj2.getPosY())
+            b = true;
+        else
+            b = false;
+
+        return b;
+    }
+
+    /*
+    private boolean playerAndBallSameColor(Player player, Ball ball){
+        boolean b = false;
+
+        if(player.getPlayerColor() == ball.getBallColor())
+            b = true;
+        else
+            b = false;
+
+        return b;
+    }
+     */
 
 }

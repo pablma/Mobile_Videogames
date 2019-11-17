@@ -62,4 +62,8 @@ public class Player extends GameObject {
         _playerColors.add(c);
         System.out.println(_playerColors.element());
     }
+
+    public PlayerColor getPlayerColor(){
+        return _playerColors.element();
+    }
 }
