@@ -99,12 +99,13 @@ public class GameState extends State { // debería de ir en la lógica
     @Override
     public void present(float deltaTime) {
 
-        _graphics.clear(0xffff00ff);
+
+        _graphics.clear(_backgroudnColor.getBackgroundColor());
 
         _backgroudnColor.present(deltaTime);
 
-        _blackBand.drawImageAsBottomRightBand();
-        _blackBand.drawImageAsUpperLeftBand();
+        //_blackBand.drawImageAsBottomRightBand();
+        //_blackBand.drawImageAsUpperLeftBand();
 
         arrowsBackgroundPresent(deltaTime);
         ballsPresent(deltaTime);
