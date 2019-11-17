@@ -21,6 +21,12 @@ public class Ball extends GameObject {
 
     private Random random;
 
+    private BallColor _masterWhiteArray[] = new BallColor[]{BallColor.WHITE, BallColor.WHITE, BallColor.WHITE, BallColor.WHITE, BallColor.WHITE,
+            BallColor.WHITE, BallColor.WHITE, BallColor.BLACK, BallColor.BLACK, BallColor.BLACK};
+
+    private BallColor _masterBlackArray[] = new BallColor[]{BallColor.BLACK, BallColor.BLACK, BallColor.BLACK, BallColor.BLACK, BallColor.BLACK,
+            BallColor.BLACK, BallColor.BLACK, BallColor.WHITE, BallColor.WHITE, BallColor.WHITE};
+
 
     public Ball(float iniPosX, float iniPosY, Graphics g) {
         super(iniPosX, iniPosY, g);
@@ -56,13 +62,6 @@ public class Ball extends GameObject {
 
     private void movement(){
         _posY += _velY;
-
-        /*
-        if (_posY > 1920)
-        {
-            _posY = _iniPosY;
-            System.out.println("Pos: " + _posY);
-        }*/
     }
 
     public void selectBallColor(BallColor master)
@@ -71,11 +70,9 @@ public class Ball extends GameObject {
         BallColor masterColor = master;
 
         if(master == BallColor.BLACK)
-            colors = new BallColor[]{BallColor.BLACK, BallColor.BLACK, BallColor.BLACK, BallColor.BLACK, BallColor.BLACK,
-                    BallColor.BLACK, BallColor.BLACK, BallColor.WHITE, BallColor.WHITE, BallColor.WHITE};
+            colors = _masterBlackArray;
         else
-            colors = new BallColor[]{BallColor.WHITE, BallColor.WHITE, BallColor.WHITE, BallColor.WHITE, BallColor.WHITE,
-                    BallColor.WHITE, BallColor.WHITE, BallColor.BLACK, BallColor.BLACK, BallColor.BLACK};
+            colors = _masterWhiteArray;
 
         int rnd = random.nextInt(10);
         _ballColor = colors[rnd];

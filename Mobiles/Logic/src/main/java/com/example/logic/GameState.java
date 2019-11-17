@@ -18,12 +18,13 @@ import java.util.Queue;
 public class GameState extends State { // debería de ir en la lógica
 
     Graphics _graphics;
-
     Game _game;
 
-    int blackBalPosY = 0;
+    // ARROWS
+    Arrows arrows_1;
+    Arrows arrows_2;
 
-
+    // BALLS
     Ball ball_1;
     Ball ball_2;
     Ball ball_3;
@@ -31,20 +32,27 @@ public class GameState extends State { // debería de ir en la lógica
     Ball ball_5;
     Ball ball_6;
 
-    Arrows arrows_1;
-    Arrows arrows_2;
-
     float ballOffset_Y = 395f;
     float arrowsOffset_Y = Assets._backgroundArrowsImg.getHeight();
 
     Deque<Ball> balls;
     Deque<Arrows> arrowsQueue;
 
+    // PLAYER
+    Player _player;
+
+
     public GameState(Game game) {
         super(game);
         _game = game;
         _graphics = _game.getGraphics();
 
+        arrows_1 = new Arrows(0,0, _graphics);
+        arrows_2 = new Arrows(0,arrows_1.getPosY() - arrowsOffset_Y, _graphics);
+
+        arrowsQueue = new LinkedList<Arrows>();
+        arrowsQueue.add(arrows_1);
+        arrowsQueue.add(arrows_2);
 
         ball_1 = new Ball(0, 0, _graphics);
         ball_2 = new Ball(0, ball_1.getPosY() - ballOffset_Y, _graphics);
@@ -61,33 +69,24 @@ public class GameState extends State { // debería de ir en la lógica
         balls.add(ball_5);
         balls.add(ball_6);
 
-
-        arrows_1 = new Arrows(0,0, _graphics);
-        arrows_2 = new Arrows(0,arrows_1.getPosY() - arrowsOffset_Y, _graphics);
-
-        arrowsQueue = new LinkedList<Arrows>();
-        arrowsQueue.add(arrows_1);
-        arrowsQueue.add(arrows_2);
+        _player = new Player(0, 1200f, _graphics);
 
     }
 
     @Override
     public void update(float deltaTime) {
 
-        blackBalPosY += 200 * deltaTime;
-
-        if(blackBalPosY > 1920) blackBalPosY = 0;
-
         List<Input.TouchEvent> touchEvents = _game.getInput().getTouchEvents();
         for (int i = 0; i < touchEvents.size(); i++) {
             Input.TouchEvent event = touchEvents.get(i);
             if (event._type == Input.EventType.TOUCH_DOWN) {
-                System.out.println("Click with mouse key: " + event._id);
+                _player.changePlayerColor();
             }
         }
 
         arrowsBackgroundUpdate(deltaTime);
         ballsUpdate(deltaTime);
+        playerUpdate(deltaTime);
 
     }
 
@@ -100,6 +99,7 @@ public class GameState extends State { // debería de ir en la lógica
 
         arrowsBackgroundPresent(deltaTime);
         ballsPresent(deltaTime);
+        playerPresent(deltaTime);
     }
 
     @Override
@@ -159,6 +159,14 @@ public class GameState extends State { // debería de ir en la lógica
             b.present(deltaTime);
             balls.add(b);
         }
+    }
+
+    private void playerUpdate(float deltaTime) {
+
+    }
+
+    private void playerPresent(float deltaTime) {
+        _player.present(deltaTime);
     }
 
 }
