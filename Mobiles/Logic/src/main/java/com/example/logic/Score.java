@@ -27,8 +27,8 @@ public class Score extends GameObject {
     private Sprite _numbersSpriteArray[] = new Sprite[]{_zeroSprite, _oneSprite, _twoSprite, _threeSprite,
             _fourSprite, _fiveSprite, _sixSprite, _sevenSprite, _eigthSprite, _nineSprite};
 
-    public Score(float iniPosX, float iniPosY, Graphics g) {
-        super(iniPosX, iniPosY, g);
+    public Score(float iniPosX, float iniPosY) {
+        super(iniPosX, iniPosY);
     }
 
     public void present(){

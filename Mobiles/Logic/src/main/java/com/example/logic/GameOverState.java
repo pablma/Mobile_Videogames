@@ -36,14 +36,14 @@ public class GameOverState extends State {
         _game = game;
         _graphics = _game.getGraphics();
 
-        arrows_1 = new Arrows(0,0, _graphics);
-        arrows_2 = new Arrows(0,arrows_1.getPosY() - arrowsOffset_Y, _graphics);
+        arrows_1 = new Arrows(0,0);
+        arrows_2 = new Arrows(0,arrows_1.getPosY() - arrowsOffset_Y);
 
         arrowsQueue = new LinkedList<Arrows>();
         arrowsQueue.add(arrows_1);
         arrowsQueue.add(arrows_2);
 
-        _backgroudnColor = new BackgroundColor(0,0, _graphics);
+        _backgroudnColor = new BackgroundColor(0,0);
         _backgroudnColor.setNewBackgroundColor();
 
         _gameOver = Assets._gameOverSprite;

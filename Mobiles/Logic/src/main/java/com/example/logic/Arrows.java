@@ -8,8 +8,8 @@ public class Arrows extends GameObject {
     private float _velY = 20f;
     Sprite backgroundArrowsSprite =  Assets._backgroundArrowsSprite;
 
-    public Arrows(float iniPosX, float iniPosY, Graphics g) {
-        super(iniPosX, iniPosY, g);
+    public Arrows(float iniPosX, float iniPosY) {
+        super(iniPosX, iniPosY);
     }
 
     public void update(float deltaTime){

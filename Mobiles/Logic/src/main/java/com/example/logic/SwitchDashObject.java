@@ -16,8 +16,8 @@ public class SwitchDashObject extends GameObject {
 
     protected Color _color;
 
-    public SwitchDashObject(float iniPosX, float iniPosY, Graphics g, Sprite blackSp, Sprite whiteSp) {
-        super(iniPosX, iniPosY, g);
+    public SwitchDashObject(float iniPosX, float iniPosY, Sprite blackSp, Sprite whiteSp) {
+        super(iniPosX, iniPosY);
 
         _blackSp = blackSp;
         _whiteSp = whiteSp;

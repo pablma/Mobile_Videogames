@@ -22,9 +22,9 @@ public class Ball extends SwitchDashObject {
             Color.BLACK, Color.BLACK, Color.WHITE, Color.WHITE, Color.WHITE};
 
 
-    public Ball(float iniPosX, float iniPosY, Graphics g) {
+    public Ball(float iniPosX, float iniPosY) {
 
-        super(iniPosX, iniPosY, g, Assets._blackBallSprite, Assets._whiteBallSprite);
+        super(iniPosX, iniPosY, Assets._blackBallSprite, Assets._whiteBallSprite);
         _blackSp = Assets._blackBallSprite;
         _whiteSp = Assets._whiteBallSprite;
 

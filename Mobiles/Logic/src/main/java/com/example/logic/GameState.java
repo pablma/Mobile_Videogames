@@ -53,19 +53,19 @@ public class GameState extends State { // debería de ir en la lógica
         _game = game;
         _graphics = _game.getGraphics();
 
-        arrows_1 = new Arrows(0,0, _graphics);
-        arrows_2 = new Arrows(0,arrows_1.getPosY() - arrowsOffset_Y, _graphics);
+        arrows_1 = new Arrows(0,0);
+        arrows_2 = new Arrows(0,arrows_1.getPosY() - arrowsOffset_Y);
 
         arrowsQueue = new LinkedList<Arrows>();
         arrowsQueue.add(arrows_1);
         arrowsQueue.add(arrows_2);
 
-        ball_1 = new Ball(0, 0, _graphics);
-        ball_2 = new Ball(0, ball_1.getPosY() - ballOffset_Y, _graphics);
-        ball_3 = new Ball(0, ball_2.getPosY() - ballOffset_Y, _graphics);
-        ball_4 = new Ball(0, ball_3.getPosY() - ballOffset_Y, _graphics);
-        ball_5 = new Ball(0, ball_4.getPosY() - ballOffset_Y, _graphics);
-        ball_6 = new Ball(0, ball_5.getPosY() - ballOffset_Y, _graphics);
+        ball_1 = new Ball(0, 0);
+        ball_2 = new Ball(0, ball_1.getPosY() - ballOffset_Y);
+        ball_3 = new Ball(0, ball_2.getPosY() - ballOffset_Y);
+        ball_4 = new Ball(0, ball_3.getPosY() - ballOffset_Y);
+        ball_5 = new Ball(0, ball_4.getPosY() - ballOffset_Y);
+        ball_6 = new Ball(0, ball_5.getPosY() - ballOffset_Y);
 
         balls = new LinkedList<Ball>();
         balls.add(ball_1);
@@ -75,11 +75,11 @@ public class GameState extends State { // debería de ir en la lógica
         balls.add(ball_5);
         balls.add(ball_6);
 
-        _player = new Player(0, 1200f, _graphics);
+        _player = new Player(0, 1200f);
 
-        _score = new Score(850, 200, _graphics);
+        _score = new Score(850, 200);
 
-        _backgroudnColor = new BackgroundColor(0,0, _graphics);
+        _backgroudnColor = new BackgroundColor(0,0);
         _backgroudnColor.setNewBackgroundColor();
     }
 

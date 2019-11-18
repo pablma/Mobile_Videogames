@@ -14,8 +14,8 @@ public class Player extends SwitchDashObject {
     private Queue <Color> _playerColors;
 
 
-    public Player(float iniPosX, float iniPosY, Graphics g){
-        super(iniPosX, iniPosY, g, Assets._blackPlayerSprite, Assets._whitePlayerSprite);
+    public Player(float iniPosX, float iniPosY){
+        super(iniPosX, iniPosY, Assets._blackPlayerSprite, Assets._whitePlayerSprite);
 
         _blackSp = Assets._blackPlayerSprite;
         _whiteSp = Assets._whitePlayerSprite;

@@ -7,15 +7,11 @@ public class GameObject {
     protected   float _iniPosX, _iniPosY;
     protected float _posX, _posY;
 
-    protected Graphics _graphics;
-
-    public GameObject(float iniPosX, float iniPosY, Graphics g){
+    public GameObject(float iniPosX, float iniPosY){
         _iniPosX = iniPosX;
         _iniPosY = iniPosY;
         _posX = _iniPosX;
         _posY = _iniPosY;
-
-        _graphics = g;
     }
 
     public void update(float deltaTime){}

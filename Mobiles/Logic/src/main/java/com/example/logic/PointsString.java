@@ -14,8 +14,8 @@ public class PointsString extends GameObject {
     private Sprite _T_Sprite = Assets._T_Sprite;
     private Sprite _S_Sprite = Assets._S_Sprite;
 
-    public PointsString(float iniPosX, float iniPosY, Graphics g) {
-        super(iniPosX, iniPosY, g);
+    public PointsString(float iniPosX, float iniPosY) {
+        super(iniPosX, iniPosY);
     }
 
     public void present(){

@@ -43,8 +43,8 @@ public class BackgroundColor extends GameObject {
     private Random random = new Random();
     private int _randomColorIndex;
 
-    public BackgroundColor(float iniPosX, float iniPosY, Graphics g) {
-        super(iniPosX, iniPosY, g);
+    public BackgroundColor(float iniPosX, float iniPosY) {
+        super(iniPosX, iniPosY);
 
         _randomColorIndex = 0;
         _colorSpriteSelected = _colorSpritesArray[_randomColorIndex];
