@@ -219,6 +219,140 @@ public class LoadingState extends State {
 
 
 
+        //Letters
+
+        Assets._A_Img = Assets._zeroImg;
+        Assets._A_Rect  = new Rect(0,0 ,
+                Assets._A_Img.getWidth() / 15, Assets._A_Img.getHeight() / 7);
+        Assets._A_Sprite = new Sprite(_graphics, Assets._A_Img, Assets._A_Rect);
+
+        Assets._B_Img = Assets._zeroImg;
+        Assets._B_Rect  = new Rect((Assets._B_Img.getWidth() / 15),0,
+                Assets._B_Img.getWidth() / 15, Assets._B_Img.getHeight() / 7);
+        Assets._B_Sprite = new Sprite(_graphics, Assets._B_Img, Assets._B_Rect);
+
+        Assets._C_Img = Assets._zeroImg;
+        Assets._C_Rect  = new Rect(2 * (Assets._C_Img.getWidth() / 15),0,
+                Assets._C_Img.getWidth() / 15, Assets._C_Img.getHeight() / 7);
+        Assets._C_Sprite = new Sprite(_graphics, Assets._C_Img, Assets._C_Rect);
+
+        Assets._D_Img = Assets._zeroImg;
+        Assets._D_Rect  = new Rect(3 * (Assets._D_Img.getWidth() / 15),0,
+                Assets._D_Img.getWidth() / 15, Assets._D_Img.getHeight() / 7);
+        Assets._D_Sprite = new Sprite(_graphics, Assets._D_Img, Assets._D_Rect);
+
+        Assets._E_Img = Assets._zeroImg;
+        Assets._E_Rect  = new Rect(4 * (Assets._E_Img.getWidth() / 15),0,
+                Assets._E_Img.getWidth() / 15, Assets._E_Img.getHeight() / 7);
+        Assets._E_Sprite = new Sprite(_graphics, Assets._E_Img, Assets._E_Rect);
+
+        Assets._F_Img = Assets._zeroImg;
+        Assets._F_Rect  = new Rect(5 * (Assets._F_Img.getWidth() / 15),0,
+                Assets._F_Img.getWidth() / 15, Assets._F_Img.getHeight() / 7);
+        Assets._F_Sprite = new Sprite(_graphics, Assets._F_Img, Assets._F_Rect);
+
+        Assets._G_Img = Assets._zeroImg;
+        Assets._G_Rect  = new Rect(6 * (Assets._G_Img.getWidth() / 15),0,
+                Assets._G_Img.getWidth() / 15, Assets._G_Img.getHeight() / 7);
+        Assets._G_Sprite = new Sprite(_graphics, Assets._G_Img, Assets._G_Rect);
+
+        Assets._H_Img = Assets._zeroImg;
+        Assets._H_Rect  = new Rect(7 * (Assets._H_Img.getWidth() / 15),0,
+                Assets._H_Img.getWidth() / 15, Assets._H_Img.getHeight() / 7);
+        Assets._H_Sprite = new Sprite(_graphics, Assets._H_Img, Assets._H_Rect);
+
+        Assets._I_Img = Assets._zeroImg;
+        Assets._I_Rect  = new Rect(8 * (Assets._I_Img.getWidth() / 15),0,
+                Assets._I_Img.getWidth() / 15, Assets._I_Img.getHeight() / 7);
+        Assets._I_Sprite = new Sprite(_graphics, Assets._I_Img, Assets._I_Rect);
+
+        Assets._J_Img = Assets._zeroImg;
+        Assets._J_Rect  = new Rect(9 * (Assets._J_Img.getWidth() / 15),0,
+                Assets._J_Img.getWidth() / 15, Assets._J_Img.getHeight() / 7);
+        Assets._J_Sprite = new Sprite(_graphics, Assets._J_Img, Assets._J_Rect);
+
+        Assets._K_Img = Assets._zeroImg;
+        Assets._K_Rect  = new Rect(10 * (Assets._K_Img.getWidth() / 15),0,
+                Assets._K_Img.getWidth() / 15, Assets._K_Img.getHeight() / 7);
+        Assets._K_Sprite = new Sprite(_graphics, Assets._K_Img, Assets._K_Rect);
+
+        Assets._L_Img = Assets._zeroImg;
+        Assets._L_Rect  = new Rect(11 * (Assets._L_Img.getWidth() / 15),0,
+                Assets._L_Img.getWidth() / 15, Assets._L_Img.getHeight() / 7);
+        Assets._L_Sprite = new Sprite(_graphics, Assets._L_Img, Assets._L_Rect);
+
+        Assets._M_Img = Assets._zeroImg;
+        Assets._M_Rect  = new Rect(12 * (Assets._M_Img.getWidth() / 15),0,
+                Assets._M_Img.getWidth() / 15, Assets._M_Img.getHeight() / 7);
+        Assets._M_Sprite = new Sprite(_graphics, Assets._M_Img, Assets._M_Rect);
+
+        Assets._N_Img = Assets._zeroImg;
+        Assets._N_Rect  = new Rect(13 * (Assets._N_Img.getWidth() / 15),0,
+                Assets._N_Img.getWidth() / 15, Assets._N_Img.getHeight() / 7);
+        Assets._N_Sprite = new Sprite(_graphics, Assets._N_Img, Assets._N_Rect);
+
+        Assets._O_Img = Assets._zeroImg;
+        Assets._O_Rect  = new Rect(14 * (Assets._O_Img.getWidth() / 15),0,
+                Assets._O_Img.getWidth() / 15, Assets._O_Img.getHeight() / 7);
+        Assets._O_Sprite = new Sprite(_graphics, Assets._O_Img, Assets._O_Rect);
+
+        Assets._P_Img = Assets._zeroImg;
+        Assets._P_Rect  = new Rect(0,(Assets._P_Img.getHeight() / 7),
+                Assets._P_Img.getWidth() / 15, Assets._P_Img.getHeight() / 7);
+        Assets._P_Sprite = new Sprite(_graphics, Assets._P_Img, Assets._P_Rect);
+
+        Assets._Q_Img = Assets._zeroImg;
+        Assets._Q_Rect  = new Rect((Assets._Q_Img.getWidth() / 15),(Assets._Q_Img.getHeight() / 7),
+                Assets._twoImg.getWidth() / 15, Assets._Q_Img.getHeight() / 7);
+        Assets._Q_Sprite = new Sprite(_graphics, Assets._Q_Img, Assets._Q_Rect);
+
+        Assets._R_Img = Assets._zeroImg;
+        Assets._R_Rect  = new Rect(2 * (Assets._R_Img.getWidth() / 15),(Assets._R_Img.getHeight() / 7),
+                Assets._R_Img.getWidth() / 15, Assets._R_Img.getHeight() / 7);
+        Assets._R_Sprite = new Sprite(_graphics, Assets._R_Img, Assets._R_Rect);
+
+        Assets._S_Img = Assets._zeroImg;
+        Assets._S_Rect  = new Rect(3 * (Assets._S_Img.getWidth() / 15),(Assets._S_Img.getHeight() / 7),
+                Assets._S_Img.getWidth() / 15, Assets._S_Img.getHeight() / 7);
+        Assets._S_Sprite = new Sprite(_graphics, Assets._S_Img, Assets._S_Rect);
+
+        Assets._T_Img = Assets._zeroImg;
+        Assets. _T_Rect  = new Rect(4 * (Assets._T_Img.getWidth() / 15), (Assets._T_Img.getHeight() / 7),
+                Assets._T_Img.getWidth() / 15, Assets._T_Img.getHeight() / 7);
+        Assets._T_Sprite = new Sprite(_graphics, Assets._T_Img, Assets._T_Rect);
+
+        Assets._U_Img = Assets._zeroImg;
+        Assets._U_Rect  = new Rect(5 * (Assets._U_Img.getWidth() / 15),(Assets._U_Img.getHeight() / 7),
+                Assets._U_Img.getWidth() / 15, Assets._U_Img.getHeight() / 7);
+        Assets. _U_Sprite = new Sprite(_graphics, Assets._U_Img, Assets._U_Rect);
+
+        Assets._V_Img = Assets._zeroImg;
+        Assets._V_Rect  = new Rect(6 * (Assets._V_Img.getWidth() / 15),(Assets._V_Img.getHeight() / 7),
+                Assets._V_Img.getWidth() / 15, Assets._V_Img.getHeight() / 7);
+        Assets._V_Sprite = new Sprite(_graphics, Assets._V_Img, Assets._V_Rect);
+
+        Assets._W_Img = Assets._zeroImg;
+        Assets. _W_Rect  = new Rect(7 * (Assets._W_Img.getWidth() / 15), (Assets._W_Img.getHeight() / 7),
+                Assets._W_Img.getWidth() / 15, Assets._W_Img.getHeight() / 7);
+        Assets._W_Sprite = new Sprite(_graphics, Assets._W_Img, Assets._W_Rect);
+
+        Assets._X_Img = Assets._zeroImg;
+        Assets._X_Rect  = new Rect(8 * (Assets._X_Img.getWidth() / 15),(Assets._X_Img.getHeight() / 7),
+                Assets._X_Img.getWidth() / 15, Assets._X_Img.getHeight() / 7);
+        Assets._X_Sprite = new Sprite(_graphics, Assets._X_Img, Assets._X_Rect);
+
+        Assets._Y_Img = Assets._zeroImg;
+        Assets._Y_Rect  = new Rect(9 * (Assets._Y_Img.getWidth() / 15),(Assets._Y_Img.getHeight() / 7),
+                Assets._Y_Img.getWidth() / 15, Assets._Y_Img.getHeight() / 7);
+        Assets._Y_Sprite = new Sprite(_graphics, Assets._Y_Img, Assets._Y_Rect);
+
+        Assets._Z_Img = Assets._zeroImg;
+        Assets._Z_Rect  = new Rect(10 * (Assets._Z_Img.getWidth() / 15),(Assets._Z_Img.getHeight() / 7),
+                Assets._Z_Img.getWidth() / 15, Assets._Z_Img.getHeight() / 7);
+        Assets._Z_Sprite = new Sprite(_graphics, Assets._Z_Img, Assets._Z_Rect);
+
+
+
         //Buttons
 
         Assets._crosImg = _graphics.newImage("buttons.png");

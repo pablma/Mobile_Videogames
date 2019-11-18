@@ -148,5 +148,109 @@ public class Assets { // debería ir en logic
     public static Image _questionImg;
     public static Rect _questionRect;
 
+    //Letters
+    public static Sprite _A_Sprite;
+    public static Image _A_Img;
+    public static Rect _A_Rect;
+
+    public static Sprite _B_Sprite;
+    public static Image _B_Img;
+    public static Rect _B_Rect;
+
+    public static Sprite _C_Sprite;
+    public static Image _C_Img;
+    public static Rect _C_Rect;
+
+    public static Sprite _D_Sprite;
+    public static Image _D_Img;
+    public static Rect _D_Rect;
+
+    public static Sprite _E_Sprite;
+    public static Image _E_Img;
+    public static Rect _E_Rect;
+
+    public static Sprite _F_Sprite;
+    public static Image _F_Img;
+    public static Rect _F_Rect;
+
+    public static Sprite _G_Sprite;
+    public static Image _G_Img;
+    public static Rect _G_Rect;
+
+    public static Sprite _H_Sprite;
+    public static Image _H_Img;
+    public static Rect _H_Rect;
+
+    public static Sprite _I_Sprite;
+    public static Image _I_Img;
+    public static Rect _I_Rect;
+
+    public static Sprite _J_Sprite;
+    public static Image _J_Img;
+    public static Rect _J_Rect;
+
+    public static Sprite _K_Sprite;
+    public static Image _K_Img;
+    public static Rect _K_Rect;
+
+    public static Sprite _L_Sprite;
+    public static Image _L_Img;
+    public static Rect _L_Rect;
+
+    public static Sprite _M_Sprite;
+    public static Image _M_Img;
+    public static Rect _M_Rect;
+
+    public static Sprite _N_Sprite;
+    public static Image _N_Img;
+    public static Rect _N_Rect;
+
+    public static Sprite _O_Sprite;
+    public static Image _O_Img;
+    public static Rect _O_Rect;
+
+    public static Sprite _P_Sprite;
+    public static Image _P_Img;
+    public static Rect _P_Rect;
+
+    public static Sprite _Q_Sprite;
+    public static Image _Q_Img;
+    public static Rect _Q_Rect;
+
+    public static Sprite _R_Sprite;
+    public static Image _R_Img;
+    public static Rect _R_Rect;
+
+    public static Sprite _S_Sprite;
+    public static Image _S_Img;
+    public static Rect _S_Rect;
+
+    public static Sprite _T_Sprite;
+    public static Image _T_Img;
+    public static Rect _T_Rect;
+
+    public static Sprite _U_Sprite;
+    public static Image _U_Img;
+    public static Rect _U_Rect;
+
+    public static Sprite _V_Sprite;
+    public static Image _V_Img;
+    public static Rect _V_Rect;
+
+    public static Sprite _W_Sprite;
+    public static Image _W_Img;
+    public static Rect _W_Rect;
+
+    public static Sprite _X_Sprite;
+    public static Image _X_Img;
+    public static Rect _X_Rect;
+
+    public static Sprite _Y_Sprite;
+    public static Image _Y_Img;
+    public static Rect _Y_Rect;
+
+    public static Sprite _Z_Sprite;
+    public static Image _Z_Img;
+    public static Rect _Z_Rect;
 
 }
