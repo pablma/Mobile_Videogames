@@ -10,8 +10,7 @@ import java.util.Deque;
 import java.util.LinkedList;
 import java.util.List;
 
-public class MainMenuState extends State {
-
+public class InstructionsState extends State {
     Graphics _graphics;
     Game _game;
 
@@ -25,14 +24,16 @@ public class MainMenuState extends State {
     BackgroundColor _backgroudnColor;
     Sprite _blackBand =  Assets._blackBandSprite;
 
-    // MAIN MENU SPRITES
-    Sprite _logo;
+    // INSTRUCTIONS SPRITES
+    Sprite _howToPlay;
+    Sprite _instructions;
     Sprite _tapToPlay;
 
-    int _logoPosY;
+    int _howToPlayPosY;
+    int _instructionsPosY;
     int _tapToPlayPosY;
 
-    public MainMenuState(Game game) {
+    public InstructionsState(Game game) {
         super(game);
         _game = game;
         _graphics = _game.getGraphics();
@@ -46,11 +47,14 @@ public class MainMenuState extends State {
 
         _backgroudnColor = new BackgroundColor(0,0, _graphics);
 
-        _logo = Assets._switchDashLogoSprite;
-        _logoPosY = 500;
+        _howToPlay = Assets._howToPlaySprite;
+        _howToPlayPosY = 400;
+
+        _instructions = Assets._instructionsSprite;
+        _instructionsPosY = 850;
 
         _tapToPlay = Assets._tapToPlaySprite;
-        _tapToPlayPosY = 1000;
+        _tapToPlayPosY = 1500;
     }
 
     @Override
@@ -109,7 +113,8 @@ public class MainMenuState extends State {
     }
 
     private void menuPresent(float deltaTime){
-        _logo.drawImageXCentered(_logoPosY);
+        _howToPlay.drawImageXCentered(_howToPlayPosY);
+        _instructions.drawImageXCentered(_instructionsPosY);
         _tapToPlay.drawImageXCentered(_tapToPlayPosY);
     }
 
@@ -119,7 +124,7 @@ public class MainMenuState extends State {
             Input.TouchEvent event = touchEvents.get(i);
 
             if (event._type == Input.EventType.TOUCH_DOWN) {
-                _game.setState(new InstructionsState(_game));
+                _game.setState(new GameState(_game));
             }
         }
     }
