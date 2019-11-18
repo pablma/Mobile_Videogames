@@ -23,6 +23,8 @@ public class GameState extends State { // debería de ir en la lógica
     // ARROWS
     Arrows arrows_1;
     Arrows arrows_2;
+    float arrowsOffset_Y = Assets._backgroundArrowsImg.getHeight();
+    Deque<Arrows> arrowsQueue;
 
     // BALLS
     Ball ball_1;
@@ -33,10 +35,8 @@ public class GameState extends State { // debería de ir en la lógica
     Ball ball_6;
 
     float ballOffset_Y = 395f;
-    float arrowsOffset_Y = Assets._backgroundArrowsImg.getHeight();
 
     Deque<Ball> balls;
-    Deque<Arrows> arrowsQueue;
 
     // PLAYER
     Player _player;
@@ -97,7 +97,6 @@ public class GameState extends State { // debería de ir en la lógica
         arrowsBackgroundPresent(deltaTime);
         ballsPresent(deltaTime);
         playerPresent(deltaTime);
-
 
         _blackBand.drawImageAsBottomRightBand();
         _blackBand.drawImageAsUpperLeftBand();

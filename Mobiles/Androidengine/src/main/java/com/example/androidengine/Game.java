@@ -79,7 +79,7 @@ public class Game extends Activity implements com.example.engine.Game {
     } // Puede dar porblemas no devolver el deAndorid engine, ahora devolvemos la interfaz
 
     @Override
-    public void setScreen(State state) {
+    public void setState(State state) {
         if(state == null)
             throw new IllegalArgumentException("State must not be null");
 

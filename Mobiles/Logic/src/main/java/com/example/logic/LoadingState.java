@@ -234,7 +234,7 @@ public class LoadingState extends State {
 
 
 
-        _game.setScreen(new GameState(_game));
+        _game.setState(new MainMenuState(_game));
     }
 
     @Override

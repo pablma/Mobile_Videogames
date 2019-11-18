@@ -42,7 +42,7 @@ public class Game implements com.example.engine.Game {
     }
 
     @Override
-    public void setScreen(State state) {
+    public void setState(State state) {
 
         if(state == null)
             throw new IllegalArgumentException("State must not be null");
