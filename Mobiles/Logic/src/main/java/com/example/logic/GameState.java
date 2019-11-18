@@ -45,7 +45,8 @@ public class GameState extends State { // debería de ir en la lógica
     BackgroundColor _backgroudnColor;
     Sprite _blackBand =  Assets._blackBandSprite;
 
-
+    //POINTS
+    Score _score;
 
     public GameState(Game game) {
         super(game);
@@ -76,6 +77,8 @@ public class GameState extends State { // debería de ir en la lógica
 
         _player = new Player(0, 1200f, _graphics);
 
+        _score = new Score(850, 200, _graphics);
+
         _backgroudnColor = new BackgroundColor(0,0, _graphics);
     }
 
@@ -97,6 +100,7 @@ public class GameState extends State { // debería de ir en la lógica
         arrowsBackgroundPresent(deltaTime);
         ballsPresent(deltaTime);
         playerPresent(deltaTime);
+        _score.present();
 
         _blackBand.drawImageAsBottomRightBand();
         _blackBand.drawImageAsUpperLeftBand();
@@ -176,6 +180,7 @@ public class GameState extends State { // debería de ir en la lógica
 
             if (event._type == Input.EventType.TOUCH_DOWN) {
                 _player.changePlayerColor();
+                _score.updateScore();
             }
         }
     }

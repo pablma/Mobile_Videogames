@@ -39,7 +39,7 @@ public class Score extends GameObject {
             _numbersSpriteArray[_d].drawImage((int)_iniPosX - (int)(0.5 * Assets._zeroSprite.getWidth()), (int)_iniPosY);
 
         if(_counter>=100)
-            _numbersSpriteArray[_c].drawImage((int)_iniPosX - (int)(1.5 * Assets._zeroSprite.getWidth()), (int)_iniPosY);
+            _numbersSpriteArray[_c].drawImage((int)_iniPosX - (1 * Assets._zeroSprite.getWidth()), (int)_iniPosY);
     }
 
     public void updateScore(){
