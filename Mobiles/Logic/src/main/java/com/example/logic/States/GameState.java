@@ -6,6 +6,7 @@ import com.example.engine.Abstract_Classes.State;
 import com.example.engine.Interfaces.Game;
 import com.example.engine.Interfaces.Graphics;
 import com.example.engine.Interfaces.Input;
+import com.example.logic.GameManager;
 import com.example.logic.GameObjects.Arrows;
 import com.example.logic.Assets;
 import com.example.logic.GameObjects.BackgroundColor;
@@ -160,6 +161,8 @@ public class GameState extends State { // debería de ir en la lógica
                     _score.updateScore();
                 }
                 else {
+
+                    GameManager.getInstance().saveScore(_score.getScore());
                     _game.setState(new GameOverState(_game));
                 }
 

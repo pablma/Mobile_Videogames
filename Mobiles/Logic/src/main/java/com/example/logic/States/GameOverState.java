@@ -5,9 +5,12 @@ import com.example.engine.Interfaces.Graphics;
 import com.example.engine.Interfaces.Input;
 import com.example.engine.Utils.Sprite;
 import com.example.engine.Abstract_Classes.State;
+import com.example.logic.GameManager;
 import com.example.logic.GameObjects.Arrows;
 import com.example.logic.Assets;
 import com.example.logic.GameObjects.BackgroundColor;
+import com.example.logic.GameObjects.PointsString;
+import com.example.logic.GameObjects.Score;
 
 import java.util.Deque;
 import java.util.LinkedList;
@@ -30,6 +33,10 @@ public class GameOverState extends State {
     // INSTRUCTIONS SPRITES
     Sprite _gameOver;
     Sprite _tapToPlay;
+
+    //SCORE
+    Score _score;
+    PointsString pointsString;
 
     int _gameOverPosY;
     int _tapToPlayPosY;
@@ -54,6 +61,11 @@ public class GameOverState extends State {
 
         _tapToPlay = Assets._tapToPlaySprite;
         _tapToPlayPosY = 1500;
+
+        _score = new Score(1080 / 2 - (int)(0.5 * Assets._oneSprite.getWidth()), 1920 / 2);
+        _score.setScore(GameManager.getInstance().getScore());
+
+        pointsString = new PointsString(1080 / 2 - (int)(2.5 * Assets._P_Sprite.getWidth()), 1920 / 2 + 150);
     }
 
     @Override
@@ -69,6 +81,9 @@ public class GameOverState extends State {
 
         arrowsBackgroundPresent(deltaTime);
         menuPresent(deltaTime);
+
+        pointsString.present();
+        _score.present();
 
         _blackBand.drawImageAsBottomRightBand();
         _blackBand.drawImageAsUpperLeftBand();

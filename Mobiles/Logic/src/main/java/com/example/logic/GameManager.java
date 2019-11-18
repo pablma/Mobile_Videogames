@@ -8,7 +8,7 @@ public class GameManager {
 
 
     private GameManager() {
-        _score = new int[] {0, 0, 0};
+        _score = new int[] {0, 0, 0, 0};
         _backgroundColorIndex = 0;
     }
 
@@ -18,9 +18,11 @@ public class GameManager {
         return _instance;
     }
 
-    public void setScore(int[] score) {
+    public void saveScore(int[] score) {
         _score = score;
     }
+
+    public int[] getScore(){ return _score; }
 
     public void saveBackgroundColorIndex(int backgroundColorIndex) {
         _backgroundColorIndex = backgroundColorIndex;

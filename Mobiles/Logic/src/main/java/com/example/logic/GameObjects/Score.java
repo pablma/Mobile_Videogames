@@ -35,7 +35,7 @@ public class Score extends GameObject {
         _numbersSpriteArray[_u].drawImage((int)_iniPosX, (int)_iniPosY);
 
         if(_counter >= 10)
-            _numbersSpriteArray[_d].drawImage((int)_iniPosX - (int)(0.5 * Assets._zeroSprite.getWidth()), (int)_iniPosY);
+            _numbersSpriteArray[_d].drawImage((int)_iniPosX - (int)(0.5 * _zeroSprite.getWidth()), (int)_iniPosY);
 
         if(_counter>=100)
             _numbersSpriteArray[_c].drawImage((int)_iniPosX - (1 * Assets._zeroSprite.getWidth()), (int)_iniPosY);
@@ -60,7 +60,14 @@ public class Score extends GameObject {
     }
 
     public int[] getScore(){
-        int[] score = new int[]{_u, _d, _c};
+        int[] score = new int[]{_u, _d, _c, _counter};
         return score;
+    }
+
+    public void setScore(int[] score){
+        _u = score[0];
+        _d = score[1];
+        _c = score[2];
+        _counter = score[3];
     }
 }
