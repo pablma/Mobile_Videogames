@@ -151,13 +151,22 @@ public class GameState extends State { // debería de ir en la lógica
             Ball b = balls.pop();
             b.update(deltaTime);
 
-            if(topCollision(b, _player) && sameColorObjects(b, _player))
+            if(topCollision(b, _player))
             {
-                b.setPosY(balls.getLast().getPosY() - ballOffset_Y);
-                b.selectColor(balls.getLast().getColor());
+                if(sameColorObjects(b, _player))
+                {
+                    b.setPosY(balls.getLast().getPosY() - ballOffset_Y);
+                    b.selectColor(balls.getLast().getColor());
+
+                }
+                else {
+                    _game.setState(new GameOverState(_game));
+                }
+
             }
 
             balls.add(b);
+
         }
     }
 
