@@ -18,11 +18,15 @@ public class GameManager {
         return _instance;
     }
 
-    public int[] getScore() {
-        return _score;
+    public void setScore(int[] score) {
+        _score = score;
     }
 
-    public int getBackgroundColorIndex() {
+    public void saveBackgroundColorIndex(int backgroundColorIndex) {
+        _backgroundColorIndex = backgroundColorIndex;
+    }
+
+    public int getBackgroundColorIndex(){
         return _backgroundColorIndex;
     }
 }

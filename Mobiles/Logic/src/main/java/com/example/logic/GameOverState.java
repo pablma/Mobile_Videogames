@@ -44,6 +44,7 @@ public class GameOverState extends State {
         arrowsQueue.add(arrows_2);
 
         _backgroudnColor = new BackgroundColor(0,0, _graphics);
+        _backgroudnColor.setNewBackgroundColor();
 
         _gameOver = Assets._gameOverSprite;
         _gameOverPosY = 400;

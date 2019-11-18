@@ -80,6 +80,7 @@ public class GameState extends State { // debería de ir en la lógica
         _score = new Score(850, 200, _graphics);
 
         _backgroudnColor = new BackgroundColor(0,0, _graphics);
+        _backgroudnColor.setNewBackgroundColor();
     }
 
     @Override

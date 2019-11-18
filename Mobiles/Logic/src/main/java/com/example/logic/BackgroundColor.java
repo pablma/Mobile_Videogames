@@ -46,8 +46,7 @@ public class BackgroundColor extends GameObject {
     public BackgroundColor(float iniPosX, float iniPosY, Graphics g) {
         super(iniPosX, iniPosY, g);
 
-        _randomColorIndex = random.nextInt(_colorSpritesArray.length);
-
+        _randomColorIndex = 0;
         _colorSpriteSelected = _colorSpritesArray[_randomColorIndex];
         _colorIntSelected = _colorIntArray[_randomColorIndex];
     }
@@ -59,4 +58,22 @@ public class BackgroundColor extends GameObject {
     public int getBackgroundColor(){
         return _colorIntSelected;
     }
+
+    public void setNewBackgroundColor(){
+
+        _randomColorIndex = random.nextInt(_colorSpritesArray.length);
+        _colorSpriteSelected = _colorSpritesArray[_randomColorIndex];
+        _colorIntSelected = _colorIntArray[_randomColorIndex];
+        GameManager.getInstance().saveBackgroundColorIndex(_randomColorIndex);
+    }
+
+    public void setOldBackgroudnColor(){
+
+        _randomColorIndex = GameManager.getInstance().getBackgroundColorIndex();
+        _colorSpriteSelected = _colorSpritesArray[_randomColorIndex];
+        _colorIntSelected = _colorIntArray[_randomColorIndex];
+
+    }
+
+
 }

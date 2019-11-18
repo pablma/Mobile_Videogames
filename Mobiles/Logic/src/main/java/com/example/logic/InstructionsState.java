@@ -46,6 +46,7 @@ public class InstructionsState extends State {
         arrowsQueue.add(arrows_2);
 
         _backgroudnColor = new BackgroundColor(0,0, _graphics);
+        _backgroudnColor.setOldBackgroudnColor();
 
         _howToPlay = Assets._howToPlaySprite;
         _howToPlayPosY = 400;

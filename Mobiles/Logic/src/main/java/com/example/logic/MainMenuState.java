@@ -46,6 +46,7 @@ public class MainMenuState extends State {
         arrowsQueue.add(arrows_2);
 
         _backgroudnColor = new BackgroundColor(0,0, _graphics);
+        _backgroudnColor.setNewBackgroundColor();
 
         _logo = Assets._switchDashLogoSprite;
         _logoPosY = 500;
