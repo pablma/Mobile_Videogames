@@ -16,6 +16,6 @@ public class PCMain extends Game {
     }
 
     public static void main(String[] args){
-        PCMain game = new PCMain("Switch Dash", 780, 420);
+        PCMain game = new PCMain("Switch Dash", 1080, 1920);
     }
 }

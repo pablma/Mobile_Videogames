@@ -32,6 +32,7 @@ public class MainMenuState extends State {
     int _logoPosY;
     int _tapToPlayPosY;
 
+
     public MainMenuState(Game game) {
         super(game);
         _game = game;
@@ -51,6 +52,7 @@ public class MainMenuState extends State {
 
         _tapToPlay = Assets._tapToPlaySprite;
         _tapToPlayPosY = 1000;
+
     }
 
     @Override
@@ -66,7 +68,6 @@ public class MainMenuState extends State {
 
         arrowsBackgroundPresent(deltaTime);
         menuPresent(deltaTime);
-
         _blackBand.drawImageAsBottomRightBand();
         _blackBand.drawImageAsUpperLeftBand();
     }
