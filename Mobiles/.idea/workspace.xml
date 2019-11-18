@@ -42,9 +42,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6e099268-356b-497b-bc92-12242aafae8a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Logic/src/main/java/com/example/logic/InstructionsState.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Logic/src/main/java/com/example/logic/MainMenuState.java" beforeDir="false" afterPath="$PROJECT_DIR$/Logic/src/main/java/com/example/logic/MainMenuState.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Logic/src/main/java/com/example/logic/GameOverState.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -66,21 +64,6 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Engine/src/main/java/com/example/engine/Sprite.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="370">
-              <caret line="40" column="24" selection-start-line="40" selection-start-column="24" selection-end-line="40" selection-end-column="24" />
-              <folding>
-                <element signature="e#969#970#0" expanded="true" />
-                <element signature="e#1009#1010#0" expanded="true" />
-                <element signature="e#1043#1044#0" expanded="true" />
-                <element signature="e#1071#1072#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Logic/src/main/java/com/example/logic/Arrows.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="68">
@@ -101,11 +84,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Logic/src/main/java/com/example/logic/LoadingState.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="345">
-              <caret line="236" column="41" selection-start-line="236" selection-start-column="41" selection-end-line="236" selection-end-column="41" />
+            <state relative-caret-position="396">
+              <caret line="239" column="13" lean-forward="true" selection-start-line="239" selection-start-column="13" selection-end-line="239" selection-end-column="13" />
             </state>
           </provider>
         </entry>
@@ -131,11 +114,23 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Logic/src/main/java/com/example/logic/InstructionsState.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="56" column="27" selection-start-line="56" selection-start-column="27" selection-end-line="56" selection-end-column="27" />
+            <state relative-caret-position="409">
+              <caret line="129" column="5" lean-forward="true" selection-start-line="13" selection-end-line="129" selection-end-column="5" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Logic/src/main/java/com/example/logic/GameOverState.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="192">
+              <caret line="47" column="42" selection-start-line="47" selection-start-column="42" selection-end-line="47" selection-end-column="42" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -188,7 +183,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>paint_</find>
       <find>srcRect_</find>
       <find>dstRect_</find>
       <find>bitmap_</find>
@@ -218,6 +212,7 @@
       <find>newWidht</find>
       <find>BallColor</find>
       <find>setScreen</find>
+      <find>_howToPlay</find>
     </findStrings>
     <replaceStrings>
       <replace>_paint</replace>
@@ -299,11 +294,12 @@
         <option value="$PROJECT_DIR$/Logic/src/main/java/com/example/logic/Player.java" />
         <option value="$PROJECT_DIR$/Engine/src/main/java/com/example/engine/Sprite.java" />
         <option value="$PROJECT_DIR$/Logic/src/main/java/com/example/logic/MainmMenuState.java" />
-        <option value="$PROJECT_DIR$/Logic/src/main/java/com/example/logic/LoadingState.java" />
         <option value="$PROJECT_DIR$/Logic/src/main/java/com/example/logic/GameState.java" />
         <option value="$PROJECT_DIR$/Engine/src/main/java/com/example/engine/Game.java" />
         <option value="$PROJECT_DIR$/Logic/src/main/java/com/example/logic/MainMenuState.java" />
         <option value="$PROJECT_DIR$/Logic/src/main/java/com/example/logic/InstructionsState.java" />
+        <option value="$PROJECT_DIR$/Logic/src/main/java/com/example/logic/GameOverState.java" />
+        <option value="$PROJECT_DIR$/Logic/src/main/java/com/example/logic/LoadingState.java" />
       </list>
     </option>
   </component>
@@ -578,7 +574,6 @@
     </layout-to-restore>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/assignement1/SwitchDash.java" />
     <entry file="file://$PROJECT_DIR$/AndroidGame/build/generated/source/buildConfig/debug/com/example/assignement1/BuildConfig.java" />
     <entry file="file://$PROJECT_DIR$/AndroidGame/src/main/assets/th.png">
       <provider selected="true" editor-type-id="images" />
@@ -885,13 +880,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Logic/src/main/java/com/example/logic/LoadingState.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="236" column="41" selection-start-line="236" selection-start-column="41" selection-end-line="236" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Logic/src/main/java/com/example/logic/MainMenuState.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1374">
@@ -904,11 +892,28 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Logic/src/main/java/com/example/logic/InstructionsState.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="56" column="27" selection-start-line="56" selection-start-column="27" selection-end-line="56" selection-end-column="27" />
+        <state relative-caret-position="409">
+          <caret line="129" column="5" lean-forward="true" selection-start-line="13" selection-end-line="129" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Logic/src/main/java/com/example/logic/GameOverState.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="192">
+          <caret line="47" column="42" selection-start-line="47" selection-start-column="42" selection-end-line="47" selection-end-column="42" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Logic/src/main/java/com/example/logic/LoadingState.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="396">
+          <caret line="239" column="13" lean-forward="true" selection-start-line="239" selection-start-column="13" selection-end-line="239" selection-end-column="13" />
         </state>
       </provider>
     </entry>
