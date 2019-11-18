@@ -157,7 +157,7 @@ public class GameState extends State { // debería de ir en la lógica
                 {
                     b.setPosY(balls.getLast().getPosY() - ballOffset_Y);
                     b.selectColor(balls.getLast().getColor());
-
+                    _score.updateScore();
                 }
                 else {
                     _game.setState(new GameOverState(_game));
@@ -194,7 +194,6 @@ public class GameState extends State { // debería de ir en la lógica
 
             if (event._type == Input.EventType.TOUCH_DOWN) {
                 _player.changePlayerColor();
-                _score.updateScore();
             }
         }
     }
