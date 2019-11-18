@@ -1,7 +1,6 @@
-package com.example.logic;
+package com.example.logic.GameObjects;
 
-import com.example.engine.Graphics;
-import com.example.engine.Sprite;
+import com.example.logic.Assets;
 
 import java.util.LinkedList;
 import java.util.Queue;

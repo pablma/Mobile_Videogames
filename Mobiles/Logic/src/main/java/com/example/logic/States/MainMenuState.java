@@ -1,10 +1,13 @@
-package com.example.logic;
+package com.example.logic.States;
 
-import com.example.engine.Game;
-import com.example.engine.Graphics;
-import com.example.engine.Input;
-import com.example.engine.Sprite;
-import com.example.engine.State;
+import com.example.engine.Interfaces.Game;
+import com.example.engine.Interfaces.Graphics;
+import com.example.engine.Interfaces.Input;
+import com.example.engine.Utils.Sprite;
+import com.example.engine.Abstract_Classes.State;
+import com.example.logic.GameObjects.Arrows;
+import com.example.logic.Assets;
+import com.example.logic.GameObjects.BackgroundColor;
 
 import java.util.Deque;
 import java.util.LinkedList;
@@ -94,7 +97,7 @@ public class MainMenuState extends State {
             Arrows a = arrowsQueue.pop();
 
             if(a.getPosY() > 1920)
-                a.setPosY(arrowsQueue.getLast()._posY - arrowsOffset_Y);
+                a.setPosY(arrowsQueue.getLast().getPosY() - arrowsOffset_Y);
             arrowsQueue.add(a);
 
             a.update(deltaTime);

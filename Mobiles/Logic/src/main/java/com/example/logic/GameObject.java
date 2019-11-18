@@ -1,8 +1,5 @@
 package com.example.logic;
 
-import com.example.engine.Graphics;
-import com.example.engine.Sprite;
-
 public class GameObject {
     protected   float _iniPosX, _iniPosY;
     protected float _posX, _posY;

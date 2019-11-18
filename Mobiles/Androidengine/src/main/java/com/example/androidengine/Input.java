@@ -1,12 +1,11 @@
 package com.example.androidengine;
 
 
-import android.content.Context;
 import android.view.View;
 
 import java.util.List;
 
-public class Input implements com.example.engine.Input {
+public class Input implements com.example.engine.Interfaces.Input {
     TouchHandler _touchHandler;
 
     public Input(View view, float scaleX, float scaleY){

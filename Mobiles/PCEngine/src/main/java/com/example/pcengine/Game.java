@@ -1,16 +1,10 @@
 package com.example.pcengine;
 
 
-import com.example.engine.Input;
-import com.example.engine.State;
+import com.example.engine.Interfaces.Input;
+import com.example.engine.Abstract_Classes.State;
 
-import java.awt.Dimension;
-import java.awt.GraphicsEnvironment;
-import java.awt.Insets;
-import java.awt.Rectangle;
-import java.awt.Toolkit;
-
-public class Game implements com.example.engine.Game {
+public class Game implements com.example.engine.Interfaces.Game {
 
     PCSurfaceView _renderView;
     com.example.pcengine.Graphics _graphics;

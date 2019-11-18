@@ -1,9 +1,11 @@
-package com.example.engine;
+package com.example.engine.Abstract_Classes;
 
 
-import java.awt.Canvas;
+import com.example.engine.Interfaces.Graphics;
+import com.example.engine.Interfaces.Image;
+import com.example.engine.Utils.Rect;
 
-public abstract class AbstractGraphics implements Graphics{
+public abstract class AbstractGraphics implements Graphics {
 
     private int _windowWidth, _windowHeight;
 

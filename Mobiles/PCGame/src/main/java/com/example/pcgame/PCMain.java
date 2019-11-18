@@ -1,8 +1,7 @@
 package com.example.pcgame;
 
-import com.example.engine.State;
-import com.example.logic.GameState;
-import com.example.logic.LoadingState;
+import com.example.engine.Abstract_Classes.State;
+import com.example.logic.States.LoadingState;
 import com.example.pcengine.Game;
 
 public class PCMain extends Game {

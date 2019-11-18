@@ -1,6 +1,9 @@
 package com.example.androidengine;
 
 import android.view.View;
+
+import com.example.engine.Interfaces.Input;
+
 import java.util.List;
 
 
@@ -12,5 +15,5 @@ public interface TouchHandler extends View.OnTouchListener {
 
     public int getTouchY(int pointer);
 
-    public List<com.example.engine.Input.TouchEvent> getTouchEvents();
+    public List<Input.TouchEvent> getTouchEvents();
 }

@@ -5,7 +5,7 @@ import java.util.List;
 
 import javax.swing.JFrame;
 
-public class Input implements com.example.engine.Input {
+public class Input implements com.example.engine.Interfaces.Input {
 
     private PCMouseHandler _PCMouseHandler;
 

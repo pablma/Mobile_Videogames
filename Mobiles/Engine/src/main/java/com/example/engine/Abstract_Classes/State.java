@@ -1,4 +1,6 @@
-package com.example.engine;
+package com.example.engine.Abstract_Classes;
+
+import com.example.engine.Interfaces.Game;
 
 public abstract class State {
 

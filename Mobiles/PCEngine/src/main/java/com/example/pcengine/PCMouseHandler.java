@@ -1,7 +1,7 @@
 package com.example.pcengine;
 
-import com.example.engine.Input;
-import com.example.engine.Pool;
+import com.example.engine.Interfaces.Input;
+import com.example.engine.Utils.Pool;
 
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
@@ -18,9 +18,9 @@ public class PCMouseHandler implements MouseListener, MouseMotionListener {
     int _touchX;
     int _touchY;
 
-    Pool<com.example.engine.Input.TouchEvent> _touchEventPool;
-    List<com.example.engine.Input.TouchEvent> _touchEvents = new ArrayList<com.example.engine.Input.TouchEvent>();
-    List<com.example.engine.Input.TouchEvent> _touchEventsBuffer = new ArrayList<Input.TouchEvent>();
+    Pool<Input.TouchEvent> _touchEventPool;
+    List<Input.TouchEvent> _touchEvents = new ArrayList<Input.TouchEvent>();
+    List<Input.TouchEvent> _touchEventsBuffer = new ArrayList<Input.TouchEvent>();
 
 
     public PCMouseHandler(JFrame window) {

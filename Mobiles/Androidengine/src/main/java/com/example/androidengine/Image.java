@@ -1,7 +1,7 @@
 package com.example.androidengine;
 import android.graphics.Bitmap;
 
-public class Image implements com.example.engine.Image {
+public class Image implements com.example.engine.Interfaces.Image {
 
     private Bitmap _bitmap;
 

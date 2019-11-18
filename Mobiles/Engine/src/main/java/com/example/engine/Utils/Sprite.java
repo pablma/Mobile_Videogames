@@ -1,6 +1,8 @@
-package com.example.engine;
+package com.example.engine.Utils;
 
 
+import com.example.engine.Interfaces.Graphics;
+import com.example.engine.Interfaces.Image;
 
 public class Sprite {
 

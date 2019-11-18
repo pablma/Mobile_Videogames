@@ -2,9 +2,8 @@ package com.example.assignement1;
 
 
 import com.example.androidengine.Game;
-import com.example.engine.State;
-import com.example.logic.GameState;
-import com.example.logic.LoadingState;
+import com.example.engine.Abstract_Classes.State;
+import com.example.logic.States.LoadingState;
 
 public class MainActivity extends Game {
 

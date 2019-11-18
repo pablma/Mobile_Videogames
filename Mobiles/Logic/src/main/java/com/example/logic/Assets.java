@@ -1,8 +1,8 @@
 package com.example.logic;
 
-import com.example.engine.Image;
-import com.example.engine.Rect;
-import com.example.engine.Sprite;
+import com.example.engine.Interfaces.Image;
+import com.example.engine.Utils.Rect;
+import com.example.engine.Utils.Sprite;
 
 public class Assets { // debería ir en logic
 

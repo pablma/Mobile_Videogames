@@ -4,16 +4,14 @@ import android.app.Activity;
 import android.content.res.Configuration;
 import android.graphics.Bitmap;
 
-import android.graphics.Point;
 import android.os.Bundle;
-import android.view.Display;
 import android.view.Window;
 import android.view.WindowManager;
 
-import com.example.engine.State;
+import com.example.engine.Abstract_Classes.State;
 
 
-public class Game extends Activity implements com.example.engine.Game {
+public class Game extends Activity implements com.example.engine.Interfaces.Game {
 
     MySurfaceView _renderView;
     com.example.androidengine.Graphics _graphics;

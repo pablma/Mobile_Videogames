@@ -1,9 +1,9 @@
 package com.example.pcengine;
 
 
-import com.example.engine.AbstractGraphics;
-import com.example.engine.Image;
-import com.example.engine.Rect;
+import com.example.engine.Abstract_Classes.AbstractGraphics;
+import com.example.engine.Interfaces.Image;
+import com.example.engine.Utils.Rect;
 
 import java.awt.image.BufferStrategy;
 import javax.swing.JFrame;
@@ -73,7 +73,7 @@ public class Graphics extends AbstractGraphics {
     }
 
     @Override
-    protected void drawImagePrivate(Image image, com.example.engine.Rect srcRect, com.example.engine.Rect dstRect) {
+    protected void drawImagePrivate(Image image, Rect srcRect, Rect dstRect) {
         _srcRect.x = srcRect.getLeft();
         _srcRect.y = srcRect.getTop();
         _srcRect.width = srcRect.getRight();

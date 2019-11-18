@@ -3,8 +3,8 @@ package com.example.androidengine;
 import android.view.MotionEvent;
 import android.view.View;
 
-import com.example.engine.Input;
-import com.example.engine.Pool;
+import com.example.engine.Interfaces.Input;
+import com.example.engine.Utils.Pool;
 
 import java.util.ArrayList;
 import java.util.List;

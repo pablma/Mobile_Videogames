@@ -7,8 +7,8 @@ import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.graphics.Rect;
 
-import com.example.engine.AbstractGraphics;
-import com.example.engine.Image;
+import com.example.engine.Abstract_Classes.AbstractGraphics;
+import com.example.engine.Interfaces.Image;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -60,7 +60,7 @@ public class Graphics extends AbstractGraphics {
     }
 
     @Override
-    protected void drawImagePrivate(Image image, com.example.engine.Rect srcRect, com.example.engine.Rect dstRect) {
+    protected void drawImagePrivate(Image image, com.example.engine.Utils.Rect srcRect, com.example.engine.Utils.Rect dstRect) {
         _srcRect.left = srcRect.getLeft();
         _srcRect.top = srcRect.getTop();
         _srcRect.right = srcRect.getRight();

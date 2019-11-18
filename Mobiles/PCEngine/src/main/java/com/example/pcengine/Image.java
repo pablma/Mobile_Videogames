@@ -1,6 +1,6 @@
 package com.example.pcengine;
 
-public class Image implements com.example.engine.Image {
+public class Image implements com.example.engine.Interfaces.Image {
 
     private java.awt.Image _image;
 

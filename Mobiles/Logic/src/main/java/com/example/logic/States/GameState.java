@@ -1,18 +1,22 @@
-package com.example.logic;
+package com.example.logic.States;
 
 
-import com.example.engine.Rect;
-import com.example.engine.Sprite;
-import com.example.engine.State;
-import com.example.engine.Game;
-import com.example.engine.Graphics;
-import com.example.engine.Image;
-import com.example.engine.Input;
+import com.example.engine.Utils.Sprite;
+import com.example.engine.Abstract_Classes.State;
+import com.example.engine.Interfaces.Game;
+import com.example.engine.Interfaces.Graphics;
+import com.example.engine.Interfaces.Input;
+import com.example.logic.GameObjects.Arrows;
+import com.example.logic.Assets;
+import com.example.logic.GameObjects.BackgroundColor;
+import com.example.logic.GameObjects.Ball;
+import com.example.logic.GameObjects.Player;
+import com.example.logic.GameObjects.Score;
+import com.example.logic.GameObjects.SwitchDashObject;
 
 import java.util.Deque;
 import java.util.LinkedList;
 import java.util.List;
-import java.util.Queue;
 
 
 public class GameState extends State { // debería de ir en la lógica
@@ -126,7 +130,7 @@ public class GameState extends State { // debería de ir en la lógica
             Arrows a = arrowsQueue.pop();
 
             if(a.getPosY() > 1920)
-                a.setPosY(arrowsQueue.getLast()._posY - arrowsOffset_Y);
+                a.setPosY(arrowsQueue.getLast().getPosY() - arrowsOffset_Y);
             arrowsQueue.add(a);
 
             a.update(deltaTime);
@@ -149,7 +153,7 @@ public class GameState extends State { // debería de ir en la lógica
 
             if(topCollision(b, _player) && sameColorObjects(b, _player))
             {
-                b.setPosY(balls.getLast()._posY - ballOffset_Y);
+                b.setPosY(balls.getLast().getPosY() - ballOffset_Y);
                 b.selectColor(balls.getLast().getColor());
             }
 
