@@ -8,8 +8,8 @@ import java.util.Queue;
 
 public class Player extends SwitchDashObject {
 
-    private Sprite _blackPlayer;
-    private Sprite _whitePlayer;
+    //private Sprite _blackPlayer;
+    //private Sprite _whitePlayer;
 
     private Queue <Color> _playerColors;
 
@@ -17,14 +17,15 @@ public class Player extends SwitchDashObject {
     public Player(float iniPosX, float iniPosY, Graphics g){
         super(iniPosX, iniPosY, g, Assets._blackPlayerSprite, Assets._whitePlayerSprite);
 
-        _blackPlayer = Assets._blackPlayerSprite;
-        _whitePlayer = Assets._whitePlayerSprite;
+        _blackSp = Assets._blackPlayerSprite;
+        _whiteSp = Assets._whitePlayerSprite;
 
         _playerColors = new LinkedList<Color>();
         _playerColors.add(Color.BLACK);
         _playerColors.add(Color.WHITE);
 
-        this._color = Color.BLACK;
+        _color = Color.BLACK;
+        _currentSprite = _blackSp;
     }
 
     public void update(float deltaTime) {
@@ -33,10 +34,10 @@ public class Player extends SwitchDashObject {
 
     @Override
     public void present(float deltaTime) {
-        if(_playerColors.element() == Color.BLACK)
-            _blackPlayer.drawImageXCentered((int)_posY);
+        if(_color == Color.BLACK)
+            _blackSp.drawImageXCentered((int)_posY);
         else
-            _whitePlayer.drawImageXCentered((int)_posY);
+            _whiteSp.drawImageXCentered((int)_posY);
     }
 
     @Override
@@ -58,6 +59,11 @@ public class Player extends SwitchDashObject {
         Color c = _playerColors.poll();
         _playerColors.add(c);
         _color = _playerColors.element();
+
+        if(_color == Color.BLACK)
+            _currentSprite = _blackSp;
+        else
+            _currentSprite = _whiteSp;
     }
 
     public Color getPlayerColor(){

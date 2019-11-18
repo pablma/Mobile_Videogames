@@ -143,7 +143,7 @@ public class GameState extends State { // debería de ir en la lógica
             Ball b = balls.pop();
             b.update(deltaTime);
 
-            if(objectsColliding(b, _player) && sameColorObjects(b, _player))
+            if(topCollision(b, _player) && sameColorObjects(b, _player))
             {
                 b.setPosY(balls.getLast()._posY - ballOffset_Y);
                 b.selectColor(balls.getLast().getColor());
@@ -174,6 +174,7 @@ public class GameState extends State { // debería de ir en la lógica
         List<Input.TouchEvent> touchEvents = _game.getInput().getTouchEvents();
         for (int i = 0; i < touchEvents.size(); i++) {
             Input.TouchEvent event = touchEvents.get(i);
+
             if (event._type == Input.EventType.TOUCH_DOWN) {
                 _player.changePlayerColor();
             }
@@ -185,20 +186,24 @@ public class GameState extends State { // debería de ir en la lógica
 
         if(obj1.getPosX() >= obj2.getPosX() && obj1.getPosY() >= obj2.getPosY())
             b = true;
-        else
-            b = false;
 
         return b;
     }
 
+    private boolean topCollision(SwitchDashObject obj1, SwitchDashObject obj2) {
+        boolean b = false;
+
+        if(obj1.getPosY() + obj1.getSprite().getHeight() >= obj2.getPosY())
+            b = true;
+
+        return b;
+    }
 
     private boolean sameColorObjects(SwitchDashObject obj1, SwitchDashObject obj2){
         boolean b = false;
 
         if(obj1.getColor() == obj2.getColor())
             b = true;
-        else
-            b = false;
 
         return b;
     }

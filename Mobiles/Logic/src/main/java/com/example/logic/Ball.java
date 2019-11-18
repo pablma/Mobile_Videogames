@@ -10,8 +10,8 @@ public class Ball extends SwitchDashObject {
     private float _velY = 10f;
     private Color _initialColor;
 
-    private Sprite _blackBall;
-    private Sprite _whiteBall;
+    //private Sprite _blackBall;
+    //private Sprite _whiteBall;
 
     private Random random;
 
@@ -25,20 +25,21 @@ public class Ball extends SwitchDashObject {
     public Ball(float iniPosX, float iniPosY, Graphics g) {
 
         super(iniPosX, iniPosY, g, Assets._blackBallSprite, Assets._whiteBallSprite);
-        _blackBall = Assets._blackBallSprite;
-        _whiteBall = Assets._whiteBallSprite;
+        _blackSp = Assets._blackBallSprite;
+        _whiteSp = Assets._whiteBallSprite;
 
         random = new Random();
 
-        if(random.nextInt(2) == 0)
+        if(random.nextInt(2) == 0) {
             _initialColor = Color.BLACK;
-        else
+            _currentSprite = _blackSp;
+        }
+        else {
             _initialColor = Color.WHITE;
+            _currentSprite = _whiteSp;
+        }
 
         _color = _initialColor;
-
-
-
     }
 
     public void update(float deltaTime){
@@ -48,9 +49,9 @@ public class Ball extends SwitchDashObject {
     public void present(float deltaTime){
 
         if(_color == Color.BLACK)
-            _blackBall.drawImageXCentered((int)_posY);
+            _blackSp.drawImageXCentered((int)_posY);
         else
-            _whiteBall.drawImageXCentered((int)_posY);
+            _whiteSp.drawImageXCentered((int)_posY);
     }
 
     public void pause(){}
@@ -74,6 +75,11 @@ public class Ball extends SwitchDashObject {
 
         int rnd = random.nextInt(10);
         _color = colors[rnd];
+
+        if(_color == Color.BLACK)
+            _currentSprite = _blackSp;
+        else
+            _currentSprite = _whiteSp;
     }
 
     public Color getColor() {

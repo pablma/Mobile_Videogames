@@ -12,6 +12,7 @@ public class SwitchDashObject extends GameObject {
 
     protected Sprite _blackSp;
     protected Sprite _whiteSp;
+    protected Sprite _currentSprite;
 
     protected Color _color;
 
@@ -39,5 +40,9 @@ public class SwitchDashObject extends GameObject {
 
     public Color getColor() {
         return _color;
+    }
+
+    public Sprite getSprite() {
+        return _currentSprite;
     }
 }

@@ -33,4 +33,12 @@ public class Sprite {
         _graphics.drawImageXCenteredResized(_image, y, _srcRect, w, h);
     }
 
+    public int getWidth() {
+        return _srcRect.getWidth();
+    }
+
+    public int getHeight() {
+        return _srcRect.getHeight();
+    }
+
 }
