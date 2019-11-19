@@ -9,7 +9,7 @@ public class Input implements com.example.engine.Interfaces.Input {
     TouchHandler _touchHandler;
 
     public Input(View view, float scaleX, float scaleY){
-        _touchHandler = new SingleTouchHandler(view, scaleX, scaleY);
+        _touchHandler = new MultiTouchHandler(view, scaleX, scaleY);
     }
 
 
