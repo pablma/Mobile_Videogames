@@ -7,11 +7,7 @@ import java.util.Queue;
 
 public class Player extends SwitchDashObject {
 
-    //private Sprite _blackPlayer;
-    //private Sprite _whitePlayer;
-
     private Queue <Color> _playerColors;
-
 
     public Player(float iniPosX, float iniPosY){
         super(iniPosX, iniPosY, Assets._blackPlayerSprite, Assets._whitePlayerSprite);

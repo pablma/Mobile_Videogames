@@ -21,7 +21,9 @@ public class Score extends GameObject {
     private int _d = 0;
     private int _c = 0;
     private int _counter = 0;
-
+    private int _pointsToIncVel = 10;
+    private boolean _increaseVel = false;
+    private int _auxCounter = 0;
 
     private Sprite _numbersSpriteArray[] = new Sprite[]{_zeroSprite, _oneSprite, _twoSprite, _threeSprite,
             _fourSprite, _fiveSprite, _sixSprite, _sevenSprite, _eigthSprite, _nineSprite};
@@ -43,6 +45,18 @@ public class Score extends GameObject {
 
     public void updateScore(){
         _counter ++;
+
+        _auxCounter++;
+        if(_auxCounter >= _pointsToIncVel)
+        {
+            _auxCounter = 0;
+            _increaseVel = true;
+        }
+        else
+            _increaseVel = false;
+
+
+
         _u++;
 
         if(_u > 9){
@@ -57,6 +71,7 @@ public class Score extends GameObject {
                 if(_c > 9){_u = 0; _d = 0; _c = 0;}
             }
         }
+
     }
 
     public int[] getScore(){
@@ -69,5 +84,9 @@ public class Score extends GameObject {
         _d = score[1];
         _c = score[2];
         _counter = score[3];
+    }
+
+    public boolean isTimeToIncreaseVel(){
+        return _increaseVel;
     }
 }

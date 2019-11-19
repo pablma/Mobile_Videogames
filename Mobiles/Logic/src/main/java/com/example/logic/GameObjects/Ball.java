@@ -6,11 +6,10 @@ import java.util.Random;
 
 public class Ball extends SwitchDashObject {
 
-    private float _velY = 10f;
+    private float _velY = 5f;
     private Color _initialColor;
 
-    //private Sprite _blackBall;
-    //private Sprite _whiteBall;
+    private float _incVelY = 3f;
 
     private Random random;
 
@@ -42,7 +41,7 @@ public class Ball extends SwitchDashObject {
     }
 
     public void update(float deltaTime){
-        movement();
+        movement(deltaTime);
     }
 
     public void present(float deltaTime){
@@ -58,7 +57,7 @@ public class Ball extends SwitchDashObject {
 
     public void dispose(){}
 
-    private void movement(){
+    private void movement(float deltaTime){
         _posY += _velY;
     }
 
@@ -83,5 +82,9 @@ public class Ball extends SwitchDashObject {
 
     public Color getColor() {
         return _color;
+    }
+
+    public void increaseVel() {
+        _velY += _incVelY;
     }
 }

@@ -93,7 +93,7 @@ public class GameState extends State { // debería de ir en la lógica
 
         getInput();
         playerUpdate(deltaTime);
-        arrowsBackgroundUpdate(deltaTime);
+        //arrowsBackgroundUpdate(deltaTime);
         ballsUpdate(deltaTime);
     }
 
@@ -103,7 +103,7 @@ public class GameState extends State { // debería de ir en la lógica
         _graphics.clear(_backgroudnColor.getBackgroundColor());
         _backgroudnColor.present(deltaTime);
 
-        arrowsBackgroundPresent(deltaTime);
+        //arrowsBackgroundPresent(deltaTime);
         ballsPresent(deltaTime);
         playerPresent(deltaTime);
         _score.present();
@@ -161,15 +161,26 @@ public class GameState extends State { // debería de ir en la lógica
                     _score.updateScore();
                 }
                 else {
-
                     GameManager.getInstance().saveScore(_score.getScore());
                     _game.setState(new GameOverState(_game));
+                }
+
+                if(_score.isTimeToIncreaseVel())
+                {
+                    for(int j = 0; j < balls.size(); j++)
+                    {
+                        Ball ball = balls.pop();
+                        ball.increaseVel();
+                        balls.add(ball);
+                    }
+
+                    b.increaseVel();
+
                 }
 
             }
 
             balls.add(b);
-
         }
     }
 
