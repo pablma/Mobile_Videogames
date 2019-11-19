@@ -18,6 +18,7 @@ public class Graphics extends AbstractGraphics {
 
     java.awt.Rectangle _srcRect = new java.awt.Rectangle();
     java.awt.Rectangle _dstRect = new java.awt.Rectangle();
+    Graphics2D _graphics2D;
 
 
     public Graphics(JFrame window){
@@ -42,7 +43,6 @@ public class Graphics extends AbstractGraphics {
         }
 
         // Obtenemos el Buffer Strategy que se supone acaba de crearse.
-
         _strategy = _window.getBufferStrategy();
 
     }
@@ -86,6 +86,31 @@ public class Graphics extends AbstractGraphics {
 
         com.example.pcengine.Image img = (com.example.pcengine.Image)image;
         _graphics.drawImage(img.getImage(), _dstRect.x,  _dstRect.y, _dstRect.width, _dstRect.height, _srcRect.x, _srcRect.y, _srcRect.width, _srcRect.height,null);
+    }
+
+    @Override
+    protected void drawImagePrivateAlpha(Image image, Rect srcRect, Rect dstRect, float alpha) {
+        _srcRect.x = srcRect.getLeft();
+        _srcRect.y = srcRect.getTop();
+        _srcRect.width = srcRect.getRight();
+        _srcRect.height = srcRect.getBottom();
+
+        _dstRect.x = dstRect.getLeft();
+        _dstRect.y = dstRect.getTop();
+        _dstRect.width = dstRect.getRight();
+        _dstRect.height = dstRect.getBottom();
+
+
+        _graphics2D = (Graphics2D)_graphics;
+        Composite alphaComp = AlphaComposite.getInstance(AlphaComposite.SRC_OVER, alpha);
+        Composite opaqueComp = AlphaComposite.getInstance(AlphaComposite.SRC_OVER, 1);
+
+        _graphics2D.setComposite(alphaComp);
+
+        com.example.pcengine.Image img = (com.example.pcengine.Image)image;
+        _graphics.drawImage(img.getImage(), _dstRect.x,  _dstRect.y, _dstRect.width, _dstRect.height, _srcRect.x, _srcRect.y, _srcRect.width, _srcRect.height,null);
+
+        _graphics2D.setComposite(opaqueComp);
     }
 
 

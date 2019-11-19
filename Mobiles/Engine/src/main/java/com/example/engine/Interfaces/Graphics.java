@@ -15,6 +15,14 @@ public interface Graphics {
 
     public void drawImageXCenteredResized(Image image, int y, Rect srcRect, int w, int h);
 
+    public void drawImageAlpha(Image image, int x, int y, Rect srcRect, float alpha);
+
+    public void drawImageAsBackgroundAlpha(Image image, Rect srcRect, float alpha);
+
+    public void drawImageXCenteredAlpha(Image image, int y, Rect srcRect, float alpha);
+
+    public void drawImageXCenteredResizedAlpha(Image image, int y, Rect srcRect, int w, int h, float alpha);
+
     public void drawImageAsUpperLeftBand(Image image, Rect srcRect);
 
     public void drawImageAsBottomRightBand(Image image, Rect srcRect);

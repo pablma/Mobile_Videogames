@@ -25,12 +25,12 @@ public class Graphics extends AbstractGraphics {
 
 
 
+
     public Graphics(AssetManager assets, Bitmap frameBuffer){
         this._assets = assets;
         this._frameBuffer = frameBuffer;
         this._canvas = new Canvas(frameBuffer);
         this._paint = new Paint();
-
     }
 
     @Override
@@ -73,6 +73,25 @@ public class Graphics extends AbstractGraphics {
 
         com.example.androidengine.Image img = (com.example.androidengine.Image)image;
         _canvas.drawBitmap(img.getBitmap(), _srcRect, _dstRect,null);
+    }
+
+    @Override
+    protected void drawImagePrivateAlpha(Image image, com.example.engine.Utils.Rect srcRect, com.example.engine.Utils.Rect dstRect, float alpha) {
+        _srcRect.left = srcRect.getLeft();
+        _srcRect.top = srcRect.getTop();
+        _srcRect.right = srcRect.getRight();
+        _srcRect.bottom = srcRect.getBottom();
+
+        _dstRect.left = dstRect.getLeft();
+        _dstRect.top = dstRect.getTop();
+        _dstRect.right = dstRect.getRight();
+        _dstRect.bottom = dstRect.getBottom();
+
+        int a = (int)(alpha * 255);
+        _paint.setAlpha(a);
+
+        com.example.androidengine.Image img = (com.example.androidengine.Image)image;
+        _canvas.drawBitmap(img.getBitmap(), _srcRect, _dstRect,_paint);
     }
 
 

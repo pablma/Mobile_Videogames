@@ -18,7 +18,7 @@ public class Arrows extends GameObject {
     }
 
     public void present(float deltaTime){
-        backgroundArrowsSprite.drawImageXCentered((int)_posY);
+        backgroundArrowsSprite.drawImageXCenteredAlpha((int)_posY, 0.2f);
     }
 
     public void pause(){}

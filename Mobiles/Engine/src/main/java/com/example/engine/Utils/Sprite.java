@@ -27,13 +27,31 @@ public class Sprite {
 
     public void drawImageXCentered(int y){_graphics.drawImageXCentered(_image, y, _srcRect);}
 
+    public void drawImageXCenteredResized(int y, int w, int h){
+        _graphics.drawImageXCenteredResized(_image, y, _srcRect, w, h);
+    }
+
+    public void drawImageAlpha(int x, int y, float alpha){
+        _graphics.drawImageAlpha(_image, x, y, _srcRect, alpha);
+    }
+    public void drawImageAsBackgroundAlpha(float alpha){
+        _graphics.drawImageAsBackgroundAlpha(_image, _srcRect, alpha);
+    }
+    public void drawImageXCenteredAlpha(int y, float alpha){
+        _graphics.drawImageXCenteredAlpha(_image, y, _srcRect, alpha);
+    }
+    public void drawImageXCenteredResizedAlpha(int y, int w, int h, float alpha){
+        _graphics.drawImageXCenteredResizedAlpha(_image, y, _srcRect, w, h, alpha);
+    }
+
+
     public void drawImageAsUpperLeftBand(){_graphics.drawImageAsUpperLeftBand(_image, _srcRect);}
 
     public void drawImageAsBottomRightBand(){_graphics.drawImageAsBottomRightBand(_image, _srcRect);}
 
-    public void drawImageXCenteredResized(int y, int w, int h){
-        _graphics.drawImageXCenteredResized(_image, y, _srcRect, w, h);
-    }
+
+
+
 
     public int getWidth() {
         return _srcRect.getWidth();
