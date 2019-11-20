@@ -353,6 +353,14 @@ public class LoadingState extends State {
 
 
 
+        //White PNG
+        Assets._whitePNGImg = _graphics.newImage("white.png");
+        Assets._whitePNGRect  = new Rect(0,0,
+                Assets._whitePNGImg.getWidth(), Assets._whitePNGImg.getHeight());
+        Assets._whitePNGSprite = new Sprite(_graphics, Assets._whitePNGImg, Assets._whitePNGRect);
+
+
+
         //Buttons
 
         Assets._crosImg = _graphics.newImage("buttons.png");

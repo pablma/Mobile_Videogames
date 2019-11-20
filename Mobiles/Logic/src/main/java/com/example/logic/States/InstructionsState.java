@@ -8,6 +8,7 @@ import com.example.engine.Abstract_Classes.State;
 import com.example.logic.GameObjects.Arrows;
 import com.example.logic.Assets;
 import com.example.logic.GameObjects.BackgroundColor;
+import com.example.logic.GameObjects.WhiteFlash;
 
 import java.util.Deque;
 import java.util.LinkedList;
@@ -31,6 +32,8 @@ public class InstructionsState extends State {
     Sprite _howToPlay;
     Sprite _instructions;
     Sprite _tapToPlay;
+
+    WhiteFlash _whiteFlash;
 
     int _howToPlayPosY;
     int _instructionsPosY;
@@ -59,11 +62,15 @@ public class InstructionsState extends State {
 
         _tapToPlay = Assets._tapToPlaySprite;
         _tapToPlayPosY = 1500;
+
+        _whiteFlash = new WhiteFlash(0,0);
     }
 
     @Override
     public void update(float deltaTime) {
+
         arrowsBackgroundUpdate(deltaTime);
+        _whiteFlash.update(deltaTime);
         getInput();
     }
 
@@ -74,6 +81,8 @@ public class InstructionsState extends State {
 
         arrowsBackgroundPresent(deltaTime);
         menuPresent(deltaTime);
+
+        _whiteFlash.present(deltaTime);
 
         _blackBand.drawImageAsBottomRightBand();
         _blackBand.drawImageAsUpperLeftBand();

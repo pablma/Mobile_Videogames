@@ -253,4 +253,11 @@ public class Assets { // debería ir en logic
     public static Image _Z_Img;
     public static Rect _Z_Rect;
 
+
+
+    //WhitePNG
+    public static Sprite _whitePNGSprite;
+    public static Image _whitePNGImg;
+    public static Rect _whitePNGRect;
+
 }

@@ -14,6 +14,7 @@ import com.example.logic.GameObjects.Ball;
 import com.example.logic.GameObjects.Player;
 import com.example.logic.GameObjects.Score;
 import com.example.logic.GameObjects.SwitchDashObject;
+import com.example.logic.GameObjects.WhiteFlash;
 
 import java.util.Deque;
 import java.util.LinkedList;
@@ -53,6 +54,10 @@ public class GameState extends State { // debería de ir en la lógica
     //POINTS
     Score _score;
 
+    //EFFECTS
+    WhiteFlash _whiteFlash;
+
+
     public GameState(Game game) {
         super(game);
         _game = game;
@@ -86,6 +91,8 @@ public class GameState extends State { // debería de ir en la lógica
 
         _backgroudnColor = new BackgroundColor(0,0);
         _backgroudnColor.setNewBackgroundColor();
+
+        _whiteFlash = new WhiteFlash(0,0);
     }
 
     @Override
@@ -93,7 +100,8 @@ public class GameState extends State { // debería de ir en la lógica
 
         getInput();
         playerUpdate(deltaTime);
-        //arrowsBackgroundUpdate(deltaTime);
+        arrowsBackgroundUpdate(deltaTime);
+        _whiteFlash.update(deltaTime);
         ballsUpdate(deltaTime);
     }
 
@@ -103,10 +111,12 @@ public class GameState extends State { // debería de ir en la lógica
         _graphics.clear(_backgroudnColor.getBackgroundColor());
         _backgroudnColor.present(deltaTime);
 
-        //arrowsBackgroundPresent(deltaTime);
+        arrowsBackgroundPresent(deltaTime);
         ballsPresent(deltaTime);
         playerPresent(deltaTime);
         _score.present();
+
+        _whiteFlash.present(deltaTime);
 
         _blackBand.drawImageAsBottomRightBand();
         _blackBand.drawImageAsUpperLeftBand();

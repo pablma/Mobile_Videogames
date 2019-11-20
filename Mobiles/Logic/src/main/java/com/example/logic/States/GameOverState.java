@@ -11,6 +11,7 @@ import com.example.logic.Assets;
 import com.example.logic.GameObjects.BackgroundColor;
 import com.example.logic.GameObjects.PointsString;
 import com.example.logic.GameObjects.Score;
+import com.example.logic.GameObjects.WhiteFlash;
 
 import java.util.Deque;
 import java.util.LinkedList;
@@ -38,8 +39,13 @@ public class GameOverState extends State {
     Score _score;
     PointsString pointsString;
 
+    //EFFECTS
+    WhiteFlash _whiteFlash;
+
     int _gameOverPosY;
     int _tapToPlayPosY;
+
+
 
     public GameOverState(Game game) {
         super(game);
@@ -66,11 +72,14 @@ public class GameOverState extends State {
         _score.setScore(GameManager.getInstance().getScore());
 
         pointsString = new PointsString(1080 / 2 - (int)(2.5 * Assets._P_Sprite.getWidth()), 1920 / 2 + 150);
+
+        _whiteFlash = new WhiteFlash(0,0);
     }
 
     @Override
     public void update(float deltaTime) {
         arrowsBackgroundUpdate(deltaTime);
+        _whiteFlash.update(deltaTime);
         getInput();
     }
 
@@ -85,6 +94,7 @@ public class GameOverState extends State {
         pointsString.present();
         _score.present();
 
+        _whiteFlash.present(deltaTime);
         _blackBand.drawImageAsBottomRightBand();
         _blackBand.drawImageAsUpperLeftBand();
     }
