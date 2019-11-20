@@ -3,7 +3,8 @@ package com.example.engine.Interfaces;
 public interface Image {
 
     /**
-     * Interfaz que envuelve una imagen como mapa de bits
+     * INTEFAZ IMAGE
+     * Envuelve una imagen como mapa de bits
      */
 
     /**
