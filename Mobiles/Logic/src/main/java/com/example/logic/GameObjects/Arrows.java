@@ -31,7 +31,7 @@ public class Arrows extends GameObject {
         _posY += _velY;
     }
 
-    public void increaseVel() {
-        _velY += _incVelY;
+    public void increaseVel(float increasement) {
+        _velY += increasement;
     }
 }

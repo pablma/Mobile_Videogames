@@ -2,6 +2,7 @@ package com.example.logic.GameObjects;
 
 import com.example.engine.Utils.Sprite;
 import com.example.logic.Assets;
+import com.example.logic.GameManager;
 import com.example.logic.GameObject;
 
 public class Score extends GameObject {
@@ -21,7 +22,6 @@ public class Score extends GameObject {
     private int _d = 0;
     private int _c = 0;
     private int _counter = 0;
-    private int _pointsToIncVel = 10;
     private boolean _increaseVel = false;
     private int _auxCounter = 0;
 
@@ -45,9 +45,9 @@ public class Score extends GameObject {
 
     public void updateScore(){
         _counter ++;
-
         _auxCounter++;
-        if(_auxCounter >= _pointsToIncVel)
+
+        if(_auxCounter == GameManager.getInstance().getPointsToIncreaseVel() - 1)
         {
             _auxCounter = 0;
             _increaseVel = true;

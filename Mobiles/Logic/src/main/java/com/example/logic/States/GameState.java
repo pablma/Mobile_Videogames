@@ -149,11 +149,11 @@ public class GameState extends State { // debería de ir en la lógica
             if(_score.isTimeToIncreaseVel()) {
                 for (int j = 0; j < arrowsQueue.size(); j++) {
                     Arrows arrow = arrowsQueue.pop();
-                    arrow.increaseVel();
+                    arrow.increaseVel(GameManager.getInstance().getIncVelY());
                     arrowsQueue.add(arrow);
                 }
 
-                a.increaseVel();
+                a.increaseVel(GameManager.getInstance().getIncVelY());
             }
 
             arrowsQueue.add(a);
@@ -192,11 +192,11 @@ public class GameState extends State { // debería de ir en la lógica
                     for(int j = 0; j < balls.size(); j++)
                     {
                         Ball ball = balls.pop();
-                        ball.increaseVel();
+                        ball.increaseVel(GameManager.getInstance().getIncVelY());
                         balls.add(ball);
                     }
 
-                    b.increaseVel();
+                    b.increaseVel(GameManager.getInstance().getIncVelY());
 
                 }
 

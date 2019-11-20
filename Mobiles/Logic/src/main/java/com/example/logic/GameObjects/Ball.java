@@ -84,7 +84,7 @@ public class Ball extends SwitchDashObject {
         return _color;
     }
 
-    public void increaseVel() {
-        _velY += _incVelY;
+    public void increaseVel(float increasement) {
+        _velY += increasement;
     }
 }
