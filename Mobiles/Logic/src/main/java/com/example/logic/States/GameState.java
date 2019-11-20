@@ -142,9 +142,21 @@ public class GameState extends State { // debería de ir en la lógica
 
             if(a.getPosY() > 1920)
                 a.setPosY(arrowsQueue.getLast().getPosY() - arrowsOffset_Y);
-            arrowsQueue.add(a);
+
 
             a.update(deltaTime);
+
+            if(_score.isTimeToIncreaseVel()) {
+                for (int j = 0; j < arrowsQueue.size(); j++) {
+                    Arrows arrow = arrowsQueue.pop();
+                    arrow.increaseVel();
+                    arrowsQueue.add(arrow);
+                }
+
+                a.increaseVel();
+            }
+
+            arrowsQueue.add(a);
         }
     }
 

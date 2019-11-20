@@ -6,7 +6,7 @@ import java.util.Random;
 
 public class Ball extends SwitchDashObject {
 
-    private float _velY = 5f;
+    private float _velY = 20f;
     private Color _initialColor;
 
     private float _incVelY = 3f;

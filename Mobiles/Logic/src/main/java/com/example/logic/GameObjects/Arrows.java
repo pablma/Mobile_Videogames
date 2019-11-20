@@ -7,6 +7,7 @@ import com.example.logic.GameObject;
 public class Arrows extends GameObject {
 
     private float _velY = 20f;
+    private float _incVelY = 3f;
     Sprite backgroundArrowsSprite =  Assets._backgroundArrowsSprite;
 
     public Arrows(float iniPosX, float iniPosY) {
@@ -28,5 +29,9 @@ public class Arrows extends GameObject {
 
     private void movement(float deltatime){
         _posY += _velY;
+    }
+
+    public void increaseVel() {
+        _velY += _incVelY;
     }
 }
