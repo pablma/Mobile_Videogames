@@ -23,6 +23,8 @@ public class Game implements com.example.engine.Interfaces.Game {
         _state = getStartState();
 
         _renderView.run();
+
+        _input.init(this);
     }
 
     @Override
@@ -58,7 +60,8 @@ public class Game implements com.example.engine.Interfaces.Game {
         return null;
     }
 
-    public void updateGraphicsWindowSizeVariables(){
+    public void saveGraphicsWindowSizeVariables(){
         _graphics.getScreenSizes(_graphics.getWidth(), _graphics.getHeight()); // Method that allow us to update the variables that have the information of the window Size on the abstract class Graphics
+        _input.saveScreenSizes(_graphics.getWidth(), _graphics.getHeight());
     }
 }

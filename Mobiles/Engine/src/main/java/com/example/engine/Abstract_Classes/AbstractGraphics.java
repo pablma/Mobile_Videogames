@@ -28,13 +28,13 @@ public abstract class AbstractGraphics implements Graphics {
         if( physicAspectRatio > logicAspectRatio ){ //vertical
 
             physicWindowHeight = (int)((float)_windowWidth * logicAspectRatio);
-            top = getHeight() / 2 - physicWindowHeight / 2;
+            top = _windowHeight / 2 - physicWindowHeight / 2;
 
             scale = (float)physicWindowHeight / 1920.0f;
         }
         else {//horizontal
             physicWindowWidth = (int)((float)_windowHeight / logicAspectRatio);
-            left = getWidth() / 2 - physicWindowWidth / 2;
+            left = _windowWidth / 2 - physicWindowWidth / 2;
 
             scale = (float)physicWindowWidth / 1080.0f;
         }
@@ -73,12 +73,12 @@ public abstract class AbstractGraphics implements Graphics {
         if( physicAspectRatio > logicAspectRatio ){ //vertical
             physicWindowHeight = (int)((float)_windowWidth * logicAspectRatio);
 
-            top = getHeight() / 2 - physicWindowHeight / 2;
+            top = _windowHeight / 2 - physicWindowHeight / 2;
         }
         else {//horizontal
             physicWindowWidth = (int)((float)_windowHeight / logicAspectRatio);
 
-            left = getWidth() / 2 - physicWindowWidth / 2;
+            left = _windowWidth / 2 - physicWindowWidth / 2;
         }
 
         Rect dstRectResized = new Rect(0, 0, 0, 0);
@@ -107,13 +107,13 @@ public abstract class AbstractGraphics implements Graphics {
         if( physicAspectRatio > logicAspectRatio ){ //vertical
 
             physicWindowHeight = (int)((float)_windowWidth * logicAspectRatio);
-            top = getHeight() / 2 - physicWindowHeight / 2;
+            top = _windowHeight / 2 - physicWindowHeight / 2;
 
             scale = (float)physicWindowHeight / 1920.0f;
         }
         else {//horizontal
             physicWindowWidth = (int)((float)_windowHeight / logicAspectRatio);
-            left = getWidth() / 2 - physicWindowWidth / 2;
+            left = _windowWidth / 2 - physicWindowWidth / 2;
 
             scale = (float)physicWindowWidth / 1080.0f;
         }
@@ -158,13 +158,13 @@ public abstract class AbstractGraphics implements Graphics {
         if( physicAspectRatio > logicAspectRatio ){ //vertical
 
             physicWindowHeight = (int)((float)_windowWidth * logicAspectRatio);
-            top = getHeight() / 2 - physicWindowHeight / 2;
+            top = _windowHeight / 2 - physicWindowHeight / 2;
 
             scale = (float)physicWindowHeight / 1920.0f;
         }
         else {//horizontal
             physicWindowWidth = (int)((float)_windowHeight / logicAspectRatio);
-            left = getWidth() / 2 - physicWindowWidth / 2;
+            left = _windowWidth / 2 - physicWindowWidth / 2;
 
             scale = (float)physicWindowWidth / 1080.0f;
         }
@@ -205,13 +205,13 @@ public abstract class AbstractGraphics implements Graphics {
         if( physicAspectRatio > logicAspectRatio ){ //vertical
 
             physicWindowHeight = (int)((float)_windowWidth * logicAspectRatio);
-            top = getHeight() / 2 - physicWindowHeight / 2;
+            top = _windowHeight / 2 - physicWindowHeight / 2;
 
             scale = (float)physicWindowHeight / 1920.0f;
         }
         else {//horizontal
             physicWindowWidth = (int)((float)_windowHeight / logicAspectRatio);
-            left = getWidth() / 2 - physicWindowWidth / 2;
+            left = _windowWidth / 2 - physicWindowWidth / 2;
 
             scale = (float)physicWindowWidth / 1080.0f;
         }
@@ -250,12 +250,12 @@ public abstract class AbstractGraphics implements Graphics {
         if( physicAspectRatio > logicAspectRatio ){ //vertical
             physicWindowHeight = (int)((float)_windowWidth * logicAspectRatio);
 
-            top = getHeight() / 2 - physicWindowHeight / 2;
+            top = _windowHeight / 2 - physicWindowHeight / 2;
         }
         else {//horizontal
             physicWindowWidth = (int)((float)_windowHeight / logicAspectRatio);
 
-            left = getWidth() / 2 - physicWindowWidth / 2;
+            left = _windowWidth / 2 - physicWindowWidth / 2;
         }
 
         Rect dstRectResized = new Rect(0, 0, 0, 0);
@@ -284,13 +284,13 @@ public abstract class AbstractGraphics implements Graphics {
         if( physicAspectRatio > logicAspectRatio ){ //vertical
 
             physicWindowHeight = (int)((float)_windowWidth * logicAspectRatio);
-            top = getHeight() / 2 - physicWindowHeight / 2;
+            top = _windowHeight / 2 - physicWindowHeight / 2;
 
             scale = (float)physicWindowHeight / 1920.0f;
         }
         else {//horizontal
             physicWindowWidth = (int)((float)_windowHeight / logicAspectRatio);
-            left = getWidth() / 2 - physicWindowWidth / 2;
+            left = _windowWidth / 2 - physicWindowWidth / 2;
 
             scale = (float)physicWindowWidth / 1080.0f;
         }
@@ -333,13 +333,13 @@ public abstract class AbstractGraphics implements Graphics {
         if( physicAspectRatio > logicAspectRatio ){ //vertical
 
             physicWindowHeight = (int)((float)_windowWidth * logicAspectRatio);
-            top = getHeight() / 2 - physicWindowHeight / 2;
+            top = _windowHeight / 2 - physicWindowHeight / 2;
 
             scale = (float)physicWindowHeight / 1920.0f;
         }
         else {//horizontal
             physicWindowWidth = (int)((float)_windowHeight / logicAspectRatio);
-            left = getWidth() / 2 - physicWindowWidth / 2;
+            left = _windowWidth / 2 - physicWindowWidth / 2;
 
             scale = (float)physicWindowWidth / 1080.0f;
         }
@@ -383,7 +383,7 @@ public abstract class AbstractGraphics implements Graphics {
         if( physicAspectRatio > logicAspectRatio ){ //vertical
             physicWindowHeight = (int)((float)_windowWidth * logicAspectRatio);
 
-            top = getHeight() / 2 - physicWindowHeight / 2;
+            top = _windowHeight / 2 - physicWindowHeight / 2;
 
             dstRectResized.setLeft(left);
             dstRectResized.setTop(0);
@@ -393,7 +393,7 @@ public abstract class AbstractGraphics implements Graphics {
         else {//horizontal
             physicWindowWidth = (int)((float)_windowHeight / logicAspectRatio);
 
-            left = getWidth() / 2 - physicWindowWidth / 2;
+            left = _windowWidth / 2 - physicWindowWidth / 2;
 
             dstRectResized.setLeft(0);
             dstRectResized.setTop(top);
@@ -424,7 +424,7 @@ public abstract class AbstractGraphics implements Graphics {
         if( physicAspectRatio > logicAspectRatio ){ //vertical
             physicWindowHeight = (int)((float)_windowWidth * logicAspectRatio);
 
-            top = getHeight() / 2 - physicWindowHeight / 2;
+            top = _windowHeight / 2 - physicWindowHeight / 2;
 
             dstRectResized.setLeft(left);
             dstRectResized.setTop(top + physicWindowHeight);
@@ -434,7 +434,7 @@ public abstract class AbstractGraphics implements Graphics {
         else {//horizontal
             physicWindowWidth = (int)((float)_windowHeight / logicAspectRatio);
 
-            left = getWidth() / 2 - physicWindowWidth / 2;
+            left = _windowWidth / 2 - physicWindowWidth / 2;
 
             dstRectResized.setLeft(left + physicWindowWidth);
             dstRectResized.setTop(top);

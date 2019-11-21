@@ -3,7 +3,6 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/AndroidGame/AndroidGame.iml" filepath="$PROJECT_DIR$/AndroidGame/AndroidGame.iml" />
-      <module fileurl="file://$PROJECT_DIR$/AndroidGame/AndroidGame.iml" filepath="$PROJECT_DIR$/AndroidGame/AndroidGame.iml" />
       <module fileurl="file://$PROJECT_DIR$/Androidengine/Androidengine.iml" filepath="$PROJECT_DIR$/Androidengine/Androidengine.iml" />
       <module fileurl="file://$PROJECT_DIR$/Engine/Engine.iml" filepath="$PROJECT_DIR$/Engine/Engine.iml" />
       <module fileurl="file://$PROJECT_DIR$/Logic/Logic.iml" filepath="$PROJECT_DIR$/Logic/Logic.iml" />

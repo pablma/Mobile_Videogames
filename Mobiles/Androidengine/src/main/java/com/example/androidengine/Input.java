@@ -3,9 +3,11 @@ package com.example.androidengine;
 
 import android.view.View;
 
+import com.example.engine.Abstract_Classes.AbstractInput;
+
 import java.util.List;
 
-public class Input implements com.example.engine.Interfaces.Input {
+public class Input  extends AbstractInput {
     TouchHandler _touchHandler;
 
     public Input(View view, float scaleX, float scaleY){
@@ -14,22 +16,22 @@ public class Input implements com.example.engine.Interfaces.Input {
 
 
     @Override
-    public boolean isTouchDown(int pointer) {
-        return _touchHandler.isTouchDown(pointer);
+    protected boolean isTouchDownPrivate(int pointer) {
+        return false;
     }
 
     @Override
-    public int getTouchX(int pointer) {
+    protected int getTouchXPrivate(int pointer) {
         return _touchHandler.getTouchX(pointer);
     }
 
     @Override
-    public int getTouchY(int pointer) {
+    protected int getTouchYPrivate(int pointer) {
         return _touchHandler.getTouchY(pointer);
     }
 
     @Override
-    public List<TouchEvent> getTouchEvents() {
+    protected List<com.example.engine.Interfaces.Input.TouchEvent> getTouchEventsPrivate() {
         return _touchHandler.getTouchEvents();
     }
 }

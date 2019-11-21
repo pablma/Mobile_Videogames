@@ -29,7 +29,13 @@ public interface Input {
         public int _id;
     }
 
-
+    /**
+     * Inicializa el Input pasando un
+     * @param game que será necesario a posteriori
+     * para poder acceder a las opciones del graphics y por tanto poder "reescalar" la entrada
+     * y transofmarlas de coordenadas físicas a cordenadas loógicas
+     */
+    public void init(Game game);
     /**
      * Nos informa de si se ha pulsado la pantalla
      * @param pointer identificador del dedo que pulsa la pantalla
@@ -56,4 +62,11 @@ public interface Input {
      * @return la lista de touchEvents
      */
     public List<TouchEvent> getTouchEvents();
+
+
+    /**
+     * Nos permite modificar los atributos de dimensiones físicasque utilizaremos
+     * a la hora de transformar esas dimensiones en lógicas en la clase absstracta
+     */
+    public void saveScreenSizes(int w, int h);
 }

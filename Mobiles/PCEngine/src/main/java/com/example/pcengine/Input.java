@@ -1,11 +1,13 @@
 package com.example.pcengine;
 
 
+import com.example.engine.Abstract_Classes.AbstractInput;
+
 import java.util.List;
 
 import javax.swing.JFrame;
 
-public class Input implements com.example.engine.Interfaces.Input {
+public class Input extends AbstractInput {
 
     private PCMouseHandler _PCMouseHandler;
 
@@ -14,22 +16,23 @@ public class Input implements com.example.engine.Interfaces.Input {
     }
 
     @Override
-    public boolean isTouchDown(int id) {
+    protected boolean isTouchDownPrivate(int pointer) {
         return false;
     }
 
     @Override
-    public int getTouchX(int id) {
+    protected int getTouchXPrivate(int pointer) {
         return _PCMouseHandler.getTouchX();
     }
 
     @Override
-    public int getTouchY(int id) {
+    protected int getTouchYPrivate(int pointer) {
         return _PCMouseHandler.getTouchY();
     }
 
     @Override
-    public List<TouchEvent> getTouchEvents() {
+    protected List<TouchEvent> getTouchEventsPrivate() {
         return _PCMouseHandler.getTouchEvents();
     }
+
 }

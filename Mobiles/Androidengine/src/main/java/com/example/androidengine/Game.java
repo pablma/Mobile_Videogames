@@ -42,13 +42,15 @@ public class Game extends Activity implements com.example.engine.Interfaces.Game
 
         setContentView(_renderView);
 
+        _input.init(this);
     }
 
     @Override
     protected void onResume() {
         super.onResume();
 
-        _graphics.getScreenSizes(_graphics.getHeight(), _graphics.getHeight());
+        _graphics.getScreenSizes(_graphics.getWidth(), _graphics.getHeight());
+        _input.saveScreenSizes(_graphics.getWidth(), _graphics.getHeight());
 
         _state.resume();
         _renderView.resume();

@@ -29,7 +29,9 @@ public class PCSurfaceView extends JFrame {
             do {
                 do {
                     _game.getGraphics().setGraphics();
-                    _game.updateGraphicsWindowSizeVariables(); // we should update the variables that contains the information of the window size on the AbstractGraphics every frame
+
+                    _game.saveGraphicsWindowSizeVariables(); // we should update the variables that contains the information of the window size on the AbstractGraphics every frame
+
                     try {
                         _game.getCurrentState().present(deltaTime);
                     }

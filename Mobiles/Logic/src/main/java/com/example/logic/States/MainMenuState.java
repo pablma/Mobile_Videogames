@@ -124,7 +124,12 @@ public class MainMenuState extends State {
             Input.TouchEvent event = touchEvents.get(i);
 
             if (event._type == Input.EventType.TOUCH_DOWN) {
-                _game.setState(new InstructionsState(_game));
+                if(event._y > _logoPosY && event._y < _logoPosY + _logo.getHeight()){
+                    if(event._x > 540 - _logo.getWidth()/2 &&event._x < 540 + _logo.getWidth()/2){
+                        System.out.println("YEEEEEEEEEYYYYYY!!!!");
+                    }
+                }
+                //_game.setState(new InstructionsState(_game));
             }
         }
     }
