@@ -7,7 +7,7 @@ public class GameManager {
     private int _pointsToIncreaseVel = 3;
 
     private int _backgroundColorIndex;
-    private float _incVelY = 3f;
+    private float _incVelY = 0.1f;
 
 
 
@@ -43,4 +43,5 @@ public class GameManager {
     public int getPointsToIncreaseVel() {
         return _pointsToIncreaseVel;
     }
+
 }

@@ -25,6 +25,6 @@ public class WhiteFlash extends GameObject {
 
     public void decreaseAlpha(float deltaTime){
         if(_alpha > 0)
-            _alpha -= 0.15;
+            _alpha -= 1.5 * deltaTime;
     }
 }

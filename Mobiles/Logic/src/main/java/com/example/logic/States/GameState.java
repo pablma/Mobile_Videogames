@@ -15,6 +15,7 @@ import com.example.logic.GameObjects.Player;
 import com.example.logic.GameObjects.Score;
 import com.example.logic.GameObjects.SwitchDashObject;
 import com.example.logic.GameObjects.WhiteFlash;
+import com.example.logic.ParticleSystem;
 
 import java.util.Deque;
 import java.util.LinkedList;
@@ -56,6 +57,9 @@ public class GameState extends State { // debería de ir en la lógica
 
     //EFFECTS
     WhiteFlash _whiteFlash;
+
+    // PARTICLE SYSTEM
+    ParticleSystem _particleSystem;
 
 
     public GameState(Game game) {
@@ -100,9 +104,9 @@ public class GameState extends State { // debería de ir en la lógica
 
         getInput();
         playerUpdate(deltaTime);
+        ballsUpdate(deltaTime);
         arrowsBackgroundUpdate(deltaTime);
         _whiteFlash.update(deltaTime);
-        ballsUpdate(deltaTime);
     }
 
     @Override
@@ -146,16 +150,9 @@ public class GameState extends State { // debería de ir en la lógica
 
             a.update(deltaTime);
 
-            if(_score.isTimeToIncreaseVel()) {
-                for (int j = 0; j < arrowsQueue.size(); j++) {
-                    Arrows arrow = arrowsQueue.pop();
-                    arrow.increaseVel(GameManager.getInstance().getIncVelY());
-                    arrowsQueue.add(arrow);
-                }
 
+            if(_score.isTimeToIncreaseVel())
                 a.increaseVel(GameManager.getInstance().getIncVelY());
-            }
-
             arrowsQueue.add(a);
         }
     }
@@ -186,22 +183,10 @@ public class GameState extends State { // debería de ir en la lógica
                     GameManager.getInstance().saveScore(_score.getScore());
                     _game.setState(new GameOverState(_game));
                 }
-
-                if(_score.isTimeToIncreaseVel())
-                {
-                    for(int j = 0; j < balls.size(); j++)
-                    {
-                        Ball ball = balls.pop();
-                        ball.increaseVel(GameManager.getInstance().getIncVelY());
-                        balls.add(ball);
-                    }
-
-                    b.increaseVel(GameManager.getInstance().getIncVelY());
-
-                }
-
             }
 
+            if(_score.isTimeToIncreaseVel())
+                b.increaseVel(GameManager.getInstance().getIncVelY());
             balls.add(b);
         }
     }

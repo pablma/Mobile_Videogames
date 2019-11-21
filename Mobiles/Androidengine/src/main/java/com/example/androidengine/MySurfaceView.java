@@ -15,6 +15,7 @@ public class MySurfaceView extends SurfaceView implements Runnable {
     Thread _renderThread = null;
     SurfaceHolder _holder;
     volatile boolean _running = false;
+    int frames = 0;
 
     public MySurfaceView(Game game, Bitmap frameBuffer) { // context es una avtivity de android , game es una actividad de android
         super(game);
@@ -34,6 +35,7 @@ public class MySurfaceView extends SurfaceView implements Runnable {
     public void run(){
         Rect dstRect = new Rect();
         long startTime = System.nanoTime();
+        long informePrevio = startTime;
 
         while (_running){
             if(!_holder.getSurface().isValid())
@@ -43,6 +45,16 @@ public class MySurfaceView extends SurfaceView implements Runnable {
             startTime = System.nanoTime();
 
             _game.getCurrentState().update(deltaTime);
+
+            // Informe de FPS
+            if (System.nanoTime() - informePrevio > 1000000000l) {
+                long fps = frames * 1000000000l / (System.nanoTime() - informePrevio);
+                System.out.println("" + fps + " fps");
+                frames = 0;
+                informePrevio = System.nanoTime();
+            }
+            ++frames;
+
             _game.getCurrentState().present(deltaTime);
 
             Canvas canvas = _holder.lockCanvas();

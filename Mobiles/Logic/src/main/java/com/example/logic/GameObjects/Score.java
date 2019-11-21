@@ -45,16 +45,16 @@ public class Score extends GameObject {
 
     public void updateScore(){
         _counter ++;
+
         _auxCounter++;
 
-        if(_auxCounter == GameManager.getInstance().getPointsToIncreaseVel() - 1)
+        _increaseVel = false;
+
+        if(_auxCounter >= GameManager.getInstance().getPointsToIncreaseVel())
         {
             _auxCounter = 0;
             _increaseVel = true;
         }
-        else
-            _increaseVel = false;
-
 
 
         _u++;

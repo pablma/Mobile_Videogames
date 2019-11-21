@@ -27,6 +27,7 @@ public class Particle extends SwitchDashObject {
     @Override
     public void update(float deltaTime) {
         _posX += _speed;
+        _posY -= _speed;
     }
 
     @Override
