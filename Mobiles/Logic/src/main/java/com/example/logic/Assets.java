@@ -140,13 +140,22 @@ public class Assets { // debería ir en logic
     public static Image _nineImg;
     public static Rect _nineRect;
 
-    public static  Sprite _crosSprite;
-    public static Image _crosImg;
-    public static Rect _crosRect;
+    public static  Sprite _crossSprite;
+    public static Image _crossImg;
+    public static Rect _crossRect;
 
     public static  Sprite _questionSprite;
     public static Image _questionImg;
     public static Rect _questionRect;
+
+    public static  Sprite _soundOnSprite;
+    public static Image _soundOnImg;
+    public static Rect _soundOnRect;
+
+    public static  Sprite _soundOffSprite;
+    public static Image _soundOffImg;
+    public static Rect _soundOffRect;
+
 
     //Letters
     public static Sprite _A_Sprite;

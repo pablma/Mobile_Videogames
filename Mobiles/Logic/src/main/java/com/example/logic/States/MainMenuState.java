@@ -8,6 +8,7 @@ import com.example.engine.Abstract_Classes.State;
 import com.example.logic.GameObjects.Arrows;
 import com.example.logic.Assets;
 import com.example.logic.GameObjects.BackgroundColor;
+import com.example.logic.GameObjects.SoundButton;
 
 import java.util.Deque;
 import java.util.LinkedList;
@@ -31,6 +32,9 @@ public class MainMenuState extends State {
     // MAIN MENU SPRITES
     Sprite _logo;
     Sprite _tapToPlay;
+
+    //BUTTONS
+    SoundButton _soundButton;
 
     int _logoPosY;
     int _tapToPlayPosY;
@@ -57,6 +61,8 @@ public class MainMenuState extends State {
         _tapToPlay = Assets._tapToPlaySprite;
         _tapToPlayPosY = 1000;
 
+        _soundButton = new SoundButton(500,100, _game);
+
     }
 
     @Override
@@ -72,6 +78,8 @@ public class MainMenuState extends State {
 
         arrowsBackgroundPresent(deltaTime);
         menuPresent(deltaTime);
+        buttonsPresent(deltaTime);
+
         _blackBand.drawImageAsBottomRightBand();
         _blackBand.drawImageAsUpperLeftBand();
     }
@@ -118,12 +126,23 @@ public class MainMenuState extends State {
         _tapToPlay.drawImageXCentered(_tapToPlayPosY);
     }
 
+    private void buttonsPresent(float deltaTime){
+        _soundButton.present(deltaTime);
+    }
+
+    private void buttonsBehaviour(Input.TouchEvent event){
+        _soundButton.buttonBehaviour(event);
+    }
+
+
     private void getInput() {
         List<Input.TouchEvent> touchEvents = _game.getInput().getTouchEvents();
         for (int i = 0; i < touchEvents.size(); i++) {
             Input.TouchEvent event = touchEvents.get(i);
 
             if (event._type == Input.EventType.TOUCH_DOWN) {
+                buttonsBehaviour(event);
+
                 if(event._y > _logoPosY && event._y < _logoPosY + _logo.getHeight()){
                     if(event._x > 540 - _logo.getWidth()/2 &&event._x < 540 + _logo.getWidth()/2){
                         System.out.println("YEEEEEEEEEYYYYYY!!!!");

@@ -2,6 +2,7 @@ package com.example.logic.States;
 
 import com.example.engine.Interfaces.Game;
 import com.example.engine.Interfaces.Graphics;
+import com.example.engine.Interfaces.Image;
 import com.example.engine.Utils.Rect;
 import com.example.engine.Utils.Sprite;
 import com.example.engine.Abstract_Classes.State;
@@ -363,17 +364,28 @@ public class LoadingState extends State {
 
         //Buttons
 
-        Assets._crosImg = _graphics.newImage("buttons.png");
-        Assets._crosRect   = new Rect(Assets._crosImg.getWidth() / 10,0,
-                Assets._crosImg.getWidth() / 10, Assets._crosImg.getHeight());
-        Assets._crosSprite = new Sprite(_graphics, Assets._crosImg, Assets._crosRect);
+        Assets._crossImg = _graphics.newImage("buttons.png");
+        Assets._crossRect = new Rect(Assets._crossImg.getWidth() / 10,0,
+                Assets._crossImg.getWidth() / 10, Assets._crossImg.getHeight());
+        Assets._crossSprite = new Sprite(_graphics, Assets._crossImg, Assets._crossRect);
 
 
-        Assets._questionImg = Assets._crosImg;
-        Assets._questionRect  = new Rect(0,0,
+        Assets._questionImg = Assets._crossImg;
+        Assets._questionRect = new Rect(0,0,
                 Assets._questionImg.getWidth() / 10, Assets._questionImg.getHeight());
         Assets._questionSprite = new Sprite(_graphics, Assets._questionImg, Assets._questionRect);
 
+
+        Assets._soundOnImg = Assets._crossImg;
+        Assets._soundOnRect = new Rect(2 * (Assets._crossImg.getWidth() / 10),0,
+                Assets._soundOnImg.getWidth() / 10, Assets._soundOnImg.getHeight());
+        Assets._soundOnSprite = new Sprite(_graphics, Assets._soundOnImg, Assets._soundOnRect);
+
+
+        Assets._soundOffImg = Assets._crossImg;
+        Assets._soundOffRect = new Rect(3 * (Assets._crossImg.getWidth() / 10),0,
+                Assets._soundOffImg.getWidth() / 10, Assets._soundOffImg.getHeight());
+        Assets._soundOffSprite = new Sprite(_graphics, Assets._soundOffImg, Assets._soundOffRect);
 
 
         _game.setState(new MainMenuState(_game));
