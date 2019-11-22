@@ -23,6 +23,10 @@ public class SwitchDashObject extends GameObject {
         _whiteSp = whiteSp;
     }
 
+    public SwitchDashObject(float iniPosX, float iniPosY) {
+        super(iniPosX, iniPosY);
+    }
+
     @Override
     public void pause() {
         super.pause();
