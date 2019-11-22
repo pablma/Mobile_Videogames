@@ -9,8 +9,10 @@ import com.example.logic.GameManager;
 import com.example.logic.GameObjects.Arrows;
 import com.example.logic.Assets;
 import com.example.logic.GameObjects.BackgroundColor;
+import com.example.logic.GameObjects.OptionsButton;
 import com.example.logic.GameObjects.PointsString;
 import com.example.logic.GameObjects.Score;
+import com.example.logic.GameObjects.SoundButton;
 import com.example.logic.GameObjects.WhiteFlash;
 
 import java.util.Deque;
@@ -42,9 +44,13 @@ public class GameOverState extends State {
     //EFFECTS
     WhiteFlash _whiteFlash;
 
+    //BUTTONS
+    SoundButton _soundButton;
+    OptionsButton _optionButton;
+
     int _gameOverPosY;
     int _tapToPlayPosY;
-
+    int _arrowsOffSetY = 1920 - Assets._backgroundArrowsSprite.getHeight();
 
 
     public GameOverState(Game game) {
@@ -52,12 +58,8 @@ public class GameOverState extends State {
         _game = game;
         _graphics = _game.getGraphics();
 
-        arrows_1 = new Arrows(0,0);
-        arrows_2 = new Arrows(0,arrows_1.getPosY() - arrowsOffset_Y);
+        arrows_1 = new Arrows(0, _arrowsOffSetY);
 
-        arrowsQueue = new LinkedList<Arrows>();
-        arrowsQueue.add(arrows_1);
-        arrowsQueue.add(arrows_2);
 
         _backgroudnColor = new BackgroundColor(0,0);
         _backgroudnColor.setNewBackgroundColor();
@@ -74,6 +76,9 @@ public class GameOverState extends State {
         pointsString = new PointsString(1080 / 2 - (int)(2.5 * Assets._P_Sprite.getWidth()), 1920 / 2 + 150);
 
         _whiteFlash = new WhiteFlash(0,0);
+
+        _soundButton = new SoundButton(1080/2 - 470,200, _game);
+        _optionButton = new OptionsButton(1080/2 + 470 - Assets._questionSprite.getWidth(),200, _game);
     }
 
     @Override
@@ -93,6 +98,7 @@ public class GameOverState extends State {
 
         pointsString.present();
         _score.present();
+        buttonsPresent(deltaTime);
 
         _whiteFlash.present(deltaTime);
         _blackBand.drawImageAsBottomRightBand();
@@ -115,30 +121,28 @@ public class GameOverState extends State {
     }
 
     private void arrowsBackgroundUpdate(float deltaTime){
-        for (int i = 0; i < arrowsQueue.size(); i++)
-        {
-            Arrows a = arrowsQueue.pop();
-
-            if(a.getPosY() > 1920)
-                a.setPosY(arrowsQueue.getLast().getPosY() - arrowsOffset_Y);
-            arrowsQueue.add(a);
-
-            a.update(deltaTime);
+        arrows_1.update(deltaTime);
+        if(arrows_1.getPosY() > 0){
+            arrows_1.setPosY(arrows_1.getPosY() - Assets._backgroundArrowsSprite.getHeight()/5);
         }
+
+        if(_score.isTimeToIncreaseVel())
+            arrows_1.increaseVel(GameManager.getInstance().getIncVelY());
+
     }
 
     private void arrowsBackgroundPresent(float deltaTime){
-        for(int i = 0; i < arrowsQueue.size(); i++)
-        {
-            Arrows a = arrowsQueue.pop();
-            a.present(deltaTime);
-            arrowsQueue.add(a);
-        }
+        arrows_1.present(deltaTime);
     }
 
     private void menuPresent(float deltaTime){
         _gameOver.drawImageXCentered(_gameOverPosY);
         _tapToPlay.drawImageXCentered(_tapToPlayPosY);
+    }
+
+    private void buttonsPresent(float deltaTime){
+        _soundButton.present(deltaTime);
+        _optionButton.present(deltaTime);
     }
 
     private void getInput() {
@@ -147,7 +151,10 @@ public class GameOverState extends State {
             Input.TouchEvent event = touchEvents.get(i);
 
             if (event._type == Input.EventType.TOUCH_DOWN) {
-                _game.setState(new InstructionsState(_game));
+                if(_soundButton.buttonBehaviour(event)){}
+                else if(_optionButton.buttonBehaviour(event)){}
+                else
+                    _game.setState(new GameState(_game));
             }
         }
     }

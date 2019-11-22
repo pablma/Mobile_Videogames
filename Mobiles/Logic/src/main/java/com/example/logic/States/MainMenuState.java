@@ -8,6 +8,7 @@ import com.example.engine.Abstract_Classes.State;
 import com.example.logic.GameObjects.Arrows;
 import com.example.logic.Assets;
 import com.example.logic.GameObjects.BackgroundColor;
+import com.example.logic.GameObjects.OptionsButton;
 import com.example.logic.GameObjects.SoundButton;
 
 import java.util.Deque;
@@ -35,9 +36,12 @@ public class MainMenuState extends State {
 
     //BUTTONS
     SoundButton _soundButton;
+    OptionsButton _optionButton;
 
     int _logoPosY;
     int _tapToPlayPosY;
+
+    int _arrowsOffSetY = 1920 - Assets._backgroundArrowsSprite.getHeight();
 
 
     public MainMenuState(Game game) {
@@ -45,12 +49,7 @@ public class MainMenuState extends State {
         _game = game;
         _graphics = _game.getGraphics();
 
-        arrows_1 = new Arrows(0,0);
-        arrows_2 = new Arrows(0,arrows_1.getPosY() - arrowsOffset_Y);
-
-        arrowsQueue = new LinkedList<Arrows>();
-        arrowsQueue.add(arrows_1);
-        arrowsQueue.add(arrows_2);
+        arrows_1 = new Arrows(0, _arrowsOffSetY);
 
         _backgroudnColor = new BackgroundColor(0,0);
         _backgroudnColor.setNewBackgroundColor();
@@ -61,7 +60,8 @@ public class MainMenuState extends State {
         _tapToPlay = Assets._tapToPlaySprite;
         _tapToPlayPosY = 1000;
 
-        _soundButton = new SoundButton(500,100, _game);
+        _soundButton = new SoundButton(1080/2 - 470,200, _game);
+        _optionButton = new OptionsButton(1080/2 + 470 - Assets._questionSprite.getWidth(),200, _game);
 
     }
 
@@ -77,11 +77,13 @@ public class MainMenuState extends State {
         _backgroudnColor.present(deltaTime);
 
         arrowsBackgroundPresent(deltaTime);
+
         menuPresent(deltaTime);
         buttonsPresent(deltaTime);
 
         _blackBand.drawImageAsBottomRightBand();
         _blackBand.drawImageAsUpperLeftBand();
+
     }
 
     @Override
@@ -100,25 +102,15 @@ public class MainMenuState extends State {
     }
 
     private void arrowsBackgroundUpdate(float deltaTime){
-        for (int i = 0; i < arrowsQueue.size(); i++)
-        {
-            Arrows a = arrowsQueue.pop();
 
-            if(a.getPosY() > 1920)
-                a.setPosY(arrowsQueue.getLast().getPosY() - arrowsOffset_Y);
-            arrowsQueue.add(a);
-
-            a.update(deltaTime);
+        arrows_1.update(deltaTime);
+        if(arrows_1.getPosY() > 0){
+            arrows_1.setPosY(arrows_1.getPosY() - Assets._backgroundArrowsSprite.getHeight()/5);
         }
     }
 
     private void arrowsBackgroundPresent(float deltaTime){
-        for(int i = 0; i < arrowsQueue.size(); i++)
-        {
-            Arrows a = arrowsQueue.pop();
-            a.present(deltaTime);
-            arrowsQueue.add(a);
-        }
+        arrows_1.present(deltaTime);
     }
 
     private void menuPresent(float deltaTime){
@@ -128,10 +120,11 @@ public class MainMenuState extends State {
 
     private void buttonsPresent(float deltaTime){
         _soundButton.present(deltaTime);
+        _optionButton.present(deltaTime);
     }
 
     private void buttonsBehaviour(Input.TouchEvent event){
-        _soundButton.buttonBehaviour(event);
+
     }
 
 
@@ -141,9 +134,10 @@ public class MainMenuState extends State {
             Input.TouchEvent event = touchEvents.get(i);
 
             if (event._type == Input.EventType.TOUCH_DOWN) {
-                buttonsBehaviour(event);
-
-                _game.setState(new InstructionsState(_game));
+                if(_soundButton.buttonBehaviour(event)){}
+                else if(_optionButton.buttonBehaviour(event)){}
+                else
+                    _game.setState(new GameState(_game));
             }
         }
     }

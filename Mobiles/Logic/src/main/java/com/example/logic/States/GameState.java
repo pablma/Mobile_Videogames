@@ -61,18 +61,15 @@ public class GameState extends State { // debería de ir en la lógica
     // PARTICLE SYSTEM
     ParticleSystem _particleSystem;
 
+    int _arrowsOffSetY = 1920 - Assets._backgroundArrowsSprite.getHeight();
+
 
     public GameState(Game game) {
         super(game);
         _game = game;
         _graphics = _game.getGraphics();
 
-        arrows_1 = new Arrows(0,0);
-        arrows_2 = new Arrows(0,arrows_1.getPosY() - arrowsOffset_Y);
-
-        arrowsQueue = new LinkedList<Arrows>();
-        arrowsQueue.add(arrows_1);
-        arrowsQueue.add(arrows_2);
+        arrows_1 = new Arrows(0, _arrowsOffSetY);
 
         ball_1 = new Ball(0, 0);
         ball_2 = new Ball(0, ball_1.getPosY() - ballOffset_Y);
@@ -140,30 +137,18 @@ public class GameState extends State { // debería de ir en la lógica
     }
 
     private void arrowsBackgroundUpdate(float deltaTime){
-        for (int i = 0; i < arrowsQueue.size(); i++)
-        {
-            Arrows a = arrowsQueue.pop();
-
-            if(a.getPosY() > 1920)
-                a.setPosY(arrowsQueue.getLast().getPosY() - arrowsOffset_Y);
-
-
-            a.update(deltaTime);
-
-
-            if(_score.isTimeToIncreaseVel())
-                a.increaseVel(GameManager.getInstance().getIncVelY());
-            arrowsQueue.add(a);
+        arrows_1.update(deltaTime);
+        if(arrows_1.getPosY() > 0){
+            arrows_1.setPosY(arrows_1.getPosY() - Assets._backgroundArrowsSprite.getHeight()/5);
         }
+
+        if(_score.isTimeToIncreaseVel())
+            arrows_1.increaseVel(GameManager.getInstance().getIncVelY());
+
     }
 
     private void arrowsBackgroundPresent(float deltaTime){
-        for(int i = 0; i < arrowsQueue.size(); i++)
-        {
-            Arrows a = arrowsQueue.pop();
-            a.present(deltaTime);
-            arrowsQueue.add(a);
-        }
+        arrows_1.present(deltaTime);
     }
 
     private void ballsUpdate(float deltaTime){

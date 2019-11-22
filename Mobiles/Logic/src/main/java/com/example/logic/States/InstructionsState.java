@@ -8,6 +8,7 @@ import com.example.engine.Abstract_Classes.State;
 import com.example.logic.GameObjects.Arrows;
 import com.example.logic.Assets;
 import com.example.logic.GameObjects.BackgroundColor;
+import com.example.logic.GameObjects.ExitButton;
 import com.example.logic.GameObjects.WhiteFlash;
 
 import java.util.Deque;
@@ -33,23 +34,23 @@ public class InstructionsState extends State {
     Sprite _instructions;
     Sprite _tapToPlay;
 
+    //BUTTONS
+    ExitButton _exitButton;
+
     WhiteFlash _whiteFlash;
 
     int _howToPlayPosY;
     int _instructionsPosY;
     int _tapToPlayPosY;
 
+    int _arrowsOffSetY = 1920 - Assets._backgroundArrowsSprite.getHeight();
+
     public InstructionsState(Game game) {
         super(game);
         _game = game;
         _graphics = _game.getGraphics();
 
-        arrows_1 = new Arrows(0,0);
-        arrows_2 = new Arrows(0,arrows_1.getPosY() - arrowsOffset_Y);
-
-        arrowsQueue = new LinkedList<Arrows>();
-        arrowsQueue.add(arrows_1);
-        arrowsQueue.add(arrows_2);
+        arrows_1 = new Arrows(0, _arrowsOffSetY);
 
         _backgroudnColor = new BackgroundColor(0,0);
         _backgroudnColor.setOldBackgroudnColor();
@@ -64,6 +65,8 @@ public class InstructionsState extends State {
         _tapToPlayPosY = 1500;
 
         _whiteFlash = new WhiteFlash(0,0);
+
+        _exitButton = new ExitButton(1080/2 + 470 - Assets._questionSprite.getWidth(),200, _game);
     }
 
     @Override
@@ -81,6 +84,8 @@ public class InstructionsState extends State {
 
         arrowsBackgroundPresent(deltaTime);
         menuPresent(deltaTime);
+
+        buttonsPresent(deltaTime);
 
         _whiteFlash.present(deltaTime);
 
@@ -104,25 +109,14 @@ public class InstructionsState extends State {
     }
 
     private void arrowsBackgroundUpdate(float deltaTime){
-        for (int i = 0; i < arrowsQueue.size(); i++)
-        {
-            Arrows a = arrowsQueue.pop();
-
-            if(a.getPosY() > 1920)
-                a.setPosY(arrowsQueue.getLast().getPosY() - arrowsOffset_Y);
-            arrowsQueue.add(a);
-
-            a.update(deltaTime);
+        arrows_1.update(deltaTime);
+        if(arrows_1.getPosY() > 0){
+            arrows_1.setPosY(arrows_1.getPosY() - Assets._backgroundArrowsSprite.getHeight()/5);
         }
     }
 
     private void arrowsBackgroundPresent(float deltaTime){
-        for(int i = 0; i < arrowsQueue.size(); i++)
-        {
-            Arrows a = arrowsQueue.pop();
-            a.present(deltaTime);
-            arrowsQueue.add(a);
-        }
+        arrows_1.present(deltaTime);
     }
 
     private void menuPresent(float deltaTime){
@@ -131,13 +125,19 @@ public class InstructionsState extends State {
         _tapToPlay.drawImageXCentered(_tapToPlayPosY);
     }
 
+    private void buttonsPresent(float deltaTime){
+        _exitButton.present(deltaTime);
+    }
+
     private void getInput() {
         List<Input.TouchEvent> touchEvents = _game.getInput().getTouchEvents();
         for (int i = 0; i < touchEvents.size(); i++) {
             Input.TouchEvent event = touchEvents.get(i);
 
             if (event._type == Input.EventType.TOUCH_DOWN) {
-                _game.setState(new GameState(_game));
+                if(_exitButton.buttonBehaviour(event)){}
+                else
+                    _game.setState(new GameState(_game));
             }
         }
     }

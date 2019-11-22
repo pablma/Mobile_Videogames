@@ -12,8 +12,8 @@ public class Button extends GameObject {
         _game = game;
     }
 
-    public void buttonBehaviour(Input.TouchEvent event){
-
+    public boolean buttonBehaviour(Input.TouchEvent event){
+        return false;
     }
 
 

@@ -26,12 +26,13 @@ public class SoundButton extends Button {
 
     }
 
-    @Override
-    public void buttonBehaviour(Input.TouchEvent event) {
+    public boolean buttonBehaviour(Input.TouchEvent event) {
         if(event._y > _iniPosY && event._y < _iniPosY + soundOnSprite.getHeight()){
             if(event._x >_iniPosX && event._x < _iniPosX + soundOnSprite.getWidth()){
                 on = !on;
+                return true;
             }
         }
+        return false;
     }
 }
