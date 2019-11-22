@@ -11,10 +11,11 @@ public class Particle extends SwitchDashObject {
      * Contiene los atributos y métodos necesarios para crear partículas animadas
      */
 
-    private float _speed;
-    private float _lifetime = 3f;
-    private float _alpha = 1f;
-    private Random _random;
+    private float _speedX;   // Velocidad de las partícuals
+    private float _speedY;
+    private float _gravity = 10f;
+    private float _alpha = 1f;  // Alpha d elas partículas
+    private float _alphaDecreasingVel = 1.5f;   // Velocidad con la que decrece el alfa
 
 
     /**
@@ -23,11 +24,11 @@ public class Particle extends SwitchDashObject {
      * @param iniPosY posición Y inicial del objeto
      * @param color color del objeto
      */
-    public Particle(float iniPosX, float iniPosY, Color color) {
+    public Particle(float iniPosX, float iniPosY, Color color, float speedX, float speedY) {
         super(iniPosX, iniPosY, Assets._blackBallSprite, Assets._whiteBallSprite);
         _color = color;
-        _random = new Random();
-        _speed = _random.nextInt(250);
+        _speedX = speedX;
+        _speedY = speedY;
     }
 
     /**
@@ -36,9 +37,10 @@ public class Particle extends SwitchDashObject {
      */
     @Override
     public void update(float deltaTime) {
-        _posX += _speed * deltaTime;
-        _posY -= _speed * deltaTime;
-        _alpha -= 1.5f * deltaTime;
+        _posX += _speedX * deltaTime;
+        _posY += _speedY * deltaTime;
+        _speedY -= _gravity * deltaTime;
+        _alpha -= _alphaDecreasingVel * deltaTime;
     }
 
     /**

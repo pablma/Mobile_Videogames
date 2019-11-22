@@ -68,7 +68,10 @@ public class ParticleSystem extends SwitchDashObject {
         for(int i = 0; i < NUM_PARTICLES; i++){
             float rndX = _random.nextInt(100 + 100) - 100;
             float rndY = _random.nextInt(10);
-            _particles.add(new Particle(posX + rndX, posY + rndY, color));
+
+            float rndSpeedX = _random.nextInt(200 + 200) - 200;
+            float rndSpeedY = _random.nextInt(200) + 25;
+            _particles.add(new Particle(posX + rndX, posY + rndY, color, rndSpeedX, rndSpeedY));
         }
     }
 }
