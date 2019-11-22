@@ -47,7 +47,6 @@ public class LoadingState extends State {
         Assets._whiteBallSprite  = new Sprite(_graphics, Assets._whiteBallImg, Assets._whiteBallRect);
 
 
-
         //Background Arrows
 
         Assets._backgroundArrowsImg  = _graphics.newImage("arrowsBackground.png");

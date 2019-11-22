@@ -84,6 +84,8 @@ public interface Graphics {
      */
     public void drawImageXCenteredAlpha(Image image, int y, Rect srcRect, float alpha);
 
+    public void drawImageResizedAlpha(Image image, int x, int y, Rect srcRect, int w, int h, float alpha);
+
     /**
      * Pinta una imagen en pantalla centrada en el eje X y reescalada con un determinado alfa
      * @param image imagen que se quiere pintar
@@ -93,6 +95,7 @@ public interface Graphics {
      * @param h nueva altura lógica de la magen
      * @param alpha cantidad de alpha para la imagen
      */
+
     public void drawImageXCenteredResizedAlpha(Image image, int y, Rect srcRect, int w, int h, float alpha);
 
     /**

@@ -26,6 +26,7 @@ public class Assets { // debería ir en logic
     public static Rect _whiteBallRect;
 
 
+
     //Background Arrows
     public static Sprite _backgroundArrowsSprite;
     public static Image _backgroundArrowsImg;

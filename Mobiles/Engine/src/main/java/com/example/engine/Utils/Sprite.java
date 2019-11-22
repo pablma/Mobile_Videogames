@@ -40,6 +40,11 @@ public class Sprite {
     public void drawImageXCenteredAlpha(int y, float alpha){
         _graphics.drawImageXCenteredAlpha(_image, y, _srcRect, alpha);
     }
+
+    public void drawImageResizedAlpha(int x, int y, int w, int h, float alpha) {
+        _graphics.drawImageResizedAlpha(_image, x, y, _srcRect, w, h, alpha);
+    }
+
     public void drawImageXCenteredResizedAlpha(int y, int w, int h, float alpha){
         _graphics.drawImageXCenteredResizedAlpha(_image, y, _srcRect, w, h, alpha);
     }

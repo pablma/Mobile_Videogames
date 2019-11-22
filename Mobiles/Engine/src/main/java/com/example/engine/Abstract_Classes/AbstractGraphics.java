@@ -315,6 +315,56 @@ public abstract class AbstractGraphics implements Graphics {
     }
 
     @Override
+    public void drawImageResizedAlpha(Image image, int x, int y, Rect srcRect, int w, int h, float alpha) {
+
+        float scale = 1;
+
+        int newWidth = w;
+        int newHeight = h;
+
+        int physicWindowWidth = getWidth();
+        int physicWindowHeight = getHeight();
+        int top = 0;
+        int left = 0;
+
+        float logicAspectRatio = 1920.0f / 1080.0f;
+
+        float physicAspectRatio = (float)_windowHeight/(float)_windowWidth;
+
+        if( physicAspectRatio > logicAspectRatio ){ //vertical
+
+            physicWindowHeight = (int)((float)_windowWidth * logicAspectRatio);
+            top = _windowHeight / 2 - physicWindowHeight / 2;
+
+            scale = (float)physicWindowHeight / 1920.0f;
+        }
+        else {//horizontal
+            physicWindowWidth = (int)((float)_windowHeight / logicAspectRatio);
+            left = _windowWidth / 2 - physicWindowWidth / 2;
+
+            scale = (float)physicWindowWidth / 1080.0f;
+        }
+
+        int resizedX = (int)(x * scale);
+        int resizedY = (int)(y * scale);
+
+        int resizedImageW = (int)(newWidth * scale);
+        int resizedImageH = (int)(newHeight * scale);
+
+        int physicX = resizedX + left;
+        int physicY = resizedY + top;
+
+        Rect dstRectResized = new Rect(0, 0, 0, 0);
+
+        dstRectResized.setLeft(physicX);
+        dstRectResized.setTop(physicY);
+        dstRectResized.setRight(physicX + resizedImageW);
+        dstRectResized.setBottom(physicY + resizedImageH);
+
+        drawImagePrivateAlpha(image, srcRect, dstRectResized, alpha);
+    }
+
+    @Override
     public void drawImageXCenteredResizedAlpha(Image image, int y, Rect srcRect, int w, int h, float alpha) {
         float scale = 1;
 

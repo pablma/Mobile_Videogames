@@ -29,9 +29,9 @@ public class Particle extends SwitchDashObject {
     @Override
     public void present(float deltaTime) {
         if(_color == Color.BLACK)
-            _blackSp.drawImageAlpha((int) _posX, (int)_posY, _alpha);
+            _blackSp.drawImageResizedAlpha((int)_posX, (int)_posY, _blackSp.getWidth() / 2, _blackSp.getHeight() / 2, _alpha);
         else
-            _whiteSp.drawImageAlpha((int) _posX, (int)_posY, _alpha);
+            _whiteSp.drawImageResizedAlpha((int)_posX, (int)_posY, _whiteSp.getWidth() / 2, _whiteSp.getHeight() / 2, _alpha);
     }
 
     public boolean noVisible(){
