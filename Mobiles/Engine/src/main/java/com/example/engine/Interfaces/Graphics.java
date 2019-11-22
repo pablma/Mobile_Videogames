@@ -84,6 +84,16 @@ public interface Graphics {
      */
     public void drawImageXCenteredAlpha(Image image, int y, Rect srcRect, float alpha);
 
+    /**
+     * Pinta una imagen en pantalla en una posición x e y reescalada con un determinado alfa
+     * @param image imagen que se quiere pintar
+     * @param x posición X
+     * @param y posición Y
+     * @param srcRect parte / rectángulo de la imagen que se quiere pintar
+     * @param w nueva anchura lógca de la imagen
+     * @param h nueva altura lógica de la magen
+     * @param alpha cantidad de alpha para la imagen
+     */
     public void drawImageResizedAlpha(Image image, int x, int y, Rect srcRect, int w, int h, float alpha);
 
     /**
@@ -95,20 +105,19 @@ public interface Graphics {
      * @param h nueva altura lógica de la magen
      * @param alpha cantidad de alpha para la imagen
      */
-
     public void drawImageXCenteredResizedAlpha(Image image, int y, Rect srcRect, int w, int h, float alpha);
 
     /**
-     *
-     * @param image
-     * @param srcRect
+     * Pinta una imagen como una banda negra en la aprte superior de la pantalla
+     * @param image imagen que se quiere pintar
+     * @param srcRect parte / rectángulo de la imagen que se quiere pintar
      */
     public void drawImageAsUpperLeftBand(Image image, Rect srcRect);
 
     /**
-     *
-     * @param image
-     * @param srcRect
+     * Pinta una imagen como una banda negra en la aprte superior de la pantalla
+     * @param image imagen que se quiere pintar
+     * @param srcRect parte / rectángulo de la imagen que se quiere pintar
      */
     public void drawImageAsBottomRightBand(Image image, Rect srcRect);
 

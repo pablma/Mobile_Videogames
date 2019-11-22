@@ -7,10 +7,25 @@ import com.example.engine.Utils.Rect;
 
 public abstract class AbstractGraphics implements Graphics {
 
+    /**
+     * CLASE ABSTRACTA ABSTRACT_GRAPHICS
+     * Esta clase nos permitirá hacer el reescalado de todos los sprites presentes en el estado de juego
+     */
+
     private int _windowWidth, _windowHeight;
 
+    /**
+     * Constructora de la clase
+     */
     public AbstractGraphics(){}
 
+    /**
+     * Método heredado de la interfaz Graphics que pinta una imagen en una posición x e y
+     * @param image imagen que se quiere pintar
+     * @param x posición X
+     * @param y posición Y
+     * @param srcRect parte / rectángulo de la imagen que se quiere pintar
+     */
     @Override
     public void drawImage(Image image, int x, int y, Rect srcRect) {
 
@@ -58,6 +73,11 @@ public abstract class AbstractGraphics implements Graphics {
         drawImagePrivate(image, srcRect, dstRectResized);
     }
 
+    /**
+     * Método heredado de la interfaz Graphics que pinta una imagen de fondo
+     * @param image imagen que se quiere pintar
+     * @param srcRect parte / rectángulo de la imagen que se quiere pintar
+     */
     @Override
     public void drawImageAsBackground(Image image, Rect srcRect) {
         //reescaldo X Y
@@ -90,6 +110,12 @@ public abstract class AbstractGraphics implements Graphics {
         drawImagePrivate(image, srcRect, dstRectResized);
     }
 
+    /**
+     * Método heredado de la interfaz Graphics que pinta una imagen cnetrada en el eje X con una posición Y determinada
+     * @param image imagen que se quiere pintar
+     * @param y posición Y
+     * @param srcRect parte / rectángulo de la imagen que se quiere pintar
+     */
     @Override
     public void drawImageXCentered(Image image, int y, Rect srcRect) {
 
@@ -138,6 +164,14 @@ public abstract class AbstractGraphics implements Graphics {
 
     }
 
+    /**
+     * Método heredado de la interfaz Graphics que pinta una imagen reescalada centrada en el eje X una con una posición y
+     * @param image imagen que se quiere pintar
+     * @param y posición Y
+     * @param srcRect parte / rectángulo de la imagen que se quiere pintar
+     * @param w nueva anchura lógca de la imagen
+     * @param h nueva altura lógica de la magen
+     */
     @Override
     public void drawImageXCenteredResized(Image image, int y, Rect srcRect, int w, int h) {
 
@@ -188,6 +222,14 @@ public abstract class AbstractGraphics implements Graphics {
         drawImagePrivate(image, srcRect, dstRectResized);
     }
 
+    /**
+     * Método heredado de la interfaz Graphics que pinta una imagen en una posición x e y con un determinado alpha
+     * @param image imagen que se quiere pintar
+     * @param x posición X
+     * @param y posición Y
+     * @param srcRect parte / rectángulo de la imaen que se quiere pintar
+     * @param alpha cantidad de alpha para la imagen
+     */
     @Override
     public void drawImageAlpha(Image image, int x, int y, Rect srcRect, float alpha) {
 
@@ -235,6 +277,12 @@ public abstract class AbstractGraphics implements Graphics {
         drawImagePrivateAlpha(image, srcRect, dstRectResized, alpha);
     }
 
+    /**
+     * Método heredado de la interfaz Graphics que pinta una imagen como fondo con un determinado alpha
+     * @param image imagen que se quiere pintar
+     * @param srcRect parte / rectángulo de la imaen que se quiere pintar
+     * @param alpha cantidad de alpha para la imagen
+     */
     @Override
     public void drawImageAsBackgroundAlpha(Image image, Rect srcRect, float alpha) {
         //reescaldo X Y
@@ -267,6 +315,13 @@ public abstract class AbstractGraphics implements Graphics {
         drawImagePrivateAlpha(image, srcRect, dstRectResized, alpha);
     }
 
+    /**
+     * Método heredado de la interfaz Graphics que pinta una imagen centrada en el eje X con una posición Y determinada y un alpha
+     * @param image imagen que se quiere pintar
+     * @param y
+     * @param srcRect parte / rectángulo de la imaen que se quiere pintar
+     * @param alpha cantidad de alpha para la imagen
+     */
     @Override
     public void drawImageXCenteredAlpha(Image image, int y, Rect srcRect, float alpha) {
 
@@ -314,6 +369,16 @@ public abstract class AbstractGraphics implements Graphics {
         drawImagePrivateAlpha(image, srcRect, dstRectResized, alpha);
     }
 
+    /**
+     * Método heredado de la interfaz Graphics que pinta una imagen redimensionada en una posición x e y
+     * @param image imagen que se quiere pintar
+     * @param x posición X
+     * @param y posición Y
+     * @param srcRect parte / rectángulo de la imagen que se quiere pintar
+     * @param w nueva anchura lógca de la imagen
+     * @param h nueva altura lógica de la magen
+     * @param alpha cantidad de alpha para la imagen
+     */
     @Override
     public void drawImageResizedAlpha(Image image, int x, int y, Rect srcRect, int w, int h, float alpha) {
 
@@ -364,6 +429,15 @@ public abstract class AbstractGraphics implements Graphics {
         drawImagePrivateAlpha(image, srcRect, dstRectResized, alpha);
     }
 
+    /**
+     * Método heredado de la interfaz Graphics que pinta una imagen redimensionada centrada en el eje X con una posición Y determinada y un alpha
+     * @param image imagen que se quiere pintar
+     * @param y posición Y
+     * @param srcRect parte / rectángulo de la imagen que se quiere pintar
+     * @param w nueva anchura lógca de la imagen
+     * @param h nueva altura lógica de la magen
+     * @param alpha cantidad de alpha para la imagen
+     */
     @Override
     public void drawImageXCenteredResizedAlpha(Image image, int y, Rect srcRect, int w, int h, float alpha) {
         float scale = 1;
@@ -413,8 +487,11 @@ public abstract class AbstractGraphics implements Graphics {
         drawImagePrivateAlpha(image, srcRect, dstRectResized, alpha);
     }
 
-
-
+    /**
+     * Método heredado de la interfaz Graphics que pinta una imagen como una banda superior izquierda
+     * @param image imagen que se quiere pintar
+     * @param srcRect parte / rectángulo de la imagen que se quiere pintar
+     */
     @Override
     public void drawImageAsUpperLeftBand(Image image, Rect srcRect) {
 
@@ -456,6 +533,11 @@ public abstract class AbstractGraphics implements Graphics {
         drawImagePrivate(image, srcRect, dstRectResized);
     }
 
+    /**
+     * Método heredado de la interfaz Graphics que pinta una imagen como una banda inferior derecha
+     * @param image imagen que se quiere pintar
+     * @param srcRect parte / rectángulo de la imagen que se quiere pintar
+     */
     @Override
     public void drawImageAsBottomRightBand(Image image, Rect srcRect) {
 
@@ -495,13 +577,31 @@ public abstract class AbstractGraphics implements Graphics {
         drawImagePrivate(image, srcRect, dstRectResized);
     }
 
-
+    /**
+     * Método heredado de la interfaz Graphics que actualiza los valores el ancho y altod e la pantalla
+     * @param w ancho
+     * @param h alto
+     */
     @Override
     public void getScreenSizes(int w, int h) {
         _windowWidth = w;
         _windowHeight = h;
     }
 
+    /**
+     * Método que pinta una imagen con un rectángulo destino determinado
+     * @param image imagen que se quiere pintar
+     * @param srcRect rectángulo fuente d ela imagen
+     * @param dstRect rectángulo destino en el que se va a pintar la imagen
+     */
     protected abstract void drawImagePrivate(Image image, Rect srcRect, Rect dstRect);
+
+    /**
+     * Método que pinta una imagen con un rectángulo destino y una alpha determinado
+     * @param image imagen que se quiere pintar
+     * @param srcRect rectángulo fuente d ela imagen
+     * @param dstRect rectángulo destino en el que se va a pintar la imagen
+     * @param alpha alpha con el que se desea pintar la imagen
+     */
     protected abstract void drawImagePrivateAlpha(Image image, Rect srcRect, Rect dstRect, float alpha);
 }

@@ -8,7 +8,11 @@ import java.util.List;
 
 public abstract class AbstractInput implements Input {
 
-    public AbstractInput(){}
+    /**
+     * CLASE ABSTRACTA INPUT
+     * Esta clase nos permitirá reescalar las posiciones del input del jugador para
+     * saber si ha pulsado alguno de los botones
+     */
 
     Game _game;
     private int _windowWidth, _windowHeight;
@@ -16,29 +20,57 @@ public abstract class AbstractInput implements Input {
     int logicX;
     int logicY;
 
+    /**
+     * Constructora de la clase
+     */
+    public AbstractInput(){}
+
+    /**
+     * Método que asigna un game, apra poder acceder más adelante a alguno de sus atributos
+     * @param game que será necesario a posteriori
+     * para poder acceder a las opciones del graphics y por tanto poder "reescalar" la entrada
+     */
     @Override
     public void init(Game game) {
         game = _game;
     }
 
+    /**
+     * Método que informa de si se ha pulsado la pantalla
+     * @param pointer identificador del dedo que pulsa la pantalla
+     * @return true si se ha pulsado la pantalla
+     */
     @Override
     public boolean isTouchDown(int pointer) {
         return isTouchDownPrivate(pointer);
     }
 
+    /**
+     * Método que devuelve la posición lógica X del input
+     * @param pointer identificador del dedo que pulsa la pantalla
+     * @return posición lógica X del input
+     */
     @Override
     public int getTouchX(int pointer) {
         return logicX;
     }
 
+    /**
+     * Método que devuelve la posición lógica Y del input
+     * @param pointer identificador del dedo que pulsa la pantalla
+     * @return posición lógica Y del input
+     */
     @Override
     public int getTouchY(int pointer) {
         return logicY;
     }
 
+    /**
+     * Método que devuelve la lista con todos los eventos registrados hasta el momento
+     * @return lista de touchEvents con los eventos registrados hasta el momento
+     */
     @Override
     public List<TouchEvent> getTouchEvents() {
-
 
         float scale;
 
@@ -93,14 +125,41 @@ public abstract class AbstractInput implements Input {
         return touchEvents;
     }
 
+    /**
+     * Guarda los nuevos tamaños de la ventana
+     * @param w nuevo ancho
+     * @param h nuevo alto
+     */
     @Override
     public void saveScreenSizes(int w, int h) {
         _windowWidth = w;
         _windowHeight = h;
     }
 
+    /**
+     * Método que actuará con las posiciones ya reescaladas del input
+     * @param pointer identificador del dedo que pulsa la pantalla
+     * @return true si se ha pulsado la pantalla
+     */
     protected abstract boolean isTouchDownPrivate(int pointer);
+
+    /**
+     * Método que devuelve la posición física X del input
+     * @param pointer identificador del dedo que pulsa la pantalla
+     * @return posición lógica X del input
+     */
     protected abstract int getTouchXPrivate(int pointer);
+
+    /**
+     * Método que devuelve la posición lógica Y del input
+     * @param pointer
+     * @return posición lógica Y del input
+     */
     protected abstract int getTouchYPrivate(int pointer);
+
+    /**
+     * Método que devuelve la lista con todos los eventos registrados reeescalados hasta el momento
+     * @return lista de touchEvents con los eventos registrados hasta el momento
+     */
     protected abstract List<TouchEvent> getTouchEventsPrivate();
 }
