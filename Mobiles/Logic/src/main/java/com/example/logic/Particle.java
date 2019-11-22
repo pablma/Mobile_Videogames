@@ -13,7 +13,7 @@ public class Particle extends SwitchDashObject {
 
     private float _speedX;   // Velocidad X de las partículas
     private float _speedY;  // Velocidad Y de las partículas
-    private float _gravity = 1.25f;  // Fuerza de la gravedad
+    private float _gravity = 6500f;  // Fuerza de la gravedad
     private float _alpha = 1f;  // Alpha d elas partículas
     private float _alphaDecreasingVel = 1.5f;   // Velocidad con la que decrece el alfa
 
@@ -40,7 +40,8 @@ public class Particle extends SwitchDashObject {
         _posX += _speedX * deltaTime;
         _posY += _speedY * deltaTime;
 
-        _speedY += _gravity;
+        _speedY += _gravity * deltaTime;
+        System.out.println("Speed: " + _speedY);
         _alpha -= _alphaDecreasingVel * deltaTime;
     }
 

@@ -76,15 +76,8 @@
       <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_versionedparcelable_28_0_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_versionedparcelable_28_0_0_aar.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_viewpager_28_0_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_viewpager_28_0_0_aar.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Androidengine/build/generated/source/buildConfig/androidTest/debug/com/example/androidengine/test/BuildConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/Androidengine/build/generated/source/buildConfig/androidTest/debug/com/example/androidengine/test/BuildConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Androidengine/build/generated/source/buildConfig/debug/com/example/androidengine/BuildConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/Androidengine/build/generated/source/buildConfig/debug/com/example/androidengine/BuildConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Androidengine/build/outputs/logs/manifest-merger-debug-report.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Androidengine/build/outputs/logs/manifest-merger-debug-report.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Logic/src/main/java/com/example/logic/GameManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/Logic/src/main/java/com/example/logic/GameManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Logic/src/main/java/com/example/logic/GameObjects/Arrows.java" beforeDir="false" afterPath="$PROJECT_DIR$/Logic/src/main/java/com/example/logic/GameObjects/Arrows.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Logic/src/main/java/com/example/logic/GameObjects/Ball.java" beforeDir="false" afterPath="$PROJECT_DIR$/Logic/src/main/java/com/example/logic/GameObjects/Ball.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Logic/src/main/java/com/example/logic/GameObjects/Score.java" beforeDir="false" afterPath="$PROJECT_DIR$/Logic/src/main/java/com/example/logic/GameObjects/Score.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Logic/src/main/java/com/example/logic/States/GameOverState.java" beforeDir="false" afterPath="$PROJECT_DIR$/Logic/src/main/java/com/example/logic/States/GameOverState.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Logic/src/main/java/com/example/logic/States/GameState.java" beforeDir="false" afterPath="$PROJECT_DIR$/Logic/src/main/java/com/example/logic/States/GameState.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Logic/src/main/java/com/example/logic/Particle.java" beforeDir="false" afterPath="$PROJECT_DIR$/Logic/src/main/java/com/example/logic/Particle.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/local.properties" beforeDir="false" afterPath="$PROJECT_DIR$/local.properties" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -96,7 +89,7 @@
   <component name="DefaultGradleProjectSettings">
     <option name="isMigrated" value="true" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="Nexus_5X_API_29_x86" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="Nexus_5X_API_29" />
   <component name="ExternalProjectsManager">
     <system id="GRADLE">
       <state>
@@ -119,22 +112,37 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Logic/src/main/java/com/example/logic/GameObjects/Score.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="391">
-              <caret line="56" column="22" selection-start-line="56" selection-start-column="22" selection-end-line="56" selection-end-column="22" />
+            <state relative-caret-position="867">
+              <caret line="54" selection-start-line="54" selection-end-line="54" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Logic/src/main/java/com/example/logic/GameManager.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="544">
+              <caret line="32" column="5" selection-start-line="32" selection-start-column="5" selection-end-line="32" selection-end-column="5" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Logic/src/main/java/com/example/logic/GameManager.java">
+        <entry file="file://$PROJECT_DIR$/Logic/src/main/java/com/example/logic/Particle.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="9" column="32" selection-start-line="9" selection-start-column="32" selection-end-line="9" selection-end-column="32" />
+            <state relative-caret-position="459">
+              <caret line="29" column="25" lean-forward="true" selection-start-line="29" selection-start-column="25" selection-end-line="29" selection-end-column="25" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Logic/src/main/java/com/example/logic/ParticleSystem.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="476">
+              <caret line="75" column="61" selection-start-line="75" selection-start-column="61" selection-end-line="75" selection-end-column="61" />
               <folding>
-                <element signature="e#1078#1079#0" expanded="true" />
-                <element signature="e#1112#1113#0" expanded="true" />
-                <element signature="e#1139#1140#0" expanded="true" />
-                <element signature="e#1174#1175#0" expanded="true" />
+                <element signature="imports" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -143,8 +151,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Logic/src/main/java/com/example/logic/States/GameState.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="260">
-              <caret line="173" column="31" selection-start-line="173" selection-start-column="31" selection-end-line="173" selection-end-column="31" />
+            <state relative-caret-position="2652">
+              <caret line="174" column="17" selection-start-line="174" selection-start-column="17" selection-end-line="174" selection-end-column="17" />
             </state>
           </provider>
         </entry>
@@ -152,8 +160,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Logic/src/main/java/com/example/logic/GameObjects/Ball.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="760">
-              <caret line="87" selection-start-line="87" selection-end-line="87" selection-end-column="36" />
+            <state relative-caret-position="1309">
+              <caret line="89" selection-start-line="89" selection-end-line="89" selection-end-column="1" />
             </state>
           </provider>
         </entry>
@@ -161,14 +169,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Logic/src/main/java/com/example/logic/GameObjects/Arrows.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="578">
-              <caret line="42" column="21" selection-start-line="42" selection-start-column="21" selection-end-line="42" selection-end-column="21" />
-              <folding>
-                <element signature="e#923#924#0" expanded="true" />
-                <element signature="e#950#951#0" expanded="true" />
-                <element signature="e#1000#1001#0" expanded="true" />
-                <element signature="e#1027#1028#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="442">
+              <caret line="45" selection-start-line="45" selection-end-line="45" />
             </state>
           </provider>
         </entry>
@@ -176,8 +178,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Logic/src/main/java/com/example/logic/States/GameOverState.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="549">
-              <caret line="84" column="80" selection-start-line="84" selection-start-column="80" selection-end-line="84" selection-end-column="80" />
+            <state relative-caret-position="1156">
+              <caret line="86" selection-start-line="86" selection-end-line="86" />
             </state>
           </provider>
         </entry>
@@ -308,21 +310,21 @@
         <option value="$PROJECT_DIR$/Androidengine/src/main/java/com/example/androidengine/Graphics.java" />
         <option value="$PROJECT_DIR$/PCEngine/src/main/java/com/example/pcengine/Graphics.java" />
         <option value="$PROJECT_DIR$/Logic/src/main/java/com/example/logic/ParticleSystem.java" />
-        <option value="$PROJECT_DIR$/Logic/src/main/java/com/example/logic/Particle.java" />
         <option value="$PROJECT_DIR$/Logic/src/main/java/com/example/logic/GameObjects/Score.java" />
         <option value="$PROJECT_DIR$/Logic/src/main/java/com/example/logic/GameObjects/Ball.java" />
         <option value="$PROJECT_DIR$/Logic/src/main/java/com/example/logic/GameObjects/Arrows.java" />
         <option value="$PROJECT_DIR$/Logic/src/main/java/com/example/logic/States/GameState.java" />
         <option value="$PROJECT_DIR$/Logic/src/main/java/com/example/logic/States/GameOverState.java" />
         <option value="$PROJECT_DIR$/Logic/src/main/java/com/example/logic/GameManager.java" />
+        <option value="$PROJECT_DIR$/Logic/src/main/java/com/example/logic/Particle.java" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="1912" />
-    <option name="y" value="-8" />
-    <option name="width" value="1936" />
-    <option name="height" value="1056" />
+    <option name="x" value="240" />
+    <option name="y" value="130" />
+    <option name="width" value="1440" />
+    <option name="height" value="780" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -333,6 +335,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
+      <pane id="ProjectPane" />
       <pane id="AndroidView">
         <subPane>
           <expand>
@@ -370,13 +374,11 @@
         </subPane>
       </pane>
       <pane id="Scope" />
-      <pane id="ProjectPane" />
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="DeviceAndSnapshotComboBoxAction.selectedDevice" value="Nexus_5X_API_29_x86" />
-    <property name="DeviceAndSnapshotComboBoxAction.selectionTime" value="2019-11-22T15:06:01.002Z" />
+    <property name="DeviceAndSnapshotComboBoxAction.selectedDevice" value="Nexus_5X_API_29" />
+    <property name="DeviceAndSnapshotComboBoxAction.selectionTime" value="2019-11-22T17:16:06.901Z" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="android.sdk.path" value="$USER_HOME$/AppData/Local/Android/Sdk" />
     <property name="device.picker.selection" value="Nexus_5X_API_28_x86" />
@@ -403,7 +405,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.Pc">
+  <component name="RunManager" selected="Android App.app">
     <configuration default="true" type="AndroidJUnit" factoryName="Android JUnit">
       <option name="TEST_OBJECT" value="class" />
       <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
@@ -491,8 +493,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1912" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <layout>
       <window_info id="Captures" order="0" side_tool="true" weight="0.25" />
       <window_info content_ui="combo" id="Project" order="1" visible="true" weight="0.14392324" />
@@ -511,7 +512,7 @@
       <window_info anchor="bottom" id="Event Log" order="5" sideWeight="0.52132195" side_tool="true" weight="0.04550379" />
       <window_info anchor="bottom" id="Build" order="6" sideWeight="0.47974414" weight="0.1516793" />
       <window_info anchor="bottom" id="Android Profiler" order="7" />
-      <window_info active="true" anchor="bottom" id="Run" order="8" sideWeight="0.47867805" visible="true" weight="0.09534128" />
+      <window_info anchor="bottom" id="Run" order="8" sideWeight="0.47867805" weight="0.248104" />
       <window_info anchor="bottom" id="Debug" order="9" sideWeight="0.49626866" weight="0.32827735" />
       <window_info anchor="right" id="Device File Explorer" order="0" side_tool="true" />
       <window_info anchor="right" id="Capture Analysis" order="1" />
@@ -760,16 +761,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Logic/src/main/java/com/example/logic/ParticleSystem.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1207">
-          <caret line="75" column="61" selection-start-line="75" selection-start-column="61" selection-end-line="75" selection-end-column="61" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Androidengine/src/main/java/com/example/androidengine/Graphics.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1649">
@@ -790,64 +781,62 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Logic/src/main/java/com/example/logic/Particle.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="15" column="33" selection-start-line="15" selection-start-column="33" selection-end-line="15" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Logic/src/main/java/com/example/logic/GameObjects/Score.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="56" column="22" selection-start-line="56" selection-start-column="22" selection-end-line="56" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Logic/src/main/java/com/example/logic/GameObjects/Ball.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="760">
-          <caret line="87" selection-start-line="87" selection-end-line="87" selection-end-column="36" />
+        <state relative-caret-position="867">
+          <caret line="54" selection-start-line="54" selection-end-line="54" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Logic/src/main/java/com/example/logic/States/GameState.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="260">
-          <caret line="173" column="31" selection-start-line="173" selection-start-column="31" selection-end-line="173" selection-end-column="31" />
+        <state relative-caret-position="2652">
+          <caret line="174" column="17" selection-start-line="174" selection-start-column="17" selection-end-line="174" selection-end-column="17" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Logic/src/main/java/com/example/logic/States/GameOverState.java">
+    <entry file="file://$PROJECT_DIR$/Logic/src/main/java/com/example/logic/GameObjects/Ball.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="549">
-          <caret line="84" column="80" selection-start-line="84" selection-start-column="80" selection-end-line="84" selection-end-column="80" />
+        <state relative-caret-position="1309">
+          <caret line="89" selection-start-line="89" selection-end-line="89" selection-end-column="1" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Logic/src/main/java/com/example/logic/GameObjects/Arrows.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="578">
-          <caret line="42" column="21" selection-start-line="42" selection-start-column="21" selection-end-line="42" selection-end-column="21" />
-          <folding>
-            <element signature="e#923#924#0" expanded="true" />
-            <element signature="e#950#951#0" expanded="true" />
-            <element signature="e#1000#1001#0" expanded="true" />
-            <element signature="e#1027#1028#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="442">
+          <caret line="45" selection-start-line="45" selection-end-line="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Logic/src/main/java/com/example/logic/States/GameOverState.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1156">
+          <caret line="86" selection-start-line="86" selection-end-line="86" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Logic/src/main/java/com/example/logic/GameManager.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="32" selection-start-line="9" selection-start-column="32" selection-end-line="9" selection-end-column="32" />
+        <state relative-caret-position="544">
+          <caret line="32" column="5" selection-start-line="32" selection-start-column="5" selection-end-line="32" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Logic/src/main/java/com/example/logic/ParticleSystem.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="476">
+          <caret line="75" column="61" selection-start-line="75" selection-start-column="61" selection-end-line="75" selection-end-column="61" />
           <folding>
-            <element signature="e#1078#1079#0" expanded="true" />
-            <element signature="e#1112#1113#0" expanded="true" />
-            <element signature="e#1139#1140#0" expanded="true" />
-            <element signature="e#1174#1175#0" expanded="true" />
+            <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Logic/src/main/java/com/example/logic/Particle.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="459">
+          <caret line="29" column="25" lean-forward="true" selection-start-line="29" selection-start-column="25" selection-end-line="29" selection-end-column="25" />
         </state>
       </provider>
     </entry>
