@@ -8,6 +8,7 @@ import com.example.engine.Abstract_Classes.State;
 import com.example.logic.GameObjects.Arrows;
 import com.example.logic.Assets;
 import com.example.logic.GameObjects.BackgroundColor;
+import com.example.logic.GameObjects.BlackBands;
 import com.example.logic.GameObjects.OptionsButton;
 import com.example.logic.GameObjects.SoundButton;
 import com.example.logic.GameObjects.TapToPlay;
@@ -26,7 +27,8 @@ public class MainMenuState extends State {
 
     // BACKGROUND_COLOR
     BackgroundColor _backgroudnColor;
-    Sprite _blackBand =  Assets._blackBandSprite;
+
+    BlackBands _blackBands;
 
     // MAIN MENU SPRITES
     Sprite _logo;
@@ -62,6 +64,8 @@ public class MainMenuState extends State {
         _soundButton = new SoundButton(1080/2 - 470,200, _game);
         _optionButton = new OptionsButton(1080/2 + 470 - Assets._questionSprite.getWidth(),200, _game);
 
+        _blackBands = new BlackBands();
+
     }
 
     @Override
@@ -81,8 +85,7 @@ public class MainMenuState extends State {
         menuPresent(deltaTime);
         buttonsPresent(deltaTime);
 
-        _blackBand.drawImageAsBottomRightBand();
-        _blackBand.drawImageAsUpperLeftBand();
+        _blackBands.present(deltaTime);
 
     }
 
@@ -125,10 +128,6 @@ public class MainMenuState extends State {
     private void buttonsPresent(float deltaTime){
         _soundButton.present(deltaTime);
         _optionButton.present(deltaTime);
-    }
-
-    private void buttonsBehaviour(Input.TouchEvent event){
-
     }
 
 

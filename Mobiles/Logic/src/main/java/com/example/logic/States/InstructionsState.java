@@ -8,6 +8,7 @@ import com.example.engine.Abstract_Classes.State;
 import com.example.logic.GameObjects.Arrows;
 import com.example.logic.Assets;
 import com.example.logic.GameObjects.BackgroundColor;
+import com.example.logic.GameObjects.BlackBands;
 import com.example.logic.GameObjects.ExitButton;
 import com.example.logic.GameObjects.TapToPlay;
 import com.example.logic.GameObjects.WhiteFlash;
@@ -25,7 +26,7 @@ public class InstructionsState extends State {
 
     // BACKGROUND_COLOR
     BackgroundColor _backgroudnColor;
-    Sprite _blackBand =  Assets._blackBandSprite;
+    BlackBands _blackBands;
 
     // INSTRUCTIONS SPRITES
     Sprite _howToPlay;
@@ -69,6 +70,7 @@ public class InstructionsState extends State {
         _whiteFlash = new WhiteFlash(0,0);
 
         _exitButton = new ExitButton(1080/2 + 470 - Assets._questionSprite.getWidth(),200, _game);
+        _blackBands = new BlackBands();
     }
 
     @Override
@@ -93,8 +95,7 @@ public class InstructionsState extends State {
 
         _whiteFlash.present(deltaTime);
 
-        _blackBand.drawImageAsBottomRightBand();
-        _blackBand.drawImageAsUpperLeftBand();
+        _blackBands.present(deltaTime);
     }
 
     @Override

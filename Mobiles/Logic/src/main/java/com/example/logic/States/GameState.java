@@ -11,6 +11,7 @@ import com.example.logic.GameObjects.Arrows;
 import com.example.logic.Assets;
 import com.example.logic.GameObjects.BackgroundColor;
 import com.example.logic.GameObjects.Ball;
+import com.example.logic.GameObjects.BlackBands;
 import com.example.logic.GameObjects.Player;
 import com.example.logic.GameObjects.Score;
 import com.example.logic.GameObjects.SwitchDashObject;
@@ -50,7 +51,7 @@ public class GameState extends State { // debería de ir en la lógica
 
     //BACKGROUND_COLOR
     BackgroundColor _backgroudnColor;
-    Sprite _blackBand =  Assets._blackBandSprite;
+    BlackBands _blackBands;
 
     //POINTS
     Score _score;
@@ -98,6 +99,8 @@ public class GameState extends State { // debería de ir en la lógica
         _whiteFlash = new WhiteFlash(0,0);
 
         _particleSystem = new ParticleSystem(0, 0);
+        _blackBands = new BlackBands();
+
     }
 
     @Override
@@ -127,8 +130,7 @@ public class GameState extends State { // debería de ir en la lógica
 
         _whiteFlash.present(deltaTime);
 
-        _blackBand.drawImageAsBottomRightBand();
-        _blackBand.drawImageAsUpperLeftBand();
+        _blackBands.present(deltaTime);
     }
 
     @Override

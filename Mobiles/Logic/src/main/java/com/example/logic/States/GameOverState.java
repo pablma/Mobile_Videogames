@@ -9,6 +9,7 @@ import com.example.logic.GameManager;
 import com.example.logic.GameObjects.Arrows;
 import com.example.logic.Assets;
 import com.example.logic.GameObjects.BackgroundColor;
+import com.example.logic.GameObjects.BlackBands;
 import com.example.logic.GameObjects.OptionsButton;
 import com.example.logic.GameObjects.PointsString;
 import com.example.logic.GameObjects.Score;
@@ -29,7 +30,7 @@ public class GameOverState extends State {
 
     // BACKGROUND_COLOR
     BackgroundColor _backgroudnColor;
-    Sprite _blackBand =  Assets._blackBandSprite;
+    BlackBands _blackBands;
 
     // INSTRUCTIONS SPRITES
     Sprite _gameOver;
@@ -83,6 +84,7 @@ public class GameOverState extends State {
         _optionButton = new OptionsButton(1080/2 + 470 - Assets._questionSprite.getWidth(),200, _game);
 
         arrows_1.setArrowsYVel(GameManager.getInstance().getArrowsGameOverVel());
+        _blackBands = new BlackBands();
     }
 
     @Override
@@ -108,8 +110,7 @@ public class GameOverState extends State {
         buttonsPresent(deltaTime);
 
         _whiteFlash.present(deltaTime);
-        _blackBand.drawImageAsBottomRightBand();
-        _blackBand.drawImageAsUpperLeftBand();
+        _blackBands.present(deltaTime);
     }
 
     @Override
