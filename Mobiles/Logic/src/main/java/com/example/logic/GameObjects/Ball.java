@@ -84,5 +84,7 @@ public class Ball extends SwitchDashObject {
 
     public void increaseVel(float increasement) {
         _velY += increasement;
+
+        System.out.println("BOLAS");
     }
 }

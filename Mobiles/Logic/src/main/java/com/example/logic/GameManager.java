@@ -7,9 +7,9 @@ public class GameManager {
     private int _pointsToIncreaseVel = 10;
 
     private int _backgroundColorIndex;
-    private float _incVelY = 0.1f;
+    private float _incVelY = 200f;
 
-
+    private float _arrowsGameOverVel = 0;
 
     private GameManager() {
         _score = new int[] {0, 0, 0, 0};
@@ -42,6 +42,13 @@ public class GameManager {
 
     public int getPointsToIncreaseVel() {
         return _pointsToIncreaseVel;
+    }
+
+    public void saveArrowsGameOverVel(float vel){
+        _arrowsGameOverVel = vel;
+    }
+    public float getArrowsGameOverVel(){
+        return  _arrowsGameOverVel;
     }
 
 }

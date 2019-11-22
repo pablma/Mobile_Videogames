@@ -81,6 +81,8 @@ public class GameOverState extends State {
 
         _soundButton = new SoundButton(1080/2 - 470,200, _game);
         _optionButton = new OptionsButton(1080/2 + 470 - Assets._questionSprite.getWidth(),200, _game);
+
+        arrows_1.setArrowsYVel(GameManager.getInstance().getArrowsGameOverVel());
     }
 
     @Override
@@ -130,10 +132,6 @@ public class GameOverState extends State {
         if(arrows_1.getPosY() > 0){
             arrows_1.setPosY(arrows_1.getPosY() - Assets._backgroundArrowsSprite.getHeight()/5);
         }
-
-        if(_score.isTimeToIncreaseVel())
-            arrows_1.increaseVel(GameManager.getInstance().getIncVelY());
-
     }
 
     private void arrowsBackgroundPresent(float deltaTime){

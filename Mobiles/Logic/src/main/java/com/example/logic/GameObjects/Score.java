@@ -22,8 +22,6 @@ public class Score extends GameObject {
     private int _d = 0;
     private int _c = 0;
     private int _counter = 0;
-    private boolean _increaseVel = false;
-    private int _auxCounter = 0;
     private int _scoreOffsetX = 0;
     private int _scoreOffsetX2 = 0;
 
@@ -58,17 +56,6 @@ public class Score extends GameObject {
     public void updateScore(){
         _counter += 1;
 
-        _auxCounter ++;
-
-        _increaseVel = false;
-
-        if(_auxCounter >= GameManager.getInstance().getPointsToIncreaseVel())
-        {
-            _auxCounter = 0;
-            _increaseVel = true;
-        }
-
-
         _u += 1;
 
         if(_u > 9){
@@ -98,7 +85,4 @@ public class Score extends GameObject {
         _counter = score[3];
     }
 
-    public boolean isTimeToIncreaseVel(){
-        return _increaseVel;
-    }
 }

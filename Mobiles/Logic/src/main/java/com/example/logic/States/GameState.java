@@ -61,6 +61,8 @@ public class GameState extends State { // debería de ir en la lógica
     // PARTICLE SYSTEM
     ParticleSystem _particleSystem;
 
+    int _auxCounter = 0;
+
     int _arrowsOffSetY = 1920 - Assets._backgroundArrowsSprite.getHeight();
 
 
@@ -106,6 +108,8 @@ public class GameState extends State { // debería de ir en la lógica
         ballsUpdate(deltaTime);
         _particleSystem.update(deltaTime);
         arrowsBackgroundUpdate(deltaTime);
+        increasingVelLogic();
+
         _whiteFlash.update(deltaTime);
     }
 
@@ -145,10 +149,6 @@ public class GameState extends State { // debería de ir en la lógica
         if(arrows_1.getPosY() > 0){
             arrows_1.setPosY(arrows_1.getPosY() - Assets._backgroundArrowsSprite.getHeight()/5);
         }
-
-        if(_score.isTimeToIncreaseVel())
-            arrows_1.increaseVel(GameManager.getInstance().getIncVelY());
-
     }
 
     private void arrowsBackgroundPresent(float deltaTime){
@@ -168,15 +168,12 @@ public class GameState extends State { // debería de ir en la lógica
                     b.setPosY(balls.getLast().getPosY() - ballOffset_Y);
                     b.selectColor(balls.getLast().getColor());
                     _score.updateScore();
+                    _auxCounter++;
                 }
                 else {
-                    GameManager.getInstance().saveScore(_score.getScore());
-                    _game.setState(new GameOverState(_game));
+                    gameOver();
                 }
             }
-
-            if(_score.isTimeToIncreaseVel())
-                b.increaseVel(GameManager.getInstance().getIncVelY());
             balls.add(b);
         }
     }
@@ -236,5 +233,26 @@ public class GameState extends State { // debería de ir en la lógica
         return b;
     }
 
+    private void increasingVelLogic(){
+        if(_auxCounter >= GameManager.getInstance().getPointsToIncreaseVel()){
+
+            arrows_1.increaseVel(GameManager.getInstance().getIncVelY());
+
+            for(int i = 0; i < balls.size(); i++)
+            {
+                Ball b = balls.pop();
+                b.increaseVel(GameManager.getInstance().getIncVelY());
+                balls.add(b);
+            }
+            _auxCounter = 0;
+        }
+    }
+
+    private void gameOver(){
+
+        GameManager.getInstance().saveScore(_score.getScore());
+        GameManager.getInstance().saveArrowsGameOverVel(arrows_1.getArrowsYVel());
+        _game.setState(new GameOverState(_game));
+    }
 
 }

@@ -32,5 +32,14 @@ public class Arrows extends GameObject {
 
     public void increaseVel(float increasement) {
         _velY += increasement;
+        System.out.println("arrrow");
+    }
+
+    public float getArrowsYVel(){
+        return _velY;
+    }
+
+    public void setArrowsYVel(float velY){
+        _velY = velY;
     }
 }
