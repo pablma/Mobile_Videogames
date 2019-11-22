@@ -13,7 +13,7 @@ public class Particle extends SwitchDashObject {
 
     private float _speedX;   // Velocidad de las partícuals
     private float _speedY;
-    private float _gravity = 10f;
+    private float _gravity = 0.7f;
     private float _alpha = 1f;  // Alpha d elas partículas
     private float _alphaDecreasingVel = 1.5f;   // Velocidad con la que decrece el alfa
 
@@ -38,8 +38,9 @@ public class Particle extends SwitchDashObject {
     @Override
     public void update(float deltaTime) {
         _posX += _speedX * deltaTime;
-        _posY += _speedY * deltaTime;
-        _speedY -= _gravity * deltaTime;
+        _posY -= _speedY * deltaTime;
+
+        _speedY -= _gravity;
         _alpha -= _alphaDecreasingVel * deltaTime;
     }
 

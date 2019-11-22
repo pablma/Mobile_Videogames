@@ -70,7 +70,7 @@ public class ParticleSystem extends SwitchDashObject {
             float rndY = _random.nextInt(10);
 
             float rndSpeedX = _random.nextInt(200 + 200) - 200;
-            float rndSpeedY = _random.nextInt(200) + 25;
+            float rndSpeedY = _random.nextInt(500) + 300;
             _particles.add(new Particle(posX + rndX, posY + rndY, color, rndSpeedX, rndSpeedY));
         }
     }
