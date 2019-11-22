@@ -40,7 +40,6 @@ public class Particle extends SwitchDashObject {
         _posY += _speedY * deltaTime;
 
         _speedY += _gravity * deltaTime;
-        System.out.println("Speed: " + _speedY);
         _alpha -= _alphaDecreasingVel * deltaTime;
     }
 
