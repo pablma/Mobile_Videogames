@@ -24,6 +24,8 @@ public class Score extends GameObject {
     private int _counter = 0;
     private boolean _increaseVel = false;
     private int _auxCounter = 0;
+    private int _scoreOffsetX = 0;
+    private int _scoreOffsetX2 = 0;
 
     private Sprite _numbersSpriteArray[] = new Sprite[]{_zeroSprite, _oneSprite, _twoSprite, _threeSprite,
             _fourSprite, _fiveSprite, _sixSprite, _sevenSprite, _eigthSprite, _nineSprite};
@@ -34,17 +36,27 @@ public class Score extends GameObject {
 
     public void present(){
 
-        _numbersSpriteArray[_u].drawImage((int)_iniPosX, (int)_iniPosY);
+        _scoreOffsetX = 0;
+        _scoreOffsetX2 = 0;
 
-        if(_counter >= 10)
-            _numbersSpriteArray[_d].drawImage((int)_iniPosX - (int)(0.5 * _zeroSprite.getWidth()), (int)_iniPosY);
+        if(_counter>=100) {
+            _numbersSpriteArray[_c].drawImage((int) _iniPosX - (int) (0.5 * _zeroSprite.getWidth()), (int) _iniPosY);
+            _scoreOffsetX2 = (int) (0.25 * _zeroSprite.getWidth());
+        }
 
-        if(_counter>=100)
-            _numbersSpriteArray[_c].drawImage((int)_iniPosX - (1 * Assets._zeroSprite.getWidth()), (int)_iniPosY);
+        if(_counter >= 10) {
+            _numbersSpriteArray[_d].drawImage((int) _iniPosX +_scoreOffsetX2 - (int) (0.25 * _zeroSprite.getWidth()), (int) _iniPosY);
+            _scoreOffsetX = (int) (0.25 * _zeroSprite.getWidth());
+
+            if(_counter>=100) _scoreOffsetX = (int) (0.5 * _zeroSprite.getWidth());
+        }
+
+        _numbersSpriteArray[_u].drawImage((int)_iniPosX + _scoreOffsetX, (int)_iniPosY);
+
     }
 
     public void updateScore(){
-        _counter ++;
+        _counter +=5;
 
         _auxCounter++;
 
@@ -57,7 +69,7 @@ public class Score extends GameObject {
         }
 
 
-        _u++;
+        _u+=5;
 
         if(_u > 9){
             _u = 0;
