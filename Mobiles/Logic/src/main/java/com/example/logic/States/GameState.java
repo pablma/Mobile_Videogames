@@ -65,7 +65,10 @@ public class GameState extends State { // debería de ir en la lógica
 
     int _arrowsOffSetY = 1920 - Assets._backgroundArrowsSprite.getHeight();
 
-
+    /**
+     * Constructora de la clase, inicializa los atributos
+     * @param game referencia a game para acceder a sus métodos
+     */
     public GameState(Game game) {
         super(game);
         _game = game;
@@ -102,11 +105,14 @@ public class GameState extends State { // debería de ir en la lógica
 
     }
 
+    /**
+     * Actualiza la lógica de todos los elementos en pantalla del estado
+     * @param deltaTime deltaTime
+     */
     @Override
     public void update(float deltaTime) {
 
         getInput();
-        playerUpdate(deltaTime);
         ballsUpdate(deltaTime);
         _particleSystem.update(deltaTime);
         arrowsBackgroundUpdate(deltaTime);
@@ -115,6 +121,9 @@ public class GameState extends State { // debería de ir en la lógica
         _whiteFlash.update(deltaTime);
     }
 
+    /**
+     * Pinta en pantalla todos los objetos del estado
+     */
     @Override
     public void present() {
 
@@ -132,19 +141,32 @@ public class GameState extends State { // debería de ir en la lógica
         _blackBands.present();
     }
 
+    /**
+     * Podría proporcionar una funcionalidad de pausa si fuera necesario
+     */
     @Override
     public void pause() {
     }
 
+    /**
+     * Podría proporcionar una funcionalidad de reanudar si fuera necesario
+     */
     @Override
     public void resume() {
 
     }
 
+    /**
+     * Podría proporcionar una funcionalidad de liberar recursos si fuera necesario
+     */
     @Override
     public void dispose() {
     }
 
+    /**
+     * Actualiza la lógica de las flechas de fondo
+     * @param deltaTime deltaTime
+     */
     private void arrowsBackgroundUpdate(float deltaTime){
         arrows_1.update(deltaTime);
         if(arrows_1.getPosY() > 0){
@@ -152,10 +174,17 @@ public class GameState extends State { // debería de ir en la lógica
         }
     }
 
+    /**
+     * Pinta las flechas de fondo en pantalla
+     */
     private void arrowsBackgroundPresent(){
         arrows_1.present();
     }
 
+    /**
+     * Actualiza la lógica de las pelotas detectando si colisionan con el player y respawneándolas nuevamente
+     * @param deltaTime deltaTime
+     */
     private void ballsUpdate(float deltaTime){
         for (int i = 0; i < balls.size(); i++) {
             Ball b = balls.pop();
@@ -179,6 +208,9 @@ public class GameState extends State { // debería de ir en la lógica
         }
     }
 
+    /**
+     * Pinta las flechas pelotas en pantalla
+     */
     private void ballsPresent(){
         for(int i = 0; i < balls.size(); i++)
         {
@@ -188,14 +220,16 @@ public class GameState extends State { // debería de ir en la lógica
         }
     }
 
-    private void playerUpdate(float deltaTime) {
-
-    }
-
+    /**
+     * Pinta en pantalla el sprite del player
+     */
     private void playerPresent() {
         _player.present();
     }
 
+    /**
+     * Método encargado de registrar las acciones del jugador y cargar nuevos estados de juego
+     */
     private void getInput() {
         List<Input.TouchEvent> touchEvents = _game.getInput().getTouchEvents();
         for (int i = 0; i < touchEvents.size(); i++) {
@@ -207,6 +241,12 @@ public class GameState extends State { // debería de ir en la lógica
         }
     }
 
+    /**
+     * Comprueba si dos objetos han colisionado
+     * @param obj1 objeto 1 que colisiona
+     * @param obj2 objeto 2 que colisiona
+     * @return true si su posición es igual
+     */
     private boolean objectsColliding(SwitchDashObject obj1, SwitchDashObject obj2){
         boolean b = false;
 
@@ -216,6 +256,12 @@ public class GameState extends State { // debería de ir en la lógica
         return b;
     }
 
+    /**
+     * Comprueba si dos objetos han colisionado por sus extremos del eje y
+     * @param obj1 objeto 1 que colisiona
+     * @param obj2 objeto 2 que colisiona
+     * @return true si han entrado en colisión por arriba
+     */
     private boolean topCollision(SwitchDashObject obj1, SwitchDashObject obj2) {
         boolean b = false;
 
@@ -225,6 +271,12 @@ public class GameState extends State { // debería de ir en la lógica
         return b;
     }
 
+    /**
+     * Comprueba si dos objetos son del mismo color
+     * @param obj1 objeto 1
+     * @param obj2 objeto 2
+     * @return true si son del mismo color
+     */
     private boolean sameColorObjects(SwitchDashObject obj1, SwitchDashObject obj2){
         boolean b = false;
 
@@ -234,6 +286,9 @@ public class GameState extends State { // debería de ir en la lógica
         return b;
     }
 
+    /**
+     * Comprueba si se han alcanzado los puntos necesarios para incrementar la velocidad de las pelotas y las felchas y si es así, la aumenta
+     */
     private void increasingVelLogic(){
         if(_auxCounter >= GameManager.getInstance().getPointsToIncreaseVel()){
 
@@ -249,6 +304,10 @@ public class GameState extends State { // debería de ir en la lógica
         }
     }
 
+    /**
+     * Salva la puntuación y la velocidad de las flechas para mostrarlo en la pantalla de gameover
+     * Además carga un nuevo estado gameover
+     */
     private void gameOver(){
 
         GameManager.getInstance().saveScore(_score.getScore());

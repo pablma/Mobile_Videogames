@@ -4,7 +4,12 @@ import com.example.engine.Interfaces.Image;
 import com.example.engine.Utils.Rect;
 import com.example.engine.Utils.Sprite;
 
-public class Assets { // debería ir en logic
+public class Assets {
+
+    /**
+     * CLASE ASSETS
+     * Contiene los sprites, imágenes y rectángulos de cada objeto que puede ser cargado en el juego
+     */
 
     //Player
     public static Sprite _blackPlayerSprite;

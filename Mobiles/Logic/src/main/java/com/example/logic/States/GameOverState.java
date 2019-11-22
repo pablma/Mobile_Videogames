@@ -20,6 +20,12 @@ import com.example.logic.GameObjects.WhiteFlash;
 import java.util.List;
 
 public class GameOverState extends State {
+
+    /**
+     * CLASE GAME_OVER_STATE
+     * Implementa el estado de game over, donde se le da la posibilidad al player de iniciar una nueva partida
+     */
+
     Graphics _graphics;
     Game _game;
 
@@ -51,7 +57,10 @@ public class GameOverState extends State {
     int _tapToPlayPosY;
     int _arrowsOffSetY = 1920 - Assets._backgroundArrowsSprite.getHeight();
 
-
+    /**
+     * Constructora de la clase
+     * @param game referencia a game para poder acceder a sus métodos
+     */
     public GameOverState(Game game) {
         super(game);
         _game = game;
@@ -85,6 +94,10 @@ public class GameOverState extends State {
         _blackBands = new BlackBands();
     }
 
+    /**
+     * Actualiza la lógica d etodos los elementos en pantalla del estado
+     * @param deltaTime deltaTime
+     */
     @Override
     public void update(float deltaTime) {
 
@@ -95,6 +108,9 @@ public class GameOverState extends State {
 
     }
 
+    /**
+     * Pinta en pantalla todos los objetos del estado
+     */
     @Override
     public void present() {
         _graphics.clear(_backgroudnColor.getBackgroundColor());
@@ -111,21 +127,34 @@ public class GameOverState extends State {
         _blackBands.present();
     }
 
+    /**
+     * Podría proporcionar una funcionalidad de pausa si fuera necesario
+     */
     @Override
     public void pause() {
 
     }
 
+    /**
+     * Podría proporcionar una funcionalidad de reanudar si fuera necesario
+     */
     @Override
     public void resume() {
 
     }
 
+    /**
+     * Podría proporcionar una funcionalidad de liberar recursos si fuera necesario
+     */
     @Override
     public void dispose() {
 
     }
 
+    /**
+     * Actualiza la lógica de las flechas de fondo
+     * @param deltaTime deltaTime
+     */
     private void arrowsBackgroundUpdate(float deltaTime){
         arrows_1.update(deltaTime);
         if(arrows_1.getPosY() > 0){
@@ -133,24 +162,40 @@ public class GameOverState extends State {
         }
     }
 
+    /**
+     * Pinta las flechas de fondo en pantalla
+     */
     private void arrowsBackgroundPresent(){
         arrows_1.present();
     }
 
+    /**
+     * Actualiza la lógica del sprite de Tap to Play
+     * @param deltaTime deltaTime
+     */
+    private void menuUpdate(float deltaTime){
+        _tapToPlay.update(deltaTime);
+    }
+
+    /**
+     * Pinta en pantalla los sprites de gameover y tap to play
+     */
     private void menuPresent(){
         _gameOver.drawImageXCentered(_gameOverPosY);
         _tapToPlay.present();
     }
 
-    private void menuUpdate(float deltaTime){
-        _tapToPlay.update(deltaTime);
-    }
-
+    /**
+     * Pinta los botones en pantalla
+     */
     private void buttonsPresent(){
         _soundButton.present();
         _optionButton.present();
     }
 
+    /**
+     * Método encargado de registrar las acciones del jugador y cargar nuevos estados de juego
+     */
     private void getInput() {
         List<Input.TouchEvent> touchEvents = _game.getInput().getTouchEvents();
         for (int i = 0; i < touchEvents.size(); i++) {

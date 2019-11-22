@@ -9,10 +9,23 @@ import com.example.logic.SuperClasses.Assets;
 
 public class LoadingState extends State {
 
+    /**
+     * CLASE LOADING_STATE
+     * Se encarga de generar las imágenes, los rectángulo y los sprites que usaremos en el juego
+     */
+
+    /**
+     * Constructora de la clase
+     * @param game referencia a game para poder acceder a sus métodos
+     */
     public LoadingState(Game game) {
         super(game);
     }
 
+    /**
+     * Realiza la creación de todos los sprites con sus respectivas imágenes y srcRect
+     * @param deltaTime deltaTiem
+     */
     @Override
     public void update(float deltaTime) {
         Graphics _graphics = _game.getGraphics();
@@ -389,21 +402,33 @@ public class LoadingState extends State {
         _game.setState(new MainMenuState(_game));
     }
 
+    /**
+     * Podría proporcionar una funcionalidad de pintado si fuera necesario
+     */
     @Override
     public void present() {
 
     }
 
+    /**
+     * Podría proporcionar una funcionalidad de pausa si fuera necesario
+     */
     @Override
     public void pause() {
 
     }
 
+    /**
+     * Podría proporcionar una funcionalidad de reanudar si fuera necesario
+     */
     @Override
     public void resume() {
 
     }
 
+    /**
+     * Podría proporcionar una funcionalidad de liberar recursos si fuera necesario
+     */
     @Override
     public void dispose() {
 
