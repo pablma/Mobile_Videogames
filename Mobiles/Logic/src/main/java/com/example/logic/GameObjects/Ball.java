@@ -1,6 +1,7 @@
 package com.example.logic.GameObjects;
 
-import com.example.logic.Assets;
+import com.example.logic.SuperClasses.Assets;
+import com.example.logic.SuperClasses.SwitchDashObject;
 
 import java.util.Random;
 
@@ -42,7 +43,7 @@ public class Ball extends SwitchDashObject {
         movement(deltaTime);
     }
 
-    public void present(float deltaTime){
+    public void present(){
 
         if(_color == Color.BLACK)
             _blackSp.drawImageXCentered((int)_posY);

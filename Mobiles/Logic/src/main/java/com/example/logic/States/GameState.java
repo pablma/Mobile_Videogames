@@ -1,22 +1,21 @@
 package com.example.logic.States;
 
 
-import com.example.engine.Utils.Sprite;
 import com.example.engine.Abstract_Classes.State;
 import com.example.engine.Interfaces.Game;
 import com.example.engine.Interfaces.Graphics;
 import com.example.engine.Interfaces.Input;
-import com.example.logic.GameManager;
+import com.example.logic.SuperClasses.GameManager;
 import com.example.logic.GameObjects.Arrows;
-import com.example.logic.Assets;
+import com.example.logic.SuperClasses.Assets;
 import com.example.logic.GameObjects.BackgroundColor;
 import com.example.logic.GameObjects.Ball;
 import com.example.logic.GameObjects.BlackBands;
 import com.example.logic.GameObjects.Player;
 import com.example.logic.GameObjects.Score;
-import com.example.logic.GameObjects.SwitchDashObject;
+import com.example.logic.SuperClasses.SwitchDashObject;
 import com.example.logic.GameObjects.WhiteFlash;
-import com.example.logic.ParticleSystem;
+import com.example.logic.SuperClasses.ParticleSystem;
 
 import java.util.Deque;
 import java.util.LinkedList;
@@ -117,20 +116,20 @@ public class GameState extends State { // debería de ir en la lógica
     }
 
     @Override
-    public void present(float deltaTime) {
+    public void present() {
 
         _graphics.clear(_backgroudnColor.getBackgroundColor());
-        _backgroudnColor.present(deltaTime);
+        _backgroudnColor.present();
 
-        arrowsBackgroundPresent(deltaTime);
-        ballsPresent(deltaTime);
-        playerPresent(deltaTime);
-        _particleSystem.present(deltaTime);
+        arrowsBackgroundPresent();
+        ballsPresent();
+        playerPresent();
+        _particleSystem.present();
         _score.present();
 
-        _whiteFlash.present(deltaTime);
+        _whiteFlash.present();
 
-        _blackBands.present(deltaTime);
+        _blackBands.present();
     }
 
     @Override
@@ -153,8 +152,8 @@ public class GameState extends State { // debería de ir en la lógica
         }
     }
 
-    private void arrowsBackgroundPresent(float deltaTime){
-        arrows_1.present(deltaTime);
+    private void arrowsBackgroundPresent(){
+        arrows_1.present();
     }
 
     private void ballsUpdate(float deltaTime){
@@ -180,11 +179,11 @@ public class GameState extends State { // debería de ir en la lógica
         }
     }
 
-    private void ballsPresent(float deltaTime){
+    private void ballsPresent(){
         for(int i = 0; i < balls.size(); i++)
         {
             Ball b = balls.pop();
-            b.present(deltaTime);
+            b.present();
             balls.add(b);
         }
     }
@@ -193,8 +192,8 @@ public class GameState extends State { // debería de ir en la lógica
 
     }
 
-    private void playerPresent(float deltaTime) {
-        _player.present(deltaTime);
+    private void playerPresent() {
+        _player.present();
     }
 
     private void getInput() {

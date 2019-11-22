@@ -2,7 +2,7 @@ package com.example.logic.GameObjects;
 
 import com.example.engine.Interfaces.Game;
 import com.example.engine.Interfaces.Input;
-import com.example.logic.GameObject;
+import com.example.logic.SuperClasses.GameObject;
 
 public class Button extends GameObject {
 

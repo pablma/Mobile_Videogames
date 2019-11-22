@@ -1,8 +1,7 @@
-package com.example.logic;
+package com.example.logic.GameObjects;
 
-import com.example.logic.GameObjects.SwitchDashObject;
-
-import java.util.Random;
+import com.example.logic.SuperClasses.SwitchDashObject;
+import com.example.logic.SuperClasses.Assets;
 
 public class Particle extends SwitchDashObject {
 
@@ -47,10 +46,9 @@ public class Particle extends SwitchDashObject {
 
     /**
      * Método present encargado de pintar la partícula de blancno o nego, según su color
-     * @param deltaTime
      */
     @Override
-    public void present(float deltaTime) {
+    public void present() {
         if(_color == Color.BLACK)
             _blackSp.drawImageResizedAlpha((int)_posX, (int)_posY, _blackSp.getWidth() / 2, _blackSp.getHeight() / 2, _alpha);
         else

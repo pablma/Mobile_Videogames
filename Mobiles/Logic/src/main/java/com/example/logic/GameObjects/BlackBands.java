@@ -1,8 +1,8 @@
 package com.example.logic.GameObjects;
 
 import com.example.engine.Utils.Sprite;
-import com.example.logic.Assets;
-import com.example.logic.GameObject;
+import com.example.logic.SuperClasses.Assets;
+import com.example.logic.SuperClasses.GameObject;
 
 public class BlackBands extends GameObject {
 
@@ -15,7 +15,7 @@ public class BlackBands extends GameObject {
     }
 
 
-    public void present(float deltaTime){
+    public void present(){
         _blackBandSprite.drawImageAsBottomRightBand();
         _blackBandSprite.drawImageAsUpperLeftBand();
     }

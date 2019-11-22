@@ -1,4 +1,4 @@
-package com.example.logic;
+package com.example.logic.SuperClasses;
 
 public class GameManager {
     private static GameManager _instance;

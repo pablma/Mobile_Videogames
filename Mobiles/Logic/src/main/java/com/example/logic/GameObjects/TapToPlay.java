@@ -1,8 +1,8 @@
 package com.example.logic.GameObjects;
 
 import com.example.engine.Utils.Sprite;
-import com.example.logic.Assets;
-import com.example.logic.GameObject;
+import com.example.logic.SuperClasses.Assets;
+import com.example.logic.SuperClasses.GameObject;
 
 public class TapToPlay extends GameObject {
 
@@ -23,7 +23,7 @@ public class TapToPlay extends GameObject {
             else decreaseAlpha(deltaTime);
     }
 
-    public void present(float deltaTime){
+    public void present(){
             _tapToPlay.drawImageAlpha((int)_posX, (int)_posY,_alpha);
     }
 

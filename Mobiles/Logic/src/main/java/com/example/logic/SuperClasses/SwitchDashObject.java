@@ -1,7 +1,7 @@
-package com.example.logic.GameObjects;
+package com.example.logic.SuperClasses;
 
 import com.example.engine.Utils.Sprite;
-import com.example.logic.GameObject;
+import com.example.logic.SuperClasses.GameObject;
 
 public class SwitchDashObject extends GameObject {
 

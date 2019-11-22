@@ -3,7 +3,7 @@ package com.example.logic.GameObjects;
 import com.example.engine.Interfaces.Game;
 import com.example.engine.Interfaces.Input;
 import com.example.engine.Utils.Sprite;
-import com.example.logic.Assets;
+import com.example.logic.SuperClasses.Assets;
 
 public class SoundButton extends Button {
 
@@ -18,7 +18,7 @@ public class SoundButton extends Button {
     }
 
 
-    public void present(float deltaTime){
+    public void present(){
         if(on)
             soundOnSprite.drawImage((int)_iniPosX, (int)_iniPosY);
         else

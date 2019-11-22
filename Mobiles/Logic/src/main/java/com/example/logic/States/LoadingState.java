@@ -2,11 +2,10 @@ package com.example.logic.States;
 
 import com.example.engine.Interfaces.Game;
 import com.example.engine.Interfaces.Graphics;
-import com.example.engine.Interfaces.Image;
 import com.example.engine.Utils.Rect;
 import com.example.engine.Utils.Sprite;
 import com.example.engine.Abstract_Classes.State;
-import com.example.logic.Assets;
+import com.example.logic.SuperClasses.Assets;
 
 public class LoadingState extends State {
 
@@ -391,7 +390,7 @@ public class LoadingState extends State {
     }
 
     @Override
-    public void present(float deltaTime) {
+    public void present() {
 
     }
 

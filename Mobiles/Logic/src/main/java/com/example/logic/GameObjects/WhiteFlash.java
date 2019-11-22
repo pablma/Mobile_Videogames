@@ -1,8 +1,8 @@
 package com.example.logic.GameObjects;
 
 import com.example.engine.Utils.Sprite;
-import com.example.logic.Assets;
-import com.example.logic.GameObject;
+import com.example.logic.SuperClasses.Assets;
+import com.example.logic.SuperClasses.GameObject;
 
 public class WhiteFlash extends GameObject {
 
@@ -19,7 +19,7 @@ public class WhiteFlash extends GameObject {
         if(_alpha>0) decreaseAlpha(deltaTime);
     }
 
-    public void present(float deltaTime){
+    public void present(){
             _whitePNGSprite.drawImageAsBackgroundAlpha(_alpha);
     }
 

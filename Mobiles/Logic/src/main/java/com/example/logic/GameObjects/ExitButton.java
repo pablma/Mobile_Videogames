@@ -3,8 +3,7 @@ package com.example.logic.GameObjects;
 import com.example.engine.Interfaces.Game;
 import com.example.engine.Interfaces.Input;
 import com.example.engine.Utils.Sprite;
-import com.example.logic.Assets;
-import com.example.logic.States.InstructionsState;
+import com.example.logic.SuperClasses.Assets;
 import com.example.logic.States.MainMenuState;
 
 public class ExitButton extends Button {
@@ -16,7 +15,7 @@ public class ExitButton extends Button {
     }
 
 
-    public void present(float deltaTime){
+    public void present(){
         _exitSprite.drawImage((int)_iniPosX, (int)_iniPosY);
     }
 

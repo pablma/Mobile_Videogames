@@ -1,6 +1,6 @@
-package com.example.logic;
+package com.example.logic.SuperClasses;
 
-import com.example.logic.GameObjects.SwitchDashObject;
+import com.example.logic.GameObjects.Particle;
 
 import java.util.LinkedList;
 import java.util.List;
@@ -46,13 +46,12 @@ public class ParticleSystem extends SwitchDashObject {
 
     /**
      * Método present que recorre la lista de partículas llamando al present de cada una
-     * @param deltaTime deltaTime del juego
      */
     @Override
-    public void present(float deltaTime) {
+    public void present() {
         for(int i = 0; i < _particles.size(); i++){
             Particle p = _particles.get(i);
-            p.present(deltaTime);
+            p.present();
         }
     }
 

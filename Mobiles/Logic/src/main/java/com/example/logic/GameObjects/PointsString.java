@@ -1,8 +1,8 @@
 package com.example.logic.GameObjects;
 
 import com.example.engine.Utils.Sprite;
-import com.example.logic.Assets;
-import com.example.logic.GameObject;
+import com.example.logic.SuperClasses.Assets;
+import com.example.logic.SuperClasses.GameObject;
 
 public class PointsString extends GameObject {
 

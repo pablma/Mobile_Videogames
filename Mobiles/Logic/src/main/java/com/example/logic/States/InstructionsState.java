@@ -6,15 +6,13 @@ import com.example.engine.Interfaces.Input;
 import com.example.engine.Utils.Sprite;
 import com.example.engine.Abstract_Classes.State;
 import com.example.logic.GameObjects.Arrows;
-import com.example.logic.Assets;
+import com.example.logic.SuperClasses.Assets;
 import com.example.logic.GameObjects.BackgroundColor;
 import com.example.logic.GameObjects.BlackBands;
 import com.example.logic.GameObjects.ExitButton;
 import com.example.logic.GameObjects.TapToPlay;
 import com.example.logic.GameObjects.WhiteFlash;
 
-import java.util.Deque;
-import java.util.LinkedList;
 import java.util.List;
 
 public class InstructionsState extends State {
@@ -84,18 +82,18 @@ public class InstructionsState extends State {
     }
 
     @Override
-    public void present(float deltaTime) {
+    public void present() {
         _graphics.clear(_backgroudnColor.getBackgroundColor());
-        _backgroudnColor.present(deltaTime);
+        _backgroudnColor.present();
 
-        arrowsBackgroundPresent(deltaTime);
-        menuPresent(deltaTime);
+        arrowsBackgroundPresent();
+        menuPresent();
 
-        buttonsPresent(deltaTime);
+        buttonsPresent();
 
-        _whiteFlash.present(deltaTime);
+        _whiteFlash.present();
 
-        _blackBands.present(deltaTime);
+        _blackBands.present();
     }
 
     @Override
@@ -120,22 +118,22 @@ public class InstructionsState extends State {
         }
     }
 
-    private void arrowsBackgroundPresent(float deltaTime){
-        arrows_1.present(deltaTime);
+    private void arrowsBackgroundPresent(){
+        arrows_1.present();
     }
 
-    private void menuPresent(float deltaTime){
+    private void menuPresent(){
         _howToPlay.drawImageXCentered(_howToPlayPosY);
         _instructions.drawImageXCentered(_instructionsPosY);
-        _tapToPlay.present(deltaTime);
+        _tapToPlay.present();
     }
 
     private void menuUpdate(float deltaTime){
         _tapToPlay.update(deltaTime);
     }
 
-    private void buttonsPresent(float deltaTime){
-        _exitButton.present(deltaTime);
+    private void buttonsPresent(){
+        _exitButton.present();
     }
 
     private void getInput() {

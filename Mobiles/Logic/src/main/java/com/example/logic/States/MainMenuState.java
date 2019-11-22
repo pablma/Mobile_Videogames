@@ -6,15 +6,13 @@ import com.example.engine.Interfaces.Input;
 import com.example.engine.Utils.Sprite;
 import com.example.engine.Abstract_Classes.State;
 import com.example.logic.GameObjects.Arrows;
-import com.example.logic.Assets;
+import com.example.logic.SuperClasses.Assets;
 import com.example.logic.GameObjects.BackgroundColor;
 import com.example.logic.GameObjects.BlackBands;
 import com.example.logic.GameObjects.OptionsButton;
 import com.example.logic.GameObjects.SoundButton;
 import com.example.logic.GameObjects.TapToPlay;
 
-import java.util.Deque;
-import java.util.LinkedList;
 import java.util.List;
 
 public class MainMenuState extends State {
@@ -76,16 +74,16 @@ public class MainMenuState extends State {
     }
 
     @Override
-    public void present(float deltaTime) {
+    public void present() {
         _graphics.clear(_backgroudnColor.getBackgroundColor());
-        _backgroudnColor.present(deltaTime);
+        _backgroudnColor.present();
 
-        arrowsBackgroundPresent(deltaTime);
+        arrowsBackgroundPresent();
 
-        menuPresent(deltaTime);
-        buttonsPresent(deltaTime);
+        menuPresent();
+        buttonsPresent();
 
-        _blackBands.present(deltaTime);
+        _blackBands.present();
 
     }
 
@@ -112,22 +110,22 @@ public class MainMenuState extends State {
         }
     }
 
-    private void arrowsBackgroundPresent(float deltaTime){
-        arrows_1.present(deltaTime);
+    private void arrowsBackgroundPresent(){
+        arrows_1.present();
     }
 
-    private void menuPresent(float deltaTime){
+    private void menuPresent(){
         _logo.drawImageXCentered(_logoPosY);
-        _tapToPlay.present(deltaTime);
+        _tapToPlay.present();
     }
 
     private void menuUpdate(float deltaTime){
         _tapToPlay.update(deltaTime);
     }
 
-    private void buttonsPresent(float deltaTime){
-        _soundButton.present(deltaTime);
-        _optionButton.present(deltaTime);
+    private void buttonsPresent(){
+        _soundButton.present();
+        _optionButton.present();
     }
 
 

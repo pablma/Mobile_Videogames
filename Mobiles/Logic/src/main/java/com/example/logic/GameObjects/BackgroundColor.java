@@ -1,9 +1,9 @@
 package com.example.logic.GameObjects;
 
 import com.example.engine.Utils.Sprite;
-import com.example.logic.Assets;
-import com.example.logic.GameManager;
-import com.example.logic.GameObject;
+import com.example.logic.SuperClasses.Assets;
+import com.example.logic.SuperClasses.GameManager;
+import com.example.logic.SuperClasses.GameObject;
 
 import java.util.Random;
 
@@ -53,7 +53,7 @@ public class BackgroundColor extends GameObject {
         _colorIntSelected = _colorIntArray[_randomColorIndex];
     }
 
-    public void present(float deltaTime){
+    public void present(){
         _colorSpriteSelected.drawImageXCenteredResized(0, Assets._backgroundArrowsImg.getWidth(),1920);
     }
 

@@ -1,8 +1,8 @@
 package com.example.logic.GameObjects;
 
 import com.example.engine.Utils.Sprite;
-import com.example.logic.Assets;
-import com.example.logic.GameObject;
+import com.example.logic.SuperClasses.Assets;
+import com.example.logic.SuperClasses.GameObject;
 
 public class Arrows extends GameObject {
 
@@ -17,7 +17,7 @@ public class Arrows extends GameObject {
         movement(deltaTime);
     }
 
-    public void present(float deltaTime){
+    public void present(){
         backgroundArrowsSprite.drawImageXCenteredAlpha((int)_posY, 0.2f);
     }
 

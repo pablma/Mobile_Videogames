@@ -55,7 +55,7 @@ public class MySurfaceView extends SurfaceView implements Runnable {
             }
             ++frames;
 
-            _game.getCurrentState().present(deltaTime);
+            _game.getCurrentState().present();
 
             Canvas canvas = _holder.lockCanvas();
             canvas.getClipBounds(dstRect);
