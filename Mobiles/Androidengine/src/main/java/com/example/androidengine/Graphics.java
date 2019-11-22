@@ -109,4 +109,14 @@ public class Graphics extends AbstractGraphics {
     public int getHeight() {
         return _frameBuffer.getHeight();
     }
+
+    @Override
+    public int getLogicWidth() {
+        return 1080;
+    }
+
+    @Override
+    public int getLogicHeight() {
+        return 1920;
+    }
 }

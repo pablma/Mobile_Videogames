@@ -6,26 +6,45 @@ import java.util.Random;
 
 public class Particle extends SwitchDashObject {
 
+    /**
+     * CLASE PARTÍCULA
+     * Contiene los atributos y métodos necesarios para crear partículas animadas
+     */
+
     private float _speed;
     private float _lifetime = 3f;
     private float _alpha = 1f;
     private Random _random;
 
 
+    /**
+     * Contructora de la clase
+     * @param iniPosX posición X inicial del objeto
+     * @param iniPosY posición Y inicial del objeto
+     * @param color color del objeto
+     */
     public Particle(float iniPosX, float iniPosY, Color color) {
         super(iniPosX, iniPosY, Assets._blackBallSprite, Assets._whiteBallSprite);
         _color = color;
         _random = new Random();
-        _speed = _random.nextInt(200 + 200) - 200;
+        _speed = _random.nextInt(250);
     }
 
+    /**
+     * Método update encargado de actualizar la posición y el alpha de las partículas
+     * @param deltaTime deltaTime del juego
+     */
     @Override
     public void update(float deltaTime) {
         _posX += _speed * deltaTime;
-        _posY += _speed * deltaTime;
+        _posY -= _speed * deltaTime;
         _alpha -= 1.5f * deltaTime;
     }
 
+    /**
+     * Método present encargado de pintar la partícula de blancno o nego, según su color
+     * @param deltaTime
+     */
     @Override
     public void present(float deltaTime) {
         if(_color == Color.BLACK)
@@ -34,6 +53,10 @@ public class Particle extends SwitchDashObject {
             _whiteSp.drawImageResizedAlpha((int)_posX, (int)_posY, _whiteSp.getWidth() / 2, _whiteSp.getHeight() / 2, _alpha);
     }
 
+    /**
+     * Método noVisible que devuelve true si la partícula no es visible
+     * @return
+     */
     public boolean noVisible(){
         boolean b = false;
 

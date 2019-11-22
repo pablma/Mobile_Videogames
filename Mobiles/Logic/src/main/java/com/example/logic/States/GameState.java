@@ -71,12 +71,12 @@ public class GameState extends State { // debería de ir en la lógica
 
         arrows_1 = new Arrows(0, _arrowsOffSetY);
 
-        ball_1 = new Ball(_graphics.getWidth() / 2, 0);
-        ball_2 = new Ball(_graphics.getWidth() / 2, ball_1.getPosY() - ballOffset_Y);
-        ball_3 = new Ball(_graphics.getWidth() / 2, ball_2.getPosY() - ballOffset_Y);
-        ball_4 = new Ball(_graphics.getWidth() / 2, ball_3.getPosY() - ballOffset_Y);
-        ball_5 = new Ball(_graphics.getWidth() / 2, ball_4.getPosY() - ballOffset_Y);
-        ball_6 = new Ball(_graphics.getWidth() / 2, ball_5.getPosY() - ballOffset_Y);
+        ball_1 = new Ball(_graphics.getLogicWidth() / 2 - (Assets._blackBallSprite.getWidth() / 2), 0);
+        ball_2 = new Ball(_graphics.getLogicWidth() / 2 - (Assets._blackBallSprite.getWidth() / 2), ball_1.getPosY() - ballOffset_Y);
+        ball_3 = new Ball(_graphics.getLogicWidth() / 2 - (Assets._blackBallSprite.getWidth() / 2), ball_2.getPosY() - ballOffset_Y);
+        ball_4 = new Ball(_graphics.getLogicWidth() / 2 - (Assets._blackBallSprite.getWidth() / 2), ball_3.getPosY() - ballOffset_Y);
+        ball_5 = new Ball(_graphics.getLogicWidth() / 2 - (Assets._blackBallSprite.getWidth() / 2), ball_4.getPosY() - ballOffset_Y);
+        ball_6 = new Ball(_graphics.getLogicWidth() / 2 - (Assets._blackBallSprite.getWidth() / 2), ball_5.getPosY() - ballOffset_Y);
 
         balls = new LinkedList<Ball>();
         balls.add(ball_1);

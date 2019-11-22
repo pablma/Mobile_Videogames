@@ -125,6 +125,18 @@ public interface Graphics {
     public int getHeight();
 
     /**
+     * Devuelve el ancho lógico de la pantalla
+     * @return int con el ancho lógico de la pantalla
+     */
+    public int getLogicWidth();
+
+    /**
+     * Devuelve el alto lógico de la pantalla
+     * @return int con el alto lógico de la pantalla
+     */
+    public int getLogicHeight();
+
+    /**
      * Guarda w y h en dos variables que se utlizarán para el reescalado
      * @param w ancho
      * @param h alto
