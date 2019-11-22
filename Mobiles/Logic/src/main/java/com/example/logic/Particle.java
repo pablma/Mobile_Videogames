@@ -11,9 +11,9 @@ public class Particle extends SwitchDashObject {
      * Contiene los atributos y métodos necesarios para crear partículas animadas
      */
 
-    private float _speedX;   // Velocidad de las partícuals
-    private float _speedY;
-    private float _gravity = 0.7f;
+    private float _speedX;   // Velocidad X de las partículas
+    private float _speedY;  // Velocidad Y de las partículas
+    private float _gravity = 0.7f;  // Fuerza de la gravedad
     private float _alpha = 1f;  // Alpha d elas partículas
     private float _alphaDecreasingVel = 1.5f;   // Velocidad con la que decrece el alfa
 
