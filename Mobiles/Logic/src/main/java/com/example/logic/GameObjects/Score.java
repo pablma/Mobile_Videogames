@@ -56,9 +56,9 @@ public class Score extends GameObject {
     }
 
     public void updateScore(){
-        _counter +=5;
+        _counter += 1;
 
-        _auxCounter++;
+        _auxCounter ++;
 
         _increaseVel = false;
 
@@ -69,7 +69,7 @@ public class Score extends GameObject {
         }
 
 
-        _u+=5;
+        _u += 1;
 
         if(_u > 9){
             _u = 0;
