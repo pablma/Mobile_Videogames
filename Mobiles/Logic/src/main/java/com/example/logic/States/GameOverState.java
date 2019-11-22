@@ -13,6 +13,7 @@ import com.example.logic.GameObjects.OptionsButton;
 import com.example.logic.GameObjects.PointsString;
 import com.example.logic.GameObjects.Score;
 import com.example.logic.GameObjects.SoundButton;
+import com.example.logic.GameObjects.TapToPlay;
 import com.example.logic.GameObjects.WhiteFlash;
 
 import java.util.Deque;
@@ -25,9 +26,6 @@ public class GameOverState extends State {
 
     // ARROWS
     Arrows arrows_1;
-    Arrows arrows_2;
-    float arrowsOffset_Y = Assets._backgroundArrowsImg.getHeight();
-    Deque<Arrows> arrowsQueue;
 
     // BACKGROUND_COLOR
     BackgroundColor _backgroudnColor;
@@ -35,7 +33,9 @@ public class GameOverState extends State {
 
     // INSTRUCTIONS SPRITES
     Sprite _gameOver;
-    Sprite _tapToPlay;
+
+
+    TapToPlay _tapToPlay;
 
     //SCORE
     Score _score;
@@ -67,8 +67,10 @@ public class GameOverState extends State {
         _gameOver = Assets._gameOverSprite;
         _gameOverPosY = 400;
 
-        _tapToPlay = Assets._tapToPlaySprite;
+
         _tapToPlayPosY = 1500;
+        _tapToPlay = new TapToPlay(1080/2 - Assets._tapToPlaySprite.getWidth()/2, _tapToPlayPosY);
+
 
         _score = new Score(1080 / 2 - (int)(0.5 * Assets._oneSprite.getWidth()), 1920 / 2);
         _score.setScore(GameManager.getInstance().getScore());
@@ -83,9 +85,12 @@ public class GameOverState extends State {
 
     @Override
     public void update(float deltaTime) {
-        arrowsBackgroundUpdate(deltaTime);
-        _whiteFlash.update(deltaTime);
+
         getInput();
+        arrowsBackgroundUpdate(deltaTime);
+        menuUpdate(deltaTime);
+        _whiteFlash.update(deltaTime);
+
     }
 
     @Override
@@ -137,7 +142,11 @@ public class GameOverState extends State {
 
     private void menuPresent(float deltaTime){
         _gameOver.drawImageXCentered(_gameOverPosY);
-        _tapToPlay.drawImageXCentered(_tapToPlayPosY);
+        _tapToPlay.present(deltaTime);
+    }
+
+    private void menuUpdate(float deltaTime){
+        _tapToPlay.update(deltaTime);
     }
 
     private void buttonsPresent(float deltaTime){

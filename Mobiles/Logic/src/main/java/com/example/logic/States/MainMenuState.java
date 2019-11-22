@@ -10,6 +10,7 @@ import com.example.logic.Assets;
 import com.example.logic.GameObjects.BackgroundColor;
 import com.example.logic.GameObjects.OptionsButton;
 import com.example.logic.GameObjects.SoundButton;
+import com.example.logic.GameObjects.TapToPlay;
 
 import java.util.Deque;
 import java.util.LinkedList;
@@ -22,9 +23,6 @@ public class MainMenuState extends State {
 
     // ARROWS
     Arrows arrows_1;
-    Arrows arrows_2;
-    float arrowsOffset_Y = Assets._backgroundArrowsImg.getHeight();
-    Deque<Arrows> arrowsQueue;
 
     // BACKGROUND_COLOR
     BackgroundColor _backgroudnColor;
@@ -32,7 +30,8 @@ public class MainMenuState extends State {
 
     // MAIN MENU SPRITES
     Sprite _logo;
-    Sprite _tapToPlay;
+
+    TapToPlay _tapToPlay;
 
     //BUTTONS
     SoundButton _soundButton;
@@ -57,8 +56,8 @@ public class MainMenuState extends State {
         _logo = Assets._switchDashLogoSprite;
         _logoPosY = 500;
 
-        _tapToPlay = Assets._tapToPlaySprite;
         _tapToPlayPosY = 1000;
+        _tapToPlay = new TapToPlay(1080/2 - Assets._tapToPlaySprite.getWidth()/2, _tapToPlayPosY);
 
         _soundButton = new SoundButton(1080/2 - 470,200, _game);
         _optionButton = new OptionsButton(1080/2 + 470 - Assets._questionSprite.getWidth(),200, _game);
@@ -67,8 +66,9 @@ public class MainMenuState extends State {
 
     @Override
     public void update(float deltaTime) {
-        arrowsBackgroundUpdate(deltaTime);
         getInput();
+        arrowsBackgroundUpdate(deltaTime);
+        menuUpdate(deltaTime);
     }
 
     @Override
@@ -115,7 +115,11 @@ public class MainMenuState extends State {
 
     private void menuPresent(float deltaTime){
         _logo.drawImageXCentered(_logoPosY);
-        _tapToPlay.drawImageXCentered(_tapToPlayPosY);
+        _tapToPlay.present(deltaTime);
+    }
+
+    private void menuUpdate(float deltaTime){
+        _tapToPlay.update(deltaTime);
     }
 
     private void buttonsPresent(float deltaTime){
