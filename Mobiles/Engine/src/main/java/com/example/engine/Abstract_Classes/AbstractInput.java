@@ -13,6 +13,9 @@ public abstract class AbstractInput implements Input {
     Game _game;
     private int _windowWidth, _windowHeight;
 
+    int logicX;
+    int logicY;
+
     @Override
     public void init(Game game) {
         game = _game;
@@ -25,16 +28,12 @@ public abstract class AbstractInput implements Input {
 
     @Override
     public int getTouchX(int pointer) {
-        int x = getTouchXPrivate(pointer);
-        int resizedX = 5;
-        return resizedX;
+        return logicX;
     }
 
     @Override
     public int getTouchY(int pointer) {
-        int y = getTouchYPrivate(pointer);
-        int resizedY = 0;
-        return resizedY;
+        return logicY;
     }
 
     @Override
@@ -83,8 +82,8 @@ public abstract class AbstractInput implements Input {
             int repositionatedPhysicY = event._y - top;
 
 
-            int logicX = (int)( repositionatedPhysicX / scale);
-            int logicY = (int)(repositionatedPhysicY / scale);
+            logicX = (int)( repositionatedPhysicX / scale);
+            logicY = (int)(repositionatedPhysicY / scale);
 
             event._x = logicX;
             event._y = logicY;
