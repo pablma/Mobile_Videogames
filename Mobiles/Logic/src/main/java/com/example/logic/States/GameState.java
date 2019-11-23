@@ -352,7 +352,7 @@ public class GameState extends State { // debería de ir en la lógica
      * Permite llamar a una fución tras un período de tiempo determinado
      */
     public synchronized void delayedChangeStateCaller() {
-        this._timer.cancel(); //this will cancel the current task. if there is no active task, nothing happens
+        this._timer.cancel(); //Cancela una posible task actual en caso de que la hubiese
         this._timer = new Timer();
 
         TimerTask action = new TimerTask() {
@@ -361,7 +361,7 @@ public class GameState extends State { // debería de ir en la lógica
             }
         };
 
-        this._timer.schedule(action, _delayTime); //this starts the task
+        this._timer.schedule(action, _delayTime); //Comienza la task
     }
 
 }
