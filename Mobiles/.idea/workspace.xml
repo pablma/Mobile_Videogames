@@ -42,22 +42,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6e099268-356b-497b-bc92-12242aafae8a" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/caches/gradle_models.ser" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/gradle_models.ser" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Logic/src/main/java/com/example/logic/GameObjects/Arrows.java" beforeDir="false" afterPath="$PROJECT_DIR$/Logic/src/main/java/com/example/logic/GameObjects/Arrows.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Logic/src/main/java/com/example/logic/GameObjects/BackgroundColor.java" beforeDir="false" afterPath="$PROJECT_DIR$/Logic/src/main/java/com/example/logic/GameObjects/BackgroundColor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Logic/src/main/java/com/example/logic/GameObjects/Ball.java" beforeDir="false" afterPath="$PROJECT_DIR$/Logic/src/main/java/com/example/logic/GameObjects/Ball.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Logic/src/main/java/com/example/logic/GameObjects/BlackBands.java" beforeDir="false" afterPath="$PROJECT_DIR$/Logic/src/main/java/com/example/logic/GameObjects/BlackBands.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Logic/src/main/java/com/example/logic/GameObjects/Button.java" beforeDir="false" afterPath="$PROJECT_DIR$/Logic/src/main/java/com/example/logic/GameObjects/Button.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Logic/src/main/java/com/example/logic/GameObjects/ExitButton.java" beforeDir="false" afterPath="$PROJECT_DIR$/Logic/src/main/java/com/example/logic/GameObjects/ExitButton.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Logic/src/main/java/com/example/logic/GameObjects/OptionsButton.java" beforeDir="false" afterPath="$PROJECT_DIR$/Logic/src/main/java/com/example/logic/GameObjects/OptionsButton.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Logic/src/main/java/com/example/logic/GameObjects/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/Logic/src/main/java/com/example/logic/GameObjects/Player.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Logic/src/main/java/com/example/logic/GameObjects/PointsString.java" beforeDir="false" afterPath="$PROJECT_DIR$/Logic/src/main/java/com/example/logic/GameObjects/PointsString.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Logic/src/main/java/com/example/logic/GameObjects/Score.java" beforeDir="false" afterPath="$PROJECT_DIR$/Logic/src/main/java/com/example/logic/GameObjects/Score.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Logic/src/main/java/com/example/logic/GameObjects/SoundButton.java" beforeDir="false" afterPath="$PROJECT_DIR$/Logic/src/main/java/com/example/logic/GameObjects/SoundButton.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Logic/src/main/java/com/example/logic/GameObjects/TapToPlay.java" beforeDir="false" afterPath="$PROJECT_DIR$/Logic/src/main/java/com/example/logic/GameObjects/TapToPlay.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Logic/src/main/java/com/example/logic/GameObjects/WhiteFlash.java" beforeDir="false" afterPath="$PROJECT_DIR$/Logic/src/main/java/com/example/logic/GameObjects/WhiteFlash.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AndroidGame/src/main/java/com/example/assignement1/MainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/AndroidGame/src/main/java/com/example/assignement1/MainActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PCGame/src/main/java/com/example/pcgame/PCMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/PCGame/src/main/java/com/example/pcgame/PCMain.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -89,29 +75,6 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Logic/src/main/java/com/example/logic/GameObjects/Arrows.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="357">
-              <caret line="50" column="2" selection-start-line="50" selection-start-column="2" selection-end-line="52" selection-end-column="7" />
-              <folding>
-                <element signature="e#573#574#0" expanded="true" />
-                <element signature="e#612#613#0" expanded="true" />
-                <element signature="e#784#785#0" expanded="true" />
-                <element signature="e#819#820#0" expanded="true" />
-                <element signature="e#906#907#0" expanded="true" />
-                <element signature="e#986#987#0" expanded="true" />
-                <element signature="e#1471#1472#0" expanded="true" />
-                <element signature="e#1513#1514#0" expanded="true" />
-                <element signature="e#1961#1962#0" expanded="true" />
-                <element signature="e#1989#1990#0" expanded="true" />
-                <element signature="e#2184#2185#0" expanded="true" />
-                <element signature="e#2212#2213#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Logic/src/main/java/com/example/logic/GameObjects/Ball.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="-1050">
@@ -123,6 +86,37 @@
                 <element signature="e#1688#1689#0" expanded="true" />
                 <element signature="e#3257#3258#0" expanded="true" />
                 <element signature="e#3286#3287#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/PCGame/src/main/java/com/example/pcgame/PCMain.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="391">
+              <caret line="25" column="80" lean-forward="true" selection-start-line="25" selection-start-column="15" selection-end-line="25" selection-end-column="80" />
+              <folding>
+                <element signature="e#423#424#0" expanded="true" />
+                <element signature="e#463#464#0" expanded="true" />
+                <element signature="e#625#626#0" expanded="true" />
+                <element signature="e#670#671#0" expanded="true" />
+                <element signature="e#758#759#0" expanded="true" />
+                <element signature="e#823#824#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/AndroidGame/src/main/java/com/example/assignement1/MainActivity.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="187">
+              <caret line="11" column="80" selection-start-line="11" selection-start-column="80" selection-end-line="11" selection-end-column="80" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#286#287#0" expanded="true" />
+                <element signature="e#331#332#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -231,19 +225,6 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Logic/src/main/java/com/example/logic/GameObjects/PointsString.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="463">
-              <caret line="30" column="44" selection-start-line="30" selection-start-column="44" selection-end-line="30" selection-end-column="44" />
-              <folding>
-                <element signature="e#599#600#0" expanded="true" />
-                <element signature="e#638#639#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
     </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
@@ -326,8 +307,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Androidengine/src/main/java/com/example/androidengine/MultiTouchHandler.java" />
-        <option value="$PROJECT_DIR$/PCGame/src/main/java/com/example/pcgame/PCMain.java" />
         <option value="$PROJECT_DIR$/Engine/src/main/java/com/example/engine/Interfaces/Image.java" />
         <option value="$PROJECT_DIR$/Engine/src/main/java/com/example/engine/Interfaces/Input.java" />
         <option value="$PROJECT_DIR$/Androidengine/src/main/java/com/example/androidengine/Input.java" />
@@ -377,6 +356,8 @@
         <option value="$PROJECT_DIR$/Logic/src/main/java/com/example/logic/GameObjects/SoundButton.java" />
         <option value="$PROJECT_DIR$/Logic/src/main/java/com/example/logic/GameObjects/TapToPlay.java" />
         <option value="$PROJECT_DIR$/Logic/src/main/java/com/example/logic/GameObjects/WhiteFlash.java" />
+        <option value="$PROJECT_DIR$/PCGame/src/main/java/com/example/pcgame/PCMain.java" />
+        <option value="$PROJECT_DIR$/AndroidGame/src/main/java/com/example/assignement1/MainActivity.java" />
       </list>
     </option>
   </component>
@@ -400,32 +381,18 @@
           <expand>
             <path>
               <item name="Mobiles" type="1abcf292:AndroidViewProjectNode" />
-              <item name="Logic" type="e9137016:NonAndroidModuleNode" />
+              <item name="AndroidGame" type="feadf853:AndroidModuleNode" />
             </path>
             <path>
               <item name="Mobiles" type="1abcf292:AndroidViewProjectNode" />
-              <item name="Logic" type="e9137016:NonAndroidModuleNode" />
-              <item name="java" type="f7eae187:NonAndroidSourceTypeNode" />
+              <item name="AndroidGame" type="feadf853:AndroidModuleNode" />
+              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
             </path>
             <path>
               <item name="Mobiles" type="1abcf292:AndroidViewProjectNode" />
-              <item name="Logic" type="e9137016:NonAndroidModuleNode" />
-              <item name="java" type="f7eae187:NonAndroidSourceTypeNode" />
-              <item name="logic" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Mobiles" type="1abcf292:AndroidViewProjectNode" />
-              <item name="Logic" type="e9137016:NonAndroidModuleNode" />
-              <item name="java" type="f7eae187:NonAndroidSourceTypeNode" />
-              <item name="logic" type="462c0819:PsiDirectoryNode" />
-              <item name="GameObjects" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Mobiles" type="1abcf292:AndroidViewProjectNode" />
-              <item name="Logic" type="e9137016:NonAndroidModuleNode" />
-              <item name="java" type="f7eae187:NonAndroidSourceTypeNode" />
-              <item name="logic" type="462c0819:PsiDirectoryNode" />
-              <item name="States" type="462c0819:PsiDirectoryNode" />
+              <item name="AndroidGame" type="feadf853:AndroidModuleNode" />
+              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
+              <item name="assignement1" type="cbb59c9e:AndroidPsiDirectoryNode" />
             </path>
             <path>
               <item name="Mobiles" type="1abcf292:AndroidViewProjectNode" />
@@ -642,16 +609,6 @@
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/Logic/src/main/java/com/example/logic/MyClass.java" />
-    <entry file="file://$PROJECT_DIR$/AndroidGame/src/main/java/com/example/assignement1/MainActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="13" column="5" selection-start-line="13" selection-start-column="5" selection-end-line="13" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Engine/src/main/java/com/example/engine/Interfaces/Image.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
@@ -822,13 +779,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="799">
           <caret line="47" column="56" selection-start-line="47" selection-start-column="56" selection-end-line="47" selection-end-column="56" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/PCGame/src/main/java/com/example/pcgame/PCMain.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="17" column="56" selection-start-line="17" selection-start-column="56" selection-end-line="17" selection-end-column="56" />
         </state>
       </provider>
     </entry>
@@ -1147,6 +1097,33 @@
             <element signature="e#1688#1689#0" expanded="true" />
             <element signature="e#3257#3258#0" expanded="true" />
             <element signature="e#3286#3287#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PCGame/src/main/java/com/example/pcgame/PCMain.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="25" column="80" lean-forward="true" selection-start-line="25" selection-start-column="15" selection-end-line="25" selection-end-column="80" />
+          <folding>
+            <element signature="e#423#424#0" expanded="true" />
+            <element signature="e#463#464#0" expanded="true" />
+            <element signature="e#625#626#0" expanded="true" />
+            <element signature="e#670#671#0" expanded="true" />
+            <element signature="e#758#759#0" expanded="true" />
+            <element signature="e#823#824#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/AndroidGame/src/main/java/com/example/assignement1/MainActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="80" selection-start-line="11" selection-start-column="80" selection-end-line="11" selection-end-column="80" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#286#287#0" expanded="true" />
+            <element signature="e#331#332#0" expanded="true" />
           </folding>
         </state>
       </provider>
