@@ -67,7 +67,6 @@ public class Arrows extends GameObject {
      */
     public void increaseVel(float increasement) {
         _velY += increasement;
-        System.out.println("arrrow");
     }
 
     /**
