@@ -5,6 +5,7 @@ import com.example.engine.Abstract_Classes.State;
 import com.example.engine.Interfaces.Game;
 import com.example.engine.Interfaces.Graphics;
 import com.example.engine.Interfaces.Input;
+import com.example.engine.Utils.Sprite;
 import com.example.logic.SuperClasses.GameManager;
 import com.example.logic.GameObjects.Arrows;
 import com.example.logic.SuperClasses.Assets;
@@ -20,6 +21,8 @@ import com.example.logic.SuperClasses.ParticleSystem;
 import java.util.Deque;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Timer;
+import java.util.TimerTask;
 
 
 public class GameState extends State { // debería de ir en la lógica
@@ -57,13 +60,22 @@ public class GameState extends State { // debería de ir en la lógica
 
     //EFFECTS
     WhiteFlash _whiteFlash;
+    WhiteFlash _deadWhiteFlash;
 
     // PARTICLE SYSTEM
     ParticleSystem _particleSystem;
 
-    int _auxCounter = 0;
+    //Game Over Sprite
+    Sprite _gameOverSprite;
+    int _gameOverPosY;
 
-    int _arrowsOffSetY = 1920 - Assets._backgroundArrowsSprite.getHeight();
+    int _auxCounter;
+
+    int _arrowsOffSetY;
+
+    private Timer _timer;
+    int _delayTime;
+    boolean _gameOver = false;
 
     /**
      * Constructora de la clase, inicializa los atributos
@@ -74,6 +86,8 @@ public class GameState extends State { // debería de ir en la lógica
         _game = game;
         _graphics = _game.getGraphics();
 
+
+        _arrowsOffSetY = _graphics.getLogicHeight() - Assets._backgroundArrowsSprite.getHeight();
         arrows_1 = new Arrows(0, _arrowsOffSetY);
 
         ball_1 = new Ball(_graphics.getLogicWidth() / 2 - (Assets._blackBallSprite.getWidth() / 2), 0);
@@ -99,9 +113,18 @@ public class GameState extends State { // debería de ir en la lógica
         _backgroudnColor.setNewBackgroundColor();
 
         _whiteFlash = new WhiteFlash(0,0);
+        _deadWhiteFlash = new WhiteFlash(0,0);
 
         _particleSystem = new ParticleSystem(0, 0);
         _blackBands = new BlackBands();
+
+        _gameOverSprite = Assets._gameOverSprite;
+        _gameOverPosY = 400;
+
+        _auxCounter = 0;
+
+        _timer = new Timer();
+        _delayTime = 2000;
 
     }
 
@@ -119,6 +142,8 @@ public class GameState extends State { // debería de ir en la lógica
         increasingVelLogic();
 
         _whiteFlash.update(deltaTime);
+        if(_gameOver)
+            _deadWhiteFlash.update(deltaTime);
     }
 
     /**
@@ -132,11 +157,17 @@ public class GameState extends State { // debería de ir en la lógica
 
         arrowsBackgroundPresent();
         ballsPresent();
-        playerPresent();
+
+        if(!_gameOver)
+            playerPresent();
+
+
         _particleSystem.present();
         _score.present();
 
         _whiteFlash.present();
+        if(_gameOver)
+            _deadWhiteFlash.present();
 
         _blackBands.present();
     }
@@ -190,20 +221,21 @@ public class GameState extends State { // debería de ir en la lógica
             Ball b = balls.pop();
             b.update(deltaTime);
 
-            if(topCollision(b, _player))
-            {
-                if(sameColorObjects(b, _player))
+            if(!_gameOver)
+                if(topCollision(b, _player))
                 {
-                    _particleSystem.generateParticles(b.getPosX(), b.getPosY(), b.getColor());
-                    b.setPosY(balls.getLast().getPosY() - ballOffset_Y);
-                    b.selectColor(balls.getLast().getColor());
-                    _score.updateScore();
-                    _auxCounter++;
+                    if(sameColorObjects(b, _player))
+                    {
+                        _particleSystem.generateParticles(b.getPosX(), b.getPosY(), b.getColor());
+                        b.setPosY(balls.getLast().getPosY() - ballOffset_Y);
+                        b.selectColor(balls.getLast().getColor());
+                        _score.updateScore();
+                        _auxCounter++;
+                    }
+                    else {
+                        gameOver();
+                    }
                 }
-                else {
-                    gameOver();
-                }
-            }
             balls.add(b);
         }
     }
@@ -312,7 +344,24 @@ public class GameState extends State { // debería de ir en la lógica
 
         GameManager.getInstance().saveScore(_score.getScore());
         GameManager.getInstance().saveArrowsGameOverVel(arrows_1.getArrowsYVel());
-        _game.setState(new GameOverState(_game));
+        _gameOver = true;
+        delayedChangeStateCaller();
+    }
+
+    /**
+     * Permite llamar a una fución tras un período de tiempo determinado
+     */
+    public synchronized void delayedChangeStateCaller() {
+        this._timer.cancel(); //this will cancel the current task. if there is no active task, nothing happens
+        this._timer = new Timer();
+
+        TimerTask action = new TimerTask() {
+            public void run() {
+                _game.setState(new GameOverState(_game));
+            }
+        };
+
+        this._timer.schedule(action, _delayTime); //this starts the task
     }
 
 }
