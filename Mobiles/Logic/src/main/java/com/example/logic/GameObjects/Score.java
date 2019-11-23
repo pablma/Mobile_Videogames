@@ -6,6 +6,11 @@ import com.example.logic.SuperClasses.GameObject;
 
 public class Score extends GameObject {
 
+    /**
+     * CLASE SCORE
+     * Es la encrgada de llevar y actualizar la puntuación del player en todo momentos
+     */
+
     private Sprite _zeroSprite = Assets._zeroSprite;
     private Sprite _oneSprite = Assets._oneSprite;
     private Sprite _twoSprite = Assets._twoSprite;
@@ -26,11 +31,18 @@ public class Score extends GameObject {
 
     private Sprite _numbersSpriteArray[] = new Sprite[]{_zeroSprite, _oneSprite, _twoSprite, _threeSprite,
             _fourSprite, _fiveSprite, _sixSprite, _sevenSprite, _eigthSprite, _nineSprite};
-
+    /**
+     * Constructora de la clase
+     * @param iniPosX posición X inicial
+     * @param iniPosY posición Y inicial
+     */
     public Score(float iniPosX, float iniPosY) {
         super(iniPosX, iniPosY);
     }
 
+    /**
+     * Pinta los puntos en pantalla
+     */
     public void present(){
 
         _scoreOffsetX = 0;
@@ -52,6 +64,9 @@ public class Score extends GameObject {
 
     }
 
+    /**
+     * Actualiza el contador de puntos
+     */
     public void updateScore(){
         _counter += 1;
 
@@ -72,11 +87,19 @@ public class Score extends GameObject {
 
     }
 
+    /**
+     * Devuelve los puntos que tiene el player
+     * @return un array con unidades, decenas y centenas de los puntos que tiene el player
+     */
     public int[] getScore(){
         int[] score = new int[]{_u, _d, _c, _counter};
         return score;
     }
 
+    /**
+     * Pone un nuevo valor en el array de puntos
+     * @param score vector con las unidades, decenas y centenas que indica la puntación que se quiere establecer
+     */
     public void setScore(int[] score){
         _u = score[0];
         _d = score[1];

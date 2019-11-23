@@ -7,6 +7,11 @@ import java.util.Random;
 
 public class Ball extends SwitchDashObject {
 
+    /**
+     * CLASE BALL
+     * Es la encargada de llevar la lógica y el pintado de cada bola que se pueda crear en el juego
+     */
+
     private float _velY = 430f;
     private Color _initialColor;
 
@@ -18,7 +23,11 @@ public class Ball extends SwitchDashObject {
     private Color _masterBlackArray[] = new Color[]{Color.BLACK, Color.BLACK, Color.BLACK, Color.BLACK, Color.BLACK,
             Color.BLACK, Color.BLACK, Color.WHITE, Color.WHITE, Color.WHITE};
 
-
+    /**
+     * Constructora de la clase
+     * @param iniPosX posición X inicial
+     * @param iniPosY posición Y inicial
+     */
     public Ball(float iniPosX, float iniPosY) {
 
         super(iniPosX, iniPosY, Assets._blackBallSprite, Assets._whiteBallSprite);
@@ -39,10 +48,17 @@ public class Ball extends SwitchDashObject {
         _color = _initialColor;
     }
 
+    /**
+     * Actualiiza la lógica de la pelota
+     * @param deltaTime deltaTime del juego
+     */
     public void update(float deltaTime){
         movement(deltaTime);
     }
 
+    /**
+     * Pinta el sprite en pantalla depediendo de si es negro o blanco
+     */
     public void present(){
 
         if(_color == Color.BLACK)
@@ -51,15 +67,34 @@ public class Ball extends SwitchDashObject {
             _whiteSp.drawImageXCentered((int)_posY);
     }
 
+    /**
+     * Podría proporcionar una funcionalidad de pausa si fuera necesario
+     */
     public void pause(){}
+
+    /**
+     * Podría proporcionar una funcionalidad de reanudar si fuera necesario
+     */
     public void resume(){}
 
+    /**
+     * Podría proporcionar una funcionalidad de liberar recursos si fuera necesario
+     */
     public void dispose(){}
 
+    /**
+     * Lógica de la pelota, incrementa su velocidad para que vayan bajando
+     * @param deltaTime deltaTime del juego
+     */
     private void movement(float deltaTime){
         _posY += _velY * deltaTime;
     }
 
+    /**
+     * Selecciona un color para la pelota de forma alaeatoria pero sesgada, teniendo
+     * el master un 70% de posibilidades de salir
+     * @param master color con 70% de posibilidades de salir elegido
+     */
     public void selectColor(Color master)
     {
         Color colors [];
@@ -79,10 +114,18 @@ public class Ball extends SwitchDashObject {
             _currentSprite = _whiteSp;
     }
 
+    /**
+     * Devuelve el color actual de la pelota
+     * @return color actual de la pelota
+     */
     public Color getColor() {
         return _color;
     }
 
+    /**
+     * Incrementa la velocidad de la pelota
+     * @param increasement cantidad que se quiere incrementar la velocidad
+     */
     public void increaseVel(float increasement) {
         _velY += increasement;
 

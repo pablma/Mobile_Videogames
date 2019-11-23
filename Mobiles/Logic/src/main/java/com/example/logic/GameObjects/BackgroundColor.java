@@ -9,6 +9,11 @@ import java.util.Random;
 
 public class BackgroundColor extends GameObject {
 
+    /**
+     * CLASE BACKGROUND_COLOR
+     * Es la encargada de gestionar los backgroubds de fondo, así como de cargar cada color posible
+     */
+
     private Sprite _greenBackgroundSprite = Assets._greenBackgroundSprite;
     private Sprite _greenBlueBackgroundSprite = Assets._greenBlueBackgroundSprite;
     private Sprite _softBlueBackgroundSprite = Assets._softBlueBackgroundSprite;
@@ -45,6 +50,11 @@ public class BackgroundColor extends GameObject {
     private Random random = new Random();
     private int _randomColorIndex;
 
+    /**
+     * Constructora de la clase
+     * @param iniPosX posición X inicial
+     * @param iniPosY posición Y inicial
+     */
     public BackgroundColor(float iniPosX, float iniPosY) {
         super(iniPosX, iniPosY);
 
@@ -53,14 +63,24 @@ public class BackgroundColor extends GameObject {
         _colorIntSelected = _colorIntArray[_randomColorIndex];
     }
 
+    /**
+     * Pinta el sprite en pantalla
+     */
     public void present(){
         _colorSpriteSelected.drawImageXCenteredResized(0, Assets._backgroundArrowsImg.getWidth(),1920);
     }
 
+    /**
+     * Devuelve el color actual del fondo
+     * @return int con el index del color que está de fondo
+     */
     public int getBackgroundColor(){
         return _colorIntSelected;
     }
 
+    /**
+     * Pone un nuevo color random de fondo
+     */
     public void setNewBackgroundColor(){
 
         _randomColorIndex = random.nextInt(_colorSpritesArray.length);
@@ -69,6 +89,9 @@ public class BackgroundColor extends GameObject {
         GameManager.getInstance().saveBackgroundColorIndex(_randomColorIndex);
     }
 
+    /**
+     * Pone nuevamente el color que había sido pueso anteriormente de fondo
+     */
     public void setOldBackgroudnColor(){
 
         _randomColorIndex = GameManager.getInstance().getBackgroundColorIndex();
