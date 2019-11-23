@@ -10,7 +10,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class MultiTouchHandler implements TouchHandler {
-    private static  final int MAX_TOUCHPOINTS = 10;
+
+    /**
+     * CLASE MULTI_TOUCH_HANDLER
+     * Permite registrar varios eventos de input a la vez
+     */
+
+    private static final int MAX_TOUCHPOINTS = 10;
 
     boolean [] _isTouched = new boolean[MAX_TOUCHPOINTS];
 
@@ -25,6 +31,12 @@ public class MultiTouchHandler implements TouchHandler {
     float _scaleX;
     float _scaleY;
 
+    /**
+     * Constructora de la clase, inicializa el pooler con objetos de tipo TouchEvent
+     * @param view para poder registrarnos como oyentes y recibir input
+     * @param scaleX se usarán para diferentes tamaños de pantalla
+     * @param scaleY se usarán para diferentes tamaños de pantalla
+     */
     public MultiTouchHandler(View view, float scaleX, float scaleY){
         Pool.PoolObjectFactory<Input.TouchEvent> factory = new Pool.PoolObjectFactory<Input.TouchEvent>() {
             @Override
@@ -41,7 +53,13 @@ public class MultiTouchHandler implements TouchHandler {
 
     }
 
-
+    /**
+     * Registra la pulsación en pantalla y añade un nuevo evento al pooler, con sus respectivos atributos
+     * teniendo en cuenta que puede haber varios eventos a la vez
+     * @param v viene de la interfaz que hereda de onTouchListener
+     * @param event tipo de evento
+     * @return true si se ha pulsado la pantalla
+     */
     public boolean onTouch(View v, MotionEvent event){
         synchronized (this){
             int action = event.getAction() & MotionEvent.ACTION_MASK;
@@ -115,8 +133,11 @@ public class MultiTouchHandler implements TouchHandler {
         }
     }
 
-
-
+    /**
+     * Nos informa de si se ha pulsado la pantalla
+     * @param pointer identificador del dedo que realiza el input
+     * @return true si se ha pulsado la pantalla
+     */
     @Override
     public boolean isTouchDown(int pointer) {
         synchronized (this) {
@@ -128,6 +149,11 @@ public class MultiTouchHandler implements TouchHandler {
         }
     }
 
+    /**
+     * Devuelve la pòsición x del input recibido
+     * @param pointer identificador del dedo que ha pulsado
+     * @return int con la posición x del input
+     */
     @Override
     public int getTouchX(int pointer) {
         synchronized (this) {
@@ -139,6 +165,11 @@ public class MultiTouchHandler implements TouchHandler {
         }
     }
 
+    /**
+     * Devuelve la pòsición Y del input recibido
+     * @param pointer identificador del dedo que ha pulsado
+     * @return int con la posición Y del input
+     */
     @Override
     public int getTouchY(int pointer) {
         synchronized (this) {
@@ -150,6 +181,11 @@ public class MultiTouchHandler implements TouchHandler {
         }
     }
 
+    /**
+     * Devuelve una lista con todos los TouchEvents registrados hasta el momento
+     * Va copiando los eventos al pool y limpiando el buffer
+     * @return una lista de TouchEvents con todos los eventos registrados hasta el momento
+     */
     @Override
     public List<Input.TouchEvent> getTouchEvents() {
         synchronized (this) {
@@ -166,6 +202,11 @@ public class MultiTouchHandler implements TouchHandler {
         }
     }
 
+    /**
+     * Busca el index de un evento
+     * @param pointerId id
+     * @return entero con el index
+     */
     private int getIndex(int pointerId) {
         for(int i = 0; i < MAX_TOUCHPOINTS; i++){
             if(_id[i] == pointerId){

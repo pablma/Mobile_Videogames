@@ -9,6 +9,11 @@ import android.view.SurfaceView;
 
 public class MySurfaceView extends SurfaceView implements Runnable {
 
+    /**
+     * CLASE MY_SURFACE_VIEW
+     * Implementa el bucle principal de juego
+     */
+
     Game _game;
     Bitmap _frameBuffer;
 
@@ -17,6 +22,11 @@ public class MySurfaceView extends SurfaceView implements Runnable {
     volatile boolean _running = false;
     int frames = 0;
 
+    /**
+     * Constructora de la clase
+     * @param game referencia a game necesaria para acceder a sus métodos
+     * @param frameBuffer frameBuffer que usaremos para el renderizado
+     */
     public MySurfaceView(Game game, Bitmap frameBuffer) { // context es una avtivity de android , game es una actividad de android
         super(game);
         this._game = game;
@@ -24,6 +34,9 @@ public class MySurfaceView extends SurfaceView implements Runnable {
         _holder = getHolder();
     }
 
+    /**
+     * Reanuda la ejecución de la aplicación
+     */
     public void resume() {
         if (!_running) {
             _running = true;
@@ -32,6 +45,9 @@ public class MySurfaceView extends SurfaceView implements Runnable {
         }
     } //  como en la prueba de concepto
 
+    /**
+     * LLeva el bucle ppal del juego además de hacer el cálculo para el deltaTime que usamos
+     */
     public void run(){
         Rect dstRect = new Rect();
         long startTime = System.nanoTime();
@@ -46,10 +62,11 @@ public class MySurfaceView extends SurfaceView implements Runnable {
 
             _game.getCurrentState().update(deltaTime);
 
+
             // Informe de FPS
             if (System.nanoTime() - informePrevio > 1000000000l) {
                 long fps = frames * 1000000000l / (System.nanoTime() - informePrevio);
-                System.out.println("" + fps + " fps");
+                //System.out.println("" + fps + " fps");
                 frames = 0;
                 informePrevio = System.nanoTime();
             }
@@ -65,6 +82,9 @@ public class MySurfaceView extends SurfaceView implements Runnable {
         }
     }
 
+    /**
+     * Pausa la ejecución de la aplicación
+     */
     public void pause() {
         if (_running) {
             _running = false;
