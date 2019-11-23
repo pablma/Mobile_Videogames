@@ -34,50 +34,18 @@ public abstract class AbstractGraphics implements Graphics {
     @Override
     public void drawImage(Image image, int x, int y, Rect srcRect) {
 
-        float scale = 1;
-
-        int physicWindowWidth = getWidth();
-        int physicWindowHeight = getHeight();
-        int top = 0;
-        int left = 0;
-
-
-        float physicAspectRatio = (float)_windowHeight/(float)_windowWidth;
-
-        if( physicAspectRatio > logicAspectRatio ){ //vertical
-
-            physicWindowHeight = (int)((float)_windowWidth * logicAspectRatio);
-            top = _windowHeight / 2 - physicWindowHeight / 2;
-
-            scale = (float)physicWindowHeight / 1920.0f;
-        }
-        else {//horizontal
-            physicWindowWidth = (int)((float)_windowHeight / logicAspectRatio);
-            left = _windowWidth / 2 - physicWindowWidth / 2;
-
-            scale = (float)physicWindowWidth / 1080.0f;
-        }
-
-        int resizedX = (int)(x * scale);
-        int resizedY = (int)(y * scale);
-
-        int resizedImageW = (int)(srcRect.getWidth() * scale);
-        int resizedImageH = (int)(srcRect.getHeight() * scale);
-
-        int physicX = resizedX + left;
-        int physicY = resizedY + top;
-
-        Rect dstRectResized = new Rect(0, 0, 0, 0);
-
-        dstRectResized.setLeft(physicX);
-        dstRectResized.setTop(physicY);
-        dstRectResized.setRight(physicX + resizedImageW);
-        dstRectResized.setBottom(physicY + resizedImageH);
-
-        drawImagePrivate(image, srcRect, dstRectResized);
+        drawImageResized(image, x, y, srcRect, srcRect.getWidth(), srcRect.getHeight());
     }
 
-
+    /**
+     * Método heredado de la interfaz Graphics que pinta una imagen redimensionada en una posición x e y
+     * @param image imagen que se quiere pintar
+     * @param x posición X
+     * @param y posición Y
+     * @param srcRect parte / rectángulo de la imagen que se quiere pintar
+     * @param w nueva anchura lógca de la imagen
+     * @param h nueva altura lógica de la imagen
+     */
     @Override
     public void drawImageResized(Image image, int x, int y, Rect srcRect, int w, int h) {
         float scale = 1;
@@ -90,7 +58,6 @@ public abstract class AbstractGraphics implements Graphics {
         int top = 0;
         int left = 0;
 
-        float logicAspectRatio = 1920.0f / 1080.0f;
 
         float physicAspectRatio = (float)_windowHeight/(float)_windowWidth;
 
@@ -99,13 +66,13 @@ public abstract class AbstractGraphics implements Graphics {
             physicWindowHeight = (int)((float)_windowWidth * logicAspectRatio);
             top = _windowHeight / 2 - physicWindowHeight / 2;
 
-            scale = (float)physicWindowHeight / 1920.0f;
+            scale = (float)physicWindowHeight / (float)logicHeight;
         }
         else {//horizontal
             physicWindowWidth = (int)((float)_windowHeight / logicAspectRatio);
             left = _windowWidth / 2 - physicWindowWidth / 2;
 
-            scale = (float)physicWindowWidth / 1080.0f;
+            scale = (float)physicWindowWidth / (float)logicWidth;
         }
 
         int resizedX = (int)(x * scale);
@@ -125,7 +92,6 @@ public abstract class AbstractGraphics implements Graphics {
         dstRectResized.setBottom(physicY + resizedImageH);
 
         drawImagePrivate(image, srcRect, dstRectResized);
-
     }
 
     /**
@@ -135,34 +101,7 @@ public abstract class AbstractGraphics implements Graphics {
      */
     @Override
     public void drawImageAsBackground(Image image, Rect srcRect) {
-        //reescaldo X Y
-
-        int physicWindowWidth = getWidth();
-        int physicWindowHeight = getHeight();
-        int top = 0;
-        int left = 0;
-
-
-        float physicAspectRatio = (float)_windowHeight/(float)_windowWidth;
-
-        if( physicAspectRatio > logicAspectRatio ){ //vertical
-            physicWindowHeight = (int)((float)_windowWidth * logicAspectRatio);
-
-            top = _windowHeight / 2 - physicWindowHeight / 2;
-        }
-        else {//horizontal
-            physicWindowWidth = (int)((float)_windowHeight / logicAspectRatio);
-
-            left = _windowWidth / 2 - physicWindowWidth / 2;
-        }
-
-        Rect dstRectResized = new Rect(0, 0, 0, 0);
-        dstRectResized.setLeft(left);
-        dstRectResized.setTop(top);
-        dstRectResized.setBottom(top + physicWindowHeight);
-        dstRectResized.setRight(left + physicWindowWidth);
-
-        drawImagePrivate(image, srcRect, dstRectResized);
+        drawImageResized(image, 0, 0, srcRect, logicWidth, logicHeight);
     }
 
     /**
@@ -173,49 +112,7 @@ public abstract class AbstractGraphics implements Graphics {
      */
     @Override
     public void drawImageXCentered(Image image, int y, Rect srcRect) {
-
-        float scale = 1;
-
-        int physicWindowWidth = getWidth();
-        int physicWindowHeight = getHeight();
-        int top = 0;
-        int left = 0;
-
-
-        float physicAspectRatio = (float)_windowHeight/(float)_windowWidth;
-
-        if( physicAspectRatio > logicAspectRatio ){ //vertical
-
-            physicWindowHeight = (int)((float)_windowWidth * logicAspectRatio);
-            top = _windowHeight / 2 - physicWindowHeight / 2;
-
-            scale = (float)physicWindowHeight / 1920.0f;
-        }
-        else {//horizontal
-            physicWindowWidth = (int)((float)_windowHeight / logicAspectRatio);
-            left = _windowWidth / 2 - physicWindowWidth / 2;
-
-            scale = (float)physicWindowWidth / 1080.0f;
-        }
-
-
-        int resizedY = (int)(y * scale);
-
-        int resizedImageW = (int)(srcRect.getWidth() * scale);
-        int resizedImageH = (int)(srcRect.getHeight() * scale);
-
-        int physicX = (int)(((float)getWidth() / 2.0f) - (float)(resizedImageW/2));
-        int physicY = resizedY + top;
-
-        Rect dstRectResized = new Rect(0, 0, 0, 0);
-
-        dstRectResized.setLeft(physicX);
-        dstRectResized.setTop(physicY);
-        dstRectResized.setRight(physicX + resizedImageW);
-        dstRectResized.setBottom(physicY + resizedImageH);
-
-        drawImagePrivate(image, srcRect, dstRectResized);
-
+        drawImageResized(image, logicWidth / 2 - srcRect.getWidth() / 2, y, srcRect, srcRect.getWidth(), srcRect.getHeight());
     }
 
     /**
@@ -228,52 +125,10 @@ public abstract class AbstractGraphics implements Graphics {
      */
     @Override
     public void drawImageXCenteredResized(Image image, int y, Rect srcRect, int w, int h) {
-
-        float scale = 1;
-
-        int newWidth = w;
-        int newHeight = h;
-
-        int physicWindowWidth = getWidth();
-        int physicWindowHeight = getHeight();
-        int top = 0;
-        int left = 0;
-
-
-        float physicAspectRatio = (float)_windowHeight/(float)_windowWidth;
-
-        if( physicAspectRatio > logicAspectRatio ){ //vertical
-
-            physicWindowHeight = (int)((float)_windowWidth * logicAspectRatio);
-            top = _windowHeight / 2 - physicWindowHeight / 2;
-
-            scale = (float)physicWindowHeight / 1920.0f;
-        }
-        else {//horizontal
-            physicWindowWidth = (int)((float)_windowHeight / logicAspectRatio);
-            left = _windowWidth / 2 - physicWindowWidth / 2;
-
-            scale = (float)physicWindowWidth / 1080.0f;
-        }
-
-
-        int resizedY = (int)(y * scale);
-
-        int resizedImageW = (int)(newWidth * scale);
-        int resizedImageH = (int)(newHeight * scale);
-
-        int physicX = (int)(((float)getWidth() / 2.0f) - (float)(resizedImageW/2));
-        int physicY = resizedY + top;
-
-        Rect dstRectResized = new Rect(0, 0, 0, 0);
-
-        dstRectResized.setLeft(physicX);
-        dstRectResized.setTop(physicY);
-        dstRectResized.setRight(physicX + resizedImageW);
-        dstRectResized.setBottom(physicY + resizedImageH);
-
-        drawImagePrivate(image, srcRect, dstRectResized);
+        drawImageResized(image, logicWidth / 2 - w / 2, y, srcRect, w, h);
     }
+
+    //Métodos con transparencias
 
     /**
      * Método heredado de la interfaz Graphics que pinta una imagen en una posición x e y con un determinado alpha
@@ -285,139 +140,7 @@ public abstract class AbstractGraphics implements Graphics {
      */
     @Override
     public void drawImageAlpha(Image image, int x, int y, Rect srcRect, float alpha) {
-
-        float scale = 1;
-
-        int physicWindowWidth = getWidth();
-        int physicWindowHeight = getHeight();
-        int top = 0;
-        int left = 0;
-
-
-        float physicAspectRatio = (float)_windowHeight/(float)_windowWidth;
-
-        if( physicAspectRatio > logicAspectRatio ){ //vertical
-
-            physicWindowHeight = (int)((float)_windowWidth * logicAspectRatio);
-            top = _windowHeight / 2 - physicWindowHeight / 2;
-
-            scale = (float)physicWindowHeight / 1920.0f;
-        }
-        else {//horizontal
-            physicWindowWidth = (int)((float)_windowHeight / logicAspectRatio);
-            left = _windowWidth / 2 - physicWindowWidth / 2;
-
-            scale = (float)physicWindowWidth / 1080.0f;
-        }
-
-        int resizedX = (int)(x * scale);
-        int resizedY = (int)(y * scale);
-
-        int resizedImageW = (int)(srcRect.getWidth() * scale);
-        int resizedImageH = (int)(srcRect.getHeight() * scale);
-
-        int physicX = resizedX + left;
-        int physicY = resizedY + top;
-
-        Rect dstRectResized = new Rect(0, 0, 0, 0);
-
-        dstRectResized.setLeft(physicX);
-        dstRectResized.setTop(physicY);
-        dstRectResized.setRight(physicX + resizedImageW);
-        dstRectResized.setBottom(physicY + resizedImageH);
-
-        drawImagePrivateAlpha(image, srcRect, dstRectResized, alpha);
-    }
-
-    /**
-     * Método heredado de la interfaz Graphics que pinta una imagen como fondo con un determinado alpha
-     * @param image imagen que se quiere pintar
-     * @param srcRect parte / rectángulo de la imaen que se quiere pintar
-     * @param alpha cantidad de alpha para la imagen
-     */
-    @Override
-    public void drawImageAsBackgroundAlpha(Image image, Rect srcRect, float alpha) {
-        //reescaldo X Y
-
-        int physicWindowWidth = getWidth();
-        int physicWindowHeight = getHeight();
-        int top = 0;
-        int left = 0;
-
-
-        float physicAspectRatio = (float)_windowHeight/(float)_windowWidth;
-
-        if( physicAspectRatio > logicAspectRatio ){ //vertical
-            physicWindowHeight = (int)((float)_windowWidth * logicAspectRatio);
-
-            top = _windowHeight / 2 - physicWindowHeight / 2;
-        }
-        else {//horizontal
-            physicWindowWidth = (int)((float)_windowHeight / logicAspectRatio);
-
-            left = _windowWidth / 2 - physicWindowWidth / 2;
-        }
-
-        Rect dstRectResized = new Rect(0, 0, 0, 0);
-        dstRectResized.setLeft(left);
-        dstRectResized.setTop(top);
-        dstRectResized.setBottom(top + physicWindowHeight);
-        dstRectResized.setRight(left + physicWindowWidth);
-
-        drawImagePrivateAlpha(image, srcRect, dstRectResized, alpha);
-    }
-
-    /**
-     * Método heredado de la interfaz Graphics que pinta una imagen centrada en el eje X con una posición Y determinada y un alpha
-     * @param image imagen que se quiere pintar
-     * @param y
-     * @param srcRect parte / rectángulo de la imaen que se quiere pintar
-     * @param alpha cantidad de alpha para la imagen
-     */
-    @Override
-    public void drawImageXCenteredAlpha(Image image, int y, Rect srcRect, float alpha) {
-
-        float scale = 1;
-
-        int physicWindowWidth = getWidth();
-        int physicWindowHeight = getHeight();
-        int top = 0;
-        int left = 0;
-
-
-        float physicAspectRatio = (float)_windowHeight/(float)_windowWidth;
-
-        if( physicAspectRatio > logicAspectRatio ){ //vertical
-
-            physicWindowHeight = (int)((float)_windowWidth * logicAspectRatio);
-            top = _windowHeight / 2 - physicWindowHeight / 2;
-
-            scale = (float)physicWindowHeight / 1920.0f;
-        }
-        else {//horizontal
-            physicWindowWidth = (int)((float)_windowHeight / logicAspectRatio);
-            left = _windowWidth / 2 - physicWindowWidth / 2;
-
-            scale = (float)physicWindowWidth / 1080.0f;
-        }
-
-
-        int resizedY = (int)(y * scale);
-
-        int resizedImageW = (int)(srcRect.getWidth() * scale);
-        int resizedImageH = (int)(srcRect.getHeight() * scale);
-
-        int physicX = (int)(((float)getWidth() / 2.0f) - (float)(resizedImageW/2));
-        int physicY = resizedY + top;
-
-        Rect dstRectResized = new Rect(0, 0, 0, 0);
-
-        dstRectResized.setLeft(physicX);
-        dstRectResized.setTop(physicY);
-        dstRectResized.setRight(physicX + resizedImageW);
-        dstRectResized.setBottom(physicY + resizedImageH);
-
-        drawImagePrivateAlpha(image, srcRect, dstRectResized, alpha);
+        drawImageResizedAlpha(image, x, y, srcRect,  srcRect.getWidth(), srcRect.getHeight(), alpha);
     }
 
     /**
@@ -451,13 +174,13 @@ public abstract class AbstractGraphics implements Graphics {
             physicWindowHeight = (int)((float)_windowWidth * logicAspectRatio);
             top = _windowHeight / 2 - physicWindowHeight / 2;
 
-            scale = (float)physicWindowHeight / 1920.0f;
+            scale = (float)physicWindowHeight / (float)logicHeight;
         }
         else {//horizontal
             physicWindowWidth = (int)((float)_windowHeight / logicAspectRatio);
             left = _windowWidth / 2 - physicWindowWidth / 2;
 
-            scale = (float)physicWindowWidth / 1080.0f;
+            scale = (float)physicWindowWidth / (float)logicWidth;
         }
 
         int resizedX = (int)(x * scale);
@@ -480,6 +203,30 @@ public abstract class AbstractGraphics implements Graphics {
     }
 
     /**
+     * Método heredado de la interfaz Graphics que pinta una imagen como fondo con un determinado alpha
+     * @param image imagen que se quiere pintar
+     * @param srcRect parte / rectángulo de la imaen que se quiere pintar
+     * @param alpha cantidad de alpha para la imagen
+     */
+    @Override
+    public void drawImageAsBackgroundAlpha(Image image, Rect srcRect, float alpha) {
+        drawImageResizedAlpha(image, 0, 0, srcRect, logicWidth, logicHeight, alpha);
+    }
+
+    /**
+     * Método heredado de la interfaz Graphics que pinta una imagen centrada en el eje X con una posición Y determinada y un alpha
+     * @param image imagen que se quiere pintar
+     * @param y
+     * @param srcRect parte / rectángulo de la imaen que se quiere pintar
+     * @param alpha cantidad de alpha para la imagen
+     */
+    @Override
+    public void drawImageXCenteredAlpha(Image image, int y, Rect srcRect, float alpha) {
+        drawImageResizedAlpha(image, logicWidth / 2 - srcRect.getWidth() / 2, y, srcRect, srcRect.getWidth(), srcRect.getHeight(), alpha);
+    }
+
+
+    /**
      * Método heredado de la interfaz Graphics que pinta una imagen redimensionada centrada en el eje X con una posición Y determinada y un alpha
      * @param image imagen que se quiere pintar
      * @param y posición Y
@@ -490,50 +237,7 @@ public abstract class AbstractGraphics implements Graphics {
      */
     @Override
     public void drawImageXCenteredResizedAlpha(Image image, int y, Rect srcRect, int w, int h, float alpha) {
-        float scale = 1;
-
-        int newWidth = w;
-        int newHeight = h;
-
-        int physicWindowWidth = getWidth();
-        int physicWindowHeight = getHeight();
-        int top = 0;
-        int left = 0;
-
-
-        float physicAspectRatio = (float)_windowHeight/(float)_windowWidth;
-
-        if( physicAspectRatio > logicAspectRatio ){ //vertical
-
-            physicWindowHeight = (int)((float)_windowWidth * logicAspectRatio);
-            top = _windowHeight / 2 - physicWindowHeight / 2;
-
-            scale = (float)physicWindowHeight / 1920.0f;
-        }
-        else {//horizontal
-            physicWindowWidth = (int)((float)_windowHeight / logicAspectRatio);
-            left = _windowWidth / 2 - physicWindowWidth / 2;
-
-            scale = (float)physicWindowWidth / 1080.0f;
-        }
-
-
-        int resizedY = (int)(y * scale);
-
-        int resizedImageW = (int)(newWidth * scale);
-        int resizedImageH = (int)(newHeight * scale);
-
-        int physicX = (int)(((float)getWidth() / 2.0f) - (float)(resizedImageW/2));
-        int physicY = resizedY + top;
-
-        Rect dstRectResized = new Rect(0, 0, 0, 0);
-
-        dstRectResized.setLeft(physicX);
-        dstRectResized.setTop(physicY);
-        dstRectResized.setRight(physicX + resizedImageW);
-        dstRectResized.setBottom(physicY + resizedImageH);
-
-        drawImagePrivateAlpha(image, srcRect, dstRectResized, alpha);
+        drawImageResizedAlpha(image, logicWidth / 2 - w / 2, y, srcRect, w, h, alpha);
     }
 
     /**
@@ -576,8 +280,6 @@ public abstract class AbstractGraphics implements Graphics {
             dstRectResized.setBottom(top + physicWindowHeight);
             dstRectResized.setRight(left);
         }
-
-
 
         drawImagePrivate(image, srcRect, dstRectResized);
     }
