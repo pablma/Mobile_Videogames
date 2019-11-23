@@ -12,6 +12,11 @@ import java.awt.*;
 
 public class Graphics extends AbstractGraphics {
 
+    /**
+     * CLASE GRAPHICS
+     * Proporciona la funcionalidad parra cargar y pintar imágenes en PC
+     */
+
     java.awt.Graphics _graphics;
     private BufferStrategy _strategy; // obtener referencia a grafics - strategy show - dispose
     JFrame _window;
@@ -21,6 +26,10 @@ public class Graphics extends AbstractGraphics {
     Graphics2D _graphics2D;
 
 
+    /**
+     * Constructora de la clase
+     * @param window ventana de la aplicación
+     */
     public Graphics(JFrame window){
         _window = window;
 
@@ -47,7 +56,11 @@ public class Graphics extends AbstractGraphics {
 
     }
 
-
+    /**
+     * Carga una imagen de un archivo
+     * @param name Nombre del archivo a cargar
+     * @return imagen de tipo PCImage como mapa de bits
+     */
     @Override
     public Image newImage(String name) {
 
@@ -63,15 +76,12 @@ public class Graphics extends AbstractGraphics {
        return img;
     }
 
-    @Override
-    public void clear(int color) {
-        int r = (color>>16)&0xFF;
-        int g = (color>>8)&0xFF;
-        int b = (color>>0)&0xFF;
-        _graphics.setColor(new Color(r, g, b));
-        _graphics.fillRect(0, 0, getWidth(), getHeight());
-    }
-
+    /**
+     * Pinta una imagen en pantalla
+     * @param image imagen que se quiere pintar
+     * @param srcRect rectángulo fuente d ela imagen
+     * @param dstRect rectángulo destino en el que se va a pintar la imagen
+     */
     @Override
     protected void drawImagePrivate(Image image, Rect srcRect, Rect dstRect) {
         _srcRect.x = srcRect.getLeft();
@@ -88,6 +98,13 @@ public class Graphics extends AbstractGraphics {
         _graphics.drawImage(img.getImage(), _dstRect.x,  _dstRect.y, _dstRect.width, _dstRect.height, _srcRect.x, _srcRect.y, _srcRect.width, _srcRect.height,null);
     }
 
+    /**
+     * Pinta una imagen en pantalla con un determinado alpha
+     * @param image imagen que se quiere pintar
+     * @param srcRect rectángulo fuente d ela imagen
+     * @param dstRect rectángulo destino en el que se va a pintar la imagen
+     * @param alpha alpha con el que se desea pintar la imagen
+     */
     @Override
     protected void drawImagePrivateAlpha(Image image, Rect srcRect, Rect dstRect, float alpha) {
         _srcRect.x = srcRect.getLeft();
@@ -114,18 +131,40 @@ public class Graphics extends AbstractGraphics {
     }
 
 
+    /**
+     * Método para limpiar el canvas de un color determinado
+     * @param color Color con el que se quiere limpiar el canvas
+     */
+    @Override
+    public void clear(int color) {
+        int r = (color>>16)&0xFF;
+        int g = (color>>8)&0xFF;
+        int b = (color>>0)&0xFF;
+        _graphics.setColor(new Color(r, g, b));
+        _graphics.fillRect(0, 0, getWidth(), getHeight());
+    }
+
+    /**
+     * Devuelve el ancho físico de graphics
+     * @return int con el ancho de graphics
+     */
     @Override
     public int getWidth() {
         return  _window.getWidth();
     } //In PC the physic dimensions are the dimensions of the window where we are displaying the game
 
+    /**
+     * Devuelve el alto físico de Graphics
+     * @return int con el alto de Graphics
+     */
     @Override
     public int getHeight() {
         return  _window.getHeight();
     }
 
-
-
+    /**
+     * Igualamos la varible grphics a strategy
+     */
     public void setGraphics(){
         while(true) {
             try {
@@ -137,10 +176,17 @@ public class Graphics extends AbstractGraphics {
         }
     }
 
+    /**
+     * Libera recursos del graphics
+     */
     public void dispose() {
         _graphics.dispose();
     }
 
+    /**
+     * Devuelve el strategybuffer
+     * @return BufferStrattegy
+     */
     public BufferStrategy getBufferStrategy() { return _strategy; }
 
 

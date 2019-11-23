@@ -15,6 +15,11 @@ import java.io.InputStream;
 
 public class Graphics extends AbstractGraphics {
 
+    /**
+     * CLASE GRAPHICS
+     * Proporciona la funcionalidad parra cargar y pintar imágenes en android
+     */
+
     AssetManager _assets;
     Bitmap _frameBuffer;
     Canvas _canvas;
@@ -23,9 +28,11 @@ public class Graphics extends AbstractGraphics {
     Rect _srcRect = new Rect();
     Rect _dstRect = new Rect();
 
-
-
-
+    /**
+     * Constructora de la clase, inicializa todos los parámetros necesarios
+     * @param assets
+     * @param frameBuffer buffer que utilizaremos para pintar
+     */
     public Graphics(AssetManager assets, Bitmap frameBuffer){
         this._assets = assets;
         this._frameBuffer = frameBuffer;
@@ -33,6 +40,11 @@ public class Graphics extends AbstractGraphics {
         this._paint = new Paint();
     }
 
+    /**
+     * Carga una imagen de un archivo
+     * @param name Nombre del archivo a cargar
+     * @return imagen de tipo androidImage como mapa de bits
+     */
     @Override
     public Image newImage(String name) {
         InputStream in = null;
@@ -59,6 +71,12 @@ public class Graphics extends AbstractGraphics {
         return img;
     }
 
+    /**
+     * Pinta una imagen en pantalla
+     * @param image imagen que se quiere pintar
+     * @param srcRect rectángulo fuente d ela imagen
+     * @param dstRect rectángulo destino en el que se va a pintar la imagen
+     */
     @Override
     protected void drawImagePrivate(Image image, com.example.engine.Utils.Rect srcRect, com.example.engine.Utils.Rect dstRect) {
         _srcRect.left = srcRect.getLeft();
@@ -75,6 +93,13 @@ public class Graphics extends AbstractGraphics {
         _canvas.drawBitmap(img.getBitmap(), _srcRect, _dstRect,null);
     }
 
+    /**
+     * Pinta una imagen en pantalla con un determinado alpha
+     * @param image imagen que se quiere pintar
+     * @param srcRect rectángulo fuente d ela imagen
+     * @param dstRect rectángulo destino en el que se va a pintar la imagen
+     * @param alpha alpha con el que se desea pintar la imagen
+     */
     @Override
     protected void drawImagePrivateAlpha(Image image, com.example.engine.Utils.Rect srcRect, com.example.engine.Utils.Rect dstRect, float alpha) {
         _srcRect.left = srcRect.getLeft();
@@ -94,17 +119,28 @@ public class Graphics extends AbstractGraphics {
         _canvas.drawBitmap(img.getBitmap(), _srcRect, _dstRect,_paint);
     }
 
-
+    /**
+     * Método para limpiar el canvas de un color determinado
+     * @param color Color con el que se quiere limpiar el canvas
+     */
     @Override
     public void clear(int color) {
         _canvas.drawRGB((color & 0xff0000) >> 16, (color & 0xff00) >> 8, (color & 0xff));
     }
 
+    /**
+     * Devuelve el ancho físico de graphics
+     * @return int con el ancho de graphics
+     */
     @Override
     public int getWidth() {
         return _frameBuffer.getWidth();
     }
 
+    /**
+     * Devuelve el alto físico de Graphics
+     * @return int con el alto de Graphics
+     */
     @Override
     public int getHeight() {
         return _frameBuffer.getHeight();
