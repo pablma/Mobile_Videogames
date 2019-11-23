@@ -19,45 +19,28 @@ public abstract class AbstractGraphics implements Graphics {
 
     float logicAspectRatio = (float)logicHeight / (float)logicWidth;
 
+    Rect dstRectResized = new Rect(0, 0, 0, 0);
+
     /**
      * Constructora de la clase
      */
     public AbstractGraphics(){}
 
     /**
-     * Método heredado de la interfaz Graphics que pinta una imagen en una posición x e y
-     * @param image imagen que se quiere pintar
+     * Método privado que reescala que reescala las imagenes y posiciones transformabdo el destino lógico en el destino físico
      * @param x posición X
      * @param y posición Y
-     * @param srcRect parte / rectángulo de la imagen que se quiere pintar
      */
-    @Override
-    public void drawImage(Image image, int x, int y, Rect srcRect) {
-
-        drawImageResized(image, x, y, srcRect, srcRect.getWidth(), srcRect.getHeight());
-    }
-
-    /**
-     * Método heredado de la interfaz Graphics que pinta una imagen redimensionada en una posición x e y
-     * @param image imagen que se quiere pintar
-     * @param x posición X
-     * @param y posición Y
-     * @param srcRect parte / rectángulo de la imagen que se quiere pintar
-     * @param w nueva anchura lógca de la imagen
-     * @param h nueva altura lógica de la imagen
-     */
-    @Override
-    public void drawImageResized(Image image, int x, int y, Rect srcRect, int w, int h) {
-        float scale = 1;
+    private void resizedDest(int x, int y, int w, int h) {
+        float scale;
 
         int newWidth = w;
         int newHeight = h;
 
-        int physicWindowWidth = getWidth();
-        int physicWindowHeight = getHeight();
+        int physicWindowWidth;
+        int physicWindowHeight;
         int top = 0;
         int left = 0;
-
 
         float physicAspectRatio = (float)_windowHeight/(float)_windowWidth;
 
@@ -84,13 +67,38 @@ public abstract class AbstractGraphics implements Graphics {
         int physicX = resizedX + left;
         int physicY = resizedY + top;
 
-        Rect dstRectResized = new Rect(0, 0, 0, 0);
+        dstRectResized = new Rect(0, 0, 0, 0);
 
         dstRectResized.setLeft(physicX);
         dstRectResized.setTop(physicY);
         dstRectResized.setRight(physicX + resizedImageW);
         dstRectResized.setBottom(physicY + resizedImageH);
+    }
 
+    /**
+     * Método heredado de la interfaz Graphics que pinta una imagen en una posición x e y
+     * @param image imagen que se quiere pintar
+     * @param x posición X
+     * @param y posición Y
+     * @param srcRect parte / rectángulo de la imagen que se quiere pintar
+     */
+    @Override
+    public void drawImage(Image image, int x, int y, Rect srcRect) {
+        drawImageResized(image, x, y, srcRect, srcRect.getWidth(), srcRect.getHeight());
+    }
+
+    /**
+     * Método heredado de la interfaz Graphics que pinta una imagen redimensionada en una posición x e y
+     * @param image imagen que se quiere pintar
+     * @param x posición X
+     * @param y posición Y
+     * @param srcRect parte / rectángulo de la imagen que se quiere pintar
+     * @param w nueva anchura lógca de la imagen
+     * @param h nueva altura lógica de la imagen
+     */
+    @Override
+    public void drawImageResized(Image image, int x, int y, Rect srcRect, int w, int h) {
+        resizedDest(x, y, w, h);
         drawImagePrivate(image, srcRect, dstRectResized);
     }
 
@@ -129,7 +137,6 @@ public abstract class AbstractGraphics implements Graphics {
     }
 
     //Métodos con transparencias
-
     /**
      * Método heredado de la interfaz Graphics que pinta una imagen en una posición x e y con un determinado alpha
      * @param image imagen que se quiere pintar
@@ -155,50 +162,7 @@ public abstract class AbstractGraphics implements Graphics {
      */
     @Override
     public void drawImageResizedAlpha(Image image, int x, int y, Rect srcRect, int w, int h, float alpha) {
-
-        float scale = 1;
-
-        int newWidth = w;
-        int newHeight = h;
-
-        int physicWindowWidth = getWidth();
-        int physicWindowHeight = getHeight();
-        int top = 0;
-        int left = 0;
-
-
-        float physicAspectRatio = (float)_windowHeight/(float)_windowWidth;
-
-        if( physicAspectRatio > logicAspectRatio ){ //vertical
-
-            physicWindowHeight = (int)((float)_windowWidth * logicAspectRatio);
-            top = _windowHeight / 2 - physicWindowHeight / 2;
-
-            scale = (float)physicWindowHeight / (float)logicHeight;
-        }
-        else {//horizontal
-            physicWindowWidth = (int)((float)_windowHeight / logicAspectRatio);
-            left = _windowWidth / 2 - physicWindowWidth / 2;
-
-            scale = (float)physicWindowWidth / (float)logicWidth;
-        }
-
-        int resizedX = (int)(x * scale);
-        int resizedY = (int)(y * scale);
-
-        int resizedImageW = (int)(newWidth * scale);
-        int resizedImageH = (int)(newHeight * scale);
-
-        int physicX = resizedX + left;
-        int physicY = resizedY + top;
-
-        Rect dstRectResized = new Rect(0, 0, 0, 0);
-
-        dstRectResized.setLeft(physicX);
-        dstRectResized.setTop(physicY);
-        dstRectResized.setRight(physicX + resizedImageW);
-        dstRectResized.setBottom(physicY + resizedImageH);
-
+        resizedDest(x, y, w, h);
         drawImagePrivateAlpha(image, srcRect, dstRectResized, alpha);
     }
 
@@ -248,8 +212,6 @@ public abstract class AbstractGraphics implements Graphics {
     @Override
     public void drawImageAsUpperLeftBand(Image image, Rect srcRect) {
 
-        //reescaldo X Y
-
         int physicWindowWidth = getWidth();
         int physicWindowHeight = getHeight();
         int top = 0;
@@ -291,8 +253,6 @@ public abstract class AbstractGraphics implements Graphics {
      */
     @Override
     public void drawImageAsBottomRightBand(Image image, Rect srcRect) {
-
-        //reescaldo X Y
 
         int physicWindowWidth = getWidth();
         int physicWindowHeight = getHeight();
@@ -339,17 +299,21 @@ public abstract class AbstractGraphics implements Graphics {
     }
 
 
-
+    /**
+     * Método heredado de la interfaz Graphics que devuelve el ancho lógico de la pantalla
+     */
     @Override
     public int getLogicWidth() {
         return logicWidth;
     }
 
+    /**
+     * Método heredado de la interfaz Graphics que devuelve el ancho lógico de la pantalla
+     */
     @Override
     public int getLogicHeight() {
         return logicHeight;
     }
-
 
 
     /**
