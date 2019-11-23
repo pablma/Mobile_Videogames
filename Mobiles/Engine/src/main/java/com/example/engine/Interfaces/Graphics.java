@@ -33,6 +33,8 @@ public interface Graphics {
      */
     public void drawImage(Image image, int x, int y, Rect srcRect);
 
+    public void drawImageResized(Image image, int x, int y, Rect srcRect, int w, int h);
+
     /**
      * Pinta una imagen en pantalla como fondo
      * @param image imagen que se quiere pintar

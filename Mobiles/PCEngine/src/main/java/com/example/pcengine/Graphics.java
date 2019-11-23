@@ -124,15 +124,6 @@ public class Graphics extends AbstractGraphics {
         return  _window.getHeight();
     }
 
-    @Override
-    public int getLogicWidth() {
-        return 1080;
-    }
-
-    @Override
-    public int getLogicHeight() {
-        return 1920;
-    }
 
 
     public void setGraphics(){

@@ -38,6 +38,11 @@ public class Sprite {
         _graphics.drawImage(_image, x, y, _srcRect);
     }
 
+
+    public void drawImageResized(int x, int y, int w, int h, float alpha) {
+        _graphics.drawImageResized(_image, x, y, _srcRect, w, h);
+    }
+
     /**
      * Pinta un sprite como fondo
      */

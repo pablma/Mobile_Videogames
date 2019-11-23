@@ -14,6 +14,11 @@ public abstract class AbstractGraphics implements Graphics {
 
     private int _windowWidth, _windowHeight;
 
+    int logicHeight = 1920;
+    int logicWidth = 1080;
+
+    float logicAspectRatio = (float)logicHeight / (float)logicWidth;
+
     /**
      * Constructora de la clase
      */
@@ -36,7 +41,6 @@ public abstract class AbstractGraphics implements Graphics {
         int top = 0;
         int left = 0;
 
-        float logicAspectRatio = 1920.0f / 1080.0f;
 
         float physicAspectRatio = (float)_windowHeight/(float)_windowWidth;
 
@@ -73,6 +77,57 @@ public abstract class AbstractGraphics implements Graphics {
         drawImagePrivate(image, srcRect, dstRectResized);
     }
 
+
+    @Override
+    public void drawImageResized(Image image, int x, int y, Rect srcRect, int w, int h) {
+        float scale = 1;
+
+        int newWidth = w;
+        int newHeight = h;
+
+        int physicWindowWidth = getWidth();
+        int physicWindowHeight = getHeight();
+        int top = 0;
+        int left = 0;
+
+        float logicAspectRatio = 1920.0f / 1080.0f;
+
+        float physicAspectRatio = (float)_windowHeight/(float)_windowWidth;
+
+        if( physicAspectRatio > logicAspectRatio ){ //vertical
+
+            physicWindowHeight = (int)((float)_windowWidth * logicAspectRatio);
+            top = _windowHeight / 2 - physicWindowHeight / 2;
+
+            scale = (float)physicWindowHeight / 1920.0f;
+        }
+        else {//horizontal
+            physicWindowWidth = (int)((float)_windowHeight / logicAspectRatio);
+            left = _windowWidth / 2 - physicWindowWidth / 2;
+
+            scale = (float)physicWindowWidth / 1080.0f;
+        }
+
+        int resizedX = (int)(x * scale);
+        int resizedY = (int)(y * scale);
+
+        int resizedImageW = (int)(newWidth * scale);
+        int resizedImageH = (int)(newHeight * scale);
+
+        int physicX = resizedX + left;
+        int physicY = resizedY + top;
+
+        Rect dstRectResized = new Rect(0, 0, 0, 0);
+
+        dstRectResized.setLeft(physicX);
+        dstRectResized.setTop(physicY);
+        dstRectResized.setRight(physicX + resizedImageW);
+        dstRectResized.setBottom(physicY + resizedImageH);
+
+        drawImagePrivate(image, srcRect, dstRectResized);
+
+    }
+
     /**
      * Método heredado de la interfaz Graphics que pinta una imagen de fondo
      * @param image imagen que se quiere pintar
@@ -87,7 +142,7 @@ public abstract class AbstractGraphics implements Graphics {
         int top = 0;
         int left = 0;
 
-        float logicAspectRatio = 1920.0f / 1080.0f;
+
         float physicAspectRatio = (float)_windowHeight/(float)_windowWidth;
 
         if( physicAspectRatio > logicAspectRatio ){ //vertical
@@ -126,7 +181,6 @@ public abstract class AbstractGraphics implements Graphics {
         int top = 0;
         int left = 0;
 
-        float logicAspectRatio = 1920.0f / 1080.0f;
 
         float physicAspectRatio = (float)_windowHeight/(float)_windowWidth;
 
@@ -185,7 +239,6 @@ public abstract class AbstractGraphics implements Graphics {
         int top = 0;
         int left = 0;
 
-        float logicAspectRatio = 1920.0f / 1080.0f;
 
         float physicAspectRatio = (float)_windowHeight/(float)_windowWidth;
 
@@ -240,7 +293,6 @@ public abstract class AbstractGraphics implements Graphics {
         int top = 0;
         int left = 0;
 
-        float logicAspectRatio = 1920.0f / 1080.0f;
 
         float physicAspectRatio = (float)_windowHeight/(float)_windowWidth;
 
@@ -292,7 +344,7 @@ public abstract class AbstractGraphics implements Graphics {
         int top = 0;
         int left = 0;
 
-        float logicAspectRatio = 1920.0f / 1080.0f;
+
         float physicAspectRatio = (float)_windowHeight/(float)_windowWidth;
 
         if( physicAspectRatio > logicAspectRatio ){ //vertical
@@ -332,7 +384,6 @@ public abstract class AbstractGraphics implements Graphics {
         int top = 0;
         int left = 0;
 
-        float logicAspectRatio = 1920.0f / 1080.0f;
 
         float physicAspectRatio = (float)_windowHeight/(float)_windowWidth;
 
@@ -392,7 +443,6 @@ public abstract class AbstractGraphics implements Graphics {
         int top = 0;
         int left = 0;
 
-        float logicAspectRatio = 1920.0f / 1080.0f;
 
         float physicAspectRatio = (float)_windowHeight/(float)_windowWidth;
 
@@ -450,7 +500,6 @@ public abstract class AbstractGraphics implements Graphics {
         int top = 0;
         int left = 0;
 
-        float logicAspectRatio = 1920.0f / 1080.0f;
 
         float physicAspectRatio = (float)_windowHeight/(float)_windowWidth;
 
@@ -502,7 +551,7 @@ public abstract class AbstractGraphics implements Graphics {
         int top = 0;
         int left = 0;
 
-        float logicAspectRatio = 1920.0f / 1080.0f;
+
         float physicAspectRatio = (float)_windowHeight/(float)_windowWidth;
 
         Rect dstRectResized = new Rect(0, 0, 0, 0);
@@ -548,7 +597,6 @@ public abstract class AbstractGraphics implements Graphics {
         int top = 0;
         int left = 0;
 
-        float logicAspectRatio = 1920.0f / 1080.0f;
         float physicAspectRatio = (float)_windowHeight/(float)_windowWidth;
 
         Rect dstRectResized = new Rect(0, 0, 0, 0);
@@ -587,6 +635,20 @@ public abstract class AbstractGraphics implements Graphics {
         _windowWidth = w;
         _windowHeight = h;
     }
+
+
+
+    @Override
+    public int getLogicWidth() {
+        return logicWidth;
+    }
+
+    @Override
+    public int getLogicHeight() {
+        return logicHeight;
+    }
+
+
 
     /**
      * Método que pinta una imagen con un rectángulo destino determinado
