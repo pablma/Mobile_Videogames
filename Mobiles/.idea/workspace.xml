@@ -44,58 +44,13 @@
     <list default="true" id="6e099268-356b-497b-bc92-12242aafae8a" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/caches/gradle_models.ser" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/gradle_models.ser" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__android_arch_core_runtime_1_1_1_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__android_arch_core_runtime_1_1_1_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__android_arch_lifecycle_livedata_1_1_1_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__android_arch_lifecycle_livedata_1_1_1_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__android_arch_lifecycle_livedata_core_1_1_1_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__android_arch_lifecycle_livedata_core_1_1_1_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__android_arch_lifecycle_runtime_1_1_1_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__android_arch_lifecycle_runtime_1_1_1_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__android_arch_lifecycle_viewmodel_1_1_1_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__android_arch_lifecycle_viewmodel_1_1_1_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_animated_vector_drawable_28_0_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_animated_vector_drawable_28_0_0_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_appcompat_v7_28_0_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_appcompat_v7_28_0_0_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_asynclayoutinflater_28_0_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_asynclayoutinflater_28_0_0_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_constraint_constraint_layout_1_1_3_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_constraint_constraint_layout_1_1_3_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_coordinatorlayout_28_0_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_coordinatorlayout_28_0_0_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_cursoradapter_28_0_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_cursoradapter_28_0_0_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_customview_28_0_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_customview_28_0_0_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_documentfile_28_0_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_documentfile_28_0_0_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_drawerlayout_28_0_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_drawerlayout_28_0_0_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_interpolator_28_0_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_interpolator_28_0_0_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_loader_28_0_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_loader_28_0_0_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_localbroadcastmanager_28_0_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_localbroadcastmanager_28_0_0_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_print_28_0_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_print_28_0_0_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_slidingpanelayout_28_0_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_slidingpanelayout_28_0_0_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_support_compat_28_0_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_support_compat_28_0_0_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_support_core_ui_28_0_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_support_core_ui_28_0_0_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_support_core_utils_28_0_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_support_core_utils_28_0_0_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_support_fragment_28_0_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_support_fragment_28_0_0_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_support_vector_drawable_28_0_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_support_vector_drawable_28_0_0_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_swiperefreshlayout_28_0_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_swiperefreshlayout_28_0_0_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_test_espresso_espresso_core_3_0_2_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_test_espresso_espresso_core_3_0_2_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_test_espresso_espresso_idling_resource_3_0_2_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_test_espresso_espresso_idling_resource_3_0_2_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_test_monitor_1_0_2_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_test_monitor_1_0_2_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_test_runner_1_0_2_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_test_runner_1_0_2_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_versionedparcelable_28_0_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_versionedparcelable_28_0_0_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_viewpager_28_0_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_viewpager_28_0_0_aar.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AndroidGame/src/main/java/com/example/assignement1/MainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/AndroidGame/src/main/java/com/example/assignement1/MainActivity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Androidengine/build/generated/source/buildConfig/androidTest/debug/com/example/androidengine/test/BuildConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/Androidengine/build/generated/source/buildConfig/androidTest/debug/com/example/androidengine/test/BuildConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Androidengine/build/generated/source/buildConfig/debug/com/example/androidengine/BuildConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/Androidengine/build/generated/source/buildConfig/debug/com/example/androidengine/BuildConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Androidengine/build/outputs/logs/manifest-merger-debug-report.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Androidengine/build/outputs/logs/manifest-merger-debug-report.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Androidengine/src/main/java/com/example/androidengine/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/Androidengine/src/main/java/com/example/androidengine/Android_Game/Game.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Androidengine/src/main/java/com/example/androidengine/Graphics.java" beforeDir="false" afterPath="$PROJECT_DIR$/Androidengine/src/main/java/com/example/androidengine/Android_Graphics/Graphics.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Androidengine/src/main/java/com/example/androidengine/Image.java" beforeDir="false" afterPath="$PROJECT_DIR$/Androidengine/src/main/java/com/example/androidengine/Android_Graphics/Image.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Androidengine/src/main/java/com/example/androidengine/Input.java" beforeDir="false" afterPath="$PROJECT_DIR$/Androidengine/src/main/java/com/example/androidengine/Android_Input/Input.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Androidengine/src/main/java/com/example/androidengine/MultiTouchHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/Androidengine/src/main/java/com/example/androidengine/Android_Input/MultiTouchHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Androidengine/src/main/java/com/example/androidengine/MySurfaceView.java" beforeDir="false" afterPath="$PROJECT_DIR$/Androidengine/src/main/java/com/example/androidengine/Android_Game/AndroidSurfaceView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Androidengine/src/main/java/com/example/androidengine/SingleTouchHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/Androidengine/src/main/java/com/example/androidengine/Android_Input/SingleTouchHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Androidengine/src/main/java/com/example/androidengine/TouchHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/Androidengine/src/main/java/com/example/androidengine/Android_Input/TouchHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PCEngine/src/main/java/com/example/pcengine/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/PCEngine/src/main/java/com/example/pcengine/PC_Game/Game.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PCEngine/src/main/java/com/example/pcengine/Graphics.java" beforeDir="false" afterPath="$PROJECT_DIR$/PCEngine/src/main/java/com/example/pcengine/PC_Graphics/Graphics.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PCEngine/src/main/java/com/example/pcengine/Image.java" beforeDir="false" afterPath="$PROJECT_DIR$/PCEngine/src/main/java/com/example/pcengine/PC_Graphics/Image.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PCEngine/src/main/java/com/example/pcengine/Input.java" beforeDir="false" afterPath="$PROJECT_DIR$/PCEngine/src/main/java/com/example/pcengine/PC_Input/Input.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PCEngine/src/main/java/com/example/pcengine/PCMouseHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/PCEngine/src/main/java/com/example/pcengine/PC_Input/PCMouseHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PCEngine/src/main/java/com/example/pcengine/PCSurfaceView.java" beforeDir="false" afterPath="$PROJECT_DIR$/PCEngine/src/main/java/com/example/pcengine/PC_Game/PCSurfaceView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PCGame/src/main/java/com/example/pcgame/PCMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/PCGame/src/main/java/com/example/pcgame/PCMain.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/local.properties" beforeDir="false" afterPath="$PROJECT_DIR$/local.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Engine/src/main/java/com/example/engine/Abstract_Classes/AbstractGraphics.java" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/src/main/java/com/example/engine/Abstract_Classes/AbstractGraphics.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Engine/src/main/java/com/example/engine/Abstract_Classes/AbstractInput.java" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/src/main/java/com/example/engine/Abstract_Classes/AbstractInput.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Logic/src/main/java/com/example/logic/SuperClasses/GameManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/Logic/src/main/java/com/example/logic/SuperClasses/GameManager.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -125,56 +80,11 @@
     </system>
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Androidengine/src/main/java/com/example/androidengine/Android_Input/Input.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Androidengine/src/main/java/com/example/androidengine/Android_Input/MultiTouchHandler.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Androidengine/src/main/java/com/example/androidengine/Android_Input/SingleTouchHandler.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-7">
-              <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Androidengine/src/main/java/com/example/androidengine/Android_Input/TouchHandler.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="9" column="17" selection-start-line="9" selection-start-column="17" selection-end-line="9" selection-end-column="17" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/PCEngine/src/main/java/com/example/pcengine/PC_Game/Game.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
+            <state relative-caret-position="85">
               <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -195,7 +105,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/PCEngine/src/main/java/com/example/pcengine/PC_Graphics/Graphics.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
+            <state relative-caret-position="85">
               <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -216,7 +126,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/PCEngine/src/main/java/com/example/pcengine/PC_Input/Input.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
+            <state relative-caret-position="85">
               <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -225,11 +135,47 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/PCEngine/src/main/java/com/example/pcengine/PC_Input/PCMouseHandler.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="68">
               <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Engine/src/main/java/com/example/engine/Abstract_Classes/AbstractGraphics.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="512">
+              <caret line="329" column="43" selection-start-line="329" selection-start-column="43" selection-end-line="329" selection-end-column="43" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Engine/src/main/java/com/example/engine/Abstract_Classes/AbstractInput.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="688">
+              <caret line="160" column="84" selection-start-line="160" selection-start-column="84" selection-end-line="160" selection-end-column="84" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Logic/src/main/java/com/example/logic/SuperClasses/GameManager.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="102">
+              <caret line="6" column="27" selection-start-line="6" selection-start-column="27" selection-end-line="6" selection-end-column="27" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Logic/src/main/java/com/example/logic/States/GameState.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="3105">
+              <caret line="354" column="56" selection-start-line="354" selection-start-column="56" selection-end-line="354" selection-end-column="56" />
             </state>
           </provider>
         </entry>
@@ -324,13 +270,11 @@
         <option value="$PROJECT_DIR$/Engine/src/main/java/com/example/engine/Utils/Rect.java" />
         <option value="$PROJECT_DIR$/Engine/src/main/java/com/example/engine/Utils/Sprite.java" />
         <option value="$PROJECT_DIR$/Engine/src/main/java/com/example/engine/Abstract_Classes/State.java" />
-        <option value="$PROJECT_DIR$/Engine/src/main/java/com/example/engine/Abstract_Classes/AbstractInput.java" />
         <option value="$PROJECT_DIR$/Logic/src/main/java/com/example/logic/GameObject.java" />
         <option value="$PROJECT_DIR$/Logic/src/main/java/com/example/logic/SuperClasses/ParticleSystem.java" />
         <option value="$PROJECT_DIR$/Logic/src/main/java/com/example/logic/GameObjects/Particle.java" />
         <option value="$PROJECT_DIR$/Logic/src/main/java/com/example/logic/SuperClasses/GameObject.java" />
         <option value="$PROJECT_DIR$/Logic/src/main/java/com/example/logic/SuperClasses/SwitchDashObject.java" />
-        <option value="$PROJECT_DIR$/Logic/src/main/java/com/example/logic/SuperClasses/GameManager.java" />
         <option value="$PROJECT_DIR$/Logic/src/main/java/com/example/logic/SuperClasses/Assets.java" />
         <option value="$PROJECT_DIR$/Logic/src/main/java/com/example/logic/States/MainMenuState.java" />
         <option value="$PROJECT_DIR$/Logic/src/main/java/com/example/logic/States/LoadingState.java" />
@@ -365,8 +309,10 @@
         <option value="$PROJECT_DIR$/PCEngine/src/main/java/com/example/pcengine/Graphics.java" />
         <option value="$PROJECT_DIR$/Logic/src/main/java/com/example/logic/GameObjects/Arrows.java" />
         <option value="$PROJECT_DIR$/Logic/src/main/java/com/example/logic/GameObjects/Ball.java" />
-        <option value="$PROJECT_DIR$/Engine/src/main/java/com/example/engine/Abstract_Classes/AbstractGraphics.java" />
         <option value="$PROJECT_DIR$/Logic/src/main/java/com/example/logic/States/GameState.java" />
+        <option value="$PROJECT_DIR$/Engine/src/main/java/com/example/engine/Abstract_Classes/AbstractGraphics.java" />
+        <option value="$PROJECT_DIR$/Engine/src/main/java/com/example/engine/Abstract_Classes/AbstractInput.java" />
+        <option value="$PROJECT_DIR$/Logic/src/main/java/com/example/logic/SuperClasses/GameManager.java" />
       </list>
     </option>
   </component>
@@ -385,39 +331,12 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
+      <pane id="ProjectPane" />
       <pane id="AndroidView">
         <subPane>
           <expand>
-            <path>
-              <item name="Mobiles" type="1abcf292:AndroidViewProjectNode" />
-              <item name="Androidengine" type="feadf853:AndroidModuleNode" />
-            </path>
-            <path>
-              <item name="Mobiles" type="1abcf292:AndroidViewProjectNode" />
-              <item name="Androidengine" type="feadf853:AndroidModuleNode" />
-              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
-            </path>
-            <path>
-              <item name="Mobiles" type="1abcf292:AndroidViewProjectNode" />
-              <item name="Androidengine" type="feadf853:AndroidModuleNode" />
-              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
-              <item name="androidengine" type="cbb59c9e:AndroidPsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Mobiles" type="1abcf292:AndroidViewProjectNode" />
-              <item name="Engine" type="e9137016:NonAndroidModuleNode" />
-            </path>
-            <path>
-              <item name="Mobiles" type="1abcf292:AndroidViewProjectNode" />
-              <item name="Engine" type="e9137016:NonAndroidModuleNode" />
-              <item name="java" type="f7eae187:NonAndroidSourceTypeNode" />
-            </path>
-            <path>
-              <item name="Mobiles" type="1abcf292:AndroidViewProjectNode" />
-              <item name="Engine" type="e9137016:NonAndroidModuleNode" />
-              <item name="java" type="f7eae187:NonAndroidSourceTypeNode" />
-              <item name="engine" type="462c0819:PsiDirectoryNode" />
-            </path>
             <path>
               <item name="Mobiles" type="1abcf292:AndroidViewProjectNode" />
               <item name="Logic" type="e9137016:NonAndroidModuleNode" />
@@ -435,26 +354,15 @@
             </path>
             <path>
               <item name="Mobiles" type="1abcf292:AndroidViewProjectNode" />
-              <item name="PCEngine" type="e9137016:NonAndroidModuleNode" />
-            </path>
-            <path>
-              <item name="Mobiles" type="1abcf292:AndroidViewProjectNode" />
-              <item name="PCEngine" type="e9137016:NonAndroidModuleNode" />
+              <item name="Logic" type="e9137016:NonAndroidModuleNode" />
               <item name="java" type="f7eae187:NonAndroidSourceTypeNode" />
-            </path>
-            <path>
-              <item name="Mobiles" type="1abcf292:AndroidViewProjectNode" />
-              <item name="PCEngine" type="e9137016:NonAndroidModuleNode" />
-              <item name="java" type="f7eae187:NonAndroidSourceTypeNode" />
-              <item name="pcengine" type="462c0819:PsiDirectoryNode" />
+              <item name="logic" type="462c0819:PsiDirectoryNode" />
+              <item name="States" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="ProjectPane" />
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -486,7 +394,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.Pc">
+  <component name="RunManager" selected="Android App.app">
     <configuration default="true" type="AndroidJUnit" factoryName="Android JUnit">
       <option name="TEST_OBJECT" value="class" />
       <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
@@ -593,7 +501,7 @@
       <window_info anchor="bottom" id="Event Log" order="5" sideWeight="0.52132195" side_tool="true" weight="0.04550379" />
       <window_info anchor="bottom" id="Build" order="6" sideWeight="0.47974414" weight="0.17226435" />
       <window_info anchor="bottom" id="Android Profiler" order="7" />
-      <window_info anchor="bottom" id="Run" order="8" sideWeight="0.47867805" visible="true" weight="0.17551462" />
+      <window_info anchor="bottom" id="Run" order="8" sideWeight="0.47867805" weight="0.17551462" />
       <window_info anchor="bottom" id="Debug" order="9" sideWeight="0.49626866" weight="0.32827735" />
       <window_info anchor="right" id="Device File Explorer" order="0" side_tool="true" />
       <window_info anchor="right" id="Capture Analysis" order="1" />
@@ -769,13 +677,6 @@
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Logic/src/main/java/com/example/logic/SuperClasses/GameManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1428">
-          <caret line="94" column="41" selection-start-line="94" selection-start-column="41" selection-end-line="94" selection-end-column="41" />
         </state>
       </provider>
     </entry>
@@ -966,13 +867,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Engine/src/main/java/com/example/engine/Abstract_Classes/AbstractGraphics.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="24" column="31" selection-start-line="24" selection-start-column="31" selection-end-line="24" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Engine/src/main/java/com/example/engine/Utils/Pool.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="986">
@@ -980,32 +874,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Engine/src/main/java/com/example/engine/Abstract_Classes/AbstractInput.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2312">
-          <caret line="148" column="32" selection-start-line="148" selection-start-column="32" selection-end-line="148" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Logic/src/main/java/com/example/logic/States/GameOverState.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="707">
           <caret line="183" column="18" lean-forward="true" selection-start-line="183" selection-start-column="18" selection-end-line="183" selection-end-column="52" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Logic/src/main/java/com/example/logic/States/GameState.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="504">
-          <caret line="354" column="56" selection-start-line="354" selection-start-column="56" selection-end-line="354" selection-end-column="56" />
-          <folding>
-            <element signature="e#5525#5526#0" expanded="true" />
-            <element signature="e#5559#5560#0" expanded="true" />
-            <element signature="e#6894#6895#0" expanded="true" />
-            <element signature="e#6927#6928#0" expanded="true" />
-            <element signature="e#10022#10153#0" expanded="true" />
-            <element signature="e#10152#10153#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1045,7 +917,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Androidengine/src/main/java/com/example/androidengine/Android_Input/Input.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
+        <state relative-caret-position="85">
           <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -1062,7 +934,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Androidengine/src/main/java/com/example/androidengine/Android_Input/SingleTouchHandler.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-7">
+        <state relative-caret-position="68">
           <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -1072,7 +944,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Androidengine/src/main/java/com/example/androidengine/Android_Input/TouchHandler.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
+        <state relative-caret-position="85">
           <caret line="9" column="17" selection-start-line="9" selection-start-column="17" selection-end-line="9" selection-end-column="17" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -1082,7 +954,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/PCEngine/src/main/java/com/example/pcengine/PC_Game/Game.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
+        <state relative-caret-position="85">
           <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -1099,7 +971,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/PCEngine/src/main/java/com/example/pcengine/PC_Graphics/Graphics.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
+        <state relative-caret-position="85">
           <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -1116,7 +988,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/PCEngine/src/main/java/com/example/pcengine/PC_Input/Input.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
+        <state relative-caret-position="85">
           <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -1128,6 +1000,34 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
           <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Engine/src/main/java/com/example/engine/Abstract_Classes/AbstractGraphics.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="512">
+          <caret line="329" column="43" selection-start-line="329" selection-start-column="43" selection-end-line="329" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Engine/src/main/java/com/example/engine/Abstract_Classes/AbstractInput.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="688">
+          <caret line="160" column="84" selection-start-line="160" selection-start-column="84" selection-end-line="160" selection-end-column="84" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Logic/src/main/java/com/example/logic/SuperClasses/GameManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="27" selection-start-line="6" selection-start-column="27" selection-end-line="6" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Logic/src/main/java/com/example/logic/States/GameState.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3105">
+          <caret line="354" column="56" selection-start-line="354" selection-start-column="56" selection-end-line="354" selection-end-column="56" />
         </state>
       </provider>
     </entry>

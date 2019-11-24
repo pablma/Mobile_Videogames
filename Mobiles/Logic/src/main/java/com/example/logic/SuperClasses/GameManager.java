@@ -11,7 +11,7 @@ public class GameManager {
     private static GameManager _instance;
 
     private int[] _score;
-    private int _pointsToIncreaseVel = 100;
+    private int _pointsToIncreaseVel = 10;
 
     private int _backgroundColorIndex;
     private float _incVelY = 200f;

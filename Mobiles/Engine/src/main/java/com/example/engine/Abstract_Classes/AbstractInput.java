@@ -158,7 +158,7 @@ public abstract class AbstractInput implements Input {
     protected abstract int getTouchYPrivate(int pointer);
 
     /**
-     * Método que devuelve la lista con todos los eventos registrados reeescalados hasta el momento
+     * Método que reescala y devuelve la lista con todos los eventos traduciéndolos con coordenadas físicas a lógicas
      * @return lista de touchEvents con los eventos registrados hasta el momento
      */
     protected abstract List<TouchEvent> getTouchEventsPrivate();
