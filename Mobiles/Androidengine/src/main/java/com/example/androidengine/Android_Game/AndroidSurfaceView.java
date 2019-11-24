@@ -1,13 +1,12 @@
-package com.example.androidengine;
+package com.example.androidengine.Android_Game;
 
-import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.Rect;
 import android.view.SurfaceHolder;
 import android.view.SurfaceView;
 
-public class MySurfaceView extends SurfaceView implements Runnable {
+public class AndroidSurfaceView extends SurfaceView implements Runnable {
 
     /**
      * CLASE MY_SURFACE_VIEW
@@ -27,7 +26,7 @@ public class MySurfaceView extends SurfaceView implements Runnable {
      * @param game referencia a game necesaria para acceder a sus métodos
      * @param frameBuffer frameBuffer que usaremos para el renderizado
      */
-    public MySurfaceView(Game game, Bitmap frameBuffer) { // context es una avtivity de android , game es una actividad de android
+    public AndroidSurfaceView(Game game, Bitmap frameBuffer) { // context es una avtivity de android , game es una actividad de android
         super(game);
         this._game = game;
         this._frameBuffer = frameBuffer;

@@ -1,7 +1,7 @@
 package com.example.assignement1;
 
 
-import com.example.androidengine.Game;
+import com.example.androidengine.Android_Game.Game;
 import com.example.engine.Abstract_Classes.State;
 import com.example.logic.States.LoadingState;
 

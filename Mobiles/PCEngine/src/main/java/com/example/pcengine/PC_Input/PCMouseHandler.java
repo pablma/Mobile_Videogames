@@ -1,4 +1,4 @@
-package com.example.pcengine;
+package com.example.pcengine.PC_Input;
 
 import com.example.engine.Interfaces.Input;
 import com.example.engine.Utils.Pool;

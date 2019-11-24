@@ -1,4 +1,4 @@
-package com.example.pcengine;
+package com.example.pcengine.PC_Game;
 
 import javax.swing.JFrame;
 
